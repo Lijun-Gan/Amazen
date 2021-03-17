@@ -11,14 +11,13 @@ const App = () => (
   <div>
     <header>
 
-      <Link to="/"> <h1>Amazen Logo</h1> </Link>
+      <Link to="/"> <h1>amazen</h1> </Link>
 
-      <HomePageContainer />
     </header>
     <Switch>
-
-        <Route exact path="/signin" component={SigninContainer} />
-        <Route exact path="/signup" component={SignupContainer} />
+        <Route exact path="/" component={HomePageContainer} />
+        <AuthRoute exact path="/signin" component={SigninContainer} />
+        <AuthRoute exact path="/signup" component={SignupContainer} />
         <Route exact path="/books" component={BookIndex} />
     </Switch>
   </div>

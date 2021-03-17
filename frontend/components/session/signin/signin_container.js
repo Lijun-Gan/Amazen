@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import Signin from "./signin";
 import { signin } from '../../../actions/session_actions';
 
-// const mapStateToProps = (state) => ({
-    
-// });
+const mapStateToProps = (state) => ({
+    errors: state.errors.session,
+});
 
 const mapDispatchToProps = (dispatch) => {
     return ({
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null,mapDispatchToProps)(Signin);
+export default connect(mapStateToProps,mapDispatchToProps)(Signin);
