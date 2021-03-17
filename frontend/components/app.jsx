@@ -20,7 +20,6 @@ const App = () => (
         <Route exact path="/signin" component={SigninContainer} />
         <Route exact path="/signup" component={SignupContainer} />
         <Route exact path="/books" component={BookIndex} />
-        {/* <Route exact path="/" component={SearchContainer} /> */}
     </Switch>
   </div>
 );
