@@ -34,7 +34,7 @@ class SignIn extends React.Component {
 
     demoLogin(e) {
         e.preventDefault();
-        this.props.signin({email_or_username: 'amazen@gmail.com', password: 'amazenLover'})
+        this.props.signin({email_or_phone: 'amazen@gmail.com', password: 'amazenLover'})
             .then(() => this.props.history.push('/'));
     }
 
@@ -50,7 +50,7 @@ render() {
                 <form  onSubmit={this.handleSubmit} className="login-form-box">
                 <h1>Sign-In</h1> 
                 <div >
-                    <label htmlFor="emailOrUsername">Email or username:</label>
+                    <label htmlFor="emailOrUsername">Email or mobile phone number:</label>
                     <input type="text"
                         id="emailOrUsername"
                         value={this.state.email_or_username}

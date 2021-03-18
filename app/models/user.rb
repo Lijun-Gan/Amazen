@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    validates :username, presence: true, uniqueness: true
+    validates :username, presence: true
+    validates :phone_number, uniqueness: true, length: {minimum: 10}, allow_nil: true
     validates :email, presence: true, uniqueness: true
     validates :session_token, presence: true, uniqueness: true
     validates :password_digest, presence: true
@@ -39,13 +40,13 @@ class User < ApplicationRecord
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
-    def self.find_by_credentials(username_or_email, password)
-        maybe_username =  User.find_by(username: username_or_email)
-        maybe_email =  User.find_by(email: username_or_email)
+    def self.find_by_credentials(email_or_phone, password)
+        maybe_phone =  User.find_by(phone_number: email_or_phone)
+        maybe_email =  User.find_by(email: email_or_phone)
         
-        return nil if !(maybe_username || maybe_email)
+        return nil if !(maybe_phone || maybe_email)
         
-        user = maybe_username ? maybe_username : maybe_email
+        user = maybe_phone ? maybe_phone : maybe_email
        
         user.is_password?(password)? user : nil
     end
