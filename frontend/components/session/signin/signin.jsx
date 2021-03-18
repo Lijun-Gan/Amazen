@@ -75,12 +75,12 @@ render() {
             </div>
         </div>
         <div className="signin-form-bottom">
-                <p>----------------------- New to Amazen? -----------------------</p>
+                <p>--------------------- New to Amazen? ----------------------</p>
                 <Link to="/signup">
-                    <button  className="signup-btn">Create your Amazen Account</button>
+                    <button  className="submit-btn">Create your Amazen Account</button>
                 </Link>
-            </div>
-            </div>
+        </div>
+        </div>
         );
     }
 }
