@@ -7,36 +7,29 @@ class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
             username: '',
             email: '',
             password: '',
-            rePassword: ''},
-            errors: {
-            repwError: null,
-            }
+            rePassword: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
   }
 
     update(field) {
         return (e) => this.setState({
-            user:{
-
-                [field]: e.target.value
-            }
+           
+            [field]: e.target.value
+        
         });
     }
 
     handleSubmit(e) {
         // let repwError = null;
+        // debugger
         e.preventDefault();
-        if (this.state.password != this.state.rePassword){
-            this.state.errors.repwError = <p>! passwords must match</p>
-        }else{
-            const user = Object.assign({}, this.state);
-            this.props.signup(user).then(()=>(this.props.history.push('/')));
-        }
+        const user = Object.assign({}, this.state);
+        this.props.signup(this.state).then(()=>(this.props.history.push('/')));
+        
     }
 
     renderErrors() {
@@ -99,9 +92,7 @@ class SignUp extends React.Component {
                                 value={this.state.rePassword}
                                 onChange={this.update('rePassword')}
                             />
-                            {repwError}
-                        
-
+                           
                         <input className="auth-btn" type="submit" value="Create your Amazen account" />
                     </div>
                     </form>
