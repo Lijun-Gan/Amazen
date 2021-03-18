@@ -11,7 +11,7 @@ const App = () => (
   <div>
     <header>
 
-      <Link to="/"> <h1>amazen</h1> </Link>
+      {/* <Link to="/"> <h1>amazen</h1> </Link> */}
 
     </header>
     <Switch>

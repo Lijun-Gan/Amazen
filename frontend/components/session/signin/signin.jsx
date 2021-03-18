@@ -41,34 +41,37 @@ class SignIn extends React.Component {
 render() {
         return (
         <div>
-  
+            <Link to="/"> 
+            <img id="amazen-logo" src={window.amazenLogo} alt="amazen logo"/>
+            </Link>
         <div className="session-div">
             {this.renderErrors()}
             <div className="signin-form">
                 <form  onSubmit={this.handleSubmit} className="login-form-box">
                 <h1>Sign-In</h1> 
                 <div >
-                    <label>Email or username:
+                    <label htmlFor="emailOrUsername">Email or username:</label>
                     <input type="text"
+                        id="emailOrUsername"
                         value={this.state.email_or_username}
                         onChange={this.update('email_or_username')}/>
-                    </label>
-        
-                    <label>Password:
+                    
+                    <label htmlFor="pw">Password:</label>
                     <input type="password"
+                        id="pw"
                         value={this.state.password}
                         onChange={this.update('password')}
                     />
-                    </label>
+                    
             
                     <input className="auth-btn" type="submit" value="Sign-In" />
                 </div>
                 </form>
                     <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
-       
-                <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                    
+                <p >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
  
-                <a id="notes" href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
+                <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
             </div>
         </div>
         <div className="signin-form-bottom">

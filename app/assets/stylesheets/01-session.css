@@ -1,0 +1,115 @@
+#amazen-logo{
+    height: 40px;
+    width: 110px;
+    margin: 20px auto;
+}
+
+.session-div {
+    margin: 0 auto;
+    width: 350px;
+    border: 1px solid #e6e1e1;
+    /* padding-left: 19px ; */
+    
+}
+
+.session-div label{
+    font-weight: bold;
+}
+
+.session-div input{
+
+    width: 93%;
+    border-radius: 3px;
+    /* margin-bottom: 20px; */
+    height: 27px;
+    border: 1px solid #a6a6a6;
+}
+
+
+#password-note{
+    /* font: small */
+    /* margin-bottom: 6px; */
+}
+
+.pw-alert-container{
+    display: flex;
+}
+
+#pwAlert-icon{
+    height: 13px;
+    width: 13px;
+    display: block;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+
+.auth-btn.demo {
+    margin-bottom: 20px;
+    width: 93%;
+    border: 1px solid #a6a6a6;
+    height: 27px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+}
+
+/* .signin-form{
+    height: 400px;
+} */
+
+/* .signup-form{
+    height: 470px;
+    /* border: 1px solid #a6a6a6; */
+} */
+
+
+/* .auth-btn{
+    background: #f0c14b;
+    border-radius: 2px;
+    width: 93%;
+    height: 31px;
+    padding-left: 18px;
+    border: 1px solid #c5c0c0;
+} */
+
+/* .signin-form-bottom{
+    margin-top: 30px;
+    width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* .signup-btn{
+    height: 31px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #c5c0c0;
+} */
+
+/* .sign-btn{
+    background: #f0c14b;
+} */
+
+
+/* a:link{
+    text-decoration: none;
+    color: skyblue;
+} */
+
+
+
+
+/* #notes{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: smaller;
+    font-weight: normal;
+} */
+
+
+
+/* ul.errors{
+    list-style-type: none;
+    font-size: normal;
+    font-weight: lighter;
+
+} */
