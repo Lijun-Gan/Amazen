@@ -9,19 +9,25 @@
     background-color: #0F1111;
 }
 
-#nav-signin{
+.nav-signin-container{
     background-color: #0F1111;
-    height: 40px;
-    width: 70px;
+    width: 70px; 
+    padding-top: 5px; 
 }
 
 span #nav-account{
     font-size: 14px;
 }
 
-a:-webkit-any-link {
+span.nav-signin{
     color: white;
-    font-size: 11px;
+    font-size: 10px;
+    text-align: center;    
+}
+p.nav-signin{
+    color: white;
+    font-size: 14px;
+    text-align: center;
 }
 
 #nav-serarch-bar{

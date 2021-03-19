@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 
 const NavSignin = ({ currentUser, signout }) => {
   const signInLink = () => (
-    <div id="nav-signin">
-      <Link  to="/signin"> Hello, Sign in 
-      <span id="nav-account"> Account ▾</span>
+    <div className="nav-signin-container">
+      <Link  to="/signin">
+      <span className="nav-signin">Hello, Sign in </span> 
+      <p className="nav-signin"> Account ▾</p>
       </Link>
     </div>
   );
   
   const navSignedIn = () => (
-    <div id="nav-signin">
+    <div className="nav-signin-container">
       <h2>Hi, {currentUser.username}!</h2>
-      <button onClick={signout}>Log Out</button>
+      <button  className="nav-signin" onClick={signout}>Log Out</button>
     </div>
   );
 
