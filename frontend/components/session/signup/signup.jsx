@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class SignUp extends React.Component {
     constructor(props) {
         super(props);
@@ -17,11 +16,13 @@ class SignUp extends React.Component {
                 email: '',
                 password: '',
                 rePassword: '',
-                matchPassword: ''
+                matchPassword: '',
+                emailTaken: '',
             }
            
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.backFirstSignUp = this.backFirstSignUp.bind(this);
   }
 
   update(field) {
@@ -84,15 +85,46 @@ class SignUp extends React.Component {
                 email: invalid_email,
                 password: invalid_password,
                 rePassword: invalid_rePassword,
-                matchPassword:diff_password
+                matchPassword:diff_password,
+                emailTaken: this.state.errors.emailTaken
             }
         });
 
         if (errors_count === 0) {
             this.props.signup(this.state.user)
-                .then( ()=> this.props.history.push("/") );
+                .then( ()=> this.props.history.push("/"), (response)=>{
+                    if(response.errors.includes("Email has already been taken")){
+                        this.setState({
+                            errors: {
+                                username: this.state.errors.username,
+                                email: this.state.errors.email,
+                                password: this.state.errors.password,
+                                rePassword: this.state.errors.rePassword,
+                                matchPassword:this.state.errors.matchPassword,
+                                emailTaken: "Email address already in use"
+                            }
+                        });
+                        console.log(response.errors[0])
+                    }
+                    console.log(response.errors[0])
+                } );
         }
 
+    }
+
+    backFirstSignUp(e) {
+        e.preventDefault
+
+        this.setState(
+            {errors: {
+                username: '',
+                email: '',
+                password: '',
+                rePassword: '',
+                matchPassword: '',
+                emailTaken: '',
+            }
+        });
     }
 
     // renderErrors() {
@@ -119,7 +151,9 @@ class SignUp extends React.Component {
         const emailColor = (this.state.errors.email !== "") ? "input-error" : null;
         const passwordColor = (this.state.errors.password !== "") ? "input-error" : null;
         const rePasswordColor = (this.state.errors.rePassword !== "") ? "input-error" : null;
-        return (
+        
+        if(this.state.errors.emailTaken === ""){
+            return (
 
         <div>
             <Link to="/"> 
@@ -197,7 +231,7 @@ class SignUp extends React.Component {
             </div>
             {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
         
-        <div id="footnotes" >
+        <div id="auth-footnotes" >
             <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
             <p> &nbsp; </p>
             <p>© 2021, Amazen.com, inc. or its affiliates</p>
@@ -205,7 +239,64 @@ class SignUp extends React.Component {
 
         </div>
     
-        );
+        );}else{
+            return(
+                <div>
+            <Link to="/"> 
+                <img id="amazen-logo" src={window.amazenLogo} alt="amazen logo"/>
+            </Link>
+
+                <div className="email-taken-alert" >
+
+                    <img src={window.email_taken} alt="email address already in use"/>
+                    <p className="sign-up-email-taken"> {this.state.user.email}</p>
+                        
+                </div>
+
+            <div className="session-div email-taken">
+
+                {/* {this.renderErrors()} */}
+       
+                <div className="email-taken-info">
+                   
+                    <h3>Are you a returning customer?</h3>  
+                    <Link to="/signin" id="notes">Sign-In</Link>
+                    <p></p>
+                    <Link to="/signin" id="notes">forgot your password?</Link>
+                    
+                    {/* <p><Link to="/signup">Forgot your password?</Link></p> */}
+                    
+
+                    <p></p>
+                
+                    <h3>New to Amazon.com?</h3> 
+                    <span>Create a new account with</span>
+                    <button className="backFirstSignIn" onClick={this.backFirstSignUp}>&nbsp;a different e-mail address</button>
+                    
+                    <p></p>
+
+                    <span>Create a new account with</span>
+                    <button className="backFirstSignIn" onClick={this.backFirstSignUp}>&nbsp;this e-mail address</button>
+
+                    <p></p>
+
+                    <h3>Still need help?</h3>
+                    <a href="https://github.com/Lijun-Gan/Amazen">Contact Customer Service</a>
+                    
+                </div>
+            </div>
+            {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
+        
+        <div id="auth-footnotes" >
+            <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+            <p> &nbsp; </p>
+            <p>© 2021, Amazen.com, inc. or its affiliates</p>
+        </div>
+
+        </div>
+            )
+
+        }
     }
 }
 

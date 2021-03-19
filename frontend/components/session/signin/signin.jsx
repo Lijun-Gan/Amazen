@@ -189,7 +189,7 @@ class SignIn extends React.Component {
                         </Link>
                 </div>
 
-                <div id="footnotes" >
+                <div id="auth-footnotes" >
                     <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
                     <p> &nbsp; </p>
                     <p>© 2021, Amazen.com, inc. or its affiliates</p>
@@ -220,7 +220,6 @@ class SignIn extends React.Component {
                     
                     </div>
                     
-                    
                     <div >
 
                         <span id="password-label" htmlFor="pw">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -244,7 +243,7 @@ class SignIn extends React.Component {
                     <a href="https://github.com/Lijun-Gan/Amazen"> Detail ▾</a>
                 </div>
                 </div>
-                <div id="footnotes" >
+                <div id="auth-footnotes" >
                     <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
                     <p> &nbsp; </p>
                     <p>© 2021, Amazen.com, inc. or its affiliates</p>

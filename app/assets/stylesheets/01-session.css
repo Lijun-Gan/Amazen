@@ -133,26 +133,15 @@ input.input-error {
 
 }
 
-#footnotes{
-    font-size: 0.9em;
+#auth-footnotes{
+    font-size: 0.8em;
     width: 312px;
     margin: 30px auto;
     padding-left: 60px ;
     padding-top: 26px;
     font-family: 'Lato', sans-serif;
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
 }
-
-/* #auth-footnote{
-    height: 250px;
-    width: 350px; 
-} */
-
-
-/* .signup-form{ 
-    height: 470px;
-    border: 1px solid #a6a6a6;
-} */
 
 button.backFirstSignIn{
     color: #0066c0;
@@ -180,25 +169,40 @@ button.backFirstSignIn{
 }
 
 
-
-/* .signup-btn{
-    height: 31px;
-    width: 100%;
+.email-taken-alert{
+    width: 313px;
+    height: 95px;
+    /* margin: 20px auto; */
+    padding: 2px;
+    border: orange solid 1px ;
     border-radius: 4px;
-} */
-
-/* .sign-btn{
-    background: #f0c14b;
-} */
+    box-shadow: 0 0 0 4px #fffae7 inset;
+    margin: 20px auto;
+    
+}
 
 #notes{
     margin-bottom: 20px;
     font-size: 0.9em;
 }
 
-/* ul.errors{
-    list-style-type: none;
-    font-size: normal;
-    font-weight: lighter;
+.sign-up-email-taken{
+    padding-left: 49px;
+    font-size: 11px;
+    font-weight: bold;
+}
 
-} */
+h3{
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.email-taken-info{
+    font-size: 0.98em;
+
+}
+
+.session-div.email-taken{
+    border: none;
+}
