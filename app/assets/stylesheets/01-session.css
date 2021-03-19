@@ -27,14 +27,21 @@ a:-webkit-any-link{
 
 .session-div input{
 
-    width: 310px;
+    width: 296px;
     border-radius: 3px;
     margin-bottom: 12px;
     margin-top: 4px;
-    height: 31px;
+    /* height: 31px; */
+    height: 23px;
     border: 1px solid #a6a6a6;
     font-size: 12.5px;
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    /* padding-left: 7px; */
+
 }
 
 .session-div input:focus{
