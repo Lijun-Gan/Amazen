@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
     validates :username, presence: true
     validates :phone_number, uniqueness: true, length: {minimum: 10}, allow_nil: true
@@ -48,7 +50,6 @@ class User < ApplicationRecord
         
         return nil if !(maybe_phone || maybe_email)
         user = maybe_phone ? maybe_phone : maybe_email
-
         return user
 
     end
