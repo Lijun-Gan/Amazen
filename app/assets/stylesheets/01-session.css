@@ -4,16 +4,17 @@
     margin: 20px auto;
 }
 
-/* a:link{
-    color: rgb(66, 178, 223);
-  } */
+a:-webkit-any-link{
+    color: #0066c0;
+  } 
 
 .session-div {
     margin: 0 auto;
-    width: 350px;
+    width: 312px;
     border: 1px solid #e6e1e1;
-    padding-left: 20px ;
-    padding-bottom: 20px;
+    padding-left: 18px ;
+    padding-right: 18px ;
+    padding-bottom: 18px;
     font-size: 12.5px;
     font-family: 'Lato', sans-serif;
 }
@@ -26,7 +27,7 @@
 
 .session-div input{
 
-    width: 93%;
+    width: 310px;
     border-radius: 3px;
     margin-bottom: 12px;
     margin-top: 4px;
@@ -56,32 +57,32 @@
     height: 13px;
     width: 13px;
     display: block;
-    padding-top: 3px;
+    padding-top: 1px;
     padding-right: 3px;
 }
 
 .auth-btn.demo {
     margin-bottom: 20px;
-    width: 93%;
+    width: 310px;
     border: 1px solid #a6a6a6;
     height: 31px;
     border-radius: 3px;
 }
 
 #incorrect-email{
-    width: 370px;
+    width: 350px;
     height: 95px;
     margin: 20px auto;
 }
 
 #incorrect-phone{
-    width: 370px;
+    width: 350px;
     height: 95px;
     margin: 20px auto;
 }
 
 #incorrect-password{
-    width: 370px;
+    width: 350px;
     height: 78px;
     margin: 20px auto;
 }
@@ -115,7 +116,7 @@ input.input-error {
 
 #newAmazen{
     color: rgb(161, 159, 151);
-    font-size: 0.9em;
+    font-size: 0.75em;
 }
 
 
@@ -134,17 +135,17 @@ input.input-error {
 
 #footnotes{
     font-size: 0.9em;
-    width: 350px;
+    width: 312px;
     margin: 30px auto;
     padding-left: 60px ;
-    padding-top: 20px;
+    padding-top: 26px;
     font-family: 'Lato', sans-serif;
     font-size: 0.7em;
 }
 
 /* #auth-footnote{
     height: 250px;
-    width: 370px; 
+    width: 350px; 
 } */
 
 
@@ -153,15 +154,20 @@ input.input-error {
     border: 1px solid #a6a6a6;
 } */
 
+button.backFirstSignIn{
+    color: #0066c0;
+}
+
 .signin-form-bottom{
     margin-top: 25px;
-    width: 370px;
+    width: 350px;
     margin-left: auto;
     margin-right: auto;
     /* margin: 30px, auto; */
 }
 
 .create-account-btn{
+    color: black;
     width: 100%;
     height: 31px;
     background: #e7e9ec;
@@ -185,17 +191,10 @@ input.input-error {
     background: #f0c14b;
 } */
 
-
-
-
-
-
 #notes{
     margin-bottom: 20px;
     font-size: 0.9em;
 }
-
-
 
 /* ul.errors{
     list-style-type: none;

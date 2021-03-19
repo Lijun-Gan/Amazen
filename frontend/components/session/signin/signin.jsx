@@ -19,13 +19,15 @@ class SignIn extends React.Component {
                 emptyPassword: '',
             },
             user_exist:{
-                exist: 0
+                exist: 0,
+                email: '',
             },
         };
 
 
         this.handleFirstSubmit = this.handleFirstSubmit.bind(this);
         this.handleSecondSubmit = this.handleSecondSubmit.bind(this);
+        this.backFirstSignIn = this.backFirstSignIn.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
     }
 
@@ -108,15 +110,33 @@ class SignIn extends React.Component {
         });
     }
 
+    backFirstSignIn(e) {
+        e.preventDefault
+        // debugger
+        // const { user_exist } = { ...this.state };
+        // debugger
+        // const currentUser = user_exist;
+        // debugger
+        // user_exist[exist] = 0
+        
+        this.setState(
+            {user_exist: {
 
-    renderErrors() {
-        return(
-          <ul className="errors">
-            {this.props.errors.map((error, idx) => (
-              <li key={`error-${idx}`}>❗{error} </li> ))}
-          </ul>
-        );
-      }
+                exist: 0,
+                email: this.state.user_exist.email,
+            }
+        });
+    }
+
+
+    // renderErrors() {
+    //     return(
+    //       <ul className="errors">
+    //         {this.props.errors.map((error, idx) => (
+    //           <li key={`error-${idx}`}>❗{error} </li> ))}
+    //       </ul>
+    //     );
+    //   }
 
     demoLogin(e) {
         e.preventDefault();
@@ -157,13 +177,13 @@ class SignIn extends React.Component {
                         </form>
                             <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
                             
-                        <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                        <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
         
                         <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
                     </div>
                 </div>
                 <div className="signin-form-bottom">
-                        <p id="newAmazen">------------------------- New to Amazen? ----------------------------</p>
+                        <p id="newAmazen">------------------------------ New to Amazen? ---------------------------------</p>
                         <Link to="/signup">
                             <button  className="create-account-btn">Create your Amazen Account</button>
                         </Link>
@@ -194,15 +214,18 @@ class SignIn extends React.Component {
                     <h1>Sign-In</h1> 
                     <div id="exist-email">
                         <span>{this.state.user_exist.email}</span>
-                        <Link to="/signup"> Change</Link>
+                        {/* <Link to="/signup"> Change</Link> */}
+                        <button className="backFirstSignIn" onClick={this.backFirstSignIn}>&nbsp;Change</button>
+                        
+                    
                     </div>
                     
                     
                     <div >
 
                         <span id="password-label" htmlFor="pw">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <a href="">Forgot your password?</a>
-                        
+                        <Link to="/signup">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forgot your password?</Link>
+
                         <input type="password"
                             className={emptyPasswordColor}
                             id="pw"

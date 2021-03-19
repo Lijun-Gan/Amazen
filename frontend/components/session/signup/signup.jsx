@@ -185,7 +185,7 @@ class SignUp extends React.Component {
                     </div>
                     </form>
         
-                    <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                    <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
                 
                     <p id="notes">-----------------------------------------------------------------</p>
                     <span id="notes">Already have an account? </span> 
