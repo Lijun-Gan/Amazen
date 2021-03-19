@@ -1,0 +1,87 @@
+#nav-amazen-logo{
+    height: 50px;
+    width: 134px;
+}
+
+#nav-address{
+    width: 163.75px;
+    height: 50px;
+    background-color: #0F1111;
+}
+
+#nav-signin{
+    background-color: #0F1111;
+    height: 40px;
+    width: 70px;
+}
+
+span #nav-account{
+    font-size: 14px;
+}
+
+a:-webkit-any-link {
+    color: white;
+    font-size: 11px;
+}
+
+#nav-serarch-bar{
+    width: 430px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 4px;
+    background-color: white;
+}
+#nav-serarch-bar-container{
+    display: flex;
+
+    justify-content: center;
+}
+
+#search-icon{
+    width: 45px;
+    height: 40px; 
+}
+
+#nav-language{
+    width: 45px;
+    height: 40px;
+}
+#nav-returns{
+    width: 60px;
+    height: 40px;
+
+}
+
+#nav-cart{
+    width: 60px;
+    height: 40px;
+}
+
+#nav-mid-all{
+    width: 60px;
+    height: 40px;
+}
+
+#nav-bar-top{
+    display: flex;
+    background-color: #0F1111;
+    height: 60px;
+    justify-content: space-between;
+}
+
+#nav-bar-mid{
+    background-color: #232F3E;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+button #nav-bar-mid{
+    border: tomato;
+}
+

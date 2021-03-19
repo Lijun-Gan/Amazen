@@ -1,5 +1,6 @@
 import React from "react";
-import HomePageContainer from "./home_page/home_page_container";
+// import HomePageContainer from "./home_page/home_page_container";
+import HomePage from "./home_page/home_page";
 import SigninContainer from "./session/signin/signin_container";
 import SignupContainer from "./session/signup/signup_container";
 import { Route,Switch,Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ const App = () => (
 
     </header>
     <Switch>
-        <Route exact path="/" component={HomePageContainer} />
+        <Route exact path="/" component={HomePage} />
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
         <Route exact path="/books" component={BookIndex} />
