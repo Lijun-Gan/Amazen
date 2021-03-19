@@ -61,7 +61,7 @@ class SignIn extends React.Component {
                     )
                 }
                 if (this.state.user.email_or_phone === "") {
-                    invalid_email_or_phone = <h4 className="no-entry">! Enter your email or mobile phone number</h4>
+                    invalid_email_or_phone = <h5 className="input-error">! Enter your email or mobile phone number</h5>
                 }
             }
         
@@ -91,7 +91,7 @@ class SignIn extends React.Component {
         this.props.signin(user).then(()=>(this.props.history.push('/')),
         ()=>{
             if(this.state.user.password === ""){
-                empty_password = <h4 className="no-entry">! Enter your password</h4>
+                empty_password = <h5 className="input-error">! Enter your password</h5>
             }else{
                 invalid_password = <img id="incorrect-password" src={window.incorrect_password} alt="incorrect-password"/>
             }
@@ -128,6 +128,8 @@ class SignIn extends React.Component {
 
         if(this.state.user_exist.exist === 0){
 
+        const emailOrPhoneColor = (this.state.errors.email_or_phone !== "") ? "input-error" : null;
+
             return (
                 <div>
                     <Link to="/"> 
@@ -136,13 +138,14 @@ class SignIn extends React.Component {
                     {this.state.errors.email}
                     {this.state.errors.phone}
                 <div className="session-div">
-                    {this.renderErrors()}
+                    {/* {this.renderErrors()} */}
                     <div className="signin-form">
                         <form  onSubmit={this.handleFirstSubmit} className="login-form-box">
                         <h1>Sign-In</h1> 
                         <div >
                             <label htmlFor="emailOrPhone">Email or mobile phone number:</label>
                             <input type="text"
+                                className={emailOrPhoneColor}
                                 id="emailOrPhone"
                                 value={this.state.user.email_or_phone}
                                 onChange={this.update('email_or_phone')}/>
@@ -154,21 +157,30 @@ class SignIn extends React.Component {
                         </form>
                             <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
                             
-                        <p >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                        <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
         
                         <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
                     </div>
                 </div>
                 <div className="signin-form-bottom">
-                        <p>--------------------- New to Amazen? ----------------------</p>
+                        <p id="newAmazen">------------------------- New to Amazen? ----------------------------</p>
                         <Link to="/signup">
-                            <button  className="submit-btn">Create your Amazen Account</button>
+                            <button  className="create-account-btn">Create your Amazen Account</button>
                         </Link>
                 </div>
+
+                <div id="footnotes" >
+                    <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+                    <p> &nbsp; </p>
+                    <p>© 2021, Amazen.com, inc. or its affiliates</p>
+                </div>
+                {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
                 </div>
             );
 
         }else{
+            const emptyPasswordColor = (this.state.errors.emptyPassword !== "") ? "input-error" : null;
+   
             return (
                 <div>
                 <Link to="/"> 
@@ -180,12 +192,19 @@ class SignIn extends React.Component {
                 <div className="signin-form">
                     <form  onSubmit={this.handleSecondSubmit} className="login-form-box">
                     <h1>Sign-In</h1> 
-
-                    <p>{this.state.user_exist.email}</p>
+                    <div id="exist-email">
+                        <span>{this.state.user_exist.email}</span>
+                        <Link to="/signup"> Change</Link>
+                    </div>
+                    
+                    
                     <div >
-                
-                        <label htmlFor="pw">Password:</label>
+
+                        <span id="password-label" htmlFor="pw">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <a href="">Forgot your password?</a>
+                        
                         <input type="password"
+                            className={emptyPasswordColor}
                             id="pw"
                             value={this.state.password}
                             onChange={this.update('password')}
@@ -196,71 +215,23 @@ class SignIn extends React.Component {
                         <input className="auth-btn" type="submit" value="Sign-In" />
                     </div>
                     </form>
-                        <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
-                        
-                    <p >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
-
-                    <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
+                    <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
+             
+                    <span>&nbsp;&nbsp; ▢ Keep me signed in.</span>
+                    <a href="https://github.com/Lijun-Gan/Amazen"> Detail ▾</a>
                 </div>
                 </div>
-                <div className="signin-form-bottom">
-                    <p>--------------------- New to Amazen? ----------------------</p>
-                    <Link to="/signup">
-                        <button  className="submit-btn">Create your Amazen Account</button>
-                    </Link>
+                <div id="footnotes" >
+                    <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+                    <p> &nbsp; </p>
+                    <p>© 2021, Amazen.com, inc. or its affiliates</p>
                 </div>
+                {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
                 </div>
             );
         }
  
     }
-
-
-
-    //     return (
-    //     <div>
-    //         <Link to="/"> 
-    //         <img id="amazen-logo" src={window.amazenLogo} alt="amazen logo"/>
-    //         </Link>
-    //     <div className="session-div">
-    //         {this.renderErrors()}
-    //         <div className="signin-form">
-    //             <form  onSubmit={this.handleSecondSubmit} className="login-form-box">
-    //             <h1>Sign-In</h1> 
-    //             <div >
-    //                 <label htmlFor="emailOrPhone">Email or mobile phone number:</label>
-    //                 <input type="text"
-    //                     id="emailOrPhone"
-    //                     value={this.state.email_or_username}
-    //                     onChange={this.update('email_or_phone')}/>
-                    
-    //                 <label htmlFor="pw">Password:</label>
-    //                 <input type="password"
-    //                     id="pw"
-    //                     value={this.state.password}
-    //                     onChange={this.update('password')}
-    //                 />
-                    
-            
-    //                 <input className="auth-btn" type="submit" value="Sign-In" />
-    //             </div>
-    //             </form>
-    //                 <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
-                    
-    //             <p >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
- 
-    //             <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
-    //         </div>
-    //     </div>
-    //     <div className="signin-form-bottom">
-    //             <p>--------------------- New to Amazen? ----------------------</p>
-    //             <Link to="/signup">
-    //                 <button  className="submit-btn">Create your Amazen Account</button>
-    //             </Link>
-    //     </div>
-    //     </div>
-    //     );
-    // }
 }
 
 export default SignIn;

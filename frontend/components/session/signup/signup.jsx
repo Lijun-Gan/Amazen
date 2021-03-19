@@ -46,34 +46,34 @@ class SignUp extends React.Component {
         let diff_password = "";
 
         if (this.state.user.username === "") {
-            invalid_username = <h4 className="no-entry">! Enter your name</h4>
+            invalid_username = <h5 className="input-error">! Enter your name</h5>
             errors_count++;
         }
 
         let email = this.state.user.email
         if(!(email.includes("@") && email.includes(".") && email.split("@")[0].length>0 &&email.split("@")[1].length>3  &&email.split("@")[1].split(".")[0].length>0 &&email.split("@")[1].split(".")[1].length> 1)){
-            invalid_email = <h4 className="no-entry">! Enter a valid email address</h4>
+            invalid_email = <h5 className="input-error">! Enter a valid email address</h5>
             errors_count++;
         }
 
         if (this.state.user.email === "") {
-            invalid_email = <h4 className="no-entry">! Enter your email</h4>
+            invalid_email = <h5 className="input-error">! Enter your email</h5>
             errors_count++;
         }
 
         if (this.state.user.password === "") {
-            invalid_password = <h4 className="no-entry">! Enter your password</h4>
+            invalid_password = <h5 className="input-error">! Enter your password</h5>
             errors_count++;
         } else if (this.state.user.password.length < 6) {
-            invalid_password = <h4 className="no-entry">! Passwords must be at least 6 characters.</h4>
+            invalid_password = <h5 className="input-error">! Passwords must be at least 6 characters.</h5>
             errors_count++;
         }
 
         if (this.state.user.password !== "" && this.state.user.rePassword === "") {
-            invalid_rePassword = <h4 className="no-entry">! Type your password again</h4>
+            invalid_rePassword = <h5 className="input-error">! Type your password again</h5>
             errors_count++;
         } else if (this.state.user.rePassword !== this.state.user.password) {
-            diff_password = <h4 className="no-entry">! Passwords must match</h4>
+            diff_password = <h5 className="input-error">! Passwords must match</h5>
             errors_count++;
         }
 
@@ -106,6 +106,19 @@ class SignUp extends React.Component {
 
 
     render() {
+
+        const passwordHint = (
+
+            <div className="pw-alert-container">
+                <img id="pwAlert-icon" src={window.pwAlert} alt="password alert"/>
+                <p id="notes">Password must be at least 6 characters.</p>
+            </div>
+        )
+
+        const usernameColor = (this.state.errors.username !== "") ? "input-error" : null;
+        const emailColor = (this.state.errors.email !== "") ? "input-error" : null;
+        const passwordColor = (this.state.errors.password !== "") ? "input-error" : null;
+        const rePasswordColor = (this.state.errors.rePassword !== "") ? "input-error" : null;
         return (
 
         <div>
@@ -123,6 +136,7 @@ class SignUp extends React.Component {
                     <div >
                         <label htmlFor="username"> Your name </label>
                         <input type="text"
+                            className={usernameColor}
                             id="username"
                             value={this.state.username}
                             onChange={this.update('username')}
@@ -134,6 +148,7 @@ class SignUp extends React.Component {
                 
                         <label htmlFor="email">Email:</label>
                         <input type="text"
+                            className={emailColor}
                             id="email"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -143,21 +158,20 @@ class SignUp extends React.Component {
 
                         <label htmlFor="pw">Password:</label>
                         <input type="password"
+                            className={passwordColor}
                             id="pw"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="At least 6 characters"
                             />
 
-                        {this.state.errors.password}
+                        {this.state.errors.password !== "" ? this.state.errors.password : passwordHint}
 
-                        <div className="pw-alert-container">
-                            <img id="pwAlert-icon" src={window.pwAlert} alt="password alert"/>
-                            <p id="notes">Password must be at least 6 characters.</p>
-                        </div>
+
 
                         <label htmlFor="repw"> Re-enter password:</label>
                             <input type="password"
+                                className={rePasswordColor}
                                 id="repw"
                                 value={this.state.rePassword}
                                 onChange={this.update('rePassword')}
@@ -173,11 +187,22 @@ class SignUp extends React.Component {
         
                     <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">Condistions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
                 
-                    <p id="notes">-------------------------------------------------------------------------</p>
+                    <p id="notes">-----------------------------------------------------------------</p>
                     <span id="notes">Already have an account? </span> 
                     <Link to="/signin" id="notes">Sign-In ▸</Link>
+                    <p></p>
+                    <span id="notes">Purchasing for work? </span> 
+                    <Link to="" id="notes">Create a business account ▸</Link>
                 </div>
             </div>
+            {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
+        
+        <div id="footnotes" >
+            <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+            <p> &nbsp; </p>
+            <p>© 2021, Amazen.com, inc. or its affiliates</p>
+        </div>
+
         </div>
     
         );

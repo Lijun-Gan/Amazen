@@ -4,32 +4,48 @@
     margin: 20px auto;
 }
 
+/* a:link{
+    color: rgb(66, 178, 223);
+  } */
+
 .session-div {
     margin: 0 auto;
     width: 350px;
     border: 1px solid #e6e1e1;
-    /* padding-left: 19px ; */
-    
+    padding-left: 20px ;
+    padding-bottom: 20px;
+    font-size: 12.5px;
+    font-family: 'Lato', sans-serif;
 }
+
 
 .session-div label{
     font-weight: bold;
+    /* padding-top: 20px; */
 }
 
 .session-div input{
 
-    width: 90%;
+    width: 93%;
     border-radius: 3px;
-    /* margin-bottom: 20px; */
-    height: 27px;
+    margin-bottom: 12px;
+    margin-top: 4px;
+    height: 31px;
     border: 1px solid #a6a6a6;
+    font-size: 12.5px;
+    font-family: 'Lato', sans-serif;;
+}
+
+.session-div input:focus{
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
 
 
-
 #password-note{
-    /* font: small */
-    /* margin-bottom: 6px; */
+    font: small;
+    margin-bottom: 6px;
+    
 }
 
 .pw-alert-container{
@@ -48,63 +64,114 @@
     margin-bottom: 20px;
     width: 93%;
     border: 1px solid #a6a6a6;
-    height: 27px;
-    border-radius: 3px;
-}
-
-
-.signin-form-bottom{
-    /* margin-top: 30px; */
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin: 30px, auto; */
-}
-
-.submit-btn{
-
-    width: 100%;
-    border: 1px solid #a6a6a6;
-    height: 27px;
+    height: 31px;
     border-radius: 3px;
 }
 
 #incorrect-email{
-    width: 350px;
+    width: 370px;
     height: 95px;
     margin: 20px auto;
 }
 
 #incorrect-phone{
-    width: 350px;
+    width: 370px;
     height: 95px;
     margin: 20px auto;
 }
 
 #incorrect-password{
-    width: 350px;
+    width: 370px;
     height: 78px;
     margin: 20px auto;
 }
 
-/* .signin-form{
-    height: 400px;
-} */
+h5.input-error{
+    color:  #c40000;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight:520;
+    font-size: 0.8em;
+    
+}
 
-/* .signup-form{
-    height: 470px;
-    /* border: 1px solid #a6a6a6; */
-} */
+h1{
+    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+input.input-error {
+    border: 1px solid #c40000;
+    box-shadow: 0 0 0 3px rgb(221 0 0 / 10%) inset;
+}
+
+#password-label{
+    font-weight: bold;
+    font-size: 12.5px;
+}
+
+#newAmazen{
+    color: rgb(161, 159, 151);
+    font-size: 0.9em;
+}
 
 
-/* .auth-btn{
+#exist-email{
+    margin-bottom: 20px;
+}
+
+
+
+.auth-btn{
     background: #f0c14b;
-    border-radius: 2px;
-    width: 93%;
-    height: 31px;
-    padding-left: 18px;
-    border: 1px solid #c5c0c0;
+    text-align: center; 
+    margin: auto;
+
+}
+
+#footnotes{
+    font-size: 0.9em;
+    width: 350px;
+    margin: 30px auto;
+    padding-left: 60px ;
+    padding-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+}
+
+/* #auth-footnote{
+    height: 250px;
+    width: 370px; 
 } */
+
+
+/* .signup-form{ 
+    height: 470px;
+    border: 1px solid #a6a6a6;
+} */
+
+.signin-form-bottom{
+    margin-top: 25px;
+    width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 30px, auto; */
+}
+
+.create-account-btn{
+    width: 100%;
+    height: 31px;
+    background: #e7e9ec;
+    text-align: center; 
+    border-radius: 3px;
+    margin-top: 14px;
+    border: 1px solid #c5c0c0;
+    font-size: 12.5px;
+    font-family: 'Lato', sans-serif;
+}
 
 
 
@@ -112,7 +179,6 @@
     height: 31px;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid #c5c0c0;
 } */
 
 /* .sign-btn{
@@ -120,20 +186,14 @@
 } */
 
 
-/* a:link{
-    text-decoration: none;
-    color: skyblue;
-} */
 
 
 
 
-/* #notes{
-    margin-top: 0px;
+#notes{
     margin-bottom: 20px;
-    font-size: smaller;
-    font-weight: normal;
-} */
+    font-size: 0.9em;
+}
 
 
 
