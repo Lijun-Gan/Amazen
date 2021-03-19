@@ -68,6 +68,25 @@
     height: 27px;
     border-radius: 3px;
 }
+
+#incorrect-email{
+    width: 350px;
+    height: 95px;
+    margin: 20px auto;
+}
+
+#incorrect-phone{
+    width: 350px;
+    height: 95px;
+    margin: 20px auto;
+}
+
+#incorrect-password{
+    width: 350px;
+    height: 78px;
+    margin: 20px auto;
+}
+
 /* .signin-form{
     height: 400px;
 } */

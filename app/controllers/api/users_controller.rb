@@ -19,6 +19,17 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def exists
+
+        user = User.account_exist(params[:email_or_phone])
+        if user
+            render json: {exist: 1, email: user.email }
+
+        else
+            render json: {exist: 0, email: ""}
+        end
+    end
+
 
     private
     def user_params

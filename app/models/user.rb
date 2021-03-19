@@ -21,6 +21,8 @@ class User < ApplicationRecord
         self.session_token
     end
 
+
+
     def ensure_session_token
         self.session_token ||= generate_unique_session_token
     end
@@ -40,15 +42,25 @@ class User < ApplicationRecord
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
-    def self.find_by_credentials(email_or_phone, password)
+    def self.account_exist(email_or_phone)
         maybe_phone =  User.find_by(phone_number: email_or_phone)
         maybe_email =  User.find_by(email: email_or_phone)
         
         return nil if !(maybe_phone || maybe_email)
-        
         user = maybe_phone ? maybe_phone : maybe_email
-       
+
+        return user
+
+    end
+
+
+    def self.find_by_credentials(email_or_phone, password)
+   
+        return nil unless User.account_exist(email_or_phone)
+        user = User.account_exist(email_or_phone)
         user.is_password?(password)? user : nil
     end
+
+
 
 end

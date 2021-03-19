@@ -8,4 +8,4 @@
 
 User.destroy_all
 
-demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover" )
+demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )

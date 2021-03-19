@@ -13,11 +13,11 @@ class SignUp extends React.Component {
                 rePassword: ''
             },
             errors: {
-                username: "",
-                email: "",
-                password: "",
-                rePassword: "",
-                matchPassword: ""
+                username: '',
+                email: '',
+                password: '',
+                rePassword: '',
+                matchPassword: ''
             }
            
         };

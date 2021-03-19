@@ -21,3 +21,11 @@ export const signout = () =>(
 
     })
 );
+
+export const checkUser = (email_or_phone) =>(
+    $.ajax({
+        method: "GET",
+        url: "/api/users/exists",
+        data: {email_or_phone}
+    })
+);
