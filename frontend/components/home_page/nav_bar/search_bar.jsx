@@ -16,12 +16,12 @@ class SearchBar extends Component{
 
     render(){
        
-            return (
-                <div className="searchbar">
-                    <div id="nav-serarch-bar-container">
-                        <input id="nav-serarch-bar" type="text" value={this.state.searchTerm} onChange={this.handleInput("item")}/>
-                        <button><img id="search-icon" src={window.search_icon} alt="Search" /></button>
-                    </div>  
+        return (
+            <div className="searchbar">
+                <div className="nav-serarch-bar-container">
+                    <input id="nav-serarch-bar" type="text" value={this.state.searchTerm} onChange={this.handleInput("item")}/>
+                    <button><img id="search-icon" src={window.search_icon} alt="Search" /></button>
+                </div>  
             </div>
         )
     }

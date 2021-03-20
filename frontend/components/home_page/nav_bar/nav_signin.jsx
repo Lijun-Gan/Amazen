@@ -14,8 +14,8 @@ const NavSignin = ({ currentUser, signout }) => {
   
   const navSignedIn = () => (
     <div className="nav-signin-container">
-      <h2>Hi, {currentUser.username}!</h2>
-      <button  className="nav-signin" onClick={signout}>Log Out</button>
+      <span className="nav-signin">Hello, {currentUser.username}!</span>
+      <button className="nav-signin" onClick={signout}>Log Out</button>
     </div>
   );
 
