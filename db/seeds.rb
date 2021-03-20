@@ -10,4 +10,4 @@ User.destroy_all
 
 demoUser = User.new(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 
-demo_user.save!
+demoUser.save!
