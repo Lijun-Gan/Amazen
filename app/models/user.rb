@@ -5,8 +5,8 @@ class User < ApplicationRecord
     validates :phone_number, uniqueness: true, length: {minimum: 10}, allow_nil: true
     validates :email, presence: true, uniqueness: true
     validates :session_token, presence: true, uniqueness: true
-    validates :password_digest, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
+    validates :password_digest, presence: true
 
     before_validation :ensure_session_token
     attr_reader :password
@@ -22,8 +22,6 @@ class User < ApplicationRecord
         end
         self.session_token
     end
-
-
 
     def ensure_session_token
         self.session_token ||= generate_unique_session_token
@@ -54,14 +52,11 @@ class User < ApplicationRecord
 
     end
 
-
     def self.find_by_credentials(email_or_phone, password)
    
         return nil unless User.account_exist(email_or_phone)
         user = User.account_exist(email_or_phone)
         user.is_password?(password)? user : nil
     end
-
-
 
 end
