@@ -1,0 +1,79 @@
+p.backToTop{
+    background-color: #37475A;
+    height: 40px;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    line-height: 19px;
+}
+
+#foot-notes-container{
+    height: 400px;
+    width: 100%;
+    background-color: #232F3E;
+    color: white;
+    /* border: green 1px solid; */
+    display: flex;
+    justify-content: center;
+
+}
+
+#foot-notes{
+    margin-top: auto;
+    height: 400px;
+    width: 80%;
+    display: flex;
+    /* border: red 1px solid; */
+    justify-content: space-around;
+    align-items: center;
+    /* white-space: nowrap; */
+}
+
+div.ft{
+    width: 200px;
+    height: 80%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    /* border:yellow 1px solid; */
+    
+}
+
+.fn-first{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px
+
+}
+
+.ft button{
+    /* border:blue 1px solid; */
+    margin-bottom: 7px
+}
+
+#meetCreator {
+    height: 68px;
+    background-color: #0F1111;
+    display: flex;
+    justify-content: center;
+    
+    justify-content: space-around;
+}
+
+#meetCreator a{
+
+    color: white;
+}
+
+
+.amazenLogo{
+    height: 40px;
+    width: 110px;
+    margin-top: 15px;
+    
+}
+
+p.linkedin{
+    padding-top: 23px;
+}

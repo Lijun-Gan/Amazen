@@ -1,26 +1,84 @@
+#nav-bar-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-top-left{
+    display: flex;
+    margin-left: 10px;
+}
+.nav-top-right{
+    display: flex;
+    position: static;
+    justify-content: space-between;
+}
+
 #nav-amazen-logo{
-    height: 50px;
+    margin-top: 5px;
+    height: 55px;
     width: 134px;
+    margin-right: 6px;
+}
+#nav-amazen-logo:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
 
 #nav-address{
-    width: 163.75px;
-    height: 50px;
-    background-color: #0F1111;
+    margin-top: 5px;
+    width: 143px;
+    height: 55px;
+    margin-right: 6px;
+}
+
+#nav-address:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
 
 .nav-signin-container{
-    background-color: #0F1111;
-    width: 70px; 
-    padding-top: 5px; 
+    padding-top: 8px; 
+    margin-top: 5px;
+    margin-right: 20px;
+    height: 45px;
+    text-align: center;
+
 }
+
+.nav-signin-container:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
 
 span #nav-account{
     font-size: 13px;
 }
 
 span.nav-signin{
-    max-width: 70px;
+    color: white;
+    font-size: 10px;
+    max-width: 110px;
+    display: inline-block;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+p.nav-signin{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    max-width: 110px;
+    display: inline-block;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+p.nav-signin.username{
+    max-width: 110px;
     color: white;
     font-size: 10px;
     height: 10px;
@@ -30,57 +88,82 @@ span.nav-signin{
     white-space: nowrap;
     overflow: hidden;
 }
-p.nav-signin{
-    color: white;
-    font-size: 13px;
-    text-align: center;
-}
 
 button.nav-signin{
     color: white;
     font-size: 14px;
-
 }
 
-#nav-serarch-bar{
-    width: 500px;
+div.searchbar{
+    width: 68%;
+}
+
+input.nav-search-bar{
+  
     height: 38px;
+    width: 94%;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin-top: 5px;
+    margin-top: 6px;
     background-color: white;
+
 }
-.nav-serarch-bar-container{
-    margin-top: 7px;
+
+div.nav-search-bar-container{
+
+    margin-top: 7px; 
     display: flex;
     justify-content: center;
 }
 
 #search-icon{
     width: 45px;
-    height: 48px;
+    height: 50px;
 }
+
+
 
 #nav-language{
+    padding-bottom: 10px;
     width: 45px;
     height: 40px;
+    margin-top: 6px;
+    margin-right: 20px;
+    margin-left: 15px;
 }
-#nav-returns{
-    width: 60px;
-    height: 40px;
-    margin-top: 5px;
 
+#nav-language:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
+#nav-returns{
+    width: 65px;
+    height: 45px;
+    margin-top: 8px;
+    padding-bottom: px;
+    margin-right: 20px;
+}
+
+#nav-returns:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
 
 #nav-cart{
+    margin-top: 5px;
     width: 60px;
     height: 40px;
+    margin-right: 20px;
+    padding-bottom: 10px;
 }
 
-#nav-mid-all{
-    width: 60px;
-    height: 40px;
+#nav-cart:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
+
+
 
 #nav-bar-top{
     display: flex;
@@ -89,15 +172,37 @@ button.nav-signin{
     justify-content: space-between;
 }
 
+#nav-mid-all{
+    width: 60px;
+    height: 38px;
+    margin-right: 5px;
+}
+
 #nav-bar-mid{
     background-color: #232F3E;
     color: white;
     display: flex;
-    justify-content: space-between;
     font-size: 14px;
+    white-space: nowrap;
 }
 
-button #nav-bar-mid{
-    border: tomato;
+button.sub-nav{
+    margin-right: 16px;
+    padding: 0 6px;
+    height: 35px;
+    width: auto;
 }
+
+button.sub-nav:hover {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
+button.sub-nav.last{
+    margin-left: 66px;
+    font-weight: bold;
+}
+
+
+
 
