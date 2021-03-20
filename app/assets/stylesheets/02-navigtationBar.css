@@ -16,40 +16,49 @@
 }
 
 span #nav-account{
-    font-size: 14px;
+    font-size: 13px;
 }
 
 span.nav-signin{
+    max-width: 70px;
     color: white;
     font-size: 10px;
-    text-align: center;    
+    height: 10px;
+    text-align: center; 
+    display: inline-block;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
 }
 p.nav-signin{
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
 }
 
+button.nav-signin{
+    color: white;
+    font-size: 14px;
+
+}
+
 #nav-serarch-bar{
-    width: 430px;
+    width: 500px;
+    height: 38px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 3px;
-    padding-right: 4px;
+    margin-top: 5px;
     background-color: white;
 }
-#nav-serarch-bar-container{
+.nav-serarch-bar-container{
+    margin-top: 7px;
     display: flex;
-
     justify-content: center;
 }
 
 #search-icon{
     width: 45px;
-    height: 40px; 
+    height: 48px;
 }
 
 #nav-language{
@@ -59,6 +68,7 @@ p.nav-signin{
 #nav-returns{
     width: 60px;
     height: 40px;
+    margin-top: 5px;
 
 }
 
