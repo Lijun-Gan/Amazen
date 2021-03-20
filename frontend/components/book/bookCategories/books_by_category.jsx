@@ -8,8 +8,11 @@ const BooksByCategory = (props)=>{
         return(
             <div id="Books_by_Category">
                 <NavBar />
+                
                 <h1>this is BooksByCategory page</h1>
-                {console.log(props)}
+               
+
+               
                 <FootNote />
             
             </div>

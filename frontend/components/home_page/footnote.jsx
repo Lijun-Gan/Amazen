@@ -5,8 +5,8 @@ const FootNote = ()=>{
     return(
 
         <div>
-            
-            <p className="backToTop">Back to top</p>
+            {/* onClick={() => window.scrollTo()} */}
+            <button className="backToTop" onClick={()=>{window.scrollTo(0, 0)}}>Back to top</button>
 
             <div id="foot-notes-container">
             <div id="foot-notes">

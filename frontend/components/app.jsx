@@ -6,22 +6,49 @@ import SignupContainer from "./session/signup/signup_container";
 import { Route,Switch,Link } from 'react-router-dom';
 import {AuthRoute,ProtectedRoute} from '../util/route_utils';
 import BooksByCategory from './book/bookCategories/books_by_category';
+import NavBar from './home_page/navigation';
 
 
 const App = () => (
   <div>
     <header>
 
-      {/* <Link to="/"> <h1>amazen</h1> </Link> */}
-
     </header>
+
     <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/books_by/:category" component={BooksByCategory} />
+        <Route exact path="/books/:category" component={BooksByCategory} />
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
     </Switch>
   </div>
 );
+
+
+// class App extends Component {
+//   constructor(props){
+//       super(props);
+//       debugger
+//       this.state = {
+//           isNavbarHidden: false
+//       };
+//   }
+//   render() {
+//     return(
+//         <div>
+//           <header>
+      
+//           </header>
+//           { (this.state.nav_bar.isHidden) ? null : <NavBar /> }
+//           <Switch>
+//               <Route exact path="/" component={HomePage} />
+//               <Route exact path="/books/:category" component={BooksByCategory} />
+//               <AuthRoute exact path="/signin" component={SigninContainer} />
+//               <AuthRoute exact path="/signup" component={SignupContainer} />
+//           </Switch>
+//         </div>
+//       )
+//   }
+// }
 
 export default App;

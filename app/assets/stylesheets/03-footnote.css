@@ -1,6 +1,7 @@
-p.backToTop{
+button.backToTop{
     background-color: #37475A;
     height: 40px;
+    width: 100%;
     font-size: 13px;
     color: white;
     text-align: center;

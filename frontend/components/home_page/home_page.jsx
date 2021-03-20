@@ -8,7 +8,9 @@ const HomePage = (props)=>{
         <div>
             <NavBar />
             <HomePageCategory />
-            {console.log(props)}
+            <p>
+          
+            </p>
             <FootNote />
         </div>
     )

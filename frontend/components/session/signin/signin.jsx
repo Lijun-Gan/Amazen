@@ -21,7 +21,7 @@ class SignIn extends React.Component {
             user_exist:{
                 exist: 0,
                 email: '',
-            },
+            }
         };
 
 
