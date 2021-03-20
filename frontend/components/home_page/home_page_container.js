@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 // import { signout } from '../../actions/session_actions';
-import HomePage from './home_page';
+import HomePage from './navigation';
 
 // const mapStateToProps = ({ session, entities: { users } }) => {
 //   return {
