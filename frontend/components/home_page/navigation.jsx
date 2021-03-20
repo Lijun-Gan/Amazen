@@ -43,9 +43,16 @@ const NavBar = () => {
           <img id="nav-language" src={window.language_icon} alt="language"/>
           </Link>
           <NavSigninContainer />
-          <Link to="/">
+          {/* <Link to="/">
           <img id="nav-returns" src={window.nav_returns} alt="returns"/>
-          </Link>
+          </Link> */}
+
+           <button className="nav-returns">
+           <span className="nav-signin">Returns </span> 
+           <p className="nav-signin"> & Orders</p>
+           </button>
+    
+
           <Link to="/">
           <img id="nav-cart" src={window.nav_cart} alt="shopping cart"/>
           </Link>

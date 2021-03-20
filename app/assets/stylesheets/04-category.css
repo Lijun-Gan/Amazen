@@ -1,0 +1,13 @@
+
+#homeCategory h1 {
+    font-size: 38px;
+    font-weight: lighter;
+    color: #797676;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#homeCategory h3 {
+    font-size: 21px;
+    font-weight: bold;
+}

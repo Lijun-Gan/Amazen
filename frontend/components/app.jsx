@@ -5,7 +5,7 @@ import SigninContainer from "./session/signin/signin_container";
 import SignupContainer from "./session/signup/signup_container";
 import { Route,Switch,Link } from 'react-router-dom';
 import {AuthRoute,ProtectedRoute} from '../util/route_utils';
-import BookIndex from './book/book_index';
+import BooksByCategory from './book/bookCategories/books_by_category';
 
 
 const App = () => (
@@ -17,9 +17,9 @@ const App = () => (
     </header>
     <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/books_by/:category" component={BooksByCategory} />
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
-        <Route exact path="/books" component={BookIndex} />
     </Switch>
   </div>
 );
