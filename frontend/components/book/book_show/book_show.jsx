@@ -29,18 +29,17 @@ class BookShow extends React.Component {
                         <img id="showPage-bookImg" src={book.image_url}/>
                     </div>
 
-                    <div id="sp-detail">
+                    <div className="sp-detail">
                         <p className="sp.title">{book.title}</p>
                         <p className="sp.author">by {book.author} (Author)</p>
                         <img id="fiveStar" src={window.five_star} alt="rating"/>
                         <p className="sp.catogory">{book.category}</p>
 
-                        <ul id="sp-prices">
-                           { book.prices.map((formatPrice,idx)=> {
+                        <ul className="sp-prices">
+                           { book.prices.map((formatPrice)=> {
                                return (
-                               <li key={idx}>
-                                   <p>{formatPrice.book_format}</p>
-                                   <p>{formatPrice.price}</p>
+                               <li key={formatPrice.id}>
+                                   <button className="price-btn">{formatPrice.book_format}<br/>{formatPrice.price}</button>
                                </li>
                            )})}
                         </ul>
@@ -48,10 +47,11 @@ class BookShow extends React.Component {
                     </div>
 
                     <div id="addCartContainer">
-                        tbd
+                        <p>free shipping</p>
+                        <p>sold by amazen</p>
                     </div>
 
-                    <div id="sp-container-sed"></div>
+                    <div id="sp-container-secend"></div>
 
                 </div>
 

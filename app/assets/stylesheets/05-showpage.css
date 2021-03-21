@@ -1,16 +1,19 @@
 #showPage-bookImg{
     width: 229px;
     height: 346px;
+    border:red 1px solid;
 
 }
 
 #fiveStar{
-    width: 200px;
-    height: 30px;
+    width: 224px;
+    height: 25px;
 }
 
 #sp-container-first{
     display: flex;
+    width: 100%;
+    border: blue 1px solid;
     /* height: 600px; */
 }
 
@@ -20,8 +23,27 @@
     
 }
 
-#sp-detail{
-    border:springgreen 1px solid;
-    width: 500px;
+.sp-detail{
+
+    width: 50%;
     margin-left: 30px;
+}
+
+.sp-prices{
+    display: flex;
+}
+
+.price-btn{
+    width: 130px;
+    height: 39px;
+    border: solid 1px  #a2a6ac;
+    padding: 5px 10px 5px 11px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#addCartContainer{
+    width: 20%;
+    margin-left: 10px;
+    border: springgreen 1px solid;
 }

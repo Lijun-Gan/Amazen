@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
     def index 
 
-        @books = Book.all
+        @books = Book.all 
         # debugger
         render :index
     end
