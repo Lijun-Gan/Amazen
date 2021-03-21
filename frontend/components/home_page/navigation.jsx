@@ -61,31 +61,31 @@ const NavBar = () => {
     </div>
 
 
-    {/* <div id='nav-bar-mid'> */}
+    <div id='nav-bar-mid'>
 
-       <div id="nav-mid-container"> 
         <Link to="/">
         <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
         </Link>
-          <button className="sub-nav sm">Best Sellers</button>
-          <button className="sub-nav sm">Today's Deals</button>
-          <button className="sub-nav sm">Prime</button>
+       <div id="nav-mid-container"> 
+          <button className="sub-nav xsm">Best Sellers</button>
+          <button className="sub-nav xsm">Today's Deals</button>
+          <button className="sub-nav xsm">Prime</button>
           <button className="sub-nav sm">Customer Service</button>
           <button className="sub-nav sm">New Release</button>
-          <button className="sub-nav md">Books</button>
-          <button className="sub-nav md">Fashion</button>
+          <button className="sub-nav sm">Books</button>
+          <button className="sub-nav sm">Fashion</button>
           <button className="sub-nav md">Kindle Books</button>
-          <button className="sub-nav lg">Gift Cards</button>
-          <button className="sub-nav lg">Toys & Games</button>
+          <button className="sub-nav md">Gift Cards</button>
+          <button className="sub-nav md">Toys & Games</button>
           <button className="sub-nav lg">Find a Gift</button>
           <button className="sub-nav lg">Amazon Home</button>
-          <button className="sub-nav xlg">Computers</button>
+          <button className="sub-nav lg">Computers</button>
           <button className="sub-nav xlg">Sell</button>
           <button className="sub-nav xlg">Pharmacy</button>
           <button className="sub-nav xlg">Video Games</button>
-          <button className="sub-nav xlg last">Shop women-owned</button>
         </div>
-      {/* </div> */}
+          <button className="subNav last">Shop women-owned</button>
+      </div>
 
     <div id="book-category">
       

@@ -193,10 +193,6 @@ button.backFirstSignIn{
     font-size: 0.9em;
 }
 
-#notes.line{
-    border-bottom: 1px solid #e7e7e7;
-    padding-bottom: 28px;
-}
 
 .sign-up-email-taken{
     padding-left: 49px;
@@ -218,3 +214,25 @@ h3{
 .session-div.email-taken{
     border: none;
 }
+
+.fade_rule {
+    height: 2px;
+    background-color: #E6E6E6;
+    margin-bottom: 25px;
+ 
+    background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+}
+
+h2.crossline {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid rgb(233, 232, 229); 
+    line-height: 0.1em;
+    margin: 10px 0 4px; 
+ } 
+ 
+ h2.crossline span { 
+     background:#fff; 
+     padding:0 8px; 
+ }
+ 

@@ -179,12 +179,13 @@ div.nav-search-bar-container{
 #nav-bar-top{
     display: flex;
     background-color: #0F1111;
-    height: 60px;
+    height: 62px;
     justify-content: space-between;
 }
 
 #nav-mid-all{
     margin-top: 2px;
+    margin-left: 10px;
     width: 60px;
     height: 34px;
 }
@@ -192,11 +193,7 @@ div.nav-search-bar-container{
 #nav-bar-mid{
     background-color: #232F3E;
     color: white;
-    /* display: flex; */
-    font-size: 14px;
-    height: 39px;
-    width: 100%;
-    white-space: nowrap;
+    display: flex;
 }
 
 button.sub-nav{
@@ -205,59 +202,71 @@ button.sub-nav{
     height: 12px;
     width: auto;
     display: none;
-    border: 1px solid red;
+    border: 1px solid transparent;
     
 }
 
 button.sub-nav:hover {
     border: 1px solid #f1f1f1;
     border-radius: 3px;
-
 }
 
-button.sub-nav.xlg.last {
-    margin-left: 55px;
+button.subNav.last {
+    margin-left: 45px;
     margin-right: 25px;
     font-weight: bold;
+    width: 182px;
+    height: 28px;
+    font-size: 14px;
+    margin-top: 3px;
+    border: 1px solid transparent;
+    text-align: center;
 }
+
+button.subNav.last:hover {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
 
 #nav-mid-container{
-    /* margin-left: auto; */
     display: flex; 
-    /* //// */
-
     background-color: #232F3E;
     color: white;
-    /* display: flex; */
     font-size: 14px;
     height: 39px;
-    width: 100%;
+    width: 80%;
     white-space: nowrap;
-
 }
 
 
-@media only screen and (min-width: 1400px) { 
+@media only screen and (min-width: 1770px) { 
     button.xlg { 
         display: flex; 
     } 
 } 
-@media only screen and (min-width: 1000px) { 
+@media only screen and (min-width: 1480px) { 
     button.lg { 
         display: flex; 
     } 
 } 
 
 /* check if the screen size is at least 400px */ 
-@media only screen and (min-width: 800px) { 
+@media only screen and (min-width: 1209px) { 
     button.md { 
         display: flex; 
     } 
 } 
 
 /* check if the screen size is at least 100px */ 
-@media only screen and (min-width: 594px) { 
+@media only screen and (min-width: 800px) { 
     button.sm { 
+        display: flex; 
+    } 
+} 
+/* check if the screen size is at least 100px */ 
+@media only screen and (min-width: 500px) { 
+    button.xsm { 
         display: flex; 
     } 
 } 
