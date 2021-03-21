@@ -65,24 +65,27 @@ const NavBar = () => {
       <Link to="/">
       <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
       </Link>
-      <button className="sub-nav first">Best Sellers</button>
-      <button className="sub-nav">Today's Deals</button>
-      <button className="sub-nav">Prime</button>
-      <button className="sub-nav">Customer Service</button>
-      <button className="sub-nav">New Release</button>
-      <button className="sub-nav">Books</button>
-      <button className="sub-nav">Fashion</button>
-      <button className="sub-nav">Kindle Books</button>
-      <button className="sub-nav">Gift Cards</button>
-      <button className="sub-nav">Toys & Games</button>
-      <button className="sub-nav">Find a Gift</button>
-      <button className="sub-nav">Amazon Home</button>
-      <button className="sub-nav">Computers</button>
-      <button className="sub-nav">Sell</button>
-      <button className="sub-nav">Pharmacy</button>
-      <button className="sub-nav">Video Games</button>
-      <button className="sub-nav last">Shop women-owned</button>
-    </div>
+
+       <div id="nav-mid-container"> 
+          <button className="sub-nav first">Best Sellers</button>
+          <button className="sub-nav">Today's Deals</button>
+          <button className="sub-nav">Prime</button>
+          <button className="sub-nav">Customer Service</button>
+          <button className="sub-nav">New Release</button>
+          <button className="sub-nav">Books</button>
+          <button className="sub-nav">Fashion</button>
+          <button className="sub-nav">Kindle Books</button>
+          <button className="sub-nav">Gift Cards</button>
+          <button className="sub-nav">Toys & Games</button>
+          <button className="sub-nav">Find a Gift</button>
+          <button className="sub-nav">Amazon Home</button>
+          <button className="sub-nav">Computers</button>
+          <button className="sub-nav">Sell</button>
+          <button className="sub-nav">Pharmacy</button>
+          <button className="sub-nav">Video Games</button>
+          <button className="sub-nav last">Shop women-owned</button>
+        </div>
+      </div>
 
     <div id="book-category">
       

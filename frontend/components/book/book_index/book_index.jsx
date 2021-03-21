@@ -6,8 +6,13 @@ class BookIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchBooks()
+  }
+
   render() {
-    const { chirps } = this.props;
+    const { books } = this.props;
+    debugger
     return (
       <div>
         <h1>Books</h1>

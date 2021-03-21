@@ -10,4 +10,31 @@
 #homeCategory h3 {
     font-size: 21px;
     font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px
 }
+
+#category_img{
+    height: 103px;
+    width: 120px;
+}
+
+#catPic{
+    height: 130px;
+    width: 9%; 
+}
+
+#select-category-cantainer{
+    margin-left: 35px; 
+}
+
+#select-category{
+    display: flex;
+}
+
+#category_img:hover{
+   
+    border:#797676 1px solid;    
+   
+}
+

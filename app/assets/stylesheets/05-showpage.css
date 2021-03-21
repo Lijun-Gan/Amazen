@@ -1,0 +1,27 @@
+#showPage-bookImg{
+    width: 229px;
+    height: 346px;
+
+}
+
+#fiveStar{
+    width: 200px;
+    height: 30px;
+}
+
+#sp-container-first{
+    display: flex;
+    /* height: 600px; */
+}
+
+#sp-container-first{
+    /* width: 100px; */
+    /* height: 300px; */
+    
+}
+
+#sp-detail{
+    border:springgreen 1px solid;
+    width: 500px;
+    margin-left: 30px;
+}

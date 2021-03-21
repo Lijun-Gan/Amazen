@@ -177,9 +177,9 @@ div.nav-search-bar-container{
 }
 
 #nav-mid-all{
+    margin-top: 2px;
     width: 60px;
     height: 34px;
-    margin-right: 5px;
 }
 
 #nav-bar-mid{
@@ -187,9 +187,9 @@ div.nav-search-bar-container{
     color: white;
     display: flex;
     font-size: 14px;
-    white-space: nowrap;
     height: 39px;
     width: 100%;
+    white-space: nowrap;
 }
 
 button.sub-nav{
@@ -205,10 +205,13 @@ button.sub-nav:hover {
 }
 
 button.sub-nav.last{
-    margin-left: 66px;
+    margin-left: 55px;
+    margin-right: 25px;
     font-weight: bold;
 }
 
-
+#nav-mid-container{
+    margin-left: auto;
+}
 
 

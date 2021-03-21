@@ -5,8 +5,11 @@ import SigninContainer from "./session/signin/signin_container";
 import SignupContainer from "./session/signup/signup_container";
 import { Route,Switch,Link } from 'react-router-dom';
 import {AuthRoute,ProtectedRoute} from '../util/route_utils';
-import BooksByCategory from './book/bookCategories/books_by_category';
-import NavBar from './home_page/navigation';
+// import BooksByCategory from './book/bookCategories/books_by_category'; 
+
+import BookShowContainer from './book/book_show/book_show_container'
+// import NavBar from './home_page/navigation';
+import BookIndexContainer from './book/book_index/book_index_container'
 
 
 const App = () => (
@@ -17,7 +20,10 @@ const App = () => (
 
     <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/books/:category" component={BooksByCategory} />
+
+        <Route exact path="/books" component={BookIndexContainer} />
+        <Route exact path="/books/:id" component={BookShowContainer} />
+        {/* <Route exact path="/books/:category" component={BooksByCategory} /> */}
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
     </Switch>
