@@ -174,8 +174,6 @@ div.nav-search-bar-container{
     border-radius: 3px;
 }
 
-
-
 #nav-bar-top{
     display: flex;
     background-color: #0F1111;
@@ -218,9 +216,10 @@ button.subNav.last {
     width: 182px;
     height: 28px;
     font-size: 14px;
-    margin-top: 3px;
+    margin-top: 6px;
     border: 1px solid transparent;
     text-align: center;
+    white-space: nowrap;
 }
 
 button.subNav.last:hover {
@@ -251,21 +250,19 @@ button.subNav.last:hover {
     } 
 } 
 
-/* check if the screen size is at least 400px */ 
 @media only screen and (min-width: 1209px) { 
     button.md { 
         display: flex; 
     } 
 } 
 
-/* check if the screen size is at least 100px */ 
 @media only screen and (min-width: 800px) { 
     button.sm { 
         display: flex; 
     } 
 } 
-/* check if the screen size is at least 100px */ 
-@media only screen and (min-width: 500px) { 
+
+@media only screen and (min-width: 505px) { 
     button.xsm { 
         display: flex; 
     } 

@@ -73,7 +73,7 @@ const NavBar = () => {
           <button className="sub-nav sm">Customer Service</button>
           <button className="sub-nav sm">New Release</button>
           <button className="sub-nav sm">Books</button>
-          <button className="sub-nav sm">Fashion</button>
+          <button className="sub-nav md">Fashion</button>
           <button className="sub-nav md">Kindle Books</button>
           <button className="sub-nav md">Gift Cards</button>
           <button className="sub-nav md">Toys & Games</button>
