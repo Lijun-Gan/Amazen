@@ -7,7 +7,7 @@ class BookShow extends React.Component {
     constructor(props) {
       super(props);
       this.state = ({
-          format: 'Select format: ',
+          format: 'Select format ',
           price: '0.00'
       })
       this.handlePrice = this.handlePrice.bind(this)
@@ -101,13 +101,15 @@ class BookShow extends React.Component {
                         </ul>
              
 
-                        <p className="book-description">{book.description}</p>
+                      
                
                     </div>
 
                     <div id="addCartContainer">
                         <p className="SelectForm">{this.state.format}: </p>
-                        <span className="bsp-price-color">Price: {"$ "+ this.state.price}</span>
+                        <span className="bsp-price-color">Price: { "$ "+ Number.parseFloat(parseFloat(this.state.price)).toFixed(2)}</span>
+                       
+                        
                         <p className="freeShipping">& FREE shipping</p>
                         <p className="inStock-color">In Stock</p>
                         <img id="dropDownQuantity" src={window.dropDownQuantity} alt="quantity"/>
@@ -121,7 +123,13 @@ class BookShow extends React.Component {
                 </div>
 
                 <div id="bsp-container-secend">
+                    
+                    <p className="author-bio-name">About the Book</p>
+                    <p className="author-bio-p">{book.description}</p>
+                    {/* <p className="book-description">{book.description}</p> */}
+                   
                    {author_bio}
+
                 </div>
 
                 <div id="bsp-container-third">
