@@ -125,10 +125,11 @@
 
 #bsp-container-third h2{
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
-#book-reviews-container{
-    height: 800px;
+#book-reviews-container-right{
+    /* height: 800px; */
     border: 1px solid red;
     margin-bottom: 100px;
 }
@@ -177,3 +178,73 @@
     font-size: 12px;
 }
 
+#reviewUser-pic{
+    width: 34px;
+    height: 34px;
+}
+
+#ReviewStars{
+    width: 80px;
+    height: 18px;
+}
+
+#PictureText{
+    display: flex;
+}
+
+.PictureText-text{
+    padding: 10px;
+}
+
+.PictureText-title{
+    padding-top: 1px;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.reviewDateNBody{
+    margin-bottom: 20px;
+    margin-left: 4px;
+}
+
+.deleteReview-btn{
+    width: 77px;
+    height: 22px;
+    border: solid 1px rgb(173, 177, 184); 
+    text-align: center;
+    background-color: #e7e9ec;
+    border-radius: 3px;
+}
+.editReview-btn{
+    width: 77px;
+    height: 22px;
+    border: solid 1px rgb(173, 177, 184); 
+    text-align: center;
+    background-color: #e7e9ec;
+    border-radius: 3px;
+}
+
+.deleteReview-btn:focus{
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+}
+.editReview-btn:focus{
+    border-color: #e77600;
+
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+}
+
+.postReview{
+    background-color: #e7e9ec;
+    border: solid 1px rgb(173, 177, 184); 
+    text-align: center;
+    width: 298px;
+    height: 29px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.postReview:focus{
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+}

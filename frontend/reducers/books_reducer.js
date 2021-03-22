@@ -1,5 +1,5 @@
 
-import { RECEIVE_BOOKS, RECEIVE_BOOK } from '../actions/book_actions';
+import { RECEIVE_BOOKS, RECEIVE_BOOK, RECEIVE_BOOK_FOR_REVIEW } from '../actions/book_actions';
 
 const booksReducer = (State = {}, action) => {
 
@@ -14,6 +14,8 @@ const booksReducer = (State = {}, action) => {
             nextState[action.book.id] = action.book;
 
             return nextState;
+        // case RECEIVE_BOOK_FOR_REVIEW:
+        //     return Object.assign({}, State, { display: action.anime.details });
 
         default:
             return State;

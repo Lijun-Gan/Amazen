@@ -2,6 +2,7 @@ import * as APIUtil from '../util/book_api_util';
 
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS ';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
+export const RECEIVE_BOOK_FOR_REVIEW = 'RECEIVE_BOOK_FOR_REVIEW ';
 
 const receiveBooks = (books) => {
     return {
@@ -10,10 +11,17 @@ const receiveBooks = (books) => {
     }
 };
 
-const receiveBook = (book) => ({
+export const receiveBook = (book) => ({
     type: RECEIVE_BOOK,
     book
 });
+
+export const receiveBookForReview = (book) => ({
+    type: RECEIVE_BOOK,
+    book
+});
+
+
 
 export const fetchBooks = (book) => dispatch => {
     return (
@@ -22,7 +30,7 @@ export const fetchBooks = (book) => dispatch => {
 };
 
 export const fetchBook = (bookId) => dispatch => {
-    // debugger
+
     return (
         APIUtil.fetchBook(bookId).then(book => { dispatch(receiveBook(book))})
     )

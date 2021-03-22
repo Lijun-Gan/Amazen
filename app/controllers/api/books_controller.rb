@@ -7,7 +7,7 @@ class Api::BooksController < ApplicationController
     end
 
     def show
-        @book = Book.includes(:book_author, :prices).find_by(id: params[:id])
+        @book = Book.includes(:book_author, :reviews, :prices).find_by(id: params[:id])
         # debugger
         if @book
             render :show

@@ -5,6 +5,7 @@ import {checkUser} from "./util/session_api_util";
 import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
 import { fetchBook,fetchBooks } from './actions/book_actions';
+import { createReview,updateReview,deleteReview } from './actions/review_actions';
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -37,6 +38,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     window.fetchBook = fetchBook
     window.fetchBooks = fetchBooks
+
+    window.createReview = createReview
+    window.updateReview = updateReview
+    window.deleteReview = deleteReview
+
 
     ReactDOM.render(<Root store={store} />, root);
 

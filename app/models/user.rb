@@ -60,5 +60,10 @@ class User < ApplicationRecord
     end
 
 
+    has_many :authorized_reviews,
+        class_name: :Review,
+        primary_key: :id,
+        foreign_key: :user_id
+    
 
 end

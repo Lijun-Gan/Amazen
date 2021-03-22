@@ -10,13 +10,17 @@ User.destroy_all
 Author.destroy_all
 Price.destroy_all
 Book.destroy_all
+Review.destroy_all
 
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('authors')
 ApplicationRecord.connection.reset_pk_sequence!('prices')
 ApplicationRecord.connection.reset_pk_sequence!('books')
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
+
+User.create(username: "lijun", email: "lijun@gmail.com", password: "password" )
 
 Author.create( name: "Benjamin Graham",  
     biography: "Benjamin Graham (1894-1976), 
@@ -44,3 +48,19 @@ Price.create( book_id: 1, book_format: "Paperback",  price: 14.29)
 Price.create( book_id: 1, book_format: "Audiobook",  price: 8.58)
 Price.create( book_id: 1, book_format: "Hardcopy",  price: 25.19)
 Price.create( book_id: 1, book_format: "Audio CD",  price: 36.00)
+
+
+Review.create(       
+    title: "Definitely not a beginners book!",
+    body: "I am sure this book is chalk full of good info! However it is certainly not a beginners book to investing.",
+    rating: 4,
+    user_id: 1,
+    book_id: 1)
+
+Review.create(
+    title: "10/10 Great Book, Do Yourself the Favor of Buying the Paperback",
+    body: "This is a great book for anyone who is interested in introducing themselves into the world of investing.",
+    rating: 5,
+    user_id: 1,
+    book_id: 1,
+)

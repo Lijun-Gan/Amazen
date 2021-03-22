@@ -10,4 +10,10 @@ class Book < ApplicationRecord
         foreign_key: :author_id
         
     has_many :prices
+
+    has_many :reviews,
+        class_name: :Review,
+        primary_key: :id,
+        foreign_key: :book_id
+    
 end

@@ -28,34 +28,55 @@ class BookShow extends React.Component {
         })
     }
 
+    handleRating(rating){
+        if(rating === 5){
+           return  <img id="ReviewStars" src={window.five_star} alt="rating"/>
+        }
+        if(rating === 4){
+           return  <img  id="ReviewStars" src={window.four_star} alt="rating"/>
+        }
+        if(rating === 3){
+           return  <img id="ReviewStars" src={window.three_star} alt="rating"/>
+        }
+        if(rating === 2){
+           return  <img id="ReviewStars" src={window.two_star} alt="rating"/>
+        }
+        if(rating === 1){
+           return  <img  id="ReviewStars" src={window.one_star} alt="rating"/>
+        }
+    }
+
+    handleDate(unformatedDate){
+
+        const d = new Date(unformatedDate)
+        const months = {
+            0: 'January',
+            1: 'February',
+            2: 'March',
+            3: 'April',
+            4: 'May',
+            5: 'June',
+            6: 'July',
+            7: 'August',
+            8: 'September',
+            9: 'October',
+            10: 'November',
+            11: 'December'
+        }
+        const monthName = months[d.getMonth()]
+        const year = d.getFullYear() 
+        const date = d.getDate()
+        return `${monthName} ${date}, ${year}`
+    }
+    
+
     render(){  
         let show_page = "page broken"
         // let show_page = <img src={ window.page_broken} alt="page broken"/>  
         if (this.props.book){
             const {book} = this.props
-            let publish_date;
             let author_bio;
-            if(book.publication_date){
-                    const d = new Date(book.publication_date)
-                    const months = {
-                        0: 'January',
-                        1: 'February',
-                        2: 'March',
-                        3: 'April',
-                        4: 'May',
-                        5: 'June',
-                        6: 'July',
-                        7: 'August',
-                        8: 'September',
-                        9: 'October',
-                        10: 'November',
-                        11: 'December'
-                    }
-                const monthName = months[d.getMonth()]
-                const year = d.getFullYear() // 2019
-                const date = d.getDate() // 23
-                publish_date = `${monthName} ${date}, ${year}`
-            }
+  
 
             if (book.biography ){
                 author_bio = (
@@ -65,13 +86,14 @@ class BookShow extends React.Component {
                     </div>
                 ) 
             }
+
+
         
             show_page = (
 
             <div id="bsp-container">
 
                 <div id="bsp-container-first">
-
                     <div>
                         <img id="lookInside_bookShow" src={window.lookInside_bookShow} alt="Look Inside"/>
                         <img id="showPage-bookImg" src={book.image_url}/>
@@ -79,10 +101,10 @@ class BookShow extends React.Component {
 
                     <div className="bsp-detail">
                         <p className="bsp-title">{book.title}</p>
-                        <p className="bsp-publication">{publish_date }</p>
+                        <p className="bsp-publication">{this.handleDate(book.publication_date)}</p>
                         <span>by </span>
                         <span className="bsp-author">{book.author} (Author)</span>
-                        <img id="fiveStar" src={window.five_star} alt="rating"/>
+                        <img id="fiveStar" src={window.avg_star} alt="rating"/>
                         <div className="book-category">
                             <span>Category: </span>
                             <span className="bsp-catogory">{book.category}</span>
@@ -99,9 +121,6 @@ class BookShow extends React.Component {
                                </li>
                            )})}
                         </ul>
-             
-
-                      
                
                     </div>
 
@@ -126,7 +145,7 @@ class BookShow extends React.Component {
                     
                     <p className="author-bio-name">About the Book</p>
                     <p className="author-bio-p">{book.description}</p>
-                    {/* <p className="book-description">{book.description}</p> */}
+               
                    
                    {author_bio}
 
@@ -134,14 +153,51 @@ class BookShow extends React.Component {
 
                 <div id="bsp-container-third">
                     <h2>Customer reviews</h2>
-                    <div id="book-reviews-container">
-                        <p>here is the review </p>
+                    
+                    <button className="postReview">Write a customer review</button>
+                    <div id="book-reviews-container-left">
+
+                    </div>
+
+                    <div id="book-reviews-container-right">
+                        <ul>
+                            {book.reviews.map((review)=>(
+                                <li key={review.id}>
+                          
+                                    {review.user_id === this.props.currentUser ? 
+                                    (
+                                        <div>
+                                            <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button>
+                                            <button className="deleteReview-btn" onClick={(()=>{this.props.deleteReview(review)})} >Detete</button>
+                                        </div>
+                                    ) : null}   
+                                    <div id="PictureText">
+                                        <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
+                                        <span className="PictureText-text">{review.review_author}</span>
+                                    </div>
+
+                                    <div id="PictureText">
+                                        {this.handleRating(review.rating)}
+                                        <span className="PictureText-title">{review.title}</span>
+                                    </div>
+
+                                    <p className="reviewDateNBody">reviewed on {this.handleDate(review.created_at)}</p>
+                                    <p className="reviewDateNBody">{review.body}</p>
+                                    
+                                </li>
+                            ))}
+                        </ul>
+                        
                     </div>
                 </div>
 
-            </div>
+            </div>            
 
-            
+
+
+
+
+
 
         )}
         return (

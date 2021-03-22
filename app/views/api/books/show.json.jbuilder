@@ -11,3 +11,12 @@ json.prices do
         json.extract! price, :book_format, :price
     end
 end
+
+json.reviews do
+    json.array! @book.reviews do |review|
+        json.extract! review, :id, :book_id, :title, :body, :rating, :user_id,:created_at,:updated_at
+        json.review_author review.review_author.username
+        json.book @book.title
+    end
+end
+
