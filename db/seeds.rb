@@ -18,11 +18,25 @@ ApplicationRecord.connection.reset_pk_sequence!('books')
 
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 
-Author.create( name: "Benjamin Graham",  biography: "Benjamin Graham,the father of value investing, has been an inspiration for many successful businesspeople.")
+Author.create( name: "Benjamin Graham",  
+    biography: "Benjamin Graham (1894-1976), 
+    the father of value investing, has been an inspiration for many of today's 
+    most successful businesspeople. He is also the author of Securities Analysis 
+    and The Interpretation of Financial Statements. --This text refers to the paperback edition.")
+
 Author.create( name: "James Clear", biography: "James Clear is an author and speaker focused on habits, decision-making, and continuous improvement.")
 
 
-Book.create( title: "The Intelligent Investor: The Definitive Book on Value Investing",description: "This classic text is annotated to update Graham's timeless wisdom for today's market conditions.",category: "business & investing",publication_date: "February 21, 2006",image_url: "https://images-na.ssl-images-amazon.com/images/I/91yj3mbz4JL.jpg", author_id: 1)
+Book.create( 
+    title: "The Intelligent Investor: The Definitive Book on Value Investing",
+    description: "This classic text is annotated to update Graham's timeless wisdom for today's market conditions...
+    The greatest investment advisor of the twentieth century, Benjamin Graham, taught and inspired people worldwide. 
+    Graham's philosophy of 'value investing' -- which shields investors from substantial error and teaches them to develop long-term strategies 
+    -- has made The Intelligent Investor the stock market bible ever since its original publication in 1949.",
+    category: "business & investing",
+    publication_date: "February 21, 2006",
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/91yj3mbz4JL.jpg", 
+    author_id: 1)
 
 
 Price.create( book_id: 1, book_format: "Kindle",  price: 10.49)

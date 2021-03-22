@@ -161,9 +161,12 @@ div.nav-search-bar-container{
 
 #nav-cart{
     margin-top: 6px;
-    width: 60px;
+    margin-right: 15px;
+    margin-left: 6px;
+    width: 66px;
     height: 40px;
-    margin-right: 20px;
+    padding-left: 9px;
+    padding-right: 9px;
     padding-bottom: 11px;
     border: 1px transparent solid;
 
@@ -264,6 +267,11 @@ button.subNav.last:hover {
 
 @media only screen and (min-width: 505px) { 
     button.xsm { 
+        display: flex; 
+    } 
+} 
+@media only screen and (min-width: 300px) { 
+    button.xxsm { 
         display: flex; 
     } 
 } 

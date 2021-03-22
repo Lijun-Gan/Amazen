@@ -67,10 +67,10 @@ const NavBar = () => {
         <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
         </Link>
        <div id="nav-mid-container"> 
-          <button className="sub-nav xsm">Best Sellers</button>
-          <button className="sub-nav xsm">Today's Deals</button>
+          <button className="sub-nav xxsm">Best Sellers</button>
+          <button className="sub-nav xxsm">Today's Deals</button>
           <button className="sub-nav xsm">Prime</button>
-          <button className="sub-nav sm">Customer Service</button>
+          <button className="sub-nav xsm">Customer Service</button>
           <button className="sub-nav sm">New Release</button>
           <button className="sub-nav sm">Books</button>
           <button className="sub-nav md">Fashion</button>
