@@ -21,7 +21,7 @@ class SignIn extends React.Component {
             user_exist:{
                 exist: 0,
                 email: '',
-            },
+            }
         };
 
 
@@ -183,7 +183,10 @@ class SignIn extends React.Component {
                     </div>
                 </div>
                 <div className="signin-form-bottom">
-                        <p id="newAmazen">------------------------------ New to Amazen? ---------------------------------</p>
+                        
+                        <h2 className="crossline"><span id="newAmazen">New to Amazen?</span></h2>
+       
+                        
                         <Link to="/signup">
                             <button  className="create-account-btn">Create your Amazen Account</button>
                         </Link>

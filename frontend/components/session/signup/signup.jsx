@@ -219,9 +219,10 @@ class SignUp extends React.Component {
                     </div>
                     </form>
         
-                    <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                    <p id="notes" >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
                 
-                    <p id="notes">-----------------------------------------------------------------</p>
+                    <div class="fade_rule"></div>  
+
                     <span id="notes">Already have an account? </span> 
                     <Link to="/signin" id="notes">Sign-In ▸</Link>
                     <p></p>
@@ -229,7 +230,6 @@ class SignUp extends React.Component {
                     <Link to="" id="notes">Create a business account ▸</Link>
                 </div>
             </div>
-            {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
         
         <div id="auth-footnotes" >
             <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>

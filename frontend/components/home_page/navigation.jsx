@@ -43,9 +43,16 @@ const NavBar = () => {
           <img id="nav-language" src={window.language_icon} alt="language"/>
           </Link>
           <NavSigninContainer />
-          <Link to="/">
+          {/* <Link to="/">
           <img id="nav-returns" src={window.nav_returns} alt="returns"/>
-          </Link>
+          </Link> */}
+
+           <button className="nav-returns">
+           <span className="nav-signin">Returns </span> 
+           <p className="nav-signin"> & Orders</p>
+           </button>
+    
+
           <Link to="/">
           <img id="nav-cart" src={window.nav_cart} alt="shopping cart"/>
           </Link>
@@ -55,27 +62,30 @@ const NavBar = () => {
 
 
     <div id='nav-bar-mid'>
-      <Link to="/">
-      <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
-      </Link>
-      <button className="sub-nav first">Best Sellers</button>
-      <button className="sub-nav">Today's Deals</button>
-      <button className="sub-nav">Prime</button>
-      <button className="sub-nav">Customer Service</button>
-      <button className="sub-nav">New Release</button>
-      <button className="sub-nav">Books</button>
-      <button className="sub-nav">Fashion</button>
-      <button className="sub-nav">Kindle Books</button>
-      <button className="sub-nav">Gift Cards</button>
-      <button className="sub-nav">Toys & Games</button>
-      <button className="sub-nav">Find a Gift</button>
-      <button className="sub-nav">Amazon Home</button>
-      <button className="sub-nav">Computers</button>
-      <button className="sub-nav">Sell</button>
-      <button className="sub-nav">Pharmacy</button>
-      <button className="sub-nav">Video Games</button>
-      <button className="sub-nav last">Shop women-owned</button>
-    </div>
+
+        <Link to="/">
+        <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
+        </Link>
+       <div id="nav-mid-container"> 
+          <button className="sub-nav xxsm">Best Sellers</button>
+          <button className="sub-nav xxsm">Today's Deals</button>
+          <button className="sub-nav xsm">Prime</button>
+          <button className="sub-nav xsm">Customer Service</button>
+          <button className="sub-nav sm">New Release</button>
+          <button className="sub-nav sm">Books</button>
+          <button className="sub-nav md">Fashion</button>
+          <button className="sub-nav md">Kindle Books</button>
+          <button className="sub-nav md">Gift Cards</button>
+          <button className="sub-nav md">Toys & Games</button>
+          <button className="sub-nav lg">Find a Gift</button>
+          <button className="sub-nav lg">Amazon Home</button>
+          <button className="sub-nav lg">Computers</button>
+          <button className="sub-nav xlg">Sell</button>
+          <button className="sub-nav xlg">Pharmacy</button>
+          <button className="sub-nav xlg">Video Games</button>
+        </div>
+          <button className="subNav last">Shop women-owned</button>
+      </div>
 
     <div id="book-category">
       

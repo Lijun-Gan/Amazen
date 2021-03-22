@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
 
-    def ensure_logged_in
+    def require_logged_in
         render json: {message: "User Does not Exist"}, status: 404 unless logged_in? 
     end
 

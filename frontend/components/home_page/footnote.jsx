@@ -5,8 +5,8 @@ const FootNote = ()=>{
     return(
 
         <div>
-            
-            <p className="backToTop">Back to top</p>
+            {/* onClick={() => window.scrollTo()} */}
+            <button className="backToTop" onClick={()=>{window.scrollTo(0, 0)}}>Back to top</button>
 
             <div id="foot-notes-container">
             <div id="foot-notes">
@@ -15,50 +15,50 @@ const FootNote = ()=>{
                 <button className="fn-first">Get to Know Us</button>
                 <button>Careers</button>
                 <button>Blog </button>
-                <button>About Amazon </button>
+                <button>About Amazen </button>
                 <button>Sustainability </button>
                 <button>Press Center </button>
                 <button>Investor Relations </button>
-                <button>Amazon Devices </button>
-                <button>Amazon Tours </button>
+                <button>Amazen Devices </button>
+                <button>Amazen Tours </button>
                 <p></p>
             </div>
 
             <div className="ft">
                 <button className="fn-first">Make Money with Us </button>
-                <button>Sell products on Amazon </button>
-                <button>Sell apps on Amazon </button>
+                <button>Sell products on Amazen </button>
+                <button>Sell apps on Amazen </button>
                 <button>Become an Affiliate </button>
                 <button>Advertise Your Products </button>
                 <button>Self-Publish with Us </button>
-                <button>Host an Amazon Hub </button>
-                <button>›See More Make Money with Us</button> 
+                <button>Host an Amazen Hub </button>
+                <button>› See More Make Money with Us</button> 
                 <p></p>
             </div>
 
             <div className="ft">
-                <button className="fn-first">Amazon Payment Products </button>
-                <button>Amazon Rewards Visa Signature Cards </button>
-                <button>Amazon.com Store Card </button>
-                <button>Amazon Business Card </button>
-                <button>Amazon Business Line of Credit</button> 
+                <button className="fn-first">Amazen Payment Products </button>
+                <button>Amazen Rewards Visa Signature Cards </button>
+                <button>Amazen.com Store Card </button>
+                <button>Amazen Business Card </button>
+                <button>Amazen Business Line of Credit</button> 
                 <button>Shop with Points </button>
                 <button>Credit Card Marketplace </button>
                 <button>Reload Your Balance </button>
-                <button>Amazon Currency Converter </button>
+                <button>Amazen Currency Converter </button>
                 <p></p>
             </div>
 
             <div className="ft last">	 
                 <button className="fn-first">Let Us Help You </button>
-                <button>Amazon and COVID-19 </button>
+                <button>Amazen and COVID-19 </button>
                 <button>Your Account</button>
                 <button>Your Orders </button>
                 <button>Shipping Rates & Policies</button> 
-                <button>Amazon Prime</button>
+                <button>Amazen Prime</button>
                 <button>Returns & Replacements</button> 
                 <button>Manage Your Content and Devices </button>
-                <button>Amazon Assistant</button>
+                <button>Amazen Assistant</button>
                 <button>Help </button>
                 <p></p>
             </div>

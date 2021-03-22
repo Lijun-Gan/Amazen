@@ -18,6 +18,7 @@
     height: 55px;
     width: 134px;
     margin-right: 6px;
+    border: 1px transparent solid;
 }
 #nav-amazen-logo:hover{
     border: 1px solid #f1f1f1;
@@ -29,6 +30,7 @@
     width: 143px;
     height: 55px;
     margin-right: 6px;
+    border: 1px transparent solid;
 }
 
 #nav-address:hover{
@@ -37,11 +39,12 @@
 }
 
 .nav-signin-container{
-    padding-top: 8px; 
-    margin-top: 5px;
+    padding-top: 7px; 
+    margin-top: 7px;
     margin-right: 20px;
     height: 45px;
     text-align: center;
+    border: 1px transparent solid;
 
 }
 
@@ -57,41 +60,46 @@ span #nav-account{
 
 span.nav-signin{
     color: white;
-    font-size: 10px;
-    max-width: 110px;
+    font-size: 12px;
+    max-width: 130px;
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
     overflow: hidden;
+    height: 11px
 
 }
 
 p.nav-signin{
     color: white;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: bold;
     text-align: center;
-    max-width: 110px;
+    max-width: 130px;
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
     overflow: hidden;
+    height: 16px;
 }
 
 p.nav-signin.username{
-    max-width: 110px;
+    max-width: 150px;
     color: white;
-    font-size: 10px;
-    height: 10px;
+    font-size: 12px;
+    height: 11px;
     text-align: center; 
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
     overflow: hidden;
+    font-weight: normal;
 }
 
 button.nav-signin{
     color: white;
     font-size: 14px;
+    font-weight: bold;
 }
 
 div.searchbar{
@@ -121,15 +129,14 @@ div.nav-search-bar-container{
     height: 50px;
 }
 
-
-
 #nav-language{
-    padding-bottom: 10px;
+    padding-bottom: 14px;
     width: 45px;
-    height: 40px;
-    margin-top: 6px;
+    height: 38px;
+    margin-top: 7px;
     margin-right: 20px;
     margin-left: 15px;
+    border: 1px transparent solid;
 }
 
 #nav-language:hover{
@@ -137,25 +144,32 @@ div.nav-search-bar-container{
     border-radius: 3px;
 }
 
-#nav-returns{
-    width: 65px;
-    height: 45px;
-    margin-top: 8px;
-    padding-bottom: px;
+.nav-returns{
+    /* font-size: 12px; */
+    padding-top: 5px; 
+    margin-top: 6px;
     margin-right: 20px;
+    height: 45px;
+    text-align: center;
+    border: 1px transparent solid;
 }
 
-#nav-returns:hover{
+.nav-returns:hover{
     border: 1px solid #f1f1f1;
     border-radius: 3px;
 }
 
 #nav-cart{
-    margin-top: 5px;
-    width: 60px;
+    margin-top: 6px;
+    margin-right: 15px;
+    margin-left: 6px;
+    width: 66px;
     height: 40px;
-    margin-right: 20px;
-    padding-bottom: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 11px;
+    border: 1px transparent solid;
+
 }
 
 #nav-cart:hover{
@@ -163,34 +177,34 @@ div.nav-search-bar-container{
     border-radius: 3px;
 }
 
-
-
 #nav-bar-top{
     display: flex;
     background-color: #0F1111;
-    height: 60px;
+    height: 62px;
     justify-content: space-between;
 }
 
 #nav-mid-all{
+    margin-top: 2px;
+    margin-left: 10px;
     width: 60px;
-    height: 38px;
-    margin-right: 5px;
+    height: 34px;
 }
 
 #nav-bar-mid{
     background-color: #232F3E;
     color: white;
     display: flex;
-    font-size: 14px;
-    white-space: nowrap;
 }
 
 button.sub-nav{
-    margin-right: 16px;
-    padding: 0 6px;
-    height: 35px;
+    margin: 5px 0 6px 0;
+    padding: 7px 8px;
+    height: 12px;
     width: auto;
+    display: none;
+    border: 1px solid transparent;
+    
 }
 
 button.sub-nav:hover {
@@ -198,11 +212,69 @@ button.sub-nav:hover {
     border-radius: 3px;
 }
 
-button.sub-nav.last{
-    margin-left: 66px;
+button.subNav.last {
+    margin-left: 45px;
+    margin-right: 25px;
     font-weight: bold;
+    width: 182px;
+    height: 28px;
+    font-size: 14px;
+    margin-top: 6px;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
 }
 
+button.subNav.last:hover {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}
+
+
+#nav-mid-container{
+    display: flex; 
+    background-color: #232F3E;
+    color: white;
+    font-size: 14px;
+    height: 39px;
+    width: 80%;
+    white-space: nowrap;
+}
+
+
+@media only screen and (min-width: 1770px) { 
+    button.xlg { 
+        display: flex; 
+    } 
+} 
+@media only screen and (min-width: 1480px) { 
+    button.lg { 
+        display: flex; 
+    } 
+} 
+
+@media only screen and (min-width: 1209px) { 
+    button.md { 
+        display: flex; 
+    } 
+} 
+
+@media only screen and (min-width: 800px) { 
+    button.sm { 
+        display: flex; 
+    } 
+} 
+
+@media only screen and (min-width: 505px) { 
+    button.xsm { 
+        display: flex; 
+    } 
+} 
+@media only screen and (min-width: 300px) { 
+    button.xxsm { 
+        display: flex; 
+    } 
+} 
 
 
 

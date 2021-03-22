@@ -5,23 +5,60 @@ import SigninContainer from "./session/signin/signin_container";
 import SignupContainer from "./session/signup/signup_container";
 import { Route,Switch,Link } from 'react-router-dom';
 import {AuthRoute,ProtectedRoute} from '../util/route_utils';
-import BookIndex from './book/book_index';
+// import BooksByCategory from './book/bookCategories/books_by_category'; 
+
+import BookShowContainer from './book/book_show/book_show_container'
+// import NavBar from './home_page/navigation';
+import BookIndexContainer from './book/book_index/book_index_container';
+import CreateReviewForm from './review/create_review_form_container';
+import EditReviewForm from './review/edit_review_form_container';
 
 
 const App = () => (
   <div>
     <header>
 
-      {/* <Link to="/"> <h1>amazen</h1> </Link> */}
-
     </header>
+
     <Switch>
         <Route exact path="/" component={HomePage} />
+
+        <Route exact path="/books" component={BookIndexContainer} />
+        <Route exact path="/books/:id" component={BookShowContainer} />
+        {/* <Route exact path="/books/:bookId/reviews" component={ReviewForm} /> */}
+        <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
+        <ProtectedRoute  exact path="/books/:bookId/edit-review" component={EditReviewForm} />
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
-        <Route exact path="/books" component={BookIndex} />
     </Switch>
   </div>
 );
+
+
+// class App extends Component {
+//   constructor(props){
+//       super(props);
+//       debugger
+//       this.state = {
+//           isNavbarHidden: false
+//       };
+//   }
+//   render() {
+//     return(
+//         <div>
+//           <header>
+      
+//           </header>
+//           { (this.state.nav_bar.isHidden) ? null : <NavBar /> }
+//           <Switch>
+//               <Route exact path="/" component={HomePage} />
+//               <Route exact path="/books/:category" component={BooksByCategory} />
+//               <AuthRoute exact path="/signin" component={SigninContainer} />
+//               <AuthRoute exact path="/signup" component={SignupContainer} />
+//           </Switch>
+//         </div>
+//       )
+//   }
+// }
 
 export default App;
