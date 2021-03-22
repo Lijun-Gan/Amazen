@@ -10,7 +10,8 @@ import {AuthRoute,ProtectedRoute} from '../util/route_utils';
 import BookShowContainer from './book/book_show/book_show_container'
 // import NavBar from './home_page/navigation';
 import BookIndexContainer from './book/book_index/book_index_container';
-import ReviewForm from './review/edit_review_form_container';
+import CreateReviewForm from './review/create_review_form_container';
+import EditReviewForm from './review/edit_review_form_container';
 
 
 const App = () => (
@@ -24,7 +25,9 @@ const App = () => (
 
         <Route exact path="/books" component={BookIndexContainer} />
         <Route exact path="/books/:id" component={BookShowContainer} />
-        <Route exact path="//books/:bookId/reviews" component={ReviewForm} />
+        {/* <Route exact path="/books/:bookId/reviews" component={ReviewForm} /> */}
+        <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
+        <ProtectedRoute  exact path="/books/:bookId/edit-review" component={EditReviewForm} />
         <AuthRoute exact path="/signin" component={SigninContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
     </Switch>

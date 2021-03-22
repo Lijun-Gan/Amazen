@@ -11,7 +11,6 @@ class PostForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        //  console.log(this.state)
         this.props.action(this.state);
     }
 
@@ -30,21 +29,26 @@ class PostForm extends React.Component{
             <form onSubmit={this.handleSubmit}>
                 <label>Overall rating:
                     <input type="text" 
+                    className="review-form-rating"
                     value={this.state.rating}
-                    onChange={this.handleInput('title')}
+                    onChange={this.handleInput('rating')}
                     />
                 </label>
 
                 <label>Title:
                     <input type="text" 
+                    className="review-form-title"
                     value={this.state.title}
                     onChange={this.handleInput('title')}
                     />
                 </label>
+
                 <label>Body:
                 <textarea onChange={this.handleInput('body')}
+                className="review-form-body"
                 value={this.state.body}></textarea>
                 </label>
+
                 <button>{this.props.formType === "Create Post"? "Create Post" : "Update Post"}</button>
             </form>
 

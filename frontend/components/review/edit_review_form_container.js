@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
-import { fetchReview, updateReview } from '../../actions/review_actions';
+import {  updateReview } from '../../actions/review_actions';
 
 class EditReviewForm extends React.Component {
     constructor(props){
       super(props)
     }
   
-      componentDidMount(){
-        debugger
-        this.props.fetchReview(this.props.review.id)
-      }
+    //   componentDidMount(){
+    //     debugger
+    //     this.props.fetchReview(this.props.review.id)
+    //   }
   
     render() {
   
