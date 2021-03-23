@@ -53,17 +53,31 @@ class SignIn extends React.Component {
             if (response.exist=== 0) {
                 if( /[a-zA-Z]/g.test(this.state.user.email_or_phone)){
                     invalid_email = (
-                        <img id="incorrect-email" src={window.incorrect_email} alt="incorrect-email"/>
+                    <div className="auth-errors">
+                        <div><img src={window.warningBan} alt="email error" /></div>
+                        <span>
+                            <h4>There was a problem</h4>
+                            <h5>We cannot find an account with that email address</h5>
+                        </span>
+                    </div>
+                        // <img id="incorrect-email" src={window.incorrect_email} alt="incorrect-email"/>
                         )
                 }
 
                 if(/\d/.test(this.state.user.email_or_phone)){
                     invalid_phone = (
-                        <img id="incorrect-phone" src={window.incorrect_phone} alt="incorrect-phone"/>
+                        <div className="auth-errors">
+                            <div><img src={window.warningBan} alt="email error" /></div>
+                            <span>
+                                <h4>There was a problem</h4>
+                                <h5>We cannot find an account with that mobile number</h5>
+                            </span>
+                    </div>
+                        // <img id="incorrect-phone" src={window.incorrect_phone} alt="incorrect-phone"/>
                     )
                 }
                 if (this.state.user.email_or_phone === "") {
-                    invalid_email_or_phone = <h5 className="input-error">! Enter your email or mobile phone number</h5>
+                    invalid_email_or_phone = <h5 className="input-error">❗ Enter your email or mobile phone number</h5>
                 }
             }
         
@@ -89,13 +103,25 @@ class SignIn extends React.Component {
         let invalid_password = "";
         let empty_password = "";
 
+       
+
         const user = Object.assign({}, this.state.user);
         this.props.signin(user).then(()=>(this.props.history.push('/')),
         ()=>{
             if(this.state.user.password === ""){
-                empty_password = <h5 className="input-error">! Enter your password</h5>
+                empty_password = <h5 className="input-error">❗ Enter your password</h5>
             }else{
-                invalid_password = <img id="incorrect-password" src={window.incorrect_password} alt="incorrect-password"/>
+              
+                invalid_password = ( 
+                    <div className="auth-errors">
+                        <div><img src={window.warningBan} alt="passward warning" /></div>
+                        <span>
+                            <h4>There was a problem</h4>
+                            <h5>Your password is incorrect</h5>
+                        </span>
+                    </div>
+                    );
+                // invalid_password = <img id="incorrect-password" src={window.incorrect_password} alt="incorrect-password"/>
             }
             this.setState({
                 errors: {
@@ -146,6 +172,17 @@ class SignIn extends React.Component {
 
     render() {
 
+    
+
+        // const incorrectPhone = (
+
+        // )
+
+        // const incorrectPassword = (
+
+        // )
+
+
         if(this.state.user_exist.exist === 0){
 
         const emailOrPhoneColor = (this.state.errors.email_or_phone !== "") ? "input-error" : null;
@@ -171,7 +208,7 @@ class SignIn extends React.Component {
                                 onChange={this.update('email_or_phone')}/>
                             
                             {this.state.errors.email_or_phone}
-
+                           
                             <input className="auth-btn" type="submit" value="Continue" />
                         </div>
                         </form>

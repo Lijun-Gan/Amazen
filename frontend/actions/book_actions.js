@@ -30,9 +30,11 @@ export const fetchBooks = (book) => dispatch => {
 };
 
 export const fetchBook = (bookId) => dispatch => {
-
+    
     return (
-        APIUtil.fetchBook(bookId).then(book => { dispatch(receiveBook(book))})
+
+        APIUtil.fetchBook(bookId).then(book => {  
+            dispatch(receiveBook(book))})
     )
 }
 

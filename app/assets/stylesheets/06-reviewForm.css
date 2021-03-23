@@ -1,0 +1,27 @@
+
+#revieForm-bookPic{
+    width: 68px;
+    height: 90px;
+}
+
+.postForm-container{
+    width: 80%;
+    margin: auto;
+}
+
+.review-form-rating-input{
+    width: 688px;
+    height: 23px;
+    border: solid 1px black;
+}
+.review-form-title-input{
+    width: 688px;
+    height: 23px;
+    border: solid 1px black;
+}
+
+.review-form-body-input{
+    width: 688px;
+    height: 80px;
+    border: solid 1px black;
+}

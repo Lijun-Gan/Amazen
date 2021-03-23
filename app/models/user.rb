@@ -59,8 +59,6 @@ class User < ApplicationRecord
         user.is_password?(password)? user : nil
     end
 
-<<<<<<< HEAD
-=======
 
     has_many :authorized_reviews,
         class_name: :Review,
@@ -68,5 +66,4 @@ class User < ApplicationRecord
         foreign_key: :user_id
     
 
->>>>>>> books
 end

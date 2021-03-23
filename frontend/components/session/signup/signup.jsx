@@ -47,34 +47,34 @@ class SignUp extends React.Component {
         let diff_password = "";
 
         if (this.state.user.username === "") {
-            invalid_username = <h5 className="input-error">! Enter your name</h5>
+            invalid_username = <h5 className="input-error">❗ Enter your name</h5>
             errors_count++;
         }
 
         let email = this.state.user.email
         if(!(email.includes("@") && email.includes(".") && email.split("@")[0].length>0 &&email.split("@")[1].length>3  &&email.split("@")[1].split(".")[0].length>0 &&email.split("@")[1].split(".")[1].length> 1)){
-            invalid_email = <h5 className="input-error">! Enter a valid email address</h5>
+            invalid_email = <h5 className="input-error">❗ Enter a valid email address</h5>
             errors_count++;
         }
 
         if (this.state.user.email === "") {
-            invalid_email = <h5 className="input-error">! Enter your email</h5>
+            invalid_email = <h5 className="input-error">❗ Enter your email</h5>
             errors_count++;
         }
 
         if (this.state.user.password === "") {
-            invalid_password = <h5 className="input-error">! Enter your password</h5>
+            invalid_password = <h5 className="input-error">❗ Enter your password</h5>
             errors_count++;
         } else if (this.state.user.password.length < 6) {
-            invalid_password = <h5 className="input-error">! Passwords must be at least 6 characters.</h5>
+            invalid_password = <h5 className="input-error">❗ Passwords must be at least 6 characters.</h5>
             errors_count++;
         }
 
         if (this.state.user.password !== "" && this.state.user.rePassword === "") {
-            invalid_rePassword = <h5 className="input-error">! Type your password again</h5>
+            invalid_rePassword = <h5 className="input-error">❗ Type your password again</h5>
             errors_count++;
         } else if (this.state.user.rePassword !== this.state.user.password) {
-            diff_password = <h5 className="input-error">! Passwords must match</h5>
+            diff_password = <h5 className="input-error">❗ Passwords must match</h5>
             errors_count++;
         }
 
@@ -221,7 +221,7 @@ class SignUp extends React.Component {
         
                     <p id="notes" >By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
                 
-                    <div class="fade_rule"></div>  
+                    <div className="fade_rule"></div>  
 
                     <span id="notes">Already have an account? </span> 
                     <Link to="/signin" id="notes">Sign-In ▸</Link>
@@ -247,10 +247,16 @@ class SignUp extends React.Component {
             </Link>
 
                 <div className="email-taken-alert" >
+                    {/* <img src={window.email_taken} alt="email address already in use"/> */}
 
-                    <img src={window.email_taken} alt="email address already in use"/>
-                    <p className="sign-up-email-taken"> {this.state.user.email}</p>
-                        
+                    <img id="yellowWarn" src={window.window.yellowWarn} alt="email address already in use"/>
+            
+                    <span>
+                        <p id="emailBadBig">Email address already in use</p>
+                        <p id="emailBad">You indicated you are a new customer, but an account already exists with the e-mail</p>
+                        <p className="sign-up-email-taken"> {this.state.user.email}</p>
+                    </span>
+                  
                 </div>
 
             <div className="session-div email-taken">

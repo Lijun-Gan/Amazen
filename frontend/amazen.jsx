@@ -5,13 +5,12 @@ import {checkUser} from "./util/session_api_util";
 import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
 import { fetchBook,fetchBooks } from './actions/book_actions';
-import { createReview,updateReview,deleteReview } from './actions/review_actions';
+import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
     // const store = configureStore();
-
 
     let store;
     if (window.currentUser) {
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.createReview = createReview
     window.updateReview = updateReview
     window.deleteReview = deleteReview
-
+    window.fetchReview = fetchReview
 
     ReactDOM.render(<Root store={store} />, root);
 

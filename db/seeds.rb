@@ -18,11 +18,6 @@ ApplicationRecord.connection.reset_pk_sequence!('prices')
 ApplicationRecord.connection.reset_pk_sequence!('books')
 ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
-<<<<<<< HEAD
-demoUser = User.new(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
-
-demoUser.save!
-=======
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 
 User.create(username: "lijun", email: "lijun@gmail.com", password: "password" )
@@ -69,4 +64,3 @@ Review.create(
     user_id: 1,
     book_id: 1,
 )
->>>>>>> books

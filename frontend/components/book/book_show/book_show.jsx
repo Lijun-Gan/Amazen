@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../../home_page/navigation';
 import Footer from '../../home_page/footnote';
+import {Link} from "react-router-dom";
 
 
 class BookShow extends React.Component {
@@ -29,19 +30,19 @@ class BookShow extends React.Component {
     }
 
     handleRating(rating){
-        if(rating === 5){
+        if(rating == 5){
            return  <img id="ReviewStars" src={window.five_star} alt="rating"/>
         }
-        if(rating === 4){
+        if(rating == 4){
            return  <img  id="ReviewStars" src={window.four_star} alt="rating"/>
         }
-        if(rating === 3){
+        if(rating == 3){
            return  <img id="ReviewStars" src={window.three_star} alt="rating"/>
         }
-        if(rating === 2){
+        if(rating == 2){
            return  <img id="ReviewStars" src={window.two_star} alt="rating"/>
         }
-        if(rating === 1){
+        if(rating == 1){
            return  <img  id="ReviewStars" src={window.one_star} alt="rating"/>
         }
     }
@@ -72,7 +73,6 @@ class BookShow extends React.Component {
 
     render(){  
         let show_page = "page broken"
-        // let show_page = <img src={ window.page_broken} alt="page broken"/>  
         if (this.props.book){
             const {book} = this.props
             let author_bio;
@@ -114,9 +114,10 @@ class BookShow extends React.Component {
                         <p className="diff-price"> See all formats and editions</p>
 
                         <ul className="bsp-prices">
-                           { book.prices.map((formatPrice)=> {
+                           { book.prices.map((formatPrice,idx)=> {
+                               debugger
                                return (
-                               <li key={formatPrice.id}>
+                               <li key={idx}>
                                    <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}<br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
                                </li>
                            )})}
@@ -154,20 +155,27 @@ class BookShow extends React.Component {
                 <div id="bsp-container-third">
                     <h2>Customer reviews</h2>
                     
-                    <button className="postReview">Write a customer review</button>
+                    {/* <button className="postReview">Write a customer review</button> */}
+
+                    <Link to={`/books/${book.id}/create-review`}>
+                        <p className="postReview">Write a customer review</p>
+                    </Link>
                     <div id="book-reviews-container-left">
 
                     </div>
 
                     <div id="book-reviews-container-right">
                         <ul>
-                            {book.reviews.map((review)=>(
-                                <li key={review.id}>
+                            {book.reviews.map((review,idx)=>(
+                                <li key={idx}>
                           
                                     {review.user_id === this.props.currentUser ? 
                                     (
                                         <div>
-                                            <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button>
+                                            {/* <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button> */}
+                                            <Link to={`/reviews/${review.id}/edit`}>
+                                                <p className="editReview-btn">Edit</p>
+                                            </Link>
                                             <button className="deleteReview-btn" onClick={(()=>{this.props.deleteReview(review)})} >Detete</button>
                                         </div>
                                     ) : null}   
