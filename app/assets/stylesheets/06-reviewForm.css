@@ -25,3 +25,104 @@
     height: 80px;
     border: solid 1px black;
 }
+
+p.postReview{
+    color:black;
+    font-size: 14px;
+    padding: 6px;
+}
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rating-star {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rating-star:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rating-star:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rating-star:not(:checked) > label:before {
+    content: '★ ';
+}
+.rating-star > input:checked ~ label {
+    color: #ffc700;    
+}
+.rating-star:not(:checked) > label:hover,
+.rating-star:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rating-star > input:checked + label:hover,
+.rating-star > input:checked + label:hover ~ label,
+.rating-star > input:checked ~ label:hover,
+.rating-star > input:checked ~ label:hover ~ label,
+.rating-star > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/*  *
+
+
+/*  */
+
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 20px;
+    height: 25px;
+    width: 100px;
+    margin: 0 0;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+}
+    
+.star-ratings-css-top{
+        /* width: 80%; */
+      color: orange;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+.star-ratings-css-bottom {
+      padding: 0;
+      display: block;
+      z-index: 0;
+    }
+  
+
+/*  */
+
+.rating-star-container{
+    display: flex;
+    margin-bottom: 9px;
+    margin-top: 5px;
+}
+
+.review-count{
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.rating-star-min-width{
+    min-width: 260px;
+}

@@ -4,7 +4,7 @@ import React from 'react';
 
 
 const BooksByCategory = (props)=>{
-    // debugger
+    // //debugger
         return(
             <div id="Books_by_Category">
                 <NavBar />

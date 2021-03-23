@@ -92,7 +92,7 @@ class SignIn extends React.Component {
             });
 
             
-            // debugger
+            // //debugger
             this.setState({user_exist: response})
             }
         )
@@ -138,11 +138,11 @@ class SignIn extends React.Component {
 
     backFirstSignIn(e) {
         e.preventDefault
-        // debugger
+        // //debugger
         // const { user_exist } = { ...this.state };
-        // debugger
+        // //debugger
         // const currentUser = user_exist;
-        // debugger
+        // //debugger
         // user_exist[exist] = 0
         
         this.setState(

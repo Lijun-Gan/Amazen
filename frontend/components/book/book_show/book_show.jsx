@@ -8,6 +8,7 @@ class BookShow extends React.Component {
     constructor(props) {
       super(props);
       this.state = ({
+        //   book: this.props.book,
           format: 'Select format ',
           price: '0.00'
       })
@@ -15,13 +16,11 @@ class BookShow extends React.Component {
     }
   
     componentDidMount(){
-        
-
       this.props.fetchBook(this.props.match.params.id)
     }
 
+
     handlePrice(e){
-        
         const book_format_price = e.target.value.split(",")
         this.setState({
             format: book_format_price[0],
@@ -29,23 +28,23 @@ class BookShow extends React.Component {
         })
     }
 
-    handleRating(rating){
-        if(rating == 5){
-           return  <img id="ReviewStars" src={window.five_star} alt="rating"/>
-        }
-        if(rating == 4){
-           return  <img  id="ReviewStars" src={window.four_star} alt="rating"/>
-        }
-        if(rating == 3){
-           return  <img id="ReviewStars" src={window.three_star} alt="rating"/>
-        }
-        if(rating == 2){
-           return  <img id="ReviewStars" src={window.two_star} alt="rating"/>
-        }
-        if(rating == 1){
-           return  <img  id="ReviewStars" src={window.one_star} alt="rating"/>
-        }
-    }
+    // handleRating(rating){
+    //     if(rating == 5){
+    //        return  <img id="ReviewStars" src={window.five_star} alt="rating"/>
+    //     }
+    //     if(rating == 4){
+    //        return  <img  id="ReviewStars" src={window.four_star} alt="rating"/>
+    //     }
+    //     if(rating == 3){
+    //        return  <img id="ReviewStars" src={window.three_star} alt="rating"/>
+    //     }
+    //     if(rating == 2){
+    //        return  <img id="ReviewStars" src={window.two_star} alt="rating"/>
+    //     }
+    //     if(rating == 1){
+    //        return  <img  id="ReviewStars" src={window.one_star} alt="rating"/>
+    //     }
+    // }
 
     handleDate(unformatedDate){
 
@@ -73,6 +72,7 @@ class BookShow extends React.Component {
 
     render(){  
         let show_page = "page broken"
+        debugger
         if (this.props.book){
             const {book} = this.props
             let author_bio;
@@ -87,8 +87,14 @@ class BookShow extends React.Component {
                 ) 
             }
 
+            debugger
 
-        
+            
+
+            let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
+            let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
+      
+
             show_page = (
 
             <div id="bsp-container">
@@ -97,14 +103,26 @@ class BookShow extends React.Component {
                     <div>
                         <img id="lookInside_bookShow" src={window.lookInside_bookShow} alt="Look Inside"/>
                         <img id="showPage-bookImg" src={book.image_url}/>
-                    </div>
-
+                    </div>0
                     <div className="bsp-detail">
                         <p className="bsp-title">{book.title}</p>
                         <p className="bsp-publication">{this.handleDate(book.publication_date)}</p>
                         <span>by </span>
                         <span className="bsp-author">{book.author} (Author)</span>
-                        <img id="fiveStar" src={window.avg_star} alt="rating"/>
+               
+<div className="rating-star-min-width">
+    <div className="rating-star-container">
+        <div className="star-ratings-css">
+            <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        </div> 
+        <p className="review-count">{review_count}</p>
+    </div>
+
+</div>
+
+
+                        {/* <img id="fiveStar" src={window.avg_star} alt="rating"/> */}
                         <div className="book-category">
                             <span>Category: </span>
                             <span className="bsp-catogory">{book.category}</span>
@@ -115,7 +133,7 @@ class BookShow extends React.Component {
 
                         <ul className="bsp-prices">
                            { book.prices.map((formatPrice,idx)=> {
-                               debugger
+                            //    debugger
                                return (
                                <li key={idx}>
                                    <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}<br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
@@ -169,29 +187,37 @@ class BookShow extends React.Component {
                             {book.reviews.map((review,idx)=>(
                                 <li key={idx}>
                           
+         
+                                    <div id="PictureText">
+                                        <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
+                                        <span className="PictureText-text">{review.review_author}</span>
+                                    </div>
+
+                                    <div className="rating-star-container">
+                                        {/* {this.handleRating(review.rating)} */}
+
+     <div className="star-ratings-css">
+        <div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    </div> 
+    
+                                        <span className="PictureText-title">{review.title}</span>
+                                    </div>
+
+                                    <p className="reviewDateNBody">reviewed on {this.handleDate(review.created_at)}</p>
+                                    <p className="reviewDateNBody">{review.body}</p>
+
                                     {review.user_id === this.props.currentUser ? 
                                     (
-                                        <div>
+                                        <div className="delete-edit-btn" >
                                             {/* <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button> */}
                                             <Link to={`/reviews/${review.id}/edit`}>
                                                 <p className="editReview-btn">Edit</p>
                                             </Link>
                                             <button className="deleteReview-btn" onClick={(()=>{this.props.deleteReview(review)})} >Detete</button>
                                         </div>
+
                                     ) : null}   
-                                    <div id="PictureText">
-                                        <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
-                                        <span className="PictureText-text">{review.review_author}</span>
-                                    </div>
-
-                                    <div id="PictureText">
-                                        {this.handleRating(review.rating)}
-                                        <span className="PictureText-title">{review.title}</span>
-                                    </div>
-
-                                    <p className="reviewDateNBody">reviewed on {this.handleDate(review.created_at)}</p>
-                                    <p className="reviewDateNBody">{review.body}</p>
-                                    
                                 </li>
                             ))}
                         </ul>
@@ -200,12 +226,6 @@ class BookShow extends React.Component {
                 </div>
 
             </div>            
-
-
-
-
-
-
 
         )}
         return (

@@ -21,10 +21,10 @@ const App = () => (
     </header>
 
     <Switch>
+        <Route exact path="/books/:id" component={BookShowContainer} />
         <Route exact path="/" component={HomePage} />
 
-        <Route exact path="/books" component={BookIndexContainer} />
-        <Route exact path="/books/:id" component={BookShowContainer} />
+        {/* <Route exact path="/books" component={BookIndexContainer} /> */}
         {/* <Route exact path="/books/:bookId/reviews" component={ReviewForm} /> */}
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
@@ -38,7 +38,7 @@ const App = () => (
 // class App extends Component {
 //   constructor(props){
 //       super(props);
-//       debugger
+//       //debugger
 //       this.state = {
 //           isNavbarHidden: false
 //       };

@@ -6,7 +6,6 @@ import { deleteReview,updateReview } from '../../../actions/review_actions';
 const mapStateToProps=(state,ownProps)=>{
 
     return({
-
         book: state.entities.books[ownProps.match.params.id],
         currentUser: state.session.id
     })

@@ -7,8 +7,6 @@ export const fetchBook = (bookId)=>{
 
 }
 
-
-
 export const fetchBooks = () => (
         $.ajax({
             url: '/api/books',

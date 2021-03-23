@@ -10,7 +10,7 @@ const reviewsReducer = (state = {}, action) => {
     
         case(RECEIVE_REVIEW):
             nextState[action.review.id] = action.review;
-            debugger
+            //debugger
             return nextState;
         default:
             return state;
