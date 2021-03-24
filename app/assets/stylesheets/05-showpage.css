@@ -139,9 +139,9 @@
 
 /*  */
 #progressbar {
-    background-color: rgb(247 247 247);
+    background-color: rgb(247, 247, 247);
     border-radius: 5px;
-    border: 1px solid rgb(224 221 221);
+    border: 1px solid rgb(224, 221, 221);
     margin-bottom: 15px;
     width: 200px;
 }
@@ -190,7 +190,7 @@
 }
 
 .inStock-color{
-    color: rgb(0, 118, 0);
+    color: rgb(4, 139, 4);
     font-size: 18px;
 }
 
