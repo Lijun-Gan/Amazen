@@ -275,12 +275,12 @@
 
 .deleteReview-btn:focus{
     border-color: #e77600;
-    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
 }
 .editReview-btn:focus{
     border-color: #e77600;
 
-    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
 }
 
 .postReview{
@@ -295,6 +295,6 @@
 
 .postReview:focus{
     border-color: #e77600;
-    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
 }
 
