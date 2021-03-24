@@ -130,10 +130,11 @@ p.postReview{
 }
 
 .overall-rating-container{
+
     margin-top: 20px;
     border-top: solid 1px #e2e1e1;
-    margin-bottom: 70px;
-    padding-top: 20px;
+    margin-bottom: 74px;
+    padding-top: 28px;
 }
 
 .reviewForm-type{
@@ -149,5 +150,57 @@ p.postReview{
     color: black;
     font-weight: 600;
     margin-bottom: 6px;
-;
+}
+
+.add-headline{
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 14px;
+    margin-top: 45px;
+  
+
+}
+
+.add-headline-container{
+    border-top: solid 1px #e2e1e1;
+}
+
+.review-form-title-input{
+    height: 28px;
+    font-size: 13px;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.written-review-lable{
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 14px;
+    margin-top: 16px;
+
+}
+
+.review-form-body-input{
+
+    height: 130px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    padding-left: 8px;
+    padding-top: 6px;
+    width: 100%;
+}
+
+.review-submit{
+    border: 1px black solid;
+    background-color: #fbd77d;
+    height: 29px;
+    width: 69px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-left: auto;
+    display: block;
+
 }

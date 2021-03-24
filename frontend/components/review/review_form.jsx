@@ -93,11 +93,11 @@ class ReviewForm extends React.Component{
     </div>
   </div>
                  
-                    <div>
+                    <div className="add-headline-container">
 
-                    <label>Add a headline:</label>
+                    <p className="add-headline">Add a headline:</p>
                         <input type="text" 
-                        placeholder="what's most important to know"
+                        placeholder="What's most important to know"
                         className="review-form-title-input"
                         value={this.state.title}
                         onChange={this.handleInput('title')}
@@ -106,7 +106,7 @@ class ReviewForm extends React.Component{
                     
                     <br/>
 
-                    <label>Add a written review:</label>
+                    <p className="written-review-lable">Add a written review:</p>
                     <textarea onChange={this.handleInput('body')}
                     placeholder="What did you like or dislike?"
                     className="review-form-body-input" 
@@ -114,7 +114,7 @@ class ReviewForm extends React.Component{
                    </textarea>
                     <br/>
 
-                    <button>submit</button>
+                    <button className="review-submit">Submit</button>
                 </form>
 
             </div>
