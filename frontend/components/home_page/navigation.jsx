@@ -42,13 +42,9 @@ const NavBar = (props) => {
         <SearchBarContainer />
 
         <div className="nav-top-right">
-          {/* <Link to="/">
-          <img id="nav-language" src={window.language_icon} alt="language"/>
-          </Link> */}
+    
           <NavSigninContainer />
-          {/* <Link to="/">
-          <img id="nav-returns" src={window.nav_returns} alt="returns"/>
-          </Link> */}
+   
 
            <button className="nav-returns">
            <span className="nav-signin">Returns </span> 
@@ -66,9 +62,11 @@ const NavBar = (props) => {
 
     <div id='nav-bar-mid'>
 
-        <Link to="/">
-        <img id="nav-mid-all" src={window.nav_mid_all} alt="middle nav"/>
-        </Link>
+       <button className="nav-mid-all-container">
+        <img id="nav-mid-all" src={window.all_icon} alt="middle nav"/>
+        <p className="word-all">&nbsp;All</p>
+       </button>
+
        <div id="nav-mid-container"> 
           <button className="sub-nav xxsm">Best Sellers</button>
           <button className="sub-nav xxsm">Today's Deals</button>
@@ -87,7 +85,8 @@ const NavBar = (props) => {
           <button className="sub-nav xlg">Pharmacy</button>
           <button className="sub-nav xlg">Video Games</button>
         </div>
-          <button className="subNav last">Shop women-owned</button>
+        <a className="subNav last" href="https://www.linkedin.com/in/lijun-gan/">Shop women-owned</a>
+          <button ></button>
       </div>
 
     <div id="book-category">

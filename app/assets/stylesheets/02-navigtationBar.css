@@ -199,9 +199,8 @@ div.nav-search-bar-container{
     font-family: 'Lato', sans-serif;
     font-size: 12px;
     border-right: 1px solid #a6a6a685;
-    height: 28px;
+    height: 40px;
     min-width: 38px;
-    padding-top: 12px;
     padding-left: 12px;
     margin-top: 6px;
 }
@@ -286,14 +285,28 @@ div.nav-search-bar-container{
 #nav-mid-all{
     margin-top: 2px;
     margin-left: 10px;
-    width: 60px;
-    height: 34px;
+    width: 18px;
+    height: 14px;
+    margin-top: 2px;
+    padding-top: 8px;
 }
 
 #nav-bar-mid{
     background-color: #232F3E;
     color: white;
     display: flex;
+}
+
+.nav-mid-all-container{
+    display: flex;
+    height: 30px;
+    margin-top: 2px;
+    border: 1px solid transparent;
+}
+
+.nav-mid-all-container:hover{
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
 }
 
 button.sub-nav{
@@ -310,21 +323,30 @@ button.sub-nav:hover {
     border: 1px solid #f1f1f1;
     border-radius: 3px;
 }
+.word-all{
+ 
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 9px;
+    padding-right: 7px;
+}
 
-button.subNav.last {
+a.subNav.last {
     margin-left: 45px;
     margin-right: 25px;
     font-weight: bold;
     width: 182px;
-    height: 28px;
+    height: 24px;
     font-size: 14px;
-    margin-top: 6px;
+    padding-top: 8px;
+    margin-top: 2px;
     border: 1px solid transparent;
     text-align: center;
     white-space: nowrap;
+    color: white;
 }
 
-button.subNav.last:hover {
+a.subNav.last:hover {
     border: 1px solid #f1f1f1;
     border-radius: 3px;
 }

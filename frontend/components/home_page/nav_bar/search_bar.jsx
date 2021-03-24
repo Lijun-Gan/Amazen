@@ -19,7 +19,7 @@ class SearchBar extends Component{
         return (
             <div className="searchbar">
                     <div className="nav-search-bar-container">
-                    <div id="search-all">All &nbsp;▾</div>
+                    <button id="search-all">All &nbsp;▾</button>
                         <input className="nav-search-bar" type="text" value={this.state.searchTerm} onChange={this.handleInput("item")}/>
                         <button className="search-icon-btn"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
                     </div>  
