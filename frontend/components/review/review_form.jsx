@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../home_page/navigation';
+import NavBarContainer from '../home_page/navigation_container';
 import Footer from '../home_page/footnote';
 
 class ReviewForm extends React.Component{
@@ -58,6 +58,7 @@ class ReviewForm extends React.Component{
         if(errors_count === 0){
 
             this.props.action_submit(this.state.review).then(()=>(this.props.history.push(`/books/${this.state.review.book_id}`)));
+
         }
     }
     
@@ -97,7 +98,7 @@ class ReviewForm extends React.Component{
         // this.state.rating = this.props.review.rating
         return( 
             <div>
-            <NavBar />
+            <NavBarContainer />
         
            
             <div className='postForm-container'>

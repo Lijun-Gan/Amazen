@@ -1,4 +1,4 @@
-import NavBar from '../../home_page/navigation';
+import NavBarContainer from '../../home_page/navigation_container';
 import FootNote from "../../home_page/footnote";
 import React from 'react';
 
@@ -7,7 +7,7 @@ const BooksByCategory = (props)=>{
     // //debugger
         return(
             <div id="Books_by_Category">
-                <NavBar />
+                <NavBarContainer />
                 
                 <h1>this is BooksByCategory page</h1>
                

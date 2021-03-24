@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../../home_page/navigation';
+import NavBarContainer from '../../home_page/navigation_container';
 import Footer from '../../home_page/footnote';
 import {Link} from "react-router-dom";
 
@@ -114,7 +114,7 @@ class BookShow extends React.Component {
             total_review = this.props.book.reviews.length
             avg_rating_out = (totalRating / this.props.book.reviews.length).toFixed(2)
         
-      
+            
     
             // let pensentage = ((star /total_review).toFixed(2) * 100).toString() 
             let showBar =  null;
@@ -309,7 +309,7 @@ class BookShow extends React.Component {
         )}
         return (
             <div>
-                <NavBar />
+                <NavBarContainer />
                 {show_page}
                 <Footer />
             </div>

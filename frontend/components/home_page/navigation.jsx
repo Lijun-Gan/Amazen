@@ -5,25 +5,17 @@ import SearchBarContainer from './nav_bar/search_bar_container'
 
 //{ currentUser, signout }
 
-const NavBar = () => {
-  // const signInLink = () => (
-  //   <nav >
-  //     <Link to="/signin"> Hello, Sign in</Link>
-  //   </nav>
-  // );
-  
-  // const signedInHomePage = () => (
-  //   <nav >
-  //     <h2>Hi, {currentUser.username}!</h2>
-  //     <button onClick={signout}>Log Out</button>
-  //   </nav>
-  // );
+const NavBar = (props) => {
+  let username;
+  if(props.user === undefined){
+    username = ""
+  }else{
+    username = props.user.username
+  }
 
-  // return currentUser ?  signedInHomePage() : signInLink() ;
-
+  debugger
   return (
     <div>
-
 
     <div id='nav-bar-top'>
 
@@ -31,9 +23,20 @@ const NavBar = () => {
           <Link to="/"> 
             <img id="nav-amazen-logo" src={window.nav_amazenLogo} alt="amazen logo"/>
           </Link>
+
+{/* 
           <Link to="/">
           <img id="nav-address" src={window.nav_address} alt="address"/>
-          </Link>
+          </Link> */}
+
+  <button className="nav-returns">
+  <span className="nav-signin">Deliver to {username}</span> 
+  <p className="nav-signin">Select your address</p>
+ </button>
+
+ 
+
+
         </div>
 
         <SearchBarContainer />

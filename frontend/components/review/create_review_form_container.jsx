@@ -66,7 +66,8 @@ const mapStateToProps = (state,ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return{
         action_submit: (review)=>(dispatch(createReview(review))),
-        action_mount: (reviewId)=>(dispatch(fetchBook(reviewId)))
+        action_mount: (reviewId)=>(dispatch(fetchBook(reviewId))),
+        
     }
 }
 

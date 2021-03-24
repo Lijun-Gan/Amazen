@@ -65,7 +65,7 @@ span.nav-signin{
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 11px
 
 }
@@ -79,7 +79,7 @@ p.nav-signin{
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 16px;
 }
 
@@ -92,7 +92,7 @@ p.nav-signin.username{
     display: inline-block;
     text-overflow: ellipsis; 
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-weight: normal;
 }
 
