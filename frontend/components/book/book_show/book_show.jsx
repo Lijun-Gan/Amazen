@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBarContainer from '../../home_page/navigation_container';
-import Footer from '../../home_page/footnote';
 import {Link} from "react-router-dom";
 
 
@@ -123,12 +121,12 @@ class BookShow extends React.Component {
                 showBar = (
                     starRatesBar.map((star,i)=>(
                         <div className="rating-bar-container" key={i}>
-                            <span>{5 - i} star</span>
+                            <span className = "progress-show-stars">{5 - i} star</span>
                             <div id="progressbar" >
                                 <div style={{"width": `${((star /total_review).toFixed(2) * 100).toString()+ "%" }` }}></div>
                             </div>
                        
-                            <span>{((star /total_review).toFixed(2) * 100).toString()+ "%"}</span>
+                            <span className="progress-show-percent">{((star /total_review).toFixed(2) * 100).toString()+ "%"}</span>
                         </div>
                     ))
                     )
@@ -251,10 +249,13 @@ class BookShow extends React.Component {
 
 </div>
 
+<p className="givenSpace"></p>
 
 { showBar }
 
 
+                        <p className="title-to-review">Review this Product</p>
+                        <p className="share-thoughts">Share your thoughts with other customers</p>
 
 
                         <Link to={`/books/${book.id}/create-review`}>

@@ -114,15 +114,26 @@ p.postReview{
 
 .rating-star-container{
     display: flex;
-    margin-bottom: 9px;
     margin-top: 5px;
     flex-wrap: wrap;
 }
 
 .review-count{
     margin-top: 6px;
-    margin-left: 6px;
+    margin-left: 12px;
     min-width: 154px;
+}
+
+.progress-show-stars{
+    margin-right: 14px;
+    color: #007185;
+    font-size: 14px;
+}
+
+.progress-show-percent{
+    margin-left: 14px;
+    color:  #007185;
+    font-size: 14px;
 }
 
 .rating-star-min-width{
@@ -207,3 +218,4 @@ p.postReview{
     margin-bottom: 60px;
 
 }
+

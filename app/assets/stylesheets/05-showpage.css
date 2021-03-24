@@ -299,3 +299,22 @@
     box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
 }
 
+.title-to-review{
+    font-size: 16px;
+    padding-top: 20px;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.share-thoughts{
+    margin-bottom: 19px;
+    font-size: 14px;
+
+}
+
+.givenSpace{
+
+    margin-bottom: 20px;
+}
