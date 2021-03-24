@@ -29,9 +29,13 @@ const NavBar = (props) => {
           <img id="nav-address" src={window.nav_address} alt="address"/>
           </Link> */}
 
-  <button className="nav-returns">
-  <span className="nav-signin">Deliver to {username}</span> 
-  <p className="nav-signin">Select your address</p>
+
+<span className="material-icons loc">room</span>
+  <button className="nav-address-container">
+    <p className="nav-address">Deliver to {username}</p> 
+
+    <p className="nav-address-select">Select your address</p>
+
  </button>
 
  
@@ -42,9 +46,9 @@ const NavBar = (props) => {
         <SearchBarContainer />
 
         <div className="nav-top-right">
-          <Link to="/">
+          {/* <Link to="/">
           <img id="nav-language" src={window.language_icon} alt="language"/>
-          </Link>
+          </Link> */}
           <NavSigninContainer />
           {/* <Link to="/">
           <img id="nav-returns" src={window.nav_returns} alt="returns"/>

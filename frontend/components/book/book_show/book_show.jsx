@@ -71,7 +71,7 @@ class BookShow extends React.Component {
     
 
     render(){  
-        let show_page = "page broken"
+        let show_page = <h1>Loading......</h1>
        if(this.props.book === undefined ||  this.props.book.reviews === undefined )  return show_page
         debugger
 
@@ -193,7 +193,10 @@ class BookShow extends React.Component {
                             //    debugger
                                return (
                                <li key={idx}>
-                                   <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}<br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
+                        
+                                   <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
+                                   <br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
+              
                                </li>
                            )})}
                         </ul>
@@ -309,9 +312,9 @@ class BookShow extends React.Component {
         )}
         return (
             <div>
-                <NavBarContainer />
+                {/* <NavBarContainer /> */}
                 {show_page}
-                <Footer />
+                {/* <Footer /> */}
             </div>
         )
     } 

@@ -7,10 +7,10 @@ import BookIndex from '../book/book_index/book_index_container';
 const HomePage = (props)=>{
     return(
         <div>
-            <NavBarContainer />
+            {/* <NavBarContainer /> */}
             <HomePageCategory />
             <BookIndex />
-            <FootNote />
+            {/* <FootNote /> */}
         </div>
     )
 }
