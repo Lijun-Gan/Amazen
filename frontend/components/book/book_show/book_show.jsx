@@ -203,7 +203,7 @@ class BookShow extends React.Component {
                                         <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
                                         <span className="PictureText-text">{review.review_author}</span>
                                     </div>
-<p>{review.review_author} cannot see </p>
+
                                     <div className="rating-star-container">
                                         {/* {this.handleRating(review.rating)} */}
 
