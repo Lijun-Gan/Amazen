@@ -89,11 +89,22 @@ class BookShow extends React.Component {
 
             debugger
 
+            // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
+            // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
             
+            let totalRating  = 0
+    
+            this.props.book.reviews.forEach((review)=>{
+                totalRating += review.rating
+            })
 
-            let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
-            let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
-      
+            let avg_rating_out 
+            let avg_rating 
+            avg_rating_out = (totalRating / this.props.book.reviews.length).toFixed(2)
+            avg_rating = ( avg_rating_out / 5 * 100).toString()+"%"
+            
+            let review_count = "(" + avg_rating_out.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
+
 
             show_page = (
 
@@ -103,7 +114,7 @@ class BookShow extends React.Component {
                     <div>
                         <img id="lookInside_bookShow" src={window.lookInside_bookShow} alt="Look Inside"/>
                         <img id="showPage-bookImg" src={book.image_url}/>
-                    </div>0
+                    </div>
                     <div className="bsp-detail">
                         <p className="bsp-title">{book.title}</p>
                         <p className="bsp-publication">{this.handleDate(book.publication_date)}</p>
@@ -123,7 +134,7 @@ class BookShow extends React.Component {
 
 
                         {/* <img id="fiveStar" src={window.avg_star} alt="rating"/> */}
-                        <div className="book-category">
+                        <div className="book-catego">
                             <span>Category: </span>
                             <span className="bsp-catogory">{book.category}</span>
 
@@ -192,7 +203,7 @@ class BookShow extends React.Component {
                                         <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
                                         <span className="PictureText-text">{review.review_author}</span>
                                     </div>
-
+<p>{review.review_author} cannot see </p>
                                     <div className="rating-star-container">
                                         {/* {this.handleRating(review.rating)} */}
 

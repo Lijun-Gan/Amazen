@@ -17,7 +17,7 @@ const booksReducer = (State = {}, action) => {
             return Object.assign({},action.books);
         case RECEIVE_BOOK:
             //debugger
-            nextState[action.book.id] = action.book;
+            nextState[action.oneBook.book.id] = action.oneBook.book;
 
             return nextState;
         // case RECEIVE_BOOK_FOR_REVIEW:

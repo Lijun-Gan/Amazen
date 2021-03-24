@@ -8,24 +8,24 @@ class CreateReviewForm extends React.Component {
   constructor(props){
     super(props)
   }
-    // componentDidMount(){
-    //   //debugger
-    //   if(!this.props.match.params.bookId){
+    componentDidMount(){
+      //debugger
+      // if(!this.props.match.params.bookId){
 
-    //     this.props.action_mount(this.props.match.params.bookId)
-    //   }
-    // }
+        this.props.action_mount(this.props.match.params.bookId)
+      // }
+    }
 
   render() {
 
-    const { action_submit, formType, review } = this.props;
+    const { action_mount, action_submit, formType, review } = this.props;
 
-    debugger
+    // debugger
     if (!this.props.review) return null;
     // if (!review) return null;
     return (
       <ReviewForm
-      // action_mount={action_mount}
+      action_mount={action_mount}
       action_submit={action_submit}
       formType={formType}
       review={review} 
@@ -36,9 +36,17 @@ class CreateReviewForm extends React.Component {
 
 const mapStateToProps = (state,ownProps) => {
 
-    debugger
+    // debugger
     const bookId = ownProps.match.params.bookId;
-    const book = state.entities.books[bookId];
+    let book;
+    if (state.entities.books[bookId] === undefined){
+      book = {
+        title: "",
+        image_url: ""
+      }
+    }else{
+      book = state.entities.books[bookId];
+    }
 
     return{
         review: {

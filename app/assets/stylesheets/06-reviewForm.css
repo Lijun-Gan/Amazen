@@ -41,7 +41,7 @@ p.postReview{
 .rating-star {
     float: left;
     height: 46px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
 }
 .rating-star:not(:checked) > input {
     position:absolute;
@@ -116,13 +116,38 @@ p.postReview{
     display: flex;
     margin-bottom: 9px;
     margin-top: 5px;
+    flex-wrap: wrap;
 }
 
 .review-count{
     margin-top: 6px;
     margin-left: 6px;
+    min-width: 154px;
 }
 
 .rating-star-min-width{
-    min-width: 260px;
+    /* min-width: 260px; */
+}
+
+.overall-rating-container{
+    margin-top: 20px;
+    border-top: solid 1px #e2e1e1;
+    margin-bottom: 70px;
+    padding-top: 20px;
+}
+
+.reviewForm-type{
+    font-size: 19px;
+    color: black;
+    font-weight: 600;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+.overallRating-words{
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 6px;
+;
 }

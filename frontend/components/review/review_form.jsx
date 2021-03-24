@@ -13,31 +13,14 @@ class ReviewForm extends React.Component{
     }
 
     // componentDidMount(){
-    // //     //debugger
-    //     if(this.props.formType === "Create Review" ){
-    //         //debugger
-    //         this.props.action_mount(this.props.match.params.bookId)
+    // //   //debugger
+    // //   if(!this.props.match.params.bookId){
 
-    //     }
-
-
-    //             ()=>{
-    //                 //debugger
-    //                 this.setState({
-    //                     review: {
-    //                         title: "" ,
-    //                         body: "",
-    //                         rating:  "",
-    //                         user_id: state.session.id,
-    //                         book_id: book_id,
-    //                         bookTitle: "",
-    //                         bookImgUrl: "" }
-    //                 })
-      
-    //             })
-    
-    
+    //     this.props.action_mount(this.props.match.params.bookId)
+    // //   }
     // }
+
+
 
     handleSubmit(e){
         e.preventDefault();
@@ -45,7 +28,6 @@ class ReviewForm extends React.Component{
         this.props.action_submit(this.state).then(()=>(this.props.history.push(`/books/${this.state.book_id}`)));
     }
     
-
     handleInput(type){
         return (e) => {
             this.setState({[type]: e.target.value});
@@ -64,7 +46,7 @@ class ReviewForm extends React.Component{
     }
 
     render(){
-        // //debugger
+        debugger
         // if (!(this.props.review)) {
         //     return <h1>Loading...</h1>;
         // }
@@ -76,13 +58,13 @@ class ReviewForm extends React.Component{
         return( 
 
             <div className='postForm-container'>
-                <h3>{this.props.formType}</h3>
-                 <p> state: {this.state.rating}</p>
-                 <p> prop: { this.props.review.rating}</p>
+                <h3 className="reviewForm-type">{this.props.formType}</h3>
+                 {/* <p> state: {this.state.rating}</p>
+                 <p> prop: { this.props.review.rating}</p> */}
 
                 <div id="PictureText">
-                    <img id="revieForm-bookPic" src={this.state.bookImgUrl} alt="book image"/>
-                    <span className="PictureText-text">{this.state.bookTitle}</span>
+                    <img id="revieForm-bookPic" src={this.props.review.bookImgUrl} alt="book image"/>
+                    <span className="PictureText-text">{this.props.review.bookTitle}</span>
                 </div>
 
                 <form onSubmit={this.handleSubmit}>
@@ -95,33 +77,38 @@ class ReviewForm extends React.Component{
                         /> */}
                     <br/>
 
-                  
-
-
-<div className="rating-star">
-    <input type="radio" id="star5" name="rate" value="5" defaultChecked={this.state.rating === 5} onClick={this.handleRating}/>
-    <label htmlFor="star5" title="text">5 stars</label>
-    <input type="radio" id="star4" name="rate" value="4" defaultChecked={this.state.rating=== 4} onClick={this.handleRating}/>
-    <label htmlFor="star4" title="text">4 stars</label>
-    <input type="radio" id="star3" name="rate" value="3" defaultChecked={this.state.rating === 3} onClick={this.handleRating}/>
-    <label htmlFor="star3" title="text">3 stars</label>
-    <input type="radio" id="star2" name="rate" value="2" defaultChecked={this.state.rating === 2} onClick={this.handleRating}/>
-    <label htmlFor="star2" title="text">2 stars</label>
-    <input type="radio" id="star1" name="rate" value="1" defaultChecked={this.state.rating === 1} onClick={this.handleRating}/>
-    <label htmlFor="star1" title="text">1 star</label>
+<div className="overall-rating-container">
+    <p className="overallRating-words" >Overall rating:</p>
+    <div className="rating-star">
+        <input type="radio" id="star5" name="rate" value="5" defaultChecked={this.state.rating === 5} onClick={this.handleRating}/>
+        <label htmlFor="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" defaultChecked={this.state.rating=== 4} onClick={this.handleRating}/>
+        <label htmlFor="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" defaultChecked={this.state.rating === 3} onClick={this.handleRating}/>
+        <label htmlFor="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" defaultChecked={this.state.rating === 2} onClick={this.handleRating}/>
+        <label htmlFor="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" defaultChecked={this.state.rating === 1} onClick={this.handleRating}/>
+        <label htmlFor="star1" title="text">1 star</label>
+    </div>
   </div>
-                                        
+                 
+                    <div>
+
                     <label>Add a headline:</label>
                         <input type="text" 
+                        placeholder="what's most important to know"
                         className="review-form-title-input"
                         value={this.state.title}
                         onChange={this.handleInput('title')}
                         />
+                    </div>
                     
                     <br/>
 
                     <label>Add a written review:</label>
                     <textarea onChange={this.handleInput('body')}
+                    placeholder="What did you like or dislike?"
                     className="review-form-body-input" 
                     value={this.state.body}>
                    </textarea>

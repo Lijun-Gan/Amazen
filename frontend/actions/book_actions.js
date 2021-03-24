@@ -11,9 +11,9 @@ const receiveBooks = (books) => {
     }
 };
 
-export const receiveBook = (book) => ({
+export const receiveBook = (oneBook) => ({
     type: RECEIVE_BOOK,
-    book
+    oneBook
 });
 
 export const receiveBookForReview = (book) => ({
