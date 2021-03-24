@@ -285,7 +285,7 @@
 
 .postReview{
     background-color: #ebedef;
-    border: solid 1px rgba(173, 177, 184); 
+    border: solid 1px rgb(173, 177, 184); 
     text-align: center;
     width: 288px;
     height: 18px;
