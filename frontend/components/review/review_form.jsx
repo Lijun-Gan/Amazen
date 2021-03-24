@@ -1,6 +1,5 @@
 import React from 'react';
-import NavBarContainer from '../home_page/navigation_container';
-import Footer from '../home_page/footnote';
+
 
 class ReviewForm extends React.Component{
     constructor(props){
@@ -98,7 +97,7 @@ class ReviewForm extends React.Component{
         // this.state.rating = this.props.review.rating
         return( 
             <div>
-            <NavBarContainer />
+
         
            
             <div className='postForm-container'>
@@ -166,7 +165,7 @@ class ReviewForm extends React.Component{
                 </form>
 
             </div>
-            <Footer />
+  
             </div>
         )
     }
