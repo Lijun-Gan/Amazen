@@ -223,7 +223,6 @@ h3{
     height: 2px;
     background-color: #E6E6E6;
     margin-bottom: 25px;
- 
     background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
 }
 
@@ -245,7 +244,7 @@ h2.crossline {
 
 .auth-errors {
     border: 1px solid #c40000;
-    box-shadow: 0 0 0 3px rgba(221,0,0,0.1) inset;
+    box-shadow: 0 0 0 3px rgba(221,0,0,.1) inset;
     border-radius: 4px;
     box-sizing: border-box;
     padding: 10px 26px 15px 15px;
