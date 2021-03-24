@@ -85,7 +85,7 @@ const NavBar = (props) => {
           <button className="sub-nav xlg">Pharmacy</button>
           <button className="sub-nav xlg">Video Games</button>
         </div>
-        <a className="subNav last" href="https://www.linkedin.com/in/lijun-gan/">Shop women-owned</a>
+        <a className="subNav last" href="https://github.com/Lijun-Gan/Amazen">Shop women-owned</a>
           <button ></button>
       </div>
 

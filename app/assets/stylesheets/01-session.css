@@ -12,6 +12,7 @@ a:-webkit-any-link{
     margin: 0 auto;
     width: 312px;
     border: 1px solid #e6e1e1;
+    border-radius: 4px;
     padding-left: 18px ;
     padding-right: 18px ;
     padding-bottom: 18px;
@@ -76,6 +77,12 @@ a:-webkit-any-link{
     border-radius: 3px;
 }
 
+.auth-btn.demo:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+
+
 #incorrect-email{
     width: 350px;
     height: 95px;
@@ -100,7 +107,7 @@ h5.input-error{
     margin-top: 0px;
     font-family: 'Lato', sans-serif;
     font-weight:520;
-    font-size: 0.9em;
+    font-size: 1em;
     
 }
 
@@ -173,6 +180,11 @@ button.backFirstSignIn{
     border: 1px solid #c5c0c0;
     font-size: 12.5px;
     font-family: 'Lato', sans-serif;
+}
+
+.create-account-btn:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
 }
 
 
