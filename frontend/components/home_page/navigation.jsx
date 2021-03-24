@@ -23,20 +23,16 @@ const NavBar = (props) => {
           <Link to="/"> 
             <img id="nav-amazen-logo" src={window.nav_amazenLogo} alt="amazen logo"/>
           </Link>
+          
 
-{/* 
-          <Link to="/">
-          <img id="nav-address" src={window.nav_address} alt="address"/>
-          </Link> */}
-
+<div className="nav-search-bar-container-outer">
 
 <span className="material-icons loc">room</span>
   <button className="nav-address-container">
     <p className="nav-address">Deliver to {username}</p> 
-
     <p className="nav-address-select">Select your address</p>
-
  </button>
+</div>
 
  
 
