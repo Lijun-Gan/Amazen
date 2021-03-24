@@ -275,17 +275,17 @@
 
 .deleteReview-btn:focus{
     border-color: #e77600;
-    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
 }
 .editReview-btn:focus{
     border-color: #e77600;
 
-    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
 }
 
 .postReview{
     background-color: #ebedef;
-    border: solid 1px rgb(173, 177, 184); 
+    border: solid 1px rgba(173, 177, 184); 
     text-align: center;
     width: 288px;
     height: 18px;
@@ -295,6 +295,6 @@
 
 .postReview:focus{
     border-color: #e77600;
-    box-shadow: 0 0 3px 2px rgb(228, 121, 17, 0.5);
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
 }
 
