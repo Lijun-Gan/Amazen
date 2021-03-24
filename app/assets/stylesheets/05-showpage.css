@@ -125,13 +125,49 @@
 
 #bsp-container-third h2{
     font-size: 24px;
-    margin-bottom: 20px;
 }
+#bsp-container-third{
+    
+    display: flex;
+}
+
+.book-reviews-container-left{
+    width: 30%;
+
+}
+
+
+/*  */
+#progressbar {
+    background-color: rgb(247 247 247);
+    border-radius: 5px;
+    border: 1px solid rgb(224 221 221);
+    margin-bottom: 15px;
+    width: 200px;
+}
+  
+  #progressbar>div {
+    background-color: #FFA41C;
+    height: 20px;
+
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  /*  */
+
+  .rating-bar-container{
+    display: flex;
+}
+
+
 
 #book-reviews-container-right{
     /* height: 800px; */
     border: 1px solid red;
     margin-bottom: 100px;
+    width: 60%;
+    margin-left: 60px;
 }
 
 .bsp-price-color{
@@ -248,11 +284,11 @@
 }
 
 .postReview{
-    background-color: #e7e9ec;
+    background-color: #ebedef;
     border: solid 1px rgb(173, 177, 184); 
     text-align: center;
-    width: 298px;
-    height: 20px;
+    width: 288px;
+    height: 18px;
     border-radius: 3px;
     margin-bottom: 20px;
 }
@@ -261,3 +297,4 @@
     border-color: #e77600;
     box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
 }
+

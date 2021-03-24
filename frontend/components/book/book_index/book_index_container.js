@@ -7,7 +7,6 @@ const mapStateToProps=(state,)=>{
     debugger
     return({
         books: Object.values(state.entities.books)
-       
     })
 }
 

@@ -39,9 +39,7 @@ class EditReviewForm extends React.Component {
       debugger
 
       const reviewId = ownProps.match.params.reviewId;
-      // const review =  state.entities.reviews[reviewId]
-      // const bookId = review.book_id
-    //debugger
+
     return {
 
       // review: state.entities.books[bookId].reviews[reviewId],

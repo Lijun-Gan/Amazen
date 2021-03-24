@@ -11,27 +11,7 @@ class BookIndex extends React.Component {
     this.props.fetchBooks()
   }
 
-  // render() {
-   
-  //   debugger
-  //   if (Boolean(this.props.books) === false) {
-  //         return <h1>Loading...</h1>;}
 
-  //   return (
-  //     <div>
-  //       <ul>
-  //         {/* {this.props.books.values.map((book)=>{
-     
-  //           <li key={book.id}>
-  //             <img src={book.image_url} alt=""/>
-  //             <p>{book.title}</p>
-  //             <p>{book.rating}</p>
-  //             <p>{book.price}</p>
-  //           </li>
-  // })} */}
-  //       </ul>
-  //     </div>
-  //   )
 
   render() {
     const { books } = this.props;
@@ -53,7 +33,7 @@ class BookIndex extends React.Component {
                 <span className='all-books-head'>Products</span>
                 <ul className='book-listing'>
                   
-                     {books.map((book,idx )=> <BookIndexItem key={idx} book={book}/>)}
+                     {books.map((book,idx )=> <BookIndexItem key={idx} book={book} reviews/>)}
                   
                     
                 </ul>

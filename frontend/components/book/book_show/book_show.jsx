@@ -72,7 +72,9 @@ class BookShow extends React.Component {
 
     render(){  
         let show_page = "page broken"
+       if(this.props.book === undefined ||  this.props.book.reviews === undefined )  return show_page
         debugger
+
         if (this.props.book){
             const {book} = this.props
             let author_bio;
@@ -92,19 +94,63 @@ class BookShow extends React.Component {
             // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
             // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
             
-            let totalRating  = 0
-    
+            let totalRating  = 0;
+            let avg_rating_out 
+            let avg_rating 
+            let total_review ;
+            let review_count;
+            let starRatesBar= [0,0,0,0,0];
+
             this.props.book.reviews.forEach((review)=>{
+                if(review.rating === 1)  starRatesBar[4] += 1;
+                if(review.rating === 2)  starRatesBar[3] += 1;
+                if(review.rating === 3)  starRatesBar[2] += 1;
+                if(review.rating === 4)  starRatesBar[1] += 1;
+                if(review.rating === 5)  starRatesBar[0] += 1;
+                 
                 totalRating += review.rating
             })
 
-            let avg_rating_out 
-            let avg_rating 
+            total_review = this.props.book.reviews.length
             avg_rating_out = (totalRating / this.props.book.reviews.length).toFixed(2)
-            avg_rating = ( avg_rating_out / 5 * 100).toString()+"%"
-            
-            let review_count = "(" + avg_rating_out.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
+        
+      
+    
+            // let pensentage = ((star /total_review).toFixed(2) * 100).toString() 
+            let showBar =  null;
 
+            if(this.props.book.reviews.length > 0) {
+                showBar = (
+                    starRatesBar.map((star,i)=>(
+                        <div className="rating-bar-container" key={i}>
+                            <span>{5 - i} star</span>
+                            <div id="progressbar" >
+                                <div style={{"width": `${((star /total_review).toFixed(2) * 100).toString()+ "%" }` }}></div>
+                            </div>
+                       
+                            <span>{((star /total_review).toFixed(2) * 100).toString()+ "%"}</span>
+                        </div>
+                    ))
+                    )
+                review_count =  "(" + avg_rating_out.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"             
+                avg_rating = ( avg_rating_out / 5 * 100).toString()+"%"
+                }else{
+                    showBar = (
+                        starRatesBar.map((star,i)=>(
+                            <div className="rating-bar-container" key={i}>
+                                <span>{5 - i} star</span>
+                                <div id="progressbar" >
+                                    <div style={{"width":  "0%" }}></div>
+                                </div>
+                           
+                                <span>{"0%"}</span>
+                            </div>
+                        ))
+                        ) 
+                    review_count = "(0 rating, 0 reviews)"
+                    avg_rating = "0%"
+                }
+                
 
             show_page = (
 
@@ -182,16 +228,38 @@ class BookShow extends React.Component {
                 </div>
 
                 <div id="bsp-container-third">
-                    <h2>Customer reviews</h2>
-                    
-                    {/* <button className="postReview">Write a customer review</button> */}
 
-                    <Link to={`/books/${book.id}/create-review`}>
-                        <p className="postReview">Write a customer review</p>
-                    </Link>
                     <div id="book-reviews-container-left">
 
+                        <h2>Customer reviews</h2>
+                        
+                
+
+
+                                       
+<div className="rating-star-min-width">
+    <div className="rating-star-container">
+        <div className="star-ratings-css">
+            <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        </div> 
+        <p className="review-count">{review_count}</p>
+    </div>
+
+</div>
+
+
+{ showBar }
+
+
+
+
+                        <Link to={`/books/${book.id}/create-review`}>
+                            <p className="postReview">Write a customer review</p>
+                        </Link>
                     </div>
+
+
 
                     <div id="book-reviews-container-right">
                         <ul>
