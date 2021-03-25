@@ -1,0 +1,73 @@
+.index-book-photo{
+    height: 310px;
+    width: 215px;
+    margin: auto;
+}
+
+.book-listing{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    width: 100%;
+} 
+
+.index-book-title{
+    width: 241px;
+    font-size: 13px;
+    margin: auto;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.bookItem-container{
+    width: 360px;
+    /* border: red solid 3px; */
+    /* padding: 20px; */
+}
+
+.home-top-picks{
+
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-left: 40px;
+
+}
+
+.home-rating-star-container{
+    display: flex;
+    margin: auto;
+    margin-left: 142px;
+    margin-top: 2px;
+}
+
+.index-book--price.home{
+    font-size: 13px;
+    text-align: center;
+    margin-top: 0px;
+    color: #B12704;
+}
+
+/* .free-ship-cap.home{
+
+} */
+
+.star-ratings-css-home-page{
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 12px;
+    height: 20px;
+    width: 60px;
+    margin: 0 0;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+
+}
+
+#home-page-container{
+    width: 95%;
+    max-width: 1512px;
+    margin: auto;
+}
+

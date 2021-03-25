@@ -18,7 +18,7 @@
 
 #category_img{
     height: 110px;
-    width: 120px;
+    width: 116px;
     border: 1px transparent solid;
 }
 
@@ -29,10 +29,10 @@
 }
 
 #select-category-cantainer{
-    /* margin-left: 35px; 
-    margin-right: 35px; */
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 35px; 
+    /* margin-right: 35px; */
+    /* margin-left: 1%; */
+    /* margin-right: 3%; */
 }
 
 #select-category{

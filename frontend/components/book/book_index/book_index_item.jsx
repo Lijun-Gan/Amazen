@@ -14,7 +14,7 @@ const BookIndexItem = ({book}) => {
 
     let avg_rating = ( book.avg_rating / 5 * 100).toString()+"%"
     let review_ratings = "("+ book.avg_rating.toString() +")"
-
+// 
     // let avg_rating;
     // let review_ratings;
     // let totalRating  = 0;
@@ -41,19 +41,25 @@ const BookIndexItem = ({book}) => {
                 <div className='book-photo'>
                     <img className='index-book-photo' src={book.image_url}></img>
                 </div>
+
+<div className="showPage-book-info">
+
                 <p className='index-book-title'>{book.title}</p>
 
 
 
 <div className="home-rating-star-container">
-    <div className="star-ratings-css">
+    <div className="star-ratings-css-home-page">
         <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div> 
-    <p className="review-count">{review_ratings}</p>
+    <p className="review-count">{book.total_reviews}</p>
+    {/* book.reviewIds.length */}
 </div>
-                <p className="index-book--price home">Price: { "$ "+ Number.parseFloat(parseFloat(book.price)).toFixed(2)}</p>
+                <p className="index-book--price home">{ "$ "+ Number.parseFloat(parseFloat(book.price)).toFixed(2)}</p>
                 {/* <p className='free-ship-cap home'>FREE Shipping by Amazen</p> */}
+</div>         
+            
             </Link>
             {/* </button> */}
         </li>

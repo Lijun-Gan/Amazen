@@ -83,9 +83,9 @@ p.postReview{
 .star-ratings-css {
     unicode-bidi: bidi-override;
     color: #c5c5c5;
-    font-size: 20px;
+    font-size: 15px;
     height: 25px;
-    width: 100px;
+    width: 75px;
     margin: 0 0;
     position: relative;
     padding: 0;
@@ -114,14 +114,18 @@ p.postReview{
 
 .rating-star-container{
     display: flex;
-    margin-top: 5px;
+    margin-top: 3px;
     flex-wrap: wrap;
 }
 
 .review-count{
-    margin-top: 6px;
-    margin-left: 12px;
-    min-width: 154px;
+
+    margin-top: 3px;
+    margin-left: 6px;
+    /* min-width: 134px; */
+    font-size: 11px;
+    color: #007185;
+
 }
 
 .progress-show-stars{

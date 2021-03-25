@@ -24,7 +24,7 @@ class BookIndex extends React.Component {
     } else {
         return (
             <div className='book-index'>
-                <span className='home-top-picks'>Top Picks For You</span>
+                <p className='home-top-picks'>Top Picks For You</p>
                 <ul className='book-listing'>
                   
                      {books.map((book,idx )=> <BookIndexItem key={idx} book={book} />)}

@@ -6,7 +6,7 @@ import BookIndex from '../book/book_index/book_index_container';
 
 const HomePage = (props)=>{
     return(
-        <div>
+        <div id="home-page-container">
             {/* <NavBarContainer /> */}
             <HomePageCategory />
             <BookIndex />

@@ -101,7 +101,7 @@ class BookShow extends React.Component {
             })
 
             total_review = reviews.length
-            avg_rating_out = (totalRating / reviews.length).toFixed(2)
+            avg_rating_out = (totalRating / Math.max(1,reviews.length)).toFixed(2)
         
             
     
@@ -154,8 +154,9 @@ class BookShow extends React.Component {
                     <div className="bsp-detail">
                         <p className="bsp-title">{book.title}</p>
                         <p className="bsp-publication">{this.handleDate(book.publication_date)}</p>
-                        <span>by </span>
-                        <span className="bsp-author">{book.author} (Author)</span>
+                        <span className ="font-for- author">by </span>
+                        <span className="bsp-author">{book.author} </span>
+                        <span className ="font-for-author">(Author)</span>
                
 <div className="rating-star-min-width">
     <div className="rating-star-container">
@@ -163,7 +164,7 @@ class BookShow extends React.Component {
             <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         </div> 
-        <p className="review-count">{review_count}</p>
+        <p className="review-count-top showpage">{total_review} ratings</p>
     </div>
 
 </div>
@@ -207,6 +208,7 @@ class BookShow extends React.Component {
                         <img id="dropDownQuantity" src={window.dropDownQuantity} alt="quantity"/>
                         <img id="addToCart-btn" src={window.addToCart} alt="add to cart"/>
                         <img id="addToCart-btn" src={window.buyNow} alt="buy now"/>
+                        <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
                         <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
                         <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>
                         <img id="addToCart-btn" src={window.addToList} alt="Add to List"/>
@@ -231,23 +233,23 @@ class BookShow extends React.Component {
                         <h2>Customer reviews</h2>
                         
                 
-
-
                                        
 <div className="rating-star-min-width">
     <div className="rating-star-container">
-        <div className="star-ratings-css">
+        <div className="star-ratings-css-review bigger">
             <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         </div> 
-        <p className="review-count">{review_count}</p>
+        <p className="review-count bigger">{avg_rating_out} out of 5</p>
     </div>
 
 </div>
 
-<p className="givenSpace"></p>
+<p className="givenSpace">{total_review} global ratings</p>
 
 { showBar }
+
+<a className="rating-cal" href="https://github.com/Lijun-Gan/Amazen">How are ratings calculated?</a>
 
 
                         <p className="title-to-review">Review this Product</p>
@@ -262,6 +264,7 @@ class BookShow extends React.Component {
 
 
                     <div id="book-reviews-container-right">
+                        <p className="us-top-reviews">Top reviews from the United States</p>
                         <ul>
                             {reviews.map((review,idx)=>(
                                 <li key={idx}>
@@ -269,7 +272,7 @@ class BookShow extends React.Component {
          
                                     <div id="PictureText">
                                         <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
-                                        <span className="PictureText-text">{review.review_author}</span>
+                                        <span className="pictureText-text-user">{review.review_author}</span>
                                     </div>
 
                                     <div className="rating-star-container">
@@ -280,10 +283,10 @@ class BookShow extends React.Component {
         <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div> 
     
-                                        <span className="PictureText-title">{review.title}</span>
+                                        <span className="bsp-PictureText-title">{review.title}</span>
                                     </div>
 
-                                    <p className="reviewDateNBody">reviewed on {this.handleDate(review.created_at)}</p>
+                                    <p className="reviewDateNBody">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
                                     <p className="reviewDateNBody">{review.body}</p>
 
                                     {review.user_id === this.props.currentUser ? 
