@@ -1,5 +1,48 @@
 .index-book-photo{
     height: 310px;
-    width: 210px;
-    margin: 20px;
+    width: 220px;
+    margin: auto;
 }
+
+.book-listing{
+    display: flex;
+    flex-wrap: wrap; 
+} 
+
+.index-book-title{
+    width: 280px;
+    font-size: 13px;
+    margin: auto;
+    padding-top: 25px;
+}
+
+.bookItem-container{
+    width: 380px;
+    /* border: red solid 3px; */
+    padding: 20px;
+}
+
+.home-top-picks{
+
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-left: 40px;
+
+}
+
+.home-rating-star-container{
+    display: flex;
+    margin: auto;
+    margin-left: 120px;
+    margin-top: 6px;
+}
+.index-book--price.home{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* .free-ship-cap.home{
+
+} */

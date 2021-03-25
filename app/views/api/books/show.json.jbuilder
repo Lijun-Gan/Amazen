@@ -15,7 +15,7 @@ json.book do
     json.extract! @book, :id, :title, :description, :category, :publication_date, :image_url
     json.author @book.book_author.name 
     json.biography @book.book_author.biography
-    json.avg_rating (total_rating.to_f / @book.reviews.length).round(2)
+    json.avg_rating (total_rating.to_f / ([1,@book.reviews.length].max)).round(2)
     json.prices do 
         json.array! @book.prices do |price|
             json.extract! price, :book_format, :price

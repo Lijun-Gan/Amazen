@@ -14,27 +14,20 @@ class BookIndex extends React.Component {
 
 
   render() {
+    debugger
     const { books } = this.props;
     if (books.length === 0 ) {
         return (
           <h1>something wrong</h1>
-            // <div className='no-match'>
-            //     <span className='no-match-message'>
-            //         Your search did not match any products.
-            //     </span>
-            //     <span className='try-searching'>
-            //         Try checking your spelling or use more general terms.
-            //     </span>
-            // </div>
         )
         
     } else {
         return (
             <div className='book-index'>
-                <span className='all-books-head'>Products</span>
+                <span className='home-top-picks'>Top Picks For You</span>
                 <ul className='book-listing'>
                   
-                     {books.map((book,idx )=> <BookIndexItem key={idx} book={book} reviews/>)}
+                     {books.map((book,idx )=> <BookIndexItem key={idx} book={book} />)}
                   
                     
                 </ul>
