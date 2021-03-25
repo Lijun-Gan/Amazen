@@ -138,6 +138,7 @@ p.postReview{
 
 .rating-star-min-width{
     /* min-width: 260px; */
+    margin-bottom: 10px;
 }
 
 .overall-rating-container{
