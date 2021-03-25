@@ -73,7 +73,11 @@ const NavBar = (props) => {
           <button className="sub-nav xsm">Prime</button>
           <button className="sub-nav xsm">Customer Service</button>
           <button className="sub-nav sm">New Release</button>
+          <Link to="/" > 
           <button className="sub-nav sm">Books</button>
+          </Link>
+      
+
           <button className="sub-nav md">Fashion</button>
           <button className="sub-nav md">Kindle Books</button>
           <button className="sub-nav md">Gift Cards</button>

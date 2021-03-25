@@ -238,18 +238,20 @@ class BookShow extends React.Component {
                         
     {/*  */}
 
-<div className="addCartBtn">
+<div className="addCartBtn-container">
 
-    <button className='addToCart-btn'>Add to Cart</button>
+    {/* <button className='addToCart-btn'>Add to Cart</button> */}
+    <button className='buy-now-btn cart'>Add to Cart</button>
     <p className="givenSmallSpace"></p>
     <button className='buy-now-btn'>Buy Now</button>
-</div>
+                        <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
 
                     
-                        <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
                         <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
                         <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>
-                        <img id="addToCart-btn" src={window.addToList} alt="Add to List"/>
+                        {/* <img id="addToCart-btn" src={window.addToList} alt="Add to List"/> */}
+                        <button className='addToList'>Add to List</button>
+</div>
                     </div>
 
                 </div>

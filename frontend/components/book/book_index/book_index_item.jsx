@@ -14,23 +14,7 @@ const BookIndexItem = ({book}) => {
 
     let avg_rating = ( book.avg_rating / 5 * 100).toString()+"%"
     let review_ratings = "("+ book.avg_rating.toString() +")"
-// 
-    // let avg_rating;
-    // let review_ratings;
-    // let totalRating  = 0;
-    // debugger
 
-    // if(book.reviews.length> 0) {
-    //     book.reviews.forEach((review)=>{
-    //         totalRating += review.rating
-    //     })
-    //     avg_rating = ((totalRating / book.reviews.length / 5).toFixed(2) * 100).toString()+"%";
-    //     review_ratings = "("+ ((totalRating / book.reviews.length).toFixed(2)).toString() +")"
-
-    // }else{
-    //     avg_rating = "0%";
-    //     review_ratings = "(0.0) "
-    // }
 
 
     return (

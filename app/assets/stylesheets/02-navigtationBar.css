@@ -73,6 +73,9 @@ span.nav-signin{
     height: 13px
 
 }
+button.sm{
+    color: white
+}
 
 p.nav-signin{
     color: white;

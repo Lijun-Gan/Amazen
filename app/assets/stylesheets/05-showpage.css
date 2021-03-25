@@ -74,13 +74,6 @@
 }
 
 
-#addCartContainer{
-    width: 270px;
-    padding: 10px 14px ;
-    border: #e6e3e3 3px solid;
-    border-radius: 8px;
-    height: 370px
-}
 
 .diff-price{
     font-size: 12px;
@@ -368,4 +361,5 @@ a.rating-cal{
 
 .showPage-book-info{
     margin-bottom: 20px;
+    /* width: 150px; */
 }

@@ -4,7 +4,7 @@
 #homeCategory h1 {
     font-size: 38px;
     font-weight: lighter;
-    color: #797676;
+    color:  #0F1111;
     text-align: center;
     margin-top: 25px;
 }
@@ -17,15 +17,35 @@
 }
 
 #category_img{
-    height: 110px;
-    width: 116px;
+    height: 80px;
+    width: 80px;
     border: 1px transparent solid;
+    margin-bottom: 10px;
 }
+
+
 
 #catPic{
     height: 130px;
     width: auto; 
     padding-right: 2px;
+    margin: auto;
+}
+
+
+#catPic:hover{
+    text-decoration:underline;
+    text-decoration-color: red;
+}
+
+
+#catPic span{
+    font-size: 11px;
+    display: table-caption;
+    text-align: center;
+    min-width: 82px;
+    color: black;
+    font-weight: 600;
 }
 
 #select-category-cantainer{
@@ -52,42 +72,44 @@
     display: none;
 }
 
-@media only screen and (min-width: 1370px) { 
+
+
+@media only screen and (min-width: 800px) { 
     #catPic.xxlg { 
         display: flex; 
     } 
 } 
 
-@media only screen and (min-width: 1203px) { 
+@media only screen and (min-width: 860px) { 
     #catPic.xlg { 
         display: flex; 
     } 
 } 
-@media only screen and (min-width: 1000px) { 
+@media only screen and (min-width: 844px) { 
     #catPic.lg { 
         display: flex; 
     } 
 } 
 
-@media only screen and (min-width: 780px) { 
+@media only screen and (min-width: 800px) { 
     #catPic.md { 
         display: flex; 
     } 
 } 
 
-@media only screen and (min-width: 700px) { 
+@media only screen and (min-width: 650px) { 
     #catPic.sm { 
         display: flex; 
     } 
 } 
 
-@media only screen and (min-width: 570px) { 
+@media only screen and (min-width: 490px) { 
     #catPic.xsm { 
         display: flex; 
     } 
 } 
 
-@media only screen and (min-width: 480px) { 
+@media only screen and (min-width: 350px) { 
     #catPic.xxsm { 
         display: flex; 
     } 

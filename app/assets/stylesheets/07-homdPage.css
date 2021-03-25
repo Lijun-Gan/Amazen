@@ -1,6 +1,6 @@
 .index-book-photo{
-    height: 310px;
-    width: 215px;
+    height: 198px;
+    width: 140px;
     margin: auto;
 }
 
@@ -12,7 +12,7 @@
 } 
 
 .index-book-title{
-    width: 241px;
+    width: 190px;
     font-size: 13px;
     margin: auto;
     padding-top: 25px;
@@ -20,7 +20,7 @@
 }
 
 .bookItem-container{
-    width: 360px;
+    /* width: 360px; */
     /* border: red solid 3px; */
     /* padding: 20px; */
 }
@@ -37,7 +37,7 @@
 .home-rating-star-container{
     display: flex;
     margin: auto;
-    margin-left: 142px;
+    margin-left: 60px;
     margin-top: 2px;
 }
 
@@ -66,8 +66,8 @@
 }
 
 #home-page-container{
-    width: 95%;
-    max-width: 1512px;
+    width: 94%;
+    /* max-width: 1512px; */
     margin: auto;
 }
 
