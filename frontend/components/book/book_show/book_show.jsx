@@ -19,30 +19,17 @@ class BookShow extends React.Component {
 
 
     handlePrice(e){
+        // debugger
+
         const book_format_price = e.target.value.split(",")
+
+        // debugger
         this.setState({
             format: book_format_price[0],
             price: book_format_price[1]
         })
     }
 
-    // handleRating(rating){
-    //     if(rating == 5){
-    //        return  <img id="ReviewStars" src={window.five_star} alt="rating"/>
-    //     }
-    //     if(rating == 4){
-    //        return  <img  id="ReviewStars" src={window.four_star} alt="rating"/>
-    //     }
-    //     if(rating == 3){
-    //        return  <img id="ReviewStars" src={window.three_star} alt="rating"/>
-    //     }
-    //     if(rating == 2){
-    //        return  <img id="ReviewStars" src={window.two_star} alt="rating"/>
-    //     }
-    //     if(rating == 1){
-    //        return  <img  id="ReviewStars" src={window.one_star} alt="rating"/>
-    //     }
-    // }
 
     handleDate(unformatedDate){
 
@@ -150,7 +137,8 @@ class BookShow extends React.Component {
                 }
                 
 
-            show_page = (
+            return(
+
 
             <div id="bsp-container">
 
@@ -176,8 +164,6 @@ class BookShow extends React.Component {
 
 </div>
 
-
-                        {/* <img id="fiveStar" src={window.avg_star} alt="rating"/> */}
                         <div className="book-catego">
                             <span>Category: </span>
                             <span className="bsp-catogory">{book.category}</span>
@@ -192,6 +178,12 @@ class BookShow extends React.Component {
                                return (
                                <li key={idx}>
                         
+                                   {/* <button className="price-btn" value={formatPrice} onClick={this.handlePrice}>
+                                       <span className="book-show-format">{formatPrice.book_format}</span>
+                                        <span className="book-show-price">{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</span>
+                                    </button> */}
+
+
                                    <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
                                    <br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
               
@@ -311,13 +303,6 @@ class BookShow extends React.Component {
             </div>            
 
         )}
-        return (
-            <div>
-                {/* <NavBarContainer /> */}
-                {show_page}
-                {/* <Footer /> */}
-            </div>
-        )
     } 
 }
   
