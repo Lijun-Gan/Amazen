@@ -31,13 +31,15 @@
 #select-category-cantainer{
     /* margin-left: 35px; 
     margin-right: 35px; */
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 #select-category{
     display: flex;
     margin-bottom: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 #category_img:hover{
