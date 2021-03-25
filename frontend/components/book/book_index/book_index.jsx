@@ -15,16 +15,17 @@ class BookIndex extends React.Component {
 
   render() {
     const { books } = this.props;
-    if (books.length === 0) {
+    if (books.length === 0 ) {
         return (
-            <div className='no-match'>
-                <span className='no-match-message'>
-                    Your search did not match any products.
-                </span>
-                <span className='try-searching'>
-                    Try checking your spelling or use more general terms.
-                </span>
-            </div>
+          <h1>something wrong</h1>
+            // <div className='no-match'>
+            //     <span className='no-match-message'>
+            //         Your search did not match any products.
+            //     </span>
+            //     <span className='try-searching'>
+            //         Try checking your spelling or use more general terms.
+            //     </span>
+            // </div>
         )
         
     } else {

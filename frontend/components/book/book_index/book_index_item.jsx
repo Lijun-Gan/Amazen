@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BookIndexItem = ({ book }) => {
     
-    let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
+    let avg_rating = (Math.max(book.avg_rating / 5 )* 100).toString()+"%"
     let review_ratings = "("+ book.avg_rating.toString() +")"
 
     // let avg_rating;

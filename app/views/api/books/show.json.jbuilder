@@ -1,6 +1,15 @@
-total_rating =  @book.reviews.inject(0) do |sum,review|
-    sum + review.rating
+# total_rating =  @book.reviews.inject(0) do |sum,review|
+#     sum + review.rating
+# end
+
+total_rating = 0
+review_ids = []
+
+@book.reviews.each do |review|
+    total_rating += review.rating
+    review_ids << (review.id)
 end
+
 
 json.book do 
     json.extract! @book, :id, :title, :description, :category, :publication_date, :image_url
@@ -14,18 +23,8 @@ json.book do
     end
 
  
-
-    # json.reviews do
-    #     json.array! @book.reviews 
-    # end
-    json.reviews do
-        json.array! @book.reviews.each do |review|
-                json.extract! review, :id, :book_id, :title, :body, :rating, :user_id,:created_at,:updated_at
-                json.review_author review.review_author.username
-                json.book @book.title
-        end
-    end
-            
+json.reviewIds review_ids
+         
 end
 
 

@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import BookIndex from './book_index';
 import {fetchBooks} from '../../../actions/book_actions'
 
-const mapStateToProps=(state,)=>{
+const mapStateToProps=(state)=>{
 
     debugger
     return({

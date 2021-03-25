@@ -14,6 +14,7 @@ class BookShow extends React.Component {
     }
   
     componentDidMount(){
+        debugger
       this.props.fetchBook(this.props.match.params.id)
     }
 
@@ -56,12 +57,15 @@ class BookShow extends React.Component {
     
 
     render(){  
+        debugger
         let show_page = <h1>Loading......</h1>
-       if(this.props.book === undefined ||  this.props.book.reviews === undefined )  return show_page
+        debugger
+       if(this.props.book === undefined ||  this.props.reviews === undefined || this.props.book.prices === undefined)  return show_page
         debugger
 
         if (this.props.book){
-            const {book} = this.props
+
+            const {book, reviews} = this.props
             let author_bio;
   
 
@@ -86,7 +90,7 @@ class BookShow extends React.Component {
             let review_count;
             let starRatesBar= [0,0,0,0,0];
 
-            this.props.book.reviews.forEach((review)=>{
+            reviews.forEach((review)=>{
                 if(review.rating === 1)  starRatesBar[4] += 1;
                 if(review.rating === 2)  starRatesBar[3] += 1;
                 if(review.rating === 3)  starRatesBar[2] += 1;
@@ -96,15 +100,15 @@ class BookShow extends React.Component {
                 totalRating += review.rating
             })
 
-            total_review = this.props.book.reviews.length
-            avg_rating_out = (totalRating / this.props.book.reviews.length).toFixed(2)
+            total_review = reviews.length
+            avg_rating_out = (totalRating / reviews.length).toFixed(2)
         
             
     
             // let pensentage = ((star /total_review).toFixed(2) * 100).toString() 
             let showBar =  null;
 
-            if(this.props.book.reviews.length > 0) {
+            if(reviews.length > 0) {
                 showBar = (
                     starRatesBar.map((star,i)=>(
                         <div className="rating-bar-container" key={i}>
@@ -117,18 +121,18 @@ class BookShow extends React.Component {
                         </div>
                     ))
                     )
-                review_count =  "(" + avg_rating_out.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"             
+                review_count =  "(" + avg_rating_out.toString() + " rating" + ", " + reviews.length.toString() + " reviews" + ")"             
                 avg_rating = ( avg_rating_out / 5 * 100).toString()+"%"
                 }else{
                     showBar = (
                         starRatesBar.map((star,i)=>(
                             <div className="rating-bar-container" key={i}>
-                                <span>{5 - i} star</span>
+                                <span  className = "progress-show-stars" >{5 - i} star</span>
                                 <div id="progressbar" >
                                     <div style={{"width":  "0%" }}></div>
                                 </div>
                            
-                                <span>{"0%"}</span>
+                                <span className="progress-show-percent">{"0%"}</span>
                             </div>
                         ))
                         ) 
@@ -259,7 +263,7 @@ class BookShow extends React.Component {
 
                     <div id="book-reviews-container-right">
                         <ul>
-                            {book.reviews.map((review,idx)=>(
+                            {reviews.map((review,idx)=>(
                                 <li key={idx}>
                           
          
