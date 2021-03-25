@@ -17,7 +17,7 @@
 }
 
 .bookItem-container{
-    width: 380px;
+    width: 360px;
     /* border: red solid 3px; */
     padding: 20px;
 }
@@ -34,7 +34,7 @@
 .home-rating-star-container{
     display: flex;
     margin: auto;
-    margin-left: 120px;
+    margin-left: 110px;
     margin-top: 6px;
 }
 .index-book--price.home{
