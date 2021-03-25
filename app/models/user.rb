@@ -64,6 +64,10 @@ class User < ApplicationRecord
         class_name: :Review,
         primary_key: :id,
         foreign_key: :user_id
+
+    has_many :carts,
+        foreign_key: :user_id,
+        class_name: :Cart
     
 
 end

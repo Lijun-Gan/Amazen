@@ -55,13 +55,16 @@ class BookShow extends React.Component {
         return `${monthName} ${date}, ${year}`
     }
     
+    handleBookQuantity(){
+
+    }
 
     render(){  
-        debugger
+
         let show_page = <h1>Loading......</h1>
-        debugger
+
        if(this.props.book === undefined ||  this.props.reviews === undefined || this.props.book.prices === undefined)  return show_page
-        debugger
+
 
         if (this.props.book){
 
@@ -78,7 +81,26 @@ class BookShow extends React.Component {
                 ) 
             }
 
-            debugger
+            let  button= ""
+            if (this.props.currentUser){
+                button = 
+                <li style={{display: 'flex', 'flexDirection':'column'}}>
+                <select className="book-quantity-select">
+                    <option value="1">Qty: 1</option>
+                    <option value="2">Qty: 2</option>
+                    <option value="3">Qty: 3</option>
+                    <option value="4">Qty: 4</option>
+                </select>
+                <button className='product-sidebar-button'>Add to Cart</button>
+                <button className='product-sidebar-button lower-button'>Buy Now</button>
+                </li>
+            }else{
+               button= <li style={{display: 'flex', 'flexDirection':'column'}}>
+                <button className='product-sidebar-button' onClick={(e)=> this.handleClick(e,'/signup')}>Sign up</button>
+                <button className='product-sidebar-button lower-button' onClick={(e) => this.handleClick(e, '/login')}>Sign In</button>
+                </li>
+            }
+
 
             // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
             // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
@@ -166,7 +188,6 @@ class BookShow extends React.Component {
         </div> 
         <p className="review-count-top showpage">{total_review} ratings</p>
     </div>
-
 </div>
 
                         <div className="book-catego">
@@ -205,9 +226,26 @@ class BookShow extends React.Component {
                         
                         <p className="freeShipping">& FREE shipping</p>
                         <p className="inStock-color">In Stock</p>
-                        <img id="dropDownQuantity" src={window.dropDownQuantity} alt="quantity"/>
-                        <img id="addToCart-btn" src={window.addToCart} alt="add to cart"/>
-                        <img id="addToCart-btn" src={window.buyNow} alt="buy now"/>
+
+    {/*  */}
+                <select className="book-quantity-select" onChange={this.handleBookQuantity} >
+                    <option value="1">Qty: 1</option>
+                    <option value="2">Qty: 2</option>
+                    <option value="3">Qty: 3</option>
+                    <option value="4">Qty: 4</option>
+                </select>
+
+                        
+    {/*  */}
+
+<div className="addCartBtn">
+
+    <button className='addToCart-btn'>Add to Cart</button>
+    <p className="givenSmallSpace"></p>
+    <button className='buy-now-btn'>Buy Now</button>
+</div>
+
+                    
                         <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
                         <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
                         <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>

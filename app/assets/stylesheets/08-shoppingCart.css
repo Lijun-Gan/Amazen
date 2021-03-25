@@ -1,0 +1,90 @@
+.book-quantity-select{
+
+    width: 65px;
+    outline: 0;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid lightgray;
+    box-shadow: 0px 1px 5px lightgrey;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    padding: 2px;
+    margin-top: 12px;
+    margin-bottom: 28px;
+}
+
+.book-quantity-select:focus {
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa;
+    background: #EDFDFF;
+}
+
+.addCartBtn{
+    border: solid 1px;
+    height: 23px;
+    width: 218px;
+    background: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    text-align: center;
+    border-radius: 4px;
+    padding-top: 5px;
+    font-size: 13px;
+}
+
+#addCartBtn{
+    width: 218px;
+}
+
+.buy-now-btn{
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background:  rgb(237, 146, 32);
+    /* background-image: linear-gradient(rgb(244, 188, 119),); */
+}
+
+/* .buy-now-btn:hover {
+    background-image: linear-gradient(rgb(244, 188, 119), rgb(225, 133, 18));
+} */
+
+.bsp-price-color{
+    color: red;
+    font-size: 14px;
+    margin-left: 96px;
+}
+
+.secure-trans{
+    font-size: 14px;
+    color: #007185;
+    margin-top: 55px;
+}
+
+
+
+.givenSmallSpace{
+    margin: 18px;
+}
+
+
+#dropDownQuantity{
+    height: 28px;
+    width: 68px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.inStock-color{
+    color: rgb(4, 139, 4);
+    font-size: 18px;
+
+}
+
+.freeShipping{
+    margin-left: 84px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}

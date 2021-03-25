@@ -1,7 +1,9 @@
 #bsp-container{
-    width: 86%;
+    width: 70%;
     margin: auto;
-    margin-top: 55px
+    margin-top: 55px;
+    min-width: 1000px;
+    max-width: 1500px;
 }
 
 #showPage-bookImg{
@@ -73,7 +75,7 @@
 
 
 #addCartContainer{
-    /* width: 270px; */
+    width: 270px;
     padding: 10px 14px ;
     border: #e6e3e3 3px solid;
     border-radius: 8px;
@@ -181,35 +183,7 @@
     margin-left: 100px;
 }
 
-.bsp-price-color{
-    color: red;
-    font-size: 14px;
-    margin-left: 96px;
-}
 
-
-#addToCart-btn{
-    height: 36px;
-    width: 218px;
-}
-
-#dropDownQuantity{
-    height: 28px;
-    width: 68px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-}
-
-.inStock-color{
-    color: rgb(4, 139, 4);
-    font-size: 18px;
-}
-
-.freeShipping{
-    margin-left: 84px;
-    margin-top: 5px;
-    margin-bottom: 12px;
-}
 
 .SelectForm{
     margin: 5px 4px;
@@ -361,11 +335,6 @@ a.rating-cal{
     margin-top: 10px;
 }
 
-.secure-trans{
-    font-size: 14px;
-    color: #007185;
-    margin-top: 5px;
-}
 
 .review-count-top.showpage{
     margin-top: 5px;

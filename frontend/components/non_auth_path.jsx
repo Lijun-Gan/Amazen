@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./home_page/home_page";
 
-import { Route,Switch} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import {ProtectedRoute} from '../util/route_utils';
 
 import BookShowContainer from './book/book_show/book_show_container'
@@ -9,6 +9,7 @@ import CreateReviewForm from './review/create_review_form_container';
 import EditReviewForm from './review/edit_review_form_container';
 import NavBarContainer from './home_page/navigation_container'
 import Footer from "./home_page/footnote";
+import cartContainer from './cart/cart_container';
 
 
 const NonAuthPath = () => (
@@ -22,6 +23,8 @@ const NonAuthPath = () => (
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
    
+        <Route exact path="/cart" component={cartContainer} />
+
     </Switch>
 
     <Footer /> 

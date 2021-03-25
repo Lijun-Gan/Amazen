@@ -15,5 +15,9 @@ class Book < ApplicationRecord
         class_name: :Review,
         primary_key: :id,
         foreign_key: :book_id
+
+    has_many :carts,
+        foreign_key: :book_id,
+        class_name: :Cart
     
 end
