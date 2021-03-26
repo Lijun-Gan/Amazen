@@ -37,12 +37,12 @@ class ReviewForm extends React.Component{
         }
 
         if(this.state.review.title === ""){
-            invalid_title = <h5 className="input-error">❗ Please enter your headline</h5>
+            invalid_title = <h5 className="input-error">❗ Please enter your headline.</h5>
             errors_count++;
         }
 
         if(this.state.review.body === ""){
-            invalid_body = <h5 className="input-error">❗ Please eneter your review</h5>
+            invalid_body = <h5 className="input-error">❗ Please enter your review.</h5>
             errors_count++;
         }
 
@@ -141,7 +141,7 @@ class ReviewForm extends React.Component{
 
                     <p className="add-headline">Add a headline:</p>
                         <input type="text" 
-                        placeholder="What's most important to know"
+                        placeholder="What's most important to know?"
                         className="review-form-title-input"
                         value={this.state.review.title}
                         onChange={this.handleInput('title')}

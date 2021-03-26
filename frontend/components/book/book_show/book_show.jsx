@@ -5,9 +5,10 @@ import {Link} from "react-router-dom";
 class BookShow extends React.Component {
     constructor(props) {
       super(props);
+
       this.state = ({
         //   book: this.props.book,
-          format: 'Select format ',
+          format: 'Select format',
           price: '0.00'
       })
       this.handlePrice = this.handlePrice.bind(this)
@@ -70,6 +71,11 @@ class BookShow extends React.Component {
 
             const {book, reviews} = this.props
             let author_bio;
+
+            if(this.state.price === '0.00'){
+                this.state.price = book.prices[0].price
+                this.state.format =book.prices[0].book_format
+            }
   
 
             if (book.biography ){
@@ -100,7 +106,6 @@ class BookShow extends React.Component {
                 <button className='product-sidebar-button lower-button' onClick={(e) => this.handleClick(e, '/login')}>Sign In</button>
                 </li>
             }
-
 
             // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
             // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
@@ -181,7 +186,7 @@ class BookShow extends React.Component {
                         <span className ="font-for-author">(Author)</span>
                
 <div className="rating-star-min-width">
-    <div className="rating-star-container">
+    <div className="rating-star-container-bookShow-top">
         <div className="star-ratings-css">
             <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
@@ -216,11 +221,13 @@ class BookShow extends React.Component {
                                </li>
                            )})}
                         </ul>
+                        {/* <p className="author-bio-name">About the Book</p> */}
+                        <p className="about-book">{book.description}</p>
                
                     </div>
 
                     <div id="addCartContainer">
-                        <p className="SelectForm">{this.state.format}: </p>
+                        <p className="SelectForm">{this.state.format + ":"} </p>
                         <span className="bsp-price-color">Price: { "$ "+ Number.parseFloat(parseFloat(this.state.price)).toFixed(2)}</span>
                        
                         
@@ -258,9 +265,6 @@ class BookShow extends React.Component {
 
                 <div id="bsp-container-secend">
                     
-                    <p className="author-bio-name">About the Book</p>
-                    <p className="author-bio-p">{book.description}</p>
-               
                    
                    {author_bio}
 
@@ -280,7 +284,7 @@ class BookShow extends React.Component {
             <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
             <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         </div> 
-        <p className="review-count bigger">{avg_rating_out} out of 5</p>
+        <p className="grobal-review-count">{avg_rating_out} out of 5</p>
     </div>
 
 </div>
@@ -297,7 +301,7 @@ class BookShow extends React.Component {
 
 
                         <Link to={`/books/${book.id}/create-review`}>
-                            <p className="postReview">Write a customer review</p>
+                            <p id="postReview">Write a customer review</p>
                         </Link>
                     </div>
 
@@ -318,7 +322,7 @@ class BookShow extends React.Component {
                                     <div className="rating-star-container">
                                         {/* {this.handleRating(review.rating)} */}
 
-     <div className="star-ratings-css">
+     <div className="star-ratings-css-reviewbottom">
         <div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div> 
@@ -326,7 +330,7 @@ class BookShow extends React.Component {
                                         <span className="bsp-PictureText-title">{review.title}</span>
                                     </div>
 
-                                    <p className="reviewDateNBody">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
+                                    <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
                                     <p className="reviewDateNBody">{review.body}</p>
 
                                     {review.user_id === this.props.currentUser ? 

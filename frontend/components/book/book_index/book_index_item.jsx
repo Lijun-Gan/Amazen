@@ -37,10 +37,10 @@ const BookIndexItem = ({book}) => {
         <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
     </div> 
-    <p className="review-count">{book.total_reviews}</p>
+    <p className="review-count-home-page">{book.total_reviews}</p>
     {/* book.reviewIds.length */}
 </div>
-                <p className="index-book--price home">{ "$ "+ Number.parseFloat(parseFloat(book.price)).toFixed(2)}</p>
+                <p className="index-book--price home">{ "$"+ Number.parseFloat(parseFloat(book.price)).toFixed(2)}</p>
                 {/* <p className='free-ship-cap home'>FREE Shipping by Amazen</p> */}
 </div>         
             

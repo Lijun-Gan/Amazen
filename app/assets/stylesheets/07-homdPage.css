@@ -19,10 +19,17 @@
     text-align: center;
 }
 
+.index-book-title:hover{
+    color: #c45500;
+    text-decoration: underline;
+    text-decoration-color: #c45500;
+
+}
+
 .bookItem-container{
     /* width: 360px; */
     /* border: red solid 3px; */
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 .home-top-picks{
@@ -37,14 +44,14 @@
 .home-rating-star-container{
     display: flex;
     margin: auto;
-    margin-left: 60px;
+    margin-left: 48px;
     margin-top: 2px;
 }
 
 .index-book--price.home{
     font-size: 13px;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 5px;
     color: #B12704;
 }
 
@@ -55,9 +62,9 @@
 .star-ratings-css-home-page{
     unicode-bidi: bidi-override;
     color: #c5c5c5;
-    font-size: 12px;
+    font-size: 17px;
     height: 20px;
-    width: 60px;
+    width: 85px;
     margin: 0 0;
     position: relative;
     padding: 0;
