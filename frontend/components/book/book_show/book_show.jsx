@@ -44,16 +44,18 @@ class BookShow extends React.Component {
         localStorage.setItem(currentUser.id, JSON.stringify(cart));
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
 
-        this.props.history.push('/cart')
+       
+        // this.props.history.push('/cart')
 
-        
-        // this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
+        this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
        
     };
 
     componentDidMount(){
       this.props.fetchBook(this.props.match.params.id)
     }
+
+ 
 
     handleBookQuantity(e){
         e.preventDefault();

@@ -292,15 +292,12 @@ In 2009, she appeared as a contestant on Jeopardy!, becoming a two-day champion 
 
 
     Author.create!( 
-    name: "Walter Isaacson ",  
+    name: "Walter Isaacson",  
     biography: "Walter Isaacson, University Professor of History at Tulane, has been CEO of the Aspen Institute, chairman of CNN, and editor of Time magazine. He is the author of Leonardo da Vinci; Steve Jobs; Einstein: His Life and Universe; Benjamin Franklin: An American Life; and Kissinger: A Biography. He is also the coauthor of The Wise Men: Six Friends and the World They Made. "
     )
     Book.create!(
-        title: "
-The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human Race
- ",
-        description: "
-When Jennifer Doudna was in sixth grade, she came home one day to find that her dad had left a paperback titled The Double Helix on her bed. She put it aside, thinking it was one of those detective tales she loved. When she read it on a rainy Saturday, she discovered she was right, in a way. As she sped through the pages, she became enthralled by the intense drama behind the competition to discover the code of life. Even though her high school counselor told her girls didn’t become scientists, she decided she would.
+        title: "The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human Race",
+ description: "When Jennifer Doudna was in sixth grade, she came home one day to find that her dad had left a paperback titled The Double Helix on her bed. She put it aside, thinking it was one of those detective tales she loved. When she read it on a rainy Saturday, she discovered she was right, in a way. As she sped through the pages, she became enthralled by the intense drama behind the competition to discover the code of life. Even though her high school counselor told her girls didn’t become scientists, she decided she would.
 
 Driven by a passion to understand how nature works and to turn discoveries into inventions, she would help to make what the book’s author, James Watson, told her was the most important biological advance since his co-discovery of the structure of DNA. She and her collaborators turned ​a curiosity ​of nature into an invention that will transform the human race: an easy-to-use tool that can edit DNA. Known as CRISPR, it opened a brave new world of medical miracles and moral questions.
 
@@ -312,10 +309,10 @@ After helping to discover CRISPR, Doudna became a leader in wrestling with these
  ",
  category:"literature & Fiction", 
         publication_date: "March 9, 2021",
-        image_url: " ",
+        image_url: "https://m.media-amazon.com/images/I/41KMmXBPckL.jpg",
         author_id: 11)
    
-    Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
+Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
    
     Price.create!( book_id: 11, book_format: "Audiobook",  price: 0.00)
    
@@ -337,8 +334,7 @@ After helping to discover CRISPR, Doudna became a leader in wrestling with these
     ",
     category:"literature & Fiction", 
             image_url: "
-    https://images-na.ssl-images-amazon.com/images/I/51f42uWcUWL._SX328_BO1,204,203,200_.jpg
-    I",
+    https://images-na.ssl-images-amazon.com/images/I/51f42uWcUWL._SX328_BO1,204,203,200_.jpg",
             author_id: 12)
        
         Price.create!( book_id: 12, book_format: "Kindle",  price: 14.99)
@@ -364,12 +360,87 @@ After helping to discover CRISPR, Doudna became a leader in wrestling with these
          ",
                 publication_date: "October 24, 2006",
                 category:"literature & Fiction", 
-                image_url: "
-        https://m.media-amazon.com/images/I/51CrMCw54EL.jpg
+                image_url: "https://m.media-amazon.com/images/I/51CrMCw54EL.jpg
         ",
-                author_id: 1)
+                author_id: 13)
            
             Price.create!( book_id: 13, book_format: "Kindle",  price: 9.99)
            
 
 
+            Author.create!( 
+                name: " Gayle Tzemach Lemmon",  
+                biography: " Gayle Tzemach Lemmon is the author of the New York Times bestsellers Ashley's War: The Untold Story of a Team of Women Soldiers on the Special Ops Battlefield (2015) and The Dressmaker of Khair Khana (2011), about a young entrepreneur who supported her community under the Taliban. Ashley's War is currently being developed into a major motion picture at Universal. Her next book, for Penguin Press, is set in northeastern Syria and will be published in February 2021. The Daughters of Kobani tells the story of what ISIS has left in its wake: the most far-reaching experiment in women's equality in the least likely place in the world brought to you by young women who have been battling ISIS town by town, street by street since 2013. These young women served as America's ground force in the fight to defeat the Islamic State and The Daughters of Kobani tells for the first time the story of how they came to serve as America's partner. 
+            
+            Lemmon, who serves as an adjunct senior fellow at the Council on Foreign Relations, along with private sector leadership roles in emerging technology and national security, began writing about entrepreneurship in conflict and post-conflict zones while studying for her MBA at Harvard following a decade covering politics at the ABC News Political Unit. This work from Afghanistan, Rwanda, Liberia, Bosnia and beyond has been published by the World Bank, Harvard Business School, the Financial Times, Harvard Business Review and CNN, among others. Following MBA study, she led public policy analysis during the global financial crisis at the global investment firm PIMCO.
+            
+            Lemmon is a frequent speaker on national security topics, including at the Aspen Security Forum and TED forums, and has given talks at West Point, ODNI, the Defense Intelligence Agency, the U.S. Naval Academy, and the National Infantry Museum. Her TED Talk on Ashley's War and the reshaping of the hero story to include women has received more than a million views worldwide. She regularly appears on MSNBC, CNN, PBS, and National Public Radio. Along with her national security work, she has reported and written extensively on topics including child marriage in the United States for PBS NewsHour and on school choice, single moms and the power and importance of girls' ambition for The Atlantic. Lemmon holds an MBA from Harvard and received the Dean's Award for her work on women's entrepreneurship. In addition to serving as a Robert Bosch Fellow in Germany, she served as a Fulbright scholar in Spain, on the board of the international aid organization Mercy Corps and is a member of the Bretton Woods Committee. She speaks Spanish, German and French and is conversant in Dari and Kurmanci."
+            )
+                Book.create!(
+                    title: "
+            The Daughters of Kobani: A Story of Rebellion, Courage, and Justice
+             ",
+                    description: " 
+            In 2014, northeastern Syria might have been the last place you would expect to find a revolution centered on women's rights. But that year, an all-female militia faced off against ISIS in a little town few had ever heard of: Kobani. By then, the Islamic State had swept across vast swaths of the country, taking town after town and spreading terror as the civil war burned all around it. From that unlikely showdown in Kobani emerged a fighting force that would wage war against ISIS across northern Syria alongside the United States. In the process, these women would spread their own political vision, determined to make women's equality a reality by fighting—house by house, street by street, city by city—the men who bought and sold women. 
+            
+            Based on years of on-the-ground reporting, The Daughters of Kobani is the unforgettable story of the women of the Kurdish militia that improbably became part of the world's best hope for stopping ISIS in Syria. Drawing from hundreds of hours of interviews, bestselling author Gayle Tzemach Lemmon introduces us to the women fighting on the front lines, determined to not only extinguish the terror of ISIS but also prove that women could lead in war and must enjoy equal rights come the peace. In helping to cement the territorial defeat of ISIS, whose savagery toward women astounded the world, these women played a central role in neutralizing the threat the group posed worldwide. In the process they earned the respect—and significant military support—of U.S. Special Operations Forces.
+            
+            Rigorously reported and powerfully told, The Daughters of Kobani shines a light on a group of women intent on not only defeating the Islamic State on the battlefield but also changing women's lives in their corner of the Middle East and beyond.
+            ",
+                    publication_date: "
+            February 16, 2021
+            ",
+            category: "biographies & memoirs", 
+                    image_url: "
+            https://images-na.ssl-images-amazon.com/images/I/51+nWrc2tCL._SX329_BO1,204,203,200_.jpg
+            ",
+                    author_id: 14)
+               
+                Price.create!( book_id: 14, book_format: "Kindle",  price: 14.99)
+                Price.create!( book_id: 14, book_format: "Paperback",  price: 10.16)
+               
+                Price.create!( book_id: 14, book_format: "Hardcopy",  price: 16.69)
+
+
+                Author.create!( 
+                    name: " Suleika Jaouad",  
+                    biography: " Suleika Jaouad, is an Emmy Award-winning writer, speaker, cancer survivor and the creator of The Isolation Journals, a global movement cultivating community and creativity during hard times.
+                
+                Born in New York City to a Tunisian father and a Swiss mother, Suleika Jaouad's career aspirations as a foreign correspondent were cut short when, at age 22, she was diagnosed with leukemia. She began writing the acclaimed New York Times column and video series from the front lines of her hospital bed, and has since become a fierce advocate for those living with illness and chronic pain. 
+                
+                She served on Barack Obama's Presidential Cancer Panel, and her advocacy work, reporting and speaking engagements have brought her everywhere from the main stage of TED, the United Nations and Capitol Hill to a maximum security prison and a two-room schoolhouse in rural Montana. When she's not on the road with her 1972 Volkswagen camper van and rescue dog Oscar, she lives in Brooklyn."
+            )  
+                    Book.create!(
+                        title: " 
+                Between Two Kingdoms: A Memoir of a Life Interrupted
+                ",
+                        description: "
+                In the summer after graduating from college, Suleika Jaouad was preparing, as they say in commencement speeches, to enter “the real world.” She had fallen in love and moved to Paris to pursue her dream of becoming a war correspondent. The real world she found, however, would take her into a very different kind of conflict zone.
+                
+                It started with an itch—first on her feet, then up her legs, like a thousand invisible mosquito bites. Next came the exhaustion, and the six-hour naps that only deepened her fatigue. Then a trip to the doctor and, a few weeks shy of her twenty-third birthday, a diagnosis: leukemia, with a 35 percent chance of survival. Just like that, the life she had imagined for herself had gone up in flames. By the time Jaouad flew home to New York, she had lost her job, her apartment, and her independence. She would spend much of the next four years in a hospital bed, fighting for her life and chronicling the saga in a column for The New York Times.
+                
+                When Jaouad finally walked out of the cancer ward—after countless rounds of chemo, a clinical trial, and a bone marrow transplant—she was, according to the doctors, cured. But as she would soon learn, a cure is not where the work of healing ends; it’s where it begins. She had spent the past 1,500 days in desperate pursuit of one goal—to survive. And now that she’d done so, she realized that she had no idea how to live.
+                
+                How would she reenter the world and live again? How could she reclaim what had been lost? Jaouad embarked—with her new best friend, Oscar, a scruffy terrier mutt—on a 100-day, 15,000-mile road trip across the country. She set out to meet some of the strangers who had written to her during her years in the hospital: a teenage girl in Florida also recovering from cancer; a teacher in California grieving the death of her son; a death-row inmate in Texas who’d spent his own years confined to a room. What she learned on this trip is that the divide between sick and well is porous, that the vast majority of us will travel back and forth between these realms throughout our lives. Between Two Kingdoms is a profound chronicle of survivorship and a fierce, tender, and inspiring exploration of what it means to begin again.
+                 ",
+                        publication_date: "
+                February 9, 2021 
+                ",
+                category: "biographies & memoirs", 
+                        image_url: "
+                https://images-na.ssl-images-amazon.com/images/I/417fYqloHKL._SX329_BO1,204,203,200_.jpg
+                ",
+                        author_id: 3)
+                   
+                    Price.create!( book_id: 15, book_format: "Kindle",  price: 13.99)
+                   
+                   
+                    Price.create!( book_id: 15, book_format: "Hardcopy",  price: 18.24)
+                   
+                
+                       
+                
+          
+                
+                
+               

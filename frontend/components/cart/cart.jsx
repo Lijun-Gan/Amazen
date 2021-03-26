@@ -17,6 +17,7 @@ class Cart extends React.Component {
 
     deleteAllItems() {
         localStorage.clear();
+        this.props.history.push('/')
     }
 
     deleteOneItem(bookId) {
@@ -32,7 +33,7 @@ class Cart extends React.Component {
     }
 
     handleCheckOut() {
-        let books = Object.values(this.state.books);
+        // let books = Object.values(this.state.books);
 
         this.state.books.map((book) => {
             this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
