@@ -9,7 +9,7 @@ class CreateReviewForm extends React.Component {
     super(props)
   }
     componentDidMount(){
-      //debugger
+      // 
       // if(!this.props.match.params.bookId){
 
         this.props.action_mount(this.props.match.params.bookId)
@@ -20,7 +20,7 @@ class CreateReviewForm extends React.Component {
 
     const { action_mount, action_submit, formType, review } = this.props;
 
-    // debugger
+    //  
     if (!this.props.review) return null;
     // if (!review) return null;
     return (
@@ -36,7 +36,7 @@ class CreateReviewForm extends React.Component {
 
 const mapStateToProps = (state,ownProps) => {
 
-    // debugger
+    //  
     const bookId = ownProps.match.params.bookId;
     let book;
     if (state.entities.books[bookId] === undefined){

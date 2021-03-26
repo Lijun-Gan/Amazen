@@ -3,9 +3,9 @@ import React from 'react';
 
 class ReviewForm extends React.Component{
     constructor(props){
-        //debugger
+        // 
         super(props)
-        debugger
+         
         // this.state = this.props.review
         this.state = {
             review: this.props.review,
@@ -16,7 +16,7 @@ class ReviewForm extends React.Component{
             }
         }
 
-    //    debugger
+    //     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleRating = this.handleRating.bind(this);
     }
@@ -24,7 +24,7 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        //debugger
+        // 
 
         let errors_count = 0;
         let invalid_rating = "";
@@ -78,7 +78,7 @@ class ReviewForm extends React.Component{
 
         const { review } = { ...this.state };
         const currentState = review;
-        debugger
+         
         // let newRating
         // newRating = parseInt(e.target.value)
         currentState["rating"] = parseInt(e.target.value)
@@ -86,14 +86,14 @@ class ReviewForm extends React.Component{
     }
 
     render(){
-        debugger
+         
         // if (!(this.props.review)) {
         //     return <h1>Loading...</h1>;
         // }
         // if (Boolean(this.props.review) === false) {
         //     return <h1>Loading...</h1>;
         // }
-        //debugger
+        // 
         // this.state.rating = this.props.review.rating
         return( 
             <div>

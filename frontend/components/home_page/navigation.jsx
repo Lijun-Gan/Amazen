@@ -13,7 +13,33 @@ const NavBar = (props) => {
     username = props.user.username
   }
 
-  debugger
+  let numBooksInCart = {
+    "position": "relative",
+    fontSize: "18px",
+    marginTop: "5px",
+    "color": "#f08804",
+    zIndex: "2"
+};
+
+let quantity = 0;
+let books = JSON.parse(localStorage.getItem(props.user.id))
+books = Object.values(books)
+if(books.length > 0){
+
+  books.forEach(book => {
+      quantity = quantity + Number(book.quantity);
+  });
+
+}
+
+if (quantity < 10) {
+    numBooksInCart["left"] = "30px";
+} else if (quantity < 20) {
+    numBooksInCart["left"] = "34px";
+} else {
+    numBooksInCart["left"] = "36px";
+}
+   
   return (
     <div>
 
@@ -51,10 +77,16 @@ const NavBar = (props) => {
            <p className="nav-signin"> & Orders</p>
            </button>
     
+    
 
-          <Link to="/">
-          <img id="nav-cart" src={window.nav_cart} alt="shopping cart"/>
-          </Link>
+
+                  <Link to="/cart" id="cart">
+                      <h5 style={numBooksInCart}>{quantity}</h5>
+                      <img src={window.cart} alt="cart" />
+                  </Link>
+
+
+          
         </div>
 
     </div>

@@ -71,7 +71,7 @@ class Cart extends React.Component {
             this.state.books &&
             Object.values(this.state.books).map((book, idx) => {
                 return (
-                    <li key={`shop-cart-${idx}`}>
+                    <li key={idx}>
                         {<CartItem handleRemoveOneItem={this.handleRemoveOneItem} book={book} />}
                     </li>
                 );

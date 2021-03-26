@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux';
 import Cart from './cart';
 import {createCart} from '../../actions/cart_actions'

@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const BookIndexItem = ({book}) => {
     
-    debugger
+     
     
     if (book.avg_rating === undefined){
         return <h1>Loading.......</h1>
     }
 
-    debugger
+     
 
 
     let avg_rating = ( book.avg_rating / 5 * 100).toString()+"%"

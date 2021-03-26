@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 
 class BookShow extends React.Component {
@@ -9,26 +9,58 @@ class BookShow extends React.Component {
       this.state = ({
         //   book: this.props.book,
           format: 'Select format',
-          price: '0.00'
+          price: '0.00',
+          quantity: '1',
+          
       })
       this.handlePrice = this.handlePrice.bind(this)
+      this.handleCart = this.handleCart.bind(this)
+      this.handleBookQuantity = this.handleBookQuantity.bind(this)
     }
   
-    componentDidMount(){
+    handleCart(e){
+        e.preventDefault();
         debugger
+
+        const savedCart = localStorage.getItem(currentUser.id);
+        let cart = {};
+
+        debugger
+
+        if (savedCart) {
+            debugger
+            cart = JSON.parse(savedCart);
+        }
+
+        debugger
+
+        cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price}
+        debugger
+    
+        localStorage.setItem(currentUser.id, JSON.stringify(cart));
+        // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
+        this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
+       
+    };
+
+    componentDidMount(){
       this.props.fetchBook(this.props.match.params.id)
     }
 
+    handleBookQuantity(e){
+        e.preventDefault();
+        debugger
+        this.setState({
+            quantity: e.target.value
+        })
+    }
 
     handlePrice(e){
-        // debugger
-
         const book_format_price = e.target.value.split(",")
-
-        // debugger
         this.setState({
             format: book_format_price[0],
-            price: book_format_price[1]
+            price: book_format_price[1],
+            
         })
     }
 
@@ -56,19 +88,14 @@ class BookShow extends React.Component {
         return `${monthName} ${date}, ${year}`
     }
     
-    handleBookQuantity(){
-
-    }
+  
 
     render(){  
 
         let show_page = <h1>Loading......</h1>
 
-       if(this.props.book === undefined ||  this.props.reviews === undefined || this.props.book.prices === undefined)  return show_page
-
-
+        if(this.props.book === undefined ||  this.props.reviews === undefined || this.props.book.prices === undefined)  return show_page
         if (this.props.book){
-
             const {book, reviews} = this.props
             let author_bio;
 
@@ -77,7 +104,6 @@ class BookShow extends React.Component {
                 this.state.format =book.prices[0].book_format
             }
   
-
             if (book.biography ){
                 author_bio = (
                     <div>
@@ -114,7 +140,7 @@ class BookShow extends React.Component {
             let avg_rating_out 
             let avg_rating 
             let total_review ;
-            let review_count;
+         
             let starRatesBar= [0,0,0,0,0];
 
             reviews.forEach((review)=>{
@@ -129,7 +155,7 @@ class BookShow extends React.Component {
 
             total_review = reviews.length
             avg_rating_out = (totalRating / Math.max(1,reviews.length)).toFixed(2)
-        
+            let review_count;
             
     
             // let pensentage = ((star /total_review).toFixed(2) * 100).toString() 
@@ -205,7 +231,7 @@ class BookShow extends React.Component {
 
                         <ul className="bsp-prices">
                            { book.prices.map((formatPrice,idx)=> {
-                            //    debugger
+                            //     
                                return (
                                <li key={idx}>
                         
@@ -235,7 +261,7 @@ class BookShow extends React.Component {
                         <p className="inStock-color">In Stock</p>
 
     {/*  */}
-                <select className="book-quantity-select" onChange={this.handleBookQuantity} >
+                <select className="book-quantity-select" onChange={this.handleBookQuantity} value={this.state.quantity}>
                     <option value="1">Qty: 1</option>
                     <option value="2">Qty: 2</option>
                     <option value="3">Qty: 3</option>
@@ -248,9 +274,9 @@ class BookShow extends React.Component {
 <div className="addCartBtn-container">
 
     {/* <button className='addToCart-btn'>Add to Cart</button> */}
-    <button className='buy-now-btn cart'>Add to Cart</button>
+    <button className='add-to-cart-button' onClick={this.handleCart}>Add to Cart</button>
     <p className="givenSmallSpace"></p>
-    <button className='buy-now-btn'>Buy Now</button>
+    <button className='buy-now-button'>Buy Now</button>
                         <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
 
                     

@@ -25,7 +25,6 @@ const App = () => (
         <AuthRoute exact path="/signin" component={AuthPath} />
         <AuthRoute exact path="/signup" component={AuthPath} />
         <Route path="/" component={NonAuthPath} />
-
     </Switch>
 
 

@@ -12,7 +12,7 @@ class EditReviewForm extends React.Component {
   }
 
     componentDidMount(){
-      //debugger
+      // 
       
       this.props.action_mount(this.props.match.params.reviewId)
     }
@@ -21,7 +21,7 @@ class EditReviewForm extends React.Component {
 
     const { action_submit, formType, review } = this.props;
 
-    //debugger
+    // 
     if (!review) return null;
     return (
       <ReviewForm
@@ -36,7 +36,7 @@ class EditReviewForm extends React.Component {
 
 
   const mapStateToProps = (state,ownProps) => {
-      debugger
+       
 
       const reviewId = ownProps.match.params.reviewId;
 

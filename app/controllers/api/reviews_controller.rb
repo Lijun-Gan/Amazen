@@ -7,7 +7,7 @@ class Api::ReviewsController < ApplicationController
 
         if @review.save
             @book = Book.find_by(id: params[:review][:book_id])
-            # //debugger
+            # // 
             render "api/books/show"
         else
             render json: @review.errors.full_messages, status: 422
