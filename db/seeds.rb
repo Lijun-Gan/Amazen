@@ -244,4 +244,132 @@ Price.create!( book_id: 8, book_format: "Audiobook",  price: 7.95)
 Price.create!( book_id: 8, book_format: "Hardcopy",  price: 22.79)
 
 
+Author.create!(
+    name: "Rysa Walker",  
+    biography: "
+RYSA WALKER is the author of the bestselling CHRONOS Files series. Timebound, the first book in the series, was the Young Adult and Grand Prize winner in the 2013 Amazon Breakthrough Novel Awards. The CHRONOS Files has sold nearly half a million copies since 2013 and has been translated into fourteen languages.
+
+In addition to speculative fiction, she writes mysteries as C. Rysa Walker, occasionally in collaboration with author Caleb Amsel.
+
+Rysa currently resides in North Carolina with her husband, two youngest sons, and a hyperactive golden retriever. When not working on the next installment in her CHRONOS Files universe, she watches shows where travelers boldly go to galaxies far away, or reads about magical creatures and superheroes from alternate timelines. 
+ "
+)  
+Book.create!(
+    title: "Now, Then, and Everywhen (Chronos Origins Book 1)",
+    description: "When two time-traveling historians cross paths during one of the most tumultuous decades of the twentieth century, history goes helter-skelter. But which one broke the timeline?
+In 2136 Madison Grace uncovers a key to the origins of CHRONOS, a time-travel agency with ties to her family’s mysterious past. Just as she is starting to jump through history, she returns to her timeline to find millions of lives erased—and only the people inside her house realize anything has changed.
+In 2304 CHRONOS historian Tyson Reyes is assigned to observe the crucial events that played out in America’s civil rights movement. But a massive time shift occurs while he’s in 1965, and suddenly the history he sees isn’t the history he knows.
+As Madi’s and Tyson’s journeys collide, they must prevent the past from being erased forever. But strange forces are at work. Are Madi and Tyson in control or merely pawns in someone else’s game? ",
+category:"biographies & memoirs",    
+publication_date: "April  1, 2020",
+    image_url: "https://m.media-amazon.com/images/I/51GrFhn-H5L.jpg",
+    author_id: 9)
+
+Price.create!( book_id: 9, book_format: "Kindle",  price: 7.99)
+
+Price.create!( book_id: 9, book_format: "Audiobook",  price: 3.38)
+
+
+Author.create!( 
+    name: "Tui T. Sutherland ",  
+    biography: "Tui T. Sutherland, also known as T. T. Sutherland (born July 31, 1978 in Caracas, Venezuela) is a Venezuelan-American children's book author who has also written under the pen name Heather Williams. She shares another pen name, Erin Hunter, with writers Kate Cary and Cherith Baldry when they collaborate with editor Victoria Holmes on the Seekers and Warriors series of novels.
+
+In 2009, she appeared as a contestant on Jeopardy!, becoming a two-day champion and winning a grand total of $46,200 .")
+
+    Book.create!(
+        title: "The Dangerous Gift (Wings of Fire, Book 14) ",
+ category:"literature & Fiction",  
+        description: "ActiveRecord uses the underlying database sequence to create primary keys. ... the IDs start from 1, there is no straight forward way in rails to do it. You can do. 1) Model.destroy_all ... which will handle all that you want, for a single table, if that's what you need ... Model.table_name) after Model.destroy_all.",
+        publication_date: "March 2 , 2021",
+        image_url: "https://images-na.ssl-images-amazon.com/images/I/51yu5yEhngL._SX329_BO1,204,203,200_.jpg",
+        author_id: 10)
+   
+    Price.create!( book_id: 10, book_format: "Kindle",  price: 10.99)
+    Price.create!( book_id: 10, book_format: "Paperback",  price: 10.16)
+    Price.create!( book_id: 10, book_format: "Hardcopy",  price: 10.79)
+
+
+
+
+    Author.create!( 
+    name: "Walter Isaacson ",  
+    biography: "Walter Isaacson, University Professor of History at Tulane, has been CEO of the Aspen Institute, chairman of CNN, and editor of Time magazine. He is the author of Leonardo da Vinci; Steve Jobs; Einstein: His Life and Universe; Benjamin Franklin: An American Life; and Kissinger: A Biography. He is also the coauthor of The Wise Men: Six Friends and the World They Made. "
+    )
+    Book.create!(
+        title: "
+The Code Breaker: Jennifer Doudna, Gene Editing, and the Future of the Human Race
+ ",
+        description: "
+When Jennifer Doudna was in sixth grade, she came home one day to find that her dad had left a paperback titled The Double Helix on her bed. She put it aside, thinking it was one of those detective tales she loved. When she read it on a rainy Saturday, she discovered she was right, in a way. As she sped through the pages, she became enthralled by the intense drama behind the competition to discover the code of life. Even though her high school counselor told her girls didn’t become scientists, she decided she would.
+
+Driven by a passion to understand how nature works and to turn discoveries into inventions, she would help to make what the book’s author, James Watson, told her was the most important biological advance since his co-discovery of the structure of DNA. She and her collaborators turned ​a curiosity ​of nature into an invention that will transform the human race: an easy-to-use tool that can edit DNA. Known as CRISPR, it opened a brave new world of medical miracles and moral questions.
+
+The development of CRISPR and the race to create vaccines for coronavirus will hasten our transition to the next great innovation revolution. The past half-century has been a digital age, based on the microchip, computer, and internet. Now we are entering a life-science revolution. Children who study digital coding will be joined by those who study genetic code.
+
+Should we use our new evolution-hacking powers to make us less susceptible to viruses? What a wonderful boon that would be! And what about preventing depression? Hmmm…Should we allow parents, if they can afford it, to enhance the height or muscles or IQ of their kids?
+
+After helping to discover CRISPR, Doudna became a leader in wrestling with these moral issues and, with her collaborator Emmanuelle Charpentier, won the Nobel Prize in 2020. Her story is a thrilling detective tale that involves the most profound wonders of nature, from the origins of life to the future of our species.
+ ",
+ category:"literature & Fiction", 
+        publication_date: "March 9, 2021",
+        image_url: " ",
+        author_id: 11)
+   
+    Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
+   
+    Price.create!( book_id: 11, book_format: "Audiobook",  price: 0.00)
+   
+
+    Author.create!( 
+        name: "jasdkjflasdjhf asjdfajsdfhkas ",  
+        biography: " as,mdf/asdf,asdnfamsdbfa,smndfbasdfkajshdf;alskdfan asdfasdnf,masdnfa asdfasdfasdfa asdfasdfasdfan        asdfasdfasd"
+    )
+        Book.create!(
+            title: "
+    Caste (Oprah's Book Club): The Origins of Our Discontents
+     ",
+            description: "
+    In this brilliant book, Isabel Wilkerson gives us a mas
+    Beautifully written, original, and revealing, Caste: The Origins of Our Discontents is an eye-opening story of people and history, and a reexamination of what lies under the surface of ordinary lives and of American life today.
+     ",
+            publication_date: "
+    August 4 ,2020
+    ",
+    category:"literature & Fiction", 
+            image_url: "
+    https://images-na.ssl-images-amazon.com/images/I/51f42uWcUWL._SX328_BO1,204,203,200_.jpg
+    I",
+            author_id: 12)
+       
+        Price.create!( book_id: 12, book_format: "Kindle",  price: 14.99)
+        Price.create!( book_id: 12, book_format: "Paperback",  price: 31.27)
+       
+        Price.create!( book_id: 12, book_format: "Hardcopy",  price: 19.02)
+       
+    
+        Author.create!( 
+            name: " asdfasdfa",  
+            biography: " asdfnasdfmban dfasdfasdfasdfjaksldf    asdfnaskdf;alkjsdflaksd;fasdf askdfjasdkfnaksdnfalkjsdfka  asdfknasdfnalksjdfl asdfas sldfnalsdf ")
+        
+            Book.create!(
+                title: "
+        Thunderstruck Kindle Edition
+         ",
+                description: "
+        In Thunderstruck, Erik Larson tells the interwoven stories of two men—Hawley Crippen, a very unlikely murderer, and Guglielmo Marconi, the obsessive creator of a seemingly supernatural means of communication—whose lives intersect during one of the greatest criminal chases of all time.
+        
+        Set in Edwardian London and on the stormy coasts of Cornwall, Cape Cod, and Nova Scotia, Thunderstruck evokes the dynamism of those years when great shipping companies competed to build the biggest, fastest ocean liners; scientific advances dazzled the public with visions of a world transformed; and the rich outdid one another with ostentatious displays of wealth. Against this background, Marconi races against incredible odds and relentless skepticism to perfect his invention: the wireless, a prime catalyst for the emergence of the world we know today. Meanwhile, Crippen, “the kindest of men,” nearly commits the perfect murder.
+        
+        With his unparalleled narrative skills, Erik Larson guides us through a relentlessly suspenseful chase over the waters of the North Atlantic. Along the way, he tells of a sad and tragic love affair that was described on the front pages of newspapers around the world, a chief inspector who found himself strangely sympathetic to the killer and his lover, and a driven and compelling inventor who transformed the way we communicate.
+         ",
+                publication_date: "October 24, 2006",
+                category:"literature & Fiction", 
+                image_url: "
+        https://m.media-amazon.com/images/I/51CrMCw54EL.jpg
+        ",
+                author_id: 1)
+           
+            Price.create!( book_id: 13, book_format: "Kindle",  price: 9.99)
+           
+
 
