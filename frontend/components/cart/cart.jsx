@@ -44,7 +44,10 @@ class Cart extends React.Component {
             books: [],
         });
         // return <Redirect to="/" />;
+        this.props.history.push("/")
+
     }
+
 
     render(){
 
@@ -74,10 +77,12 @@ class Cart extends React.Component {
 
         Object.values(this.state.books).forEach(book => {
             quantity = quantity + Number(book.quantity);
-            subTotal = subTotal + book.price
+            debugger
+            subTotal = subTotal + book.price * book.quantity
         });
 
         subTotal = "$" + subTotal.toString();
+        debugger
 
         return (    
 
@@ -92,7 +97,7 @@ class Cart extends React.Component {
                         
                         <div className="price-at-end">
 
-                         <span className="cart-page-price-tag">Price</span>
+                         <p className="cart-page-price-tag">Price</p>
 
                         </div>
 
@@ -103,7 +108,7 @@ class Cart extends React.Component {
                         <ul>
                             {Object.values(this.state.books).map((book,idx)=>(
                                 <li key={idx}>
-                                    {<CartItem deleteOneItem={this.deleteOneItem} book={book} />}
+                                    {<CartItem deleteOneItem={this.deleteOneItem} book={book} subTotle={subTotal} />}
                                 </li>
                             ))}
                         </ul>

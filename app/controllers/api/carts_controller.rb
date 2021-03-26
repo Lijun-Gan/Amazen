@@ -2,7 +2,6 @@ class Api::CartsController < ApplicationController
     def create
          
         @cart = Cart.new(cart_params)
-        purchase.cart_id = current_user.cart.id
        
         if @cart.save
             render :show
@@ -14,7 +13,6 @@ class Api::CartsController < ApplicationController
     end
 
 
-    def 
 
     private
 

@@ -11,12 +11,14 @@
     padding: 2px;
     margin-top: 12px;
     margin-bottom: 28px;
+    position: relative;
 }
 
 .book-quantity-select:focus {
     border-color: #007185;
     box-shadow: 0 0 0 3px #c8f3fa;
     background: #EDFDFF;
+
 }
 
 .addCartBtn-container{
@@ -152,11 +154,10 @@
 
 /*  */
 
-#shopping-cart-page-container{
-    /* display: flex; */
-    width: 96%;
+#shopping-cart-page-container{ 
+  
     margin-left: 36px;
-    margin-right: 36px;
+    margin-right: 36px; 
 
 }
 
@@ -165,8 +166,8 @@
     color: #007185;
     font-size: 14px;
     margin-bottom: 30px;
-    /* padding-bottom: 30px; */
-}
+    padding-bottom: 30px;
+ }
 
 /* .cart-page-left-side{
     width: 70%;
@@ -177,56 +178,61 @@
     text-align: right;
     width: 100%;
     border-bottom: solid 1px grey;
+    margin-bottom: 40px;
+} 
+
+.deleteOneItem{
+    color:blue;
+    margin-bottom: 20px;
+    border-bottom: solid 1px grey;
 
 }
 
-
-#carts-books-photo{
-    height: 300px;
-    width: 200px;
-    margin-right: 30px;
-    /* padding-top: 30px;    */
+.cart-price{
+    text-align: right;
+    color: black;
+    font-weight: 600;
 }
 
+
+
+/* 
 .cart-book-info{
     display: flex;
     width: 200px;
     
-}
+} */
 
 /* change??? */
-.carts-books-list{
+/* .carts-books-list{
     margin-top: 20px;
     margin-bottom: 5px;
     height: 800px;
     width: 800px;
     border: red 1px solid;
-}
+} */
 
-.carts-books-subtotal-tag-left{
+/* .carts-books-subtotal-tag-left{
     font-size: 24px;
-}
+} */
+
+
+
+/* .sub-total{
+    text-align: right;
+} */
+
+/* .cart-page-right-side-container{
+    text-align: right;
+} */
 
 .carts-books-subtotal-left{
-   color: #0F1111;
-   font-size: 24px;
-   padding-left: 5px;
-   font-weight: 600;
-   margin-bottom: 25px;
-}
-
-.sub-total{
-    text-align: right;
-
-}
-
-.cart-page-right-side-container{
-    text-align: right;
-}
-
-
-
-
+    color: #0F1111;
+    font-size: 24px;
+    padding-left: 5px;
+    font-weight: 600;
+    margin-bottom: 25px;
+ } 
 .carts-checkout{
     border: solid 1px;
     height: 28px;
@@ -237,7 +243,7 @@
     font-size: 13px;
     background:  #f0c14b;
     margin-bottom: 50px;
-}
+} 
 
 .carts-checkout:hover{
     background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
@@ -248,14 +254,4 @@
     outline: none;
     border-color: #e77600;
     box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
-}
-
-.carts-books-title{
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-.shopping-cart-item{
-    width: 100px;
 }

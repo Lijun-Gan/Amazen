@@ -11,7 +11,6 @@ const BooksByCategory = (props)=>{
                 
                 <h1>this is BooksByCategory page</h1>
                
-
                
                 <FootNote />
             
