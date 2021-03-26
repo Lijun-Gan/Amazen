@@ -20,6 +20,10 @@ class BookShow extends React.Component {
   
     handleCart(e){
         e.preventDefault();
+        console.log(this.props)
+        if(!this.props.currentUser){
+            this.props.history.push("/signin")
+        }
         debugger
 
         const savedCart = localStorage.getItem(currentUser.id);
@@ -40,9 +44,10 @@ class BookShow extends React.Component {
         localStorage.setItem(currentUser.id, JSON.stringify(cart));
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
 
-        // this.props.history.push('/cart')
+        this.props.history.push('/cart')
 
-        this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
+        
+        // this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
        
     };
 
