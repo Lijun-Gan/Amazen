@@ -34,11 +34,14 @@ class BookShow extends React.Component {
 
         debugger
 
-        cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price}
+        cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, id:this.props.book.id}
         debugger
     
         localStorage.setItem(currentUser.id, JSON.stringify(cart));
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
+
+        // this.props.history.push('/cart')
+
         this.props.createCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))
        
     };
@@ -113,25 +116,25 @@ class BookShow extends React.Component {
                 ) 
             }
 
-            let  button= ""
-            if (this.props.currentUser){
-                button = 
-                <li style={{display: 'flex', 'flexDirection':'column'}}>
-                <select className="book-quantity-select">
-                    <option value="1">Qty: 1</option>
-                    <option value="2">Qty: 2</option>
-                    <option value="3">Qty: 3</option>
-                    <option value="4">Qty: 4</option>
-                </select>
-                <button className='product-sidebar-button'>Add to Cart</button>
-                <button className='product-sidebar-button lower-button'>Buy Now</button>
-                </li>
-            }else{
-               button= <li style={{display: 'flex', 'flexDirection':'column'}}>
-                <button className='product-sidebar-button' onClick={(e)=> this.handleClick(e,'/signup')}>Sign up</button>
-                <button className='product-sidebar-button lower-button' onClick={(e) => this.handleClick(e, '/login')}>Sign In</button>
-                </li>
-            }
+            // let  button= ""
+            // if (this.props.currentUser){
+            //     button = 
+            //     <li style={{display: 'flex', 'flexDirection':'column'}}>
+            //     <select className="book-quantity-select">
+            //         <option value="1">Qty: 1</option>
+            //         <option value="2">Qty: 2</option>
+            //         <option value="3">Qty: 3</option>
+            //         <option value="4">Qty: 4</option>
+            //     </select>
+            //     <button className='product-sidebar-button'>Add to Cart</button>
+            //     <button className='product-sidebar-button lower-button'>Buy Now</button>
+            //     </li>
+            // }else{
+            //    button= <li style={{display: 'flex', 'flexDirection':'column'}}>
+            //     <button className='product-sidebar-button' onClick={(e)=> this.handleClick(e,'/signup')}>Sign up</button>
+            //     <button className='product-sidebar-button lower-button' onClick={(e) => this.handleClick(e, '/login')}>Sign In</button>
+            //     </li>
+            // }
 
             // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
             // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"

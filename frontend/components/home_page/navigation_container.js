@@ -6,12 +6,14 @@ const mapStateToProps = (state) =>{
         const userId = state.session.id
         return ({
             user: state.entities.users[userId],
+            cartsBook: JSON.parse(localStorage.getItem(userId ))
         })
     }else{
         return ({
             user: {
                 username: "",
-            }
+            },
+            cartsBook: {}
         })
     }
   

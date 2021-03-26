@@ -128,3 +128,134 @@
     margin-top: 5px;
     margin-bottom: 12px;
 }
+
+.cart-empty{
+    font-size: 28px;
+    margin-top: 45px;
+    margin-left: 23px;
+    color: black;
+}
+
+#continue-shopping {
+    font-size: 14px;
+    color: #007185;
+    margin-left: 25px;
+}
+
+.empty-cart-page{
+    height: 200px;
+    width: 80%;
+}
+
+
+
+
+/*  */
+
+#shopping-cart-page-container{
+    /* display: flex; */
+    width: 96%;
+    margin-left: 36px;
+    margin-right: 36px;
+
+}
+
+
+.delete-all-book{
+    color: #007185;
+    font-size: 14px;
+    margin-bottom: 30px;
+    /* padding-bottom: 30px; */
+}
+
+/* .cart-page-left-side{
+    width: 70%;
+} */
+
+
+.price-at-end{
+    text-align: right;
+    width: 100%;
+    border-bottom: solid 1px grey;
+
+}
+
+
+#carts-books-photo{
+    height: 300px;
+    width: 200px;
+    margin-right: 30px;
+    /* padding-top: 30px;    */
+}
+
+.cart-book-info{
+    display: flex;
+    width: 200px;
+    
+}
+
+/* change??? */
+.carts-books-list{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    height: 800px;
+    width: 800px;
+    border: red 1px solid;
+}
+
+.carts-books-subtotal-tag-left{
+    font-size: 24px;
+}
+
+.carts-books-subtotal-left{
+   color: #0F1111;
+   font-size: 24px;
+   padding-left: 5px;
+   font-weight: 600;
+   margin-bottom: 25px;
+}
+
+.sub-total{
+    text-align: right;
+
+}
+
+.cart-page-right-side-container{
+    text-align: right;
+}
+
+
+
+
+.carts-checkout{
+    border: solid 1px;
+    height: 28px;
+    width: 268px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background:  #f0c14b;
+    margin-bottom: 50px;
+}
+
+.carts-checkout:hover{
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.carts-checkout:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.carts-books-title{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.shopping-cart-item{
+    width: 100px;
+}

@@ -6,11 +6,24 @@ import SearchBarContainer from './nav_bar/search_bar_container'
 //{ currentUser, signout }
 
 const NavBar = (props) => {
+
+  let quantity = 0;
+
   let username;
-  if(props.user === undefined){
-    username = ""
+  if(props.user === undefined || props.cartsBook === null ){
+   
+    username = "";
+    
   }else{
-    username = props.user.username
+    username = props.user.username;
+    let cartsBook = Object.values(props.cartsBook)
+      if(cartsBook.length > 0){
+
+        cartsBook.forEach(book => {
+            quantity = quantity + Number(book.quantity);
+        });
+      }
+
   }
 
   let numBooksInCart = {
@@ -21,16 +34,10 @@ const NavBar = (props) => {
     zIndex: "2"
 };
 
-let quantity = 0;
-let books = JSON.parse(localStorage.getItem(props.user.id))
-books = Object.values(books)
-if(books.length > 0){
 
-  books.forEach(book => {
-      quantity = quantity + Number(book.quantity);
-  });
+// let books = JSON.parse(localStorage.getItem(props.user.id))
+// cartsBook = Object.values(cartsBook)
 
-}
 
 if (quantity < 10) {
     numBooksInCart["left"] = "30px";

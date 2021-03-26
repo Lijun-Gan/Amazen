@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from './cart_item';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -10,48 +10,32 @@ class Cart extends React.Component {
             books: JSON.parse(localStorage.getItem(this.props.currentUserId)),
         };
 
-        this.handleRemoveAllItems = this.handleRemoveAllItems.bind(this);
-        this.handleRemoveOneItem = this.handleRemoveOneItem.bind(this);
-        this.handlePurchaseButton = this.handlePurchaseButton.bind(this);
-        // this.calculateTotalPrice = this.calculateTotalPrice.bind(this);
+        this.deleteAllItems = this.deleteAllItems.bind(this);
+        this.deleteOneItem = this.deleteOneItem.bind(this);
+        this.handleCheckOut = this.handleCheckOut.bind(this);
     }
-    // componentDidMount() {
-    //     if (Object.values(this.state.books).length < 1) {
-    //         return <Redirect to="/" />;
-    //     }
-    // }
-    // componentDidUpdate() {
-    //     if (Object.values(this.state.books).length < 1) {
-    //         return <Redirect to="/" />;
-    //     }
-    // }
 
-    // calculateTotalPrice() {
-    //     let total = 0;
-    //     Object.values(this.state.books).map((book) => {
-    //         total += book.price;
-    //     });
-    //     console.log('total price calculated');
-    //     return total;
-    // }
-
-    handleRemoveAllItems() {
+    deleteAllItems() {
         localStorage.clear();
     }
 
-    handleRemoveOneItem(bookId) {
-        delete this.state.books[bookId];
+    deleteOneItem(bookId) {
+        return()=>{
 
-        localStorage.setItem(this.props.currentUserId, JSON.stringify(this.state.books));
-        this.setState({
-            books: this.state.books,
-        });
+            delete this.state.books[bookId];
+    
+            localStorage.setItem(this.props.currentUserId, JSON.stringify(this.state.books));
+            this.setState({
+                books: this.state.books,
+            });
+        }
     }
-    handlePurchaseButton() {
+
+    handleCheckOut() {
         let books = Object.values(this.state.books);
 
-        books.map((book) => {
-            this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id });
+        this.state.books.map((book) => {
+            this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
         });
 
         localStorage.clear();
@@ -61,59 +45,102 @@ class Cart extends React.Component {
         // return <Redirect to="/" />;
     }
 
-    render() {
-        if (this.state.books === null || Object.values(this.state.books) < 1) {
-            // return <Redirect to="/" />;
-           return  <h1>Shopping cart is empty</h1>
+    render(){
+
+        // if (this.state.books === null || Object.values(this.state.books) < 1) {
+        //     // return <Redirect to="/" />;
+        // }
+
+
+    //     debugger
+        if (this.state.books === null || Object.values(this.state.books) < 1){
+          
+            debugger
+           return (
+                <div className="empty-cart-page">
+                    <h1 className="cart-empty">Your Amazen Cart is empty.</h1>
+                    
+                   <Link to='/'>
+                   <i id="continue-shopping">Continue shopping</i></Link>
+                </div>
+            )
         }
 
-        const mappedBooks =
-            this.state.books &&
-            Object.values(this.state.books).map((book, idx) => {
-                return (
-                    <li key={idx}>
-                        {<CartItem handleRemoveOneItem={this.handleRemoveOneItem} book={book} />}
-                    </li>
-                );
-            });
+    
 
-        return (
-            <div className="shopping-cart-container">
-                <div className="shopping-cart-header">
-                    <p>
-                        <span>All Products </span> {'>'} Your  Cart
-                    </p>
-                    <h1>Your  Cart</h1>
-                </div>
-                <div className="transition-bar"></div>
-                <div className="shopping-cart-body">
-                    <ul>{mappedBooks}</ul>
-                </div>
-                <div className="shopping-cart-bottom">
-                    <div className="estimated-total">
-                        <p>Estimated Total</p>
-                        {}
-                    </div>
-                    <div className="purchase-row">
-                        <div className="purchase-button" onClick={() => this.handlePurchaseButton()}>
-                            Purchase for myself
+        let subTotal = 0;
+        let quantity = 0;
+
+        Object.values(this.state.books).forEach(book => {
+            quantity = quantity + Number(book.quantity);
+            subTotal = subTotal + book.price
+        });
+
+        subTotal = "$" + subTotal.toString();
+
+        return (    
+
+
+            <div id="shopping-cart-page-container">
+
+
+            
+
+                        <h1 className="carts-books-subtotal-tag-left">Shopping Cart</h1>
+                        <button className="delete-all-book" onClick={this.deleteAllItems}>Deselect all items</button>
+                        
+                        <div className="price-at-end">
+
+                         <span className="cart-page-price-tag">Price</span>
+
                         </div>
-                    </div>
-                </div>
-                <div className="under-cart">
-                    <div className="remove-all-box" onClick={() => this.handleRemoveAllItems()}>
-                        <Link to="/">
-                            <p>Remove all items</p>
-                        </Link>
+
+
+                    <div className="carts-books-list">
+
+                               
+                        <ul>
+                            {Object.values(this.state.books).map((book,idx)=>(
+                                <li key={idx}>
+                                    {<CartItem deleteOneItem={this.deleteOneItem} book={book} />}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    <div className="continue-shopping-box">
-                        <Link to="/">Continue Shopping</Link>
-                    </div>
+
+
+
+
+            <div className="cart-page-right-side-container">
+
+                <div className="sub-total">
+                    <span className="carts-books-subtotal-tag-left">Subtotal ({quantity} items):</span>
+                  
+                    <span className="carts-books-subtotal-left">{subTotal}</span>
+
                 </div>
+                    <button className="carts-checkout" onClick={this.handleCheckOut}>Proceeed to checkout</button>
+
             </div>
-        );
-    }
+
+
+
+            
+
+                    
+       
+       </div>
+
+
+
+
+        )
+
+        }
 }
 
+
 export default Cart;
+
+  

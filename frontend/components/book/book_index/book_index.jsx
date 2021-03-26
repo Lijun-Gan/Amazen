@@ -11,8 +11,6 @@ class BookIndex extends React.Component {
     this.props.fetchBooks()
   }
 
-
-
   render() {
      
     const { books } = this.props;

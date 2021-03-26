@@ -23,7 +23,7 @@ const NonAuthPath = () => (
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
    
-        <Route exact path="/cart" component={cartContainer} />
+        <ProtectedRoute exact path="/cart" component={cartContainer} />
 
     </Switch>
 
