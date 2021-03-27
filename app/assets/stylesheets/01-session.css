@@ -3,8 +3,8 @@
     width: 110px;
     margin-top: 15px;
     margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto
+    margin-left: 700px;
+    /* margin-right: 50%; */
 }
 
 a:-webkit-any-link{

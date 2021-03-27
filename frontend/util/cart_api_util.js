@@ -5,3 +5,10 @@ export const createCart = cart => {
         data: { cart }
     })
 }
+
+// export const fetchCart = cart => {
+//     return $.ajax({
+//         method: "GET",
+//         url: "api/carts/"
+//     })
+// }

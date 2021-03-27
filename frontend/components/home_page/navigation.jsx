@@ -7,24 +7,27 @@ import SearchBarContainer from './nav_bar/search_bar_container'
 
 const NavBar = (props) => {
 
-  let quantity = 0;
+  // let quantity = 0;
+  // let username;
 
-  let username;
-  if(props.user === undefined || props.cartsBook === null ){
-   
-    username = "";
-    
-  }else{
-    username = props.user.username;
-    let cartsBook = Object.values(props.cartsBook)
-      if(cartsBook.length > 0){
+  // if(props.username === undefined || props.cartsBook === null || props.cartsBook.length === 0 ){
+  // if(props.cartsBook.length === 0 ){
+  //  debugger
+  //   username = "";
+  // }else{
+ 
+  //   debugger
+  //   username = props.username;
+  //   const {cartsBook} = props
+  //   // let cartsBook = Object.values(props.cartsBook)
+  //     if(cartsBook.length > 0){
 
-        cartsBook.forEach(book => {
-            quantity = quantity + Number(book.quantity);
-        });
-      }
+  //       cartsBook.forEach(book => {
+  //           quantity = quantity + Number(book.quantity);
+  //       });
+  //     }
 
-  }
+  // }
 
   let numBooksInCart = {
     "position": "relative",
@@ -39,9 +42,9 @@ const NavBar = (props) => {
 // cartsBook = Object.values(cartsBook)
 
 
-if (quantity < 10) {
+if (props.quantity < 10) {
     numBooksInCart["left"] = "30px";
-} else if (quantity < 20) {
+} else if (props.quantity < 20) {
     numBooksInCart["left"] = "34px";
 } else {
     numBooksInCart["left"] = "36px";
@@ -62,7 +65,7 @@ if (quantity < 10) {
 
 <span className="material-icons loc">room</span>
   <button className="nav-address-container">
-    <p className="nav-address">Deliver to {username}</p> 
+    <p className="nav-address">Deliver to {props.username}</p> 
     <p className="nav-address-select">Select your address</p>
  </button>
 </div>
@@ -88,7 +91,7 @@ if (quantity < 10) {
 
 
                   <Link to="/cart" id="cart">
-                      <h5 style={numBooksInCart}>{quantity}</h5>
+                      <h5 style={numBooksInCart}>{props.quantity}</h5>
                       <img src={window.cart} alt="cart" />
                   </Link>
 

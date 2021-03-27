@@ -2,8 +2,7 @@ import {connect} from 'react-redux';
 import BookShow from './book_show';
 import {fetchBook} from '../../../actions/book_actions'
 import { deleteReview,updateReview } from '../../../actions/review_actions';
-import {createCart} from '../../../actions/cart_actions'
-import { createReview } from '../../../util/review_api_util';
+import {receiveCart} from '../../../actions/cart_actions'
 
 const mapStateToProps=(state,ownProps)=>{
      
@@ -36,8 +35,7 @@ const mapDispatchToProps=(dispatch)=>{
         fetchBook: (id)=>dispatch(fetchBook(id)),
         deleteReview: (review)=>dispatch(deleteReview(review)),
         updateReview: (review)=>dispatch(updateReview(review)),
-        createCart: (cart)=>dispatch(createCart(cart))
-
+        receiveCart: (cart)=>dispatch(receiveCart(cart)),
     })
 }
 

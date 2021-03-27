@@ -5,7 +5,7 @@ export default (oldState = {}, action) => {
     const nextState = Object.assign({}, oldState)
     switch (action.type) {
         case RECEIVE_CART: {
-           nextState[action.cart.id] = action.cart
+           nextState[action.cart.book_id] = action.cart
            return  nextState
         }
         default: {

@@ -6,7 +6,7 @@ import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
 import { fetchBook,fetchBooks } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
-import {createCart } from './actions/cart_actions';
+import {createCart, receiveCart } from './actions/cart_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.fetchReview = fetchReview
     
     window.createCart = createCart 
+    window.receiveCart = receiveCart
+
 
     ReactDOM.render(<Root store={store} />, root);
 

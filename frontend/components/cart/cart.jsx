@@ -57,7 +57,7 @@ class Cart extends React.Component {
 
 
     //     debugger
-        if (this.state.books === null || Object.values(this.state.books) < 1){
+        if (this === undefined || this.state.books === null || Object.values(this.state.books) < 1){
           
             debugger
            return (
