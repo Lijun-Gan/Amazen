@@ -14,29 +14,25 @@ class Cart extends React.Component {
             cartBooks: JSON.parse(localStorage.getItem(this.props.currentUserId)),
         };
 
-        this.deleteAllItems = this.deleteAllItems.bind(this);
-        // this.deleteOneItem = this.deleteOneItem.bind(this);
         this.handleCheckOut = this.handleCheckOut.bind(this);
     }
 
-    deleteAllItems() {
-        localStorage.clear();
-        this.props.history.push('/')
-    }
 
     handleCheckOut() {
-        // let books = Object.values(this.state.books);
 
-        this.state.cartBooks.map((book) => {
-            this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
+        let cartBooks = Object.values(this.state.cartBooks );
+
+        cartBooks.map((cartBook) => {
+            // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
+            this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
 
         localStorage.clear();
         this.setState({
             cartBooks: [],
         });
-        // return <Redirect to="/" />;
-        this.props.history.push("/")
+        
+        // this.props.history.push("/")
 
     }
 
@@ -49,7 +45,7 @@ class Cart extends React.Component {
 
 
         debugger
-        if (this === undefined || this.state.cartBooks === null || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
+        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
           
             debugger
            return (
