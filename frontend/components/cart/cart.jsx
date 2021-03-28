@@ -21,16 +21,17 @@ class Cart extends React.Component {
     handleCheckOut() {
 
         let cartBooks = Object.values(this.state.cartBooks );
+        localStorage.clear();
 
+        this.setState({
+            cartBooks: [],
+        });
+        
         cartBooks.map((cartBook) => {
             // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
             this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
 
-        localStorage.clear();
-        this.setState({
-            cartBooks: [],
-        });
         
         // this.props.history.push("/")
 
