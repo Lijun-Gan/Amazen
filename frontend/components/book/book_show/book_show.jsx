@@ -26,22 +26,23 @@ class BookShow extends React.Component {
         }
         debugger
 
-        // const savedCart = localStorage.getItem(currentUser.id);
-        // let cart = {};
+        const savedCart = localStorage.getItem(currentUser.id);
+        let cart = {};
 
-        // debugger
+        debugger
 
-        // if (savedCart) {
-        //     debugger
-        //     cart = JSON.parse(savedCart);
-        // }
+        if (savedCart) {
+            debugger
+            cart = JSON.parse(savedCart);
+        }
 
-        // debugger
+        debugger
+        
 
-        // cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, id:this.props.book.id}
-        // debugger
+        cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, id:this.props.book.id}
+        debugger
     
-        // localStorage.setItem(currentUser.id, JSON.stringify(cart));
+        localStorage.setItem(currentUser.id, JSON.stringify(cart));
 
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 
 class CartItem extends React.Component {
@@ -10,7 +9,7 @@ class CartItem extends React.Component {
 
     render() {
         const { book , deleteOneItem} = this.props;
-   
+        debugger
 
         return (
             <div className="shopping-cart-item">
