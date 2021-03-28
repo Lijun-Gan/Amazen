@@ -58,8 +58,6 @@ class Cart extends React.Component {
             )
         }
 
-    
-
         let subTotal = 0;
         let quantity = 0;
 
@@ -74,12 +72,7 @@ class Cart extends React.Component {
 
         return (    
 
-
             <div id="shopping-cart-page-container">
-
-
-            
-
                         <h1 className="carts-books-subtotal-tag-left">Shopping Cart</h1>
                         <button className="delete-all-book" onClick={this.deleteAllItems}>Deselect all items</button>
                         
