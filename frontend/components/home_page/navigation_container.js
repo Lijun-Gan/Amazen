@@ -9,7 +9,7 @@ const mapStateToProps = (state) =>{
 
 
     debugger
-    if(state.session.id !== undefined){
+    if(state.session.id !== undefined && state.session.id != null ){
         const userId = state.session.id
         userName = state.entities.users[userId].username
 

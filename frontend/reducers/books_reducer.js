@@ -17,12 +17,11 @@ const booksReducer = (State = {}, action) => {
             return Object.assign({},State,action.books);
 
         case RECEIVE_BOOK:
-            // 
+
             nextState[action.oneBook.book.id] = action.oneBook.book;
 
             return nextState;
-        // case RECEIVE_BOOK_FOR_REVIEW:
-        //     return Object.assign({}, State, { display: action.anime.details });
+     
 
         default:
             return State;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 class BookShow extends React.Component {
@@ -21,12 +21,12 @@ class BookShow extends React.Component {
     handleCart(e){
         e.preventDefault();
 
-        if(!this.props.currentUser){
+        if(!this.props.currentUserId){
             this.props.history.push("/signin")
         }
         debugger
 
-        const savedCart = localStorage.getItem(currentUser.id);
+        const savedCart = localStorage.getItem(this.props.currentUserId);
         let cart = {};
 
         debugger
@@ -37,18 +37,19 @@ class BookShow extends React.Component {
         }
 
         debugger
+        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id}
+        let uniqueId = this.props.book.id.toString() + "_" + this.state.format
         
-
-        cart[this.props.book.id] = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, id:this.props.book.id}
+        cart[uniqueId] = cartItem
         debugger
     
-        localStorage.setItem(currentUser.id, JSON.stringify(cart));
+        localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
 
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
 
        
         
-        this.props.receiveCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) })
+        this.props.receiveCart(cartItem)
         this.props.history.push('/cart')
 
         // this.props.receiveCart({user_id: currentUser.id, book_id: this.props.book.id, quantity: Number(this.state.quantity) }).then(()=>(this.props.history.push("/cart")))

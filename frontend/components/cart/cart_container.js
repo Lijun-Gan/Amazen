@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Cart from './cart';
-import {createCart} from '../../actions/cart_actions'
+import {createCart, deleteCart, receiveCart} from '../../actions/cart_actions'
 
 const mapStateToProps = (state) => {
     // return {
@@ -8,23 +8,27 @@ const mapStateToProps = (state) => {
        
     // }
     
+    let cartsBook = [];
     if(state.session.id !== undefined){
-        let cartsBook = [];
+        debugger
         let userId = state.session.id;
 
         if(localStorage.getItem(userId) !== null){
-            cartsBook = Object.values(JSON.parse(localStorage.getItem(userId )))
+            debugger
+            cartsBook = JSON.parse(localStorage.getItem(userId ))
         }
         return ({
             currentUserId: userId,
-            cartsBook: cartsBook
+            cartBooks: cartsBook
         })
     }
 }
     
 const mapDispatchToProps = (dispatch) => {
     return {
-        createCart: (cart) => dispatch(createCart(cart))
+        createCart: (cart) => dispatch(createCart(cart)),
+        deleteCart: (cartId) => dispatch(deleteCart(cartId)),
+        receiveCart: (cart) => dispatch(receiveCart(cart))
     }
 }
 

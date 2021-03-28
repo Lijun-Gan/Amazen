@@ -6,12 +6,16 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
 
+        // this.state = {
+        //     cartBooks: this.props.cartBooks
+        // }
+        
         this.state = {
-            books: JSON.parse(localStorage.getItem(this.props.currentUserId)),
+            cartBooks: JSON.parse(localStorage.getItem(this.props.currentUserId)),
         };
 
         this.deleteAllItems = this.deleteAllItems.bind(this);
-        this.deleteOneItem = this.deleteOneItem.bind(this);
+        // this.deleteOneItem = this.deleteOneItem.bind(this);
         this.handleCheckOut = this.handleCheckOut.bind(this);
     }
 
@@ -20,28 +24,16 @@ class Cart extends React.Component {
         this.props.history.push('/')
     }
 
-    deleteOneItem(bookId) {
-        return()=>{
-
-            delete this.state.books[bookId];
-    
-            localStorage.setItem(this.props.currentUserId, JSON.stringify(this.state.books));
-            this.setState({
-                books: this.state.books,
-            });
-        }
-    }
-
     handleCheckOut() {
         // let books = Object.values(this.state.books);
 
-        this.state.books.map((book) => {
+        this.state.cartBooks.map((book) => {
             this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
         });
 
         localStorage.clear();
         this.setState({
-            books: [],
+            cartBooks: [],
         });
         // return <Redirect to="/" />;
         this.props.history.push("/")
@@ -56,8 +48,8 @@ class Cart extends React.Component {
         // }
 
 
-    //     debugger
-        if (this === undefined || this.state.books === null || Object.values(this.state.books) < 1){
+        debugger
+        if (this === undefined || this.state.cartBooks === null || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
           
             debugger
            return (
@@ -75,10 +67,10 @@ class Cart extends React.Component {
         let subTotal = 0;
         let quantity = 0;
 
-        Object.values(this.state.books).forEach(book => {
-            quantity = quantity + Number(book.quantity);
+        Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).forEach(cartBook => {
+            quantity = quantity + Number(cartBook.quantity);
             debugger
-            subTotal = subTotal + book.price * book.quantity
+            subTotal = subTotal + cartBook.price * Number(cartBook.quantity)
         });
 
         subTotal = "$" + subTotal.toString();
@@ -106,9 +98,10 @@ class Cart extends React.Component {
 
                                
                         <ul>
-                            {Object.values(this.state.books).map((book,idx)=>(
+                            {Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).map((cartBook,idx)=>(
                                 <li key={idx}>
-                                    {<CartItem deleteOneItem={this.deleteOneItem} book={book} subTotle={subTotal} />}
+                                    {<CartItem  cartBook={cartBook} subTotle={subTotal}  deleteCart={this.props.deleteCart} receiveCart={this.props.receiveCart} />}
+                                    {/* deleteOneItem={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)} */}
                                 </li>
                             ))}
                         </ul>

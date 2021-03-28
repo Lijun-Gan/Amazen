@@ -25,8 +25,7 @@ const mapStateToProps=(state,ownProps)=>{
     return({
         book: oneBook,
         reviews: bookReviews,
-        currentUser: state.session.id,
-       
+        currentUserId: state.session.id,
         
     })
 }

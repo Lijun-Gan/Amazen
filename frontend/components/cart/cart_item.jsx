@@ -4,11 +4,60 @@ import { Link } from 'react-router-dom';
 class CartItem extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state =  this.props.cartBook;
+
+        // this.handleBookQuantity =  this.handleBookQuantity.bind(this)
+        // this.deleteOneItem = this.deleteOneItem.bind(this)
+    }
+
+    handleBookQuantity(cartId){
+
+        return (e)=>{
+
+            e.preventDefault()
+            this.setState({
+                quantity: e.target.value
+            })
+    
+            let cartBooks = JSON.parse(localStorage.getItem(currentUser.id ))
+            debugger
+               cartBooks[cartId].quantity = e.target.value;
+        
+            localStorage.setItem(currentUser.id , JSON.stringify(cartBooks));  
+        }    
+
     }
 
 
+    deleteOneItem(cartId) {
+        debugger
+
+        const value = cartId
+        debugger
+
+        return(e)=>{
+            e.preventDefault
+            debugger
+      
+
+            let cartBooks = JSON.parse(localStorage.getItem(currentUser.id ))
+            delete cartBooks[value];
+            debugger
+            
+            localStorage.setItem(currentUser.id , JSON.stringify(cartBooks));
+
+            debugger
+            this.props.deleteCart(cartId)
+            debugger
+    
+     
+
+        }
+    }
+
     render() {
-        const { book , deleteOneItem} = this.props;
+        const { cartBook } = this.props;
         debugger
 
         return (
@@ -18,18 +67,18 @@ class CartItem extends React.Component {
 <div className="cart-book-info">
 
         <div className="carts-books-img">
-            <Link to={`/books/${book.id}`}>
-            <img src={book.image_url}></img>
+            <Link to={`/books/${cartBook.book_id}`}>
+            <img src={cartBook.image_url}></img>
             </Link>
         </div>
 
 <div className="carts-books-info">
 
-            <Link to={`/books/${book.id}`}>
-                <span className='carts-books-title'>{book.title}</span>
-                <p className="cart-price">$ {book.price}</p>
+            <Link to={`/books/${cartBook.book_id}`}>
+                <span className='carts-books-title'>{cartBook.title}</span>
+                <p className="cart-price">$ {cartBook.price}</p>
             </Link>
-                <p>{book.format}</p>
+                <p>{cartBook.format}</p>
                 
             <div id="big-box">
 
@@ -37,7 +86,7 @@ class CartItem extends React.Component {
          <div className="cart-book-in-stock-container">
                 <p className="carts-book-in-stock">In Stock</p>
             
-                <select className="book-quantity-select" >
+                <select className="book-quantity-select" onChange={this.handleBookQuantity(cartBook.book_id.toString()+ "_" + cartBook.format)} value={this.state.quantity} >
                     <option value="1" >Qty: 1</option>
                     <option value="2" >Qty: 2</option>
                     <option value="3" >Qty: 3</option>
@@ -47,7 +96,7 @@ class CartItem extends React.Component {
             </div>
 </div>
            
-            <button className="deleteOneItem"  onClick={deleteOneItem(book.id)}>Delete</button>
+            <button className="deleteOneItem"  onClick={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)}>Delete</button>
 
         </div>
 
