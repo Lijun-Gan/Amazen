@@ -70,7 +70,7 @@ class CartItem extends React.Component {
 
         <div className="carts-books-img">
             <Link to={`/books/${cartBook.book_id}`}>
-            <img src={cartBook.image_url}></img>
+            <img className="cart-book-img" src={cartBook.image_url}></img>
             </Link>
         </div>
 

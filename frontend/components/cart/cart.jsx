@@ -6,12 +6,9 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     cartBooks: this.props.cartBooks
-        // }
-        
         this.state = {
             cartBooks: JSON.parse(localStorage.getItem(this.props.currentUserId)),
+            checkOut: false,
         };
 
         this.handleCheckOut = this.handleCheckOut.bind(this);
@@ -25,6 +22,7 @@ class Cart extends React.Component {
 
         this.setState({
             cartBooks: [],
+            checkOut: true
         });
         
         cartBooks.map((cartBook) => {
@@ -45,13 +43,16 @@ class Cart extends React.Component {
         // }
 
 
-        debugger
+        
         if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || currentUser === undefined || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
-          
-            debugger
+        
+  
+
            return (
                 <div className="empty-cart-page">
-                    <h1 className="cart-empty">Your Amazen Cart is empty.</h1>
+                    <p className={ this.state.checkOut ? "on-the-way" : "not-show"}>✅ &nbsp; Your order is on the way!</p>
+
+                    <h1 className="cart-empty"> Your Amazen Cart is empty.</h1>
                     
                    <Link to='/'>
                    <i id="continue-shopping">Continue shopping</i></Link>
@@ -65,13 +66,17 @@ class Cart extends React.Component {
         Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).forEach(cartBook => {
             quantity = quantity + Number(cartBook.quantity);
             debugger
-            subTotal = subTotal + cartBook.price * Number(cartBook.quantity)
+            subTotal = subTotal + Number(cartBook.price) * Number(cartBook.quantity)
         });
 
-        subTotal = "$" + subTotal.toString();
-        debugger
+        subTotal = "$" + subTotal.toFixed(2).toString();
+  
 
         return (    
+
+            <div id="shopping-cart-outer-container">
+
+            
 
             <div id="shopping-cart-page-container">
                         <h1 className="carts-books-subtotal-tag-left">Shopping Cart</h1>
@@ -109,20 +114,21 @@ class Cart extends React.Component {
                     <span className="carts-books-subtotal-left">{subTotal}</span>
 
                 </div>
+                    
+                    
+
                     <button className="carts-checkout" onClick={this.handleCheckOut}>Proceeed to checkout</button>
 
             </div>
 
 
 
-            
-
-                    
        
        </div>
 
 
 
+       </div>
 
         )
 
