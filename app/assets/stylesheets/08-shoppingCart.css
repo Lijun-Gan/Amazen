@@ -317,6 +317,11 @@
     margin-right: 6px;
 }
 
+.carts-books-title:hover{
+    text-decoration:underline;
+    text-decoration-color: #B12704;
+    color: #B12704;
+}
 
 .cart-book-author{
     font-size: 14px;
