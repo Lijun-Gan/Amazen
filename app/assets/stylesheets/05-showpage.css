@@ -58,17 +58,34 @@
     border-radius: 3px;
 }
 
-.price-btn:focus{
+.price-btn.change{
+    border: red solid 1px;
+    background-color: #fff6e6;
+}
+
+.book-show-price{
+    
+    font-weight: bolder;
+    color: #B12704;
+}
+
+.book-show-format{
+    color: black;
+    font-weight: bolder;
+}
+
+
+/* .price-btn:focus{
     background-color: #fff6e6;
     border: red solid 1px;
     font-weight: bolder;
     color: #B12704;
 }
 
-
 p.book-show-format{
     color: black;
-}
+} */
+
 
 .className:focus{
     color: red;

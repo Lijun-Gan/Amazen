@@ -228,9 +228,9 @@ class BookShow extends React.Component {
                             //     
                                return (
                                <li key={idx}>
-                                   <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>
-                                       <p className="book-show-format">{formatPrice.book_format}</p>
-                                        <p className="book-show-price" >{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</p>
+                                   <button className={formatPrice.book_format=== this.state.format ? "price-btn change": "price-btn"} value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>
+                                       <p className={formatPrice.book_format=== this.state.format ?  "book-show-format" : "nothing"}>{formatPrice.book_format}</p>
+                                        <p className={formatPrice.book_format=== this.state.format ?  "book-show-price" : "nothing"} >{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</p>
                                     </button>
 
 

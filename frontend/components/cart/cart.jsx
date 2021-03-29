@@ -46,7 +46,7 @@ class Cart extends React.Component {
 
 
         debugger
-        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
+        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || currentUser === undefined || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
           
             debugger
            return (
