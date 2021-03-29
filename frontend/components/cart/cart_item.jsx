@@ -16,14 +16,14 @@ class CartItem extends React.Component {
         return (e)=>{
 
             e.preventDefault()
-            debugger
+             
             this.setState({
                 quantity: e.target.value
             })
-            debugger
+             
     
             let cartBooks = JSON.parse(localStorage.getItem(currentUser.id ))
-            debugger
+             
                cartBooks[cartId].quantity = e.target.value;
         
             localStorage.setItem(currentUser.id , JSON.stringify(cartBooks));  
@@ -35,32 +35,32 @@ class CartItem extends React.Component {
 
 
     deleteOneItem(cartId) {
-        debugger
+         
 
 
         return(e)=>{
             e.preventDefault
-            debugger
+             
       
 
             let cartBooks = JSON.parse(localStorage.getItem(currentUser.id ))
             delete cartBooks[cartId];
-            debugger
+             
             
             localStorage.setItem(currentUser.id , JSON.stringify(cartBooks));
 
-            debugger
+             
             this.props.deleteCart(cartId)
-            debugger
+             
     
         }
     }
 
-    
+
 
     render() {
         const { cartBook } = this.props;
-        debugger
+         
 
         return (
             <div className="shopping-cart-item">

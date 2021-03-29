@@ -10,11 +10,11 @@ const mapStateToProps = (state) => {
     
     let cartsBook = [];
     if(state.session.id !== undefined){
-        debugger
+         
         let userId = state.session.id;
 
         if(localStorage.getItem(userId) !== null){
-            debugger
+             
             cartsBook = JSON.parse(localStorage.getItem(userId ))
         }
         return ({

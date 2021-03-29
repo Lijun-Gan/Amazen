@@ -86,7 +86,7 @@ class Cart extends React.Component {
 
         Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).forEach(cartBook => {
             quantity = quantity + Number(cartBook.quantity);
-            debugger
+             
             subTotal = subTotal + Number(cartBook.price) * Number(cartBook.quantity)
         });
 

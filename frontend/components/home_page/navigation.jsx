@@ -12,11 +12,11 @@ const NavBar = (props) => {
 
   // if(props.username === undefined || props.cartsBook === null || props.cartsBook.length === 0 ){
   // if(props.cartsBook.length === 0 ){
-  //  debugger
+  //   
   //   username = "";
   // }else{
  
-  //   debugger
+  //    
   //   username = props.username;
   //   const {cartsBook} = props
   //   // let cartsBook = Object.values(props.cartsBook)

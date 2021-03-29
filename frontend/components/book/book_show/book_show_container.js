@@ -9,7 +9,7 @@ const mapStateToProps=(state,ownProps)=>{
 
     let bookReviews = [];
     let allReviews;
-    debugger
+     
     const oneBook = state.entities.books[ownProps.match.params.id];
      
     if(Object.keys(oneBook !== undefined && state.entities.reviews).length !== 0 && state.entities.reviews !== undefined && oneBook.reviewIds !== undefined ){

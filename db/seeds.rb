@@ -314,7 +314,7 @@ After helping to discover CRISPR, Doudna became a leader in wrestling with these
    
 Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
    
-    Price.create!( book_id: 11, book_format: "Audiobook",  price: 0.00)
+    Price.create!( book_id: 11, book_format: "Audiobook",  price: 8.00)
    
 
     Author.create!( 
