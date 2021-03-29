@@ -120,13 +120,11 @@ class Cart extends React.Component {
                     <button className="carts-checkout" onClick={this.handleCheckOut}>Proceeed to checkout</button>
 
             </div>
-
-
-
-       
        </div>
 
+<div >
 
+</div>
 
        </div>
 

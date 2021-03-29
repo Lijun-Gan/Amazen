@@ -66,7 +66,7 @@ class CartItem extends React.Component {
             <div className="shopping-cart-item">
                  
 
-<div className="cart-book-info">
+<div className="cart-book-info-container">
 
         <div className="carts-books-img">
             <Link to={`/books/${cartBook.book_id}`}>
@@ -74,13 +74,14 @@ class CartItem extends React.Component {
             </Link>
         </div>
 
-<div className="carts-books-info">
+<div className="cart-book-info">
 
             <Link to={`/books/${cartBook.book_id}`}>
                 <span className='carts-books-title'>{cartBook.title}</span>
-                <p className="cart-price">$ {cartBook.price}</p>
             </Link>
-                <p>{cartBook.format}</p>
+              
+                <span className="cart-book-author">by {cartBook.author}</span>
+                <p className="cart-book-format">{cartBook.format}</p>
                 
             <div id="big-box">
 
@@ -88,17 +89,20 @@ class CartItem extends React.Component {
          <div className="cart-book-in-stock-container">
                 <p className="carts-book-in-stock">In Stock</p>
             
-                <select className="book-quantity-select" onChange={this.handleBookQuantity(cartBook.book_id.toString()+ "_" + cartBook.format)} value={this.state.quantity} >
-                    <option value="1" >Qty: 1</option>
-                    <option value="2" >Qty: 2</option>
-                    <option value="3" >Qty: 3</option>
-                    <option value="4" >Qty: 4</option>
+                <select className="book-quantity-select-cart" onChange={this.handleBookQuantity(cartBook.book_id.toString()+ "_" + cartBook.format)} value={this.state.quantity} >
+                    <option value="1" >Qty: &nbsp;  1</option>
+                    <option value="2" >Qty: &nbsp;  2</option>
+                    <option value="3" >Qty: &nbsp;  3</option>
+                    <option value="4" >Qty: &nbsp;  4</option>
                 </select>
-
-            </div>
-</div>
-           
+            
             <button className="deleteOneItem"  onClick={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)}>Delete</button>
+           
+        </div>
+</div>
+
+                <p className="cart-price">$ {cartBook.price}</p>
+           
 
         </div>
 
