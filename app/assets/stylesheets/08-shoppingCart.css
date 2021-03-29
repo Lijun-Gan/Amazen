@@ -32,7 +32,7 @@
     padding: 10px 14px ;
     border: #e6e3e3 3px solid;
     border-radius: 8px;
-    height: 380px
+    height: 400px
 }
 
 .add-to-cart-button{
@@ -129,6 +129,7 @@
     margin-left: 75px;
     margin-top: 5px;
     margin-bottom: 12px;
+    white-space: nowrap;
 }
 
 .cart-empty{

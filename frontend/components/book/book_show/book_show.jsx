@@ -24,24 +24,24 @@ class BookShow extends React.Component {
         if(!this.props.currentUserId){
             this.props.history.push("/signin")
         }
-        debugger
+    
 
         const savedCart = localStorage.getItem(this.props.currentUserId);
         let cart = {};
 
-        debugger
+
 
         if (savedCart) {
-            debugger
+ 
             cart = JSON.parse(savedCart);
         }
 
-        debugger
+
         let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id}
         let uniqueId = this.props.book.id.toString() + "_" + this.state.format
         
         cart[uniqueId] = cartItem
-        debugger
+
     
         localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
 
@@ -64,14 +64,14 @@ class BookShow extends React.Component {
 
     handleBookQuantity(e){
         e.preventDefault();
-        debugger
+     
         this.setState({
             quantity: e.target.value
         })
     }
 
     handlePrice(e){
-        const book_format_price = e.target.value.split(",")
+        const book_format_price = e.currentTarget.value.split(",")
         this.setState({
             format: book_format_price[0],
             price: book_format_price[1],
@@ -228,16 +228,15 @@ class BookShow extends React.Component {
                             //     
                                return (
                                <li key={idx}>
-                        
-                                   {/* <button className="price-btn" value={formatPrice} onClick={this.handlePrice}>
-                                       <span className="book-show-format">{formatPrice.book_format}</span>
-                                        <span className="book-show-price">{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</span>
-                                    </button> */}
+                                   <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>
+                                       <p className="book-show-format">{formatPrice.book_format}</p>
+                                        <p className="book-show-price" >{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</p>
+                                    </button>
 
 
-                                   <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
+                                   {/* <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
                                    <br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
-              
+               */}
                                </li>
                            )})}
                         </ul>
