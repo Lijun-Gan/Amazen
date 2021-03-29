@@ -3,8 +3,9 @@
     width: 110px;
     margin-top: 15px;
     margin-bottom: 20px;
-    margin-left: 700px;
-    /* margin-right: 50%; */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 a:-webkit-any-link{
@@ -352,3 +353,7 @@ h3.email-taken-alert {
     margin-top: 13px;
     font-size: 17px;
 }
+
+/* .signin-container{
+    width: 380px;
+} */

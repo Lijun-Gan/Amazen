@@ -172,23 +172,13 @@ class SignIn extends React.Component {
 
     render() {
 
-    
-
-        // const incorrectPhone = (
-
-        // )
-
-        // const incorrectPassword = (
-
-        // )
-
 
         if(this.state.user_exist.exist === 0){
 
         const emailOrPhoneColor = (this.state.errors.email_or_phone !== "") ? "input-error" : null;
 
             return (
-                <div>
+                <div className = "signin-container">
                     <Link to="/"> 
                     <img id="amazen-logo" src={window.amazenLogo} alt="amazen logo"/>
                     </Link>
@@ -242,7 +232,7 @@ class SignIn extends React.Component {
             const emptyPasswordColor = (this.state.errors.emptyPassword !== "") ? "input-error" : null;
    
             return (
-                <div>
+                <div className = "signin-container">
                 <Link to="/"> 
                 <img id="amazen-logo" src={window.amazenLogo} alt="amazen logo"/>
                 </Link>
