@@ -157,9 +157,10 @@
 
 #shopping-cart-page-container{ 
   
-    background-color: white;
-    border: 18px solid #EAEDED;
+    /* background-color: white;
+    border: 18px solid #EAEDED; */
     padding: 25px;
+    border-right: 18px solid #EAEDED;
 }
 
 
@@ -223,7 +224,7 @@
 .carts-checkout{
     border: solid 1px;
     height: 28px;
-    width: 268px;
+    width: 255px;
     border-color: #a88734 #9c7e31 #846a29;
     border-radius: 4px;
     text-align: center;
@@ -357,5 +358,5 @@
 
 #shopping-cart-outer-container{
     display: flex;
-
+    border: 18px solid #EAEDED;
 }
