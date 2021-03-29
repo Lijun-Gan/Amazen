@@ -10,6 +10,10 @@ button.backToTop{
     line-height: 19px;
 }
 
+#footer-container{
+    min-width: 986px;
+}
+
 #foot-notes-container{
     height: 400px;
     width: 100%;

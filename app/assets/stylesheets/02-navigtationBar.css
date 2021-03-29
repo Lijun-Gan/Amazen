@@ -425,7 +425,9 @@ a.subNav.last:hover {
 }
 
 
-
+#nav-bar-container{
+    min-width: 986px;
+}
 
 
 

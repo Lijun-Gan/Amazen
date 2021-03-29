@@ -51,7 +51,7 @@ if (props.quantity < 10) {
 }
    
   return (
-    <div>
+    <div id="nav-bar-container">
 
     <div id='nav-bar-top'>
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const FootNote = ()=>{
     return(
 
-        <div>
+        <div id="footer-container">
             {/* onClick={() => window.scrollTo()} */}
             <button className="backToTop" onClick={()=>{window.scrollTo(0, 0)}}>Back to top</button>
 

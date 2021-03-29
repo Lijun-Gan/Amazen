@@ -161,6 +161,7 @@
     border: 18px solid #EAEDED; */
     padding: 25px;
     border-right: 18px solid #EAEDED;
+    width: 83%;
 }
 
 
@@ -197,7 +198,7 @@
     color: black;
     font-weight: 600;
     min-width: 56px;
-    margin-top: 13px;
+    margin-top: 24px;
 }
 
 /* .cart-bottom-note{
@@ -247,8 +248,8 @@
 }
 
 .cart-book-img{
-    height: 180px;
-    width: 130px;
+    height: 200px;
+    width: 145px;
 }
 
 .carts-books-subtotal-tag-left{
@@ -353,7 +354,7 @@
 
     /* border: red solid 1px; */
     height: 110px;
-    width: 310px;
+    width:298px;
 
 }
 
@@ -365,4 +366,7 @@
 #shopping-cart-outer-container{
     display: flex;
     border: 18px solid #EAEDED;
+
+    min-width: 950px;
+
 }
