@@ -212,26 +212,6 @@
     padding: 0 35px;
 } 
 
-/* change??? */
-/* .carts-books-list{
-    margin-top: 20px;
-    margin-bottom: 5px;
-    height: 800px;
-    width: 800px;
-    border: red 1px solid;
-} */
-
-
-
-
-/* .sub-total{
-    text-align: right;
-} */
-
-/* .cart-page-right-side-container{
-    text-align: right;
-} */
-
 .carts-books-subtotal-left{
     color: #0F1111;
     font-size: 24px;
@@ -239,6 +219,7 @@
     font-weight: 600;
     margin-bottom: 25px;
  } 
+
 .carts-checkout{
     border: solid 1px;
     height: 28px;
@@ -249,6 +230,8 @@
     font-size: 13px;
     background:  #f0c14b;
     margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
 } 
 
 .carts-checkout:hover{
@@ -267,12 +250,19 @@
     width: 130px;
 }
 
-h1.carts-books-subtotal-tag-left{
+.carts-books-subtotal-tag-left{
     
-    font-size: 28px;
-    margin-top: 0px;
-    margin-bottom: 4px;
+    font-size: 18px;
+
+
     font-family: 'Lato', sans-serif;
+}
+.carts-books-subtotal-left{
+    
+    font-size: 19px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 
 /* #shopping-cart-outer-container{
@@ -345,4 +335,27 @@ h1.carts-books-subtotal-tag-left{
     padding-bottom: 25px;
     border-bottom: 1px #dcdbdb solid;
     margin-top: 15px;
+}
+
+.sub-total{
+    text-align: right;
+    margin-top: 6px;
+}
+
+.cart-page-right-side-container{
+
+    border: red solid 1px;
+    height: 110px;
+    width: 310px;
+
+}
+
+.sub-total-right{
+    text-align: left;
+    margin: 20px 20px;
+}
+
+#shopping-cart-outer-container{
+    display: flex;
+
 }

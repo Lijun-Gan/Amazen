@@ -106,7 +106,6 @@ class Cart extends React.Component {
 
 
 
-            <div className="cart-page-right-side-container">
 
                 <div className="sub-total">
                     <span className="carts-books-subtotal-tag-left">Subtotal ({quantity} items):</span>
@@ -116,15 +115,22 @@ class Cart extends React.Component {
                 </div>
                     
                     
+            <div className="cart-page-right-side-container">
+
+            <div className="sub-total-right ">
+
+                    <span className="carts-books-subtotal-tag-left">Subtotal ({quantity} items):</span>
+                  
+                    <span className="carts-books-subtotal-left">{subTotal}</span>
+
+                </div>
 
                     <button className="carts-checkout" onClick={this.handleCheckOut}>Proceeed to checkout</button>
 
             </div>
+
        </div>
 
-<div >
-
-</div>
 
        </div>
 
