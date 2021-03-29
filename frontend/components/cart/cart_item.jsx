@@ -53,10 +53,10 @@ class CartItem extends React.Component {
             this.props.deleteCart(cartId)
             debugger
     
-     
-
         }
     }
+
+    
 
     render() {
         const { cartBook } = this.props;

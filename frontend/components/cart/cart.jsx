@@ -12,6 +12,7 @@ class Cart extends React.Component {
         };
 
         this.handleCheckOut = this.handleCheckOut.bind(this);
+        this.deleteAllItems = this.deleteAllItems.bind(this);
     }
 
 
@@ -30,6 +31,26 @@ class Cart extends React.Component {
             this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
 
+        
+        // this.props.history.push("/")
+
+    }
+
+
+    deleteAllItems(e) {
+        e.preventDefault()
+
+        let cartBooks = Object.values(this.state.cartBooks );
+        localStorage.clear();
+
+        this.setState({
+            cartBooks: [],
+        });
+        
+        cartBooks.map((cartBook) => {
+            // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
+            this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
+        });
         
         // this.props.history.push("/")
 
@@ -80,7 +101,7 @@ class Cart extends React.Component {
 
             <div id="shopping-cart-page-container">
                         <h1 className="carts-books-subtotal-tag-left">Shopping Cart</h1>
-                        <button className="delete-all-book" onClick={this.deleteAllItems}>Deselect all items</button>
+                        <button className="delete-all-book" onClick={this.deleteAllItems}>Delete all items</button>
                         
                         <div className="price-at-end">
 
