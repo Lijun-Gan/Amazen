@@ -7,26 +7,66 @@ class SearchBar extends Component{
         this.state = {
             input: ''
         };
+
     this.handleInput = this.handleInput.bind(this);
     }
 
     componenetDidMount(){
-        this.getProducts()
+        debugger
+        this.props.fetchBooks()
+        this.handleInput()
         // this.getInput()
     }
 
-    handleInput(field){
-        return (e) => {console.log(field) }
+    handleInput(e){
+        e.preventDefault()
+        let search = e.target.value 
+        this.props.receiveSearch(search)
+        this.setState(state=>({
+            previousInput: state.input,
+            input: search
+        }))
+    }
+
+
+    searchedBook(e, id){
+        this.setState({
+            input: '',
+            previousInput: ''
+         })
+         this.props.history.push(`/books/${id}`)
     }
 
     render(){
+
+        let searchBookTitle = "";
+        if (this.props.books && this.props.search && this.state.input) {
+            debugger
+
+            searchBookTitle  =  this.props.books.filter((option) => {
+                debugger
+                
+                if (option.title.toLowerCase().includes(this.state.input.toLowerCase())){
+                    debugger
+                    return option
+                }
+            })
+            .map((book) => (
+                  <button key={book.id} onClick={e => this.searchedBook(e, book.id)}>{book.title}</button>
+              ))
+          }    
+          
+
        
         return (
             <div className="searchbar">
                     <form className="nav-search-bar-container">
                     <button id="search-all">All &nbsp;▾</button>
-                        <input className="nav-search-bar" type="text" value={this.state.searchTerm} onChange={this.handleInput("item")}/>
+                        <input className="nav-search-bar" type="text"  onChange={this.handleInput}/>
                         <button className="search-icon-btn"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
+                        <div className="search-dropdown">
+                            {searchBookTitle }
+                        </div>
                     </form>  
 
             </div>

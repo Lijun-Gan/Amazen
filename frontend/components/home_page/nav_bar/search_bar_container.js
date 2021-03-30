@@ -3,8 +3,8 @@ import SearchBar from "./search_bar";
 import {fetchBooks, receiveSearch} from '../../../actions/book_actions';
 
 const mapStateToProps = (state) => ({
-    books: Object.values(state.entities.books),
-    search: state.search
+    search: state.search,
+    books: Object.values(state.entities.books)
   
 });
 

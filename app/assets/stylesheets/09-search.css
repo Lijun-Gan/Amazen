@@ -1,0 +1,12 @@
+.search-dropdown{
+    /* display: none; */
+    background-color: white;
+    /* display: none; */
+    flex-direction: column;
+    margin-left: 48px;
+    margin-top: 40px;
+    width: 44%;
+    border: 1px solid lightgray;
+    border-top: none;
+    position: absolute;
+}

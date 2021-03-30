@@ -201,6 +201,7 @@ input.nav-search-bar{
     background-color: white;
     padding-left: 8px;
     font-size: 15px;
+    position: relative;
 }
 
 
@@ -343,6 +344,7 @@ div.searchbar:focus-within{
     height: 30px;
     margin-top: 2px;
     border: 1px solid transparent;
+    min-width: 60px;
 }
 
 .nav-mid-all-container:hover{
