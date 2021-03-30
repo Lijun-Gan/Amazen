@@ -108,7 +108,7 @@ if (props.quantity < 10) {
 
     <div id='nav-bar-mid'>
 
-       <button className="nav-mid-all-container">
+       <button className="nav-mid-all-container" onClick={()=>(props.fetchBooks())}>
         <img id="nav-mid-all" src={window.all_icon} alt="middle nav"/>
         <p className="word-all">&nbsp;All</p>
        </button>
@@ -120,7 +120,7 @@ if (props.quantity < 10) {
           <button className="sub-nav xsm">Customer Service</button>
           <button className="sub-nav sm">New Release</button>
           <Link to="/" > 
-          <button className="sub-nav sm">Books</button>
+          <button className="sub-nav sm" onClick={()=>(props.fetchBooks())}>Books</button>
           </Link>
       
 

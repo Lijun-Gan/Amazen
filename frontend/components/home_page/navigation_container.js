@@ -1,5 +1,7 @@
 import {connect } from 'react-redux'
-import  NavigationContainer from './navigation'
+import  Navigation from './navigation'
+import {fetchBooks} from '../../actions/book_actions'
+
 
 const mapStateToProps = (state) =>{
 
@@ -47,4 +49,10 @@ const mapStateToProps = (state) =>{
   
 // }
 
-export default connect(mapStateToProps, null)(NavigationContainer)
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        fetchBooks: ()=>{dispatch(fetchBooks())}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
