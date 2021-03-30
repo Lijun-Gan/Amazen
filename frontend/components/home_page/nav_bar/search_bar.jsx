@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class SearchBar extends Component{
     constructor(props){
@@ -52,7 +53,10 @@ class SearchBar extends Component{
                 }
             })
             .map((book) => (
-                  <button key={book.id} onClick={e => this.searchedBook(e, book.id)}>{book.title}</button>
+                <Link key={book.id} to="/">
+                    <p className="search-book-link" key={book.id} onClick={e => this.searchedBook(e, book.id)}>{book.title}</p>
+                </Link>
+                
               ))
           }    
           
@@ -62,11 +66,14 @@ class SearchBar extends Component{
             <div className="searchbar">
                     <form className="nav-search-bar-container">
                     <button id="search-all">All &nbsp;▾</button>
+                    <div className="nav-search-bar-with-icon">
                         <input className="nav-search-bar" type="text"  onChange={this.handleInput}/>
                         <button className="search-icon-btn"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
                         <div className="search-dropdown">
                             {searchBookTitle }
                         </div>
+
+                    </div>
                     </form>  
 
             </div>

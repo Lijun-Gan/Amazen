@@ -200,8 +200,9 @@ input.nav-search-bar{
     /* margin-top: 6px; */
     background-color: white;
     padding-left: 8px;
+    padding-right: 8px;
     font-size: 15px;
-    position: relative;
+    position: static;
 }
 
 
@@ -258,6 +259,7 @@ div.searchbar:focus-within{
     /* height: 40px; */
     height: 100%;
     /* margin-top: 6px; */
+    position: static;
 }
 
 .search-icon-btn:hover{

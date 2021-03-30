@@ -3,10 +3,23 @@
     background-color: white;
     /* display: none; */
     flex-direction: column;
-    margin-left: 48px;
+    /* margin-left: 48px; */
     margin-top: 40px;
-    width: 44%;
+    width: 100%;
     border: 1px solid lightgray;
-    border-top: none;
+    /* border-top: none; */
     position: absolute;
+}
+
+.nav-search-bar-with-icon{
+    /* widt; */
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.search-book-link{
+    color: black;
+    padding: 10px 8px;
+    font-size: 14px;
 }
