@@ -16,11 +16,15 @@ export const receiveBook = (oneBook) => ({
     oneBook
 });
 
-export const receiveBookForReview = (book) => ({
-    type: RECEIVE_BOOK,
-    book
-});
+// export const receiveBookForReview = (book) => ({
+//     type: RECEIVE_BOOK,
+//     book
+// });
 
+export const receiveSearch = (search) => ({
+    type: RECEIVE_SEARCH,
+    search
+})
 
 
 export const fetchBooks = (book) => dispatch => {

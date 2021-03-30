@@ -5,9 +5,14 @@ class SearchBar extends Component{
     constructor(props){
         super(props);
         this.state = {
-            item: ''
+            input: ''
         };
     this.handleInput = this.handleInput.bind(this);
+    }
+
+    componenetDidMount(){
+        this.getProducts()
+        // this.getInput()
     }
 
     handleInput(field){
