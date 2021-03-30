@@ -15,7 +15,7 @@ const mapStateToProps = (state) =>{
         const userId = state.session.id
         userName = state.entities.users[userId].username
 
-        if(localStorage.length !== 0){
+        if(localStorage.length !== 0 && localStorage.getItem(userId ) !== null){
 
              
             books = Object.values(JSON.parse(localStorage.getItem(userId )))

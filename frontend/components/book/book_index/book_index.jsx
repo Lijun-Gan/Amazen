@@ -23,7 +23,7 @@ class BookIndex extends React.Component {
     const { books } = this.props;
     if (books.length === 0 ) {
         return (
-          <h1>something wrong</h1>
+          <h1>Loading......</h1>
         )
         
     } else {

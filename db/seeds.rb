@@ -278,7 +278,7 @@ In 2009, she appeared as a contestant on Jeopardy!, becoming a two-day champion 
 
     Book.create!(
         title: "The Dangerous Gift (Wings of Fire, Book 14) ",
- category:"literature & Fiction",  
+ category:"literature & fiction",  
         description: "ActiveRecord uses the underlying database sequence to create primary keys. ... the IDs start from 1, there is no straight forward way in rails to do it. You can do. 1) Model.destroy_all ... which will handle all that you want, for a single table, if that's what you need ... Model.table_name) after Model.destroy_all.",
         publication_date: "March 2 , 2021",
         image_url: "https://images-na.ssl-images-amazon.com/images/I/51yu5yEhngL._SX329_BO1,204,203,200_.jpg",
@@ -307,7 +307,7 @@ Should we use our new evolution-hacking powers to make us less susceptible to vi
 
 After helping to discover CRISPR, Doudna became a leader in wrestling with these moral issues and, with her collaborator Emmanuelle Charpentier, won the Nobel Prize in 2020. Her story is a thrilling detective tale that involves the most profound wonders of nature, from the origins of life to the future of our species.
  ",
- category:"literature & Fiction", 
+ category:"literature & fiction", 
         publication_date: "March 9, 2021",
         image_url: "https://m.media-amazon.com/images/I/41KMmXBPckL.jpg",
         author_id: 11)
@@ -332,7 +332,7 @@ Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
             publication_date: "
     August 4 ,2020
     ",
-    category:"literature & Fiction", 
+    category:"literature & fiction", 
             image_url: "
     https://images-na.ssl-images-amazon.com/images/I/51f42uWcUWL._SX328_BO1,204,203,200_.jpg",
             author_id: 12)
@@ -359,7 +359,7 @@ Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
         With his unparalleled narrative skills, Erik Larson guides us through a relentlessly suspenseful chase over the waters of the North Atlantic. Along the way, he tells of a sad and tragic love affair that was described on the front pages of newspapers around the world, a chief inspector who found himself strangely sympathetic to the killer and his lover, and a driven and compelling inventor who transformed the way we communicate.
          ",
                 publication_date: "October 24, 2006",
-                category:"literature & Fiction", 
+                category:"literature & fiction", 
                 image_url: "https://m.media-amazon.com/images/I/51CrMCw54EL.jpg
         ",
                 author_id: 13)
@@ -430,7 +430,7 @@ Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
                         image_url: "
                 https://images-na.ssl-images-amazon.com/images/I/417fYqloHKL._SX329_BO1,204,203,200_.jpg
                 ",
-                        author_id: 3)
+                        author_id: 15)
                    
                     Price.create!( book_id: 15, book_format: "Kindle",  price: 13.99)
                    
@@ -438,9 +438,63 @@ Price.create!( book_id: 11, book_format: "Kindle",  price: 16.99)
                     Price.create!( book_id: 15, book_format: "Hardcopy",  price: 18.24)
                    
                 
-                       
-                
-          
-                
-                
+Author.create!( 
+    name: "Crystal Radke",  
+    biography: "In an era where we are less focused on writing and more focused on typing, Crystal provides a fantastic resource for young children who are learning how to write. This book provides the exercises necessary to get a strong start in letter and number formation and introduces children to shapes, numbers, and letters in a fun and engaging way")
+
+Book.create!(
+    title: "My First Learn to Write Workbook: Practice for Kids with Pen Control, Line Tracing, Letters, and More!",
+category:"children's books",  
+    description: "This handwriting activity book includes:
+
+    75+ Practice pages―Tons of engaging pencil-on-paper activities like connect-the-dots and fill-in-the-blanks offer enough repetition for real learning but enough variety to keep kids interested.
+    Comprehensive skill-building―As they explore these exercises, kids will build a strong foundation of reading comprehension, penmanship, and fine motor skills.
+    Colorful fun―This workbook is full of helpful (and silly) pictures and illustrations that will spark kids’ imaginations and get them excited to keep practicing.
+    Get your little one on the path to success with an interactive book that helps them master early learning skills.",
+    publication_date: "August 27, 2019",
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/516Bwd1ubwL._SX384_BO1,204,203,200_.jpg",
+    author_id: 16)
+
+Price.create!( book_id: 16, book_format: "Kindle",  price: 6.99)
+Price.create!( book_id: 16, book_format: "Paperback",  price: 8.24)
+Price.create!( book_id: 16, book_format: "Hardcopy",  price: 11.55)
+                    
+                                    
+                                      
+Author.create!( 
+    name: "James Patterson",  
+    biography: "James Patterson is the world's bestselling author. The creator of Alex Cross, he has produced more enduring fictional heroes than any other novelist alive. He lives in Florida with his family."
+)
+
+Book.create!(
+    title: "Walk in My Combat Boots: True Stories from America's Bravest Warriors",
+category:"history",  
+    description: "
+    These are the brutally honest stories usually only shared amongst comrades in arms. Here, in the voices of the men and women who’ve fought overseas from Vietnam to Iraq and Afghanistan, is a rare eye-opening look into what wearing the uniform, fighting in combat, losing friends and coming home is really like. Readers who next thank a military member for their service will finally have a true understanding of what that thanks is for",
+    publication_date: "February 8, 2021",
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/51CgmsYS+2L._SX320_BO1,204,203,200_.jpg",
+    author_id: 17)
+
+Price.create!( book_id: 17, book_format: "Kindle",  price: 15.99)
+Price.create!( book_id: 17, book_format: "Paperback",  price: 17.24)
+Price.create!( book_id: 17, book_format: "Hardcopy",  price: 30.55)
+                    
+Author.create!( 
+    name: "Christopher Hart ",  
+    biography: "Christopher Hart is the leading author of art instruction books in the US. His books have sold more than six million copies, and his titles frequently appear on the Bookscan Top 50 Art list. They also have a huge international audience, having been translated into more than 20 languages."
+)
+
+Book.create!(
+    title: "The Master Guide to Drawing Anime: How to Draw Original Characters from Simple Templates (Volume 1)",
+category:"teens & young adult",  
+    description: "Nothing brings anime artists more satisfaction than creating original characters to use in a comic strip or graphic novel. Bestselling how-to-draw author Christopher Hart helps them reach this goal by providing insight into the six most popular anime types: schoolgirls, schoolboys, preteens, vengeful bad guys, humorous personalities, and fantasy figures. ",
+    publication_date: "July 7, 2015",
+    image_url: "https://images-na.ssl-images-amazon.com/images/I/61OmpoczgeL._SX449_BO1,204,203,200_.jpg",
+    author_id: 18)
+
+Price.create!( book_id: 18, book_format: "Kindle",  price: 8.99)
+Price.create!( book_id: 18, book_format: "Paperback",  price: 17.24)
+Price.create!( book_id: 18, book_format: "Hardcopy",  price: 28.69)
+                    
+                                      
                
