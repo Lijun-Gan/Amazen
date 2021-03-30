@@ -3,8 +3,9 @@ import * as APIUtil from '../util/book_api_util';
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS ';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
 export const RECEIVE_BOOK_FOR_REVIEW = 'RECEIVE_BOOK_FOR_REVIEW ';
+export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 
-const receiveBooks = (books) => {
+export const receiveBooks = (books) => {
     return {
         type: RECEIVE_BOOKS,
         books

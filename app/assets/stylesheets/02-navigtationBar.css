@@ -370,6 +370,7 @@ button.sub-nav:hover {
     font-weight: bold;
     padding-top: 9px;
     padding-right: 7px;
+    color: white;
 }
 
 a.subNav.last {
