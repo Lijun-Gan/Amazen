@@ -14,6 +14,15 @@ export const fetchBooks = () => (
         })
 )
 
+export const fetchCategoryBooks = (category) => (
+        $.ajax({
+            method: 'GET',
+            url: `/api/books/categories/${category}`,
+        })
+)
+
+
+
 
 
 

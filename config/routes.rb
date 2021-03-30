@@ -3,9 +3,12 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     get "/users/exists", to: "users#exists"
+
     
     resources :users, only: [:create, :show]
     resources :books, only: [:index, :show]
+
+    get "/books/categories/:category", to: "books#category"
     resources :reviews, only: [ :create, :update, :destroy, :show]
     resources :carts, only:[:create]
   end

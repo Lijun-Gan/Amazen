@@ -15,6 +15,12 @@ class Api::BooksController < ApplicationController
         end 
     end
 
+    def category
+
+        @books =  Book.where(category: params[:category])
+        render :index
+    end
+
 end
 
 

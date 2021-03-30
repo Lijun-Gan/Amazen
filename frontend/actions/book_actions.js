@@ -32,10 +32,16 @@ export const fetchBooks = (book) => dispatch => {
 export const fetchBook = (bookId) => dispatch => {
     
     return (
-
+        
         APIUtil.fetchBook(bookId).then(book => {  
             dispatch(receiveBook(book))})
+            )
+        }
+        
+        // ;
+        
+export const fetchCategoryBooks = (category) => dispatch => {
+    return (
+        APIUtil.fetchCategoryBooks(category).then(books => dispatch(receiveBooks(books)))
     )
-}
-
-// ;
+};

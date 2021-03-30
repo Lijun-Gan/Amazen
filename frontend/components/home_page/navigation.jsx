@@ -63,7 +63,11 @@ if (props.quantity < 10) {
 
 <div className="nav-search-bar-container-outer">
 
-<span className="material-icons loc">room</span>
+<div className="location-container">
+
+<img className="location-icon" src={ window.location_icon} alt="location" />
+</div>
+{/* <span className="material-icons loc">room</span> */}
   <button className="nav-address-container">
     <p className="nav-address">Deliver to {props.username}</p> 
     <p className="nav-address-select">Select your address</p>

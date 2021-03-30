@@ -112,7 +112,7 @@ p.nav-signin.username{
     text-align: center;
     border: 1px transparent solid;
     width: 166px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .nav-address{
@@ -160,6 +160,18 @@ span.loc{
     font-size: 24px;
     margin-top: 16px;
     margin-right: -18px;
+}
+
+.location-icon{
+    width: 17px;
+    height: 20px;
+    margin-right: 2px;
+}
+
+.location-container{
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
 }
 
 .nav-search-bar-container-outer:hover{
@@ -423,6 +435,8 @@ a.subNav.last:hover {
     min-width: 84px;
     position: relative;
 }
+
+
 
 
 #nav-bar-container{

@@ -4,7 +4,7 @@ import configureStore from './store/store'
 import {checkUser} from "./util/session_api_util";
 import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
-import { fetchBook,fetchBooks } from './actions/book_actions';
+import { fetchBook,fetchBooks,fetchCategoryBooks } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
 import {createCart, receiveCart } from './actions/cart_actions';
 
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     window.fetchBook = fetchBook
     window.fetchBooks = fetchBooks
+    window.fetchCategoryBooks = fetchCategoryBooks
 
     window.createReview = createReview
     window.updateReview = updateReview
