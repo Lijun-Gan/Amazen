@@ -65,7 +65,7 @@ class Cart extends React.Component {
 
 
         
-        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || currentUser === undefined || Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).length < 1){
+        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || this.props.currentUserId === null || Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId ))).length < 1){
         
   
 
@@ -84,7 +84,7 @@ class Cart extends React.Component {
         let subTotal = 0;
         let quantity = 0;
 
-        Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).forEach(cartBook => {
+        Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId ))).forEach(cartBook => {
             quantity = quantity + Number(cartBook.quantity);
              
             subTotal = subTotal + Number(cartBook.price) * Number(cartBook.quantity)
@@ -114,7 +114,7 @@ class Cart extends React.Component {
 
                                
                         <ul>
-                            {Object.values(JSON.parse(localStorage.getItem(currentUser.id ))).map((cartBook,idx)=>(
+                            {Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId))).map((cartBook,idx)=>(
                                 <li key={idx}>
                                     {<CartItem  cartBook={cartBook} subTotle={subTotal}  deleteCart={this.props.deleteCart} receiveCart={this.props.receiveCart} />}
                                     {/* deleteOneItem={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)} */}

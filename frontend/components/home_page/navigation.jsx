@@ -49,7 +49,8 @@ if (props.quantity < 10) {
 } else {
     numBooksInCart["left"] = "36px";
 }
-   
+
+   debugger
   return (
     <div id="nav-bar-container">
 
@@ -85,7 +86,7 @@ if (props.quantity < 10) {
         <div className="nav-top-right">
     
           {/* <NavSigninContainer /> */}
-          <AuthPopUp id='greet' currentUser={props.username} signout={props.signout} push={props.history}/>
+          <AuthPopUp id='popUp' currentUser={props.username} signout={props.signout} push={props.history.push}/>
           
    
 

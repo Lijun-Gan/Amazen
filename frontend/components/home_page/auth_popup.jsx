@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class Greeting extends React.Component{
+class AuthPopup extends React.Component{
     constructor(props){
         super(props)
         this.handleClick = this.handleClick.bind(this)
@@ -11,8 +11,9 @@ class Greeting extends React.Component{
 
     handleClick(e){
         e.preventDefault()
-        this.props.signout()
-        .then(() => this.props.push('/signout'))
+        this.props.signout().then(() => this.props.push('/signout'))
+        // this.props.signout();
+        // this.props.push('/signout');
     }
 
     handleSign(e) {
@@ -22,14 +23,14 @@ class Greeting extends React.Component{
     accountRender(){
         return (
             
-                <ul className="greet-links">
-                    <ul className="greet-shopping-list">
+                <ul className="popUp-links">
+                    <ul className="popUp-shopping-list">
                         <h1>Your Lists</h1>
                         <li><a href="">Create a List</a></li>
                         <li><a href="">Find a List or Registry</a></li>
                         <li><a href="">AmazonSmile Charity Lists</a></li>
                     </ul>
-                    <ul className="greet-list">
+                    <ul className="popUp-list">
                         <h1>Your Account</h1>
                         <li><a href="">Account</a></li>
                         <li><a href="">Orders</a></li>
@@ -58,13 +59,13 @@ class Greeting extends React.Component{
     
     render() {
         const signin = () => (
-            <nav className="outergreet">
-                <button onClick={this.handleSign} id="topbutton"><div id='topgreet'>Hello, Sign in</div>
-                    <div id='bottomgreet'> Account & Lists ▾ </div>
+            <nav className="outerpopUp">
+                <button onClick={this.handleSign} id="topbutton"><div id='toppopUp'>Hello, Sign in</div>
+                    <div id='bottompopUp'> Account & Lists ▾ </div>
                 </button>
-                <div className="greet">
-                    <ul className="outer-greet-links">
-                        <li><Link to="/signin" id="greet-signin"><button>Sign in</button></Link></li>
+                <div className="popUp">
+                    <ul className="outer-popUp-links">
+                        <li><Link to="/signin" id="popUp-signin"><button>Sign in</button></Link></li>
                         <li id="new-customer"><p>New customer?<Link to="/signup" id="start-link">Start here.</Link></p></li>
                     </ul>
                     {this.accountRender()}
@@ -75,20 +76,20 @@ class Greeting extends React.Component{
             
             <header className="nav-group">
                 <button className="header-button">
-                    <h2 id="greeting">Hello, {this.props.currentUser}</h2>
-                    <div id='logingreet'>Account & Lists ▾ </div>
+                    <h2 id="popUping">Hello, {this.props.currentUser}</h2>
+                    <div id='loginpopUp'>Account & Lists ▾ </div>
                 </button>
                     
-                    <div className="greet">
-                        <ul className="greet-links">
-                            <ul className="greet-shopping-list">
+                    <div className="popUp">
+                        <ul className="popUp-links">
+                            <ul className="popUp-shopping-list">
                                 <h1>Your Lists</h1>
                                 <li id="shopping-list-border"><a href="" >Shopping List</a></li>
                                 <li><a href="">Create a List</a></li>
                                 <li><a href="">Find a List or Registry</a></li>
                                 <li><a href="">AmazonSmile Charity Lists</a></li>
                             </ul>   
-                            <ul className="greet-list">
+                            <ul className="popUp-list">
                                 <h1>Your Account</h1>
                                 <li><a href="">Account</a></li>
                                 <li><a href="">Orders</a></li>
@@ -123,4 +124,4 @@ class Greeting extends React.Component{
 };
 
 
-export default Greeting;
+export default AuthPopup;

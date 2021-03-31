@@ -9,9 +9,12 @@ const mapStateToProps = (state) => {
     // }
     
     let cartsBook = [];
+
+    let userId = null;
+    
     if(state.session.id !== undefined){
          
-        let userId = state.session.id;
+        userId = state.session.id;
 
         if(localStorage.getItem(userId) !== null){
              

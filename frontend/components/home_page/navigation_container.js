@@ -2,7 +2,7 @@ import {connect } from 'react-redux'
 import  Navigation from './navigation'
 import {fetchBooks} from '../../actions/book_actions'
 import { signout } from '../../actions/session_actions';
-
+import { withRouter } from "react-router";
 
 const mapStateToProps = (state) =>{
 
@@ -58,4 +58,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation))

@@ -1,5 +1,5 @@
 
-.greet-flag{
+.popUp-flag{
     position: absolute;
 	display: none;
     top: 49px;
@@ -21,7 +21,7 @@ input[type='radio']:checked{
    color: orange;
 }
 
-.greet-flag .greet-links{
+.popUp-flag .popUp-links{
     color: black;
     font-size: 13px;
      display: flex;
@@ -32,17 +32,17 @@ input[type='radio']:checked{
     padding-bottom: 12px;
 }
 
-greet-flag .greet-links input {
+popUp-flag .popUp-links input {
     position: relative;
     left: 5px;
     top: 5px;
 }
 
-#flagarrow:hover .greet-flag{
+#flagarrow:hover .popUp-flag{
     display: block;
 }
 
-.greet-flag:before {
+.popUp-flag:before {
     content: "";
     width: 4;
     height: 4;
@@ -54,7 +54,7 @@ greet-flag .greet-links input {
     border-color: rgba(0,0,0,0.1) transparent;    
 }
 
-.greet-flag:after {
+.popUp-flag:after {
     content: "";
     width: 4;
     height: 4;
@@ -66,7 +66,7 @@ greet-flag .greet-links input {
     border-color: #fff transparent;    
 }
 
-.outergreet .greet {
+.outerpopUp .popUp {
 position: absolute;
 	display: none;
 	top: 52px;
@@ -87,7 +87,7 @@ position: absolute;
 
 
 
-.greet:before {
+.popUp:before {
     content: "";
     width: 4;
     height: 4;
@@ -99,7 +99,7 @@ position: absolute;
     border-color: rgba(0,0,0,0.1) transparent;    
 }
 
-.greet:after{
+.popUp:after{
     content: "";
     width: 4;
     height: 4;
@@ -111,20 +111,20 @@ position: absolute;
     border-color: #fff transparent;    
 }
 
-.greet .outer-greet-links{
+.popUp .outer-popUp-links{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.nav-group .greet .greet-links{
+.nav-group .popUp .popUp-links{
     display: flex;
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
 }
-.outergreet .greet .greet-links{
+.outerpopUp .popUp .popUp-links{
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -136,7 +136,7 @@ position: absolute;
 }
 
 
-.nav-group .greet {
+.nav-group .popUp {
     position: absolute;
 	display: none;
 	top: 54px;
@@ -153,7 +153,7 @@ position: absolute;
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
     font-weight: initial;
 }
-.greet-list{
+.popUp-list{
     display: flex;
     flex-direction: column;
     padding-left: 15px;
@@ -161,16 +161,16 @@ position: absolute;
     border-left: 1px solid rgb(233, 231, 231);
 }
 
-.greet-shopping-list{
+.popUp-shopping-list{
     margin-left: 8px;
     margin-top: 5px;
 }
-.greet .greet-shopping-list li{
+.popUp .popUp-shopping-list li{
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.greet-links h1{
+.popUp-links h1{
     color: black;
     font-weight: bold;
     margin-bottom: 5px;
@@ -178,37 +178,37 @@ position: absolute;
     font-size: 14px;
 
 }
-.greet-links ul li a{
+.popUp-links ul li a{
     text-decoration: none;
     color: black;
     font-weight: 500;
     font-size: 12.5px;
 }
 
-.greet-links ul li a:hover{
+.popUp-links ul li a:hover{
     text-decoration: underline;
     color: #C7511F
 }
 
-.greet-links .greet-list li{
+.popUp-links .popUp-list li{
     margin: 5px;
 }
 
-.nav-group:hover .greet{
+.nav-group:hover .popUp{
     display:block;
 }
 
-.greet-links li, .outer-greet-links li{
+.popUp-links li, .outer-popUp-links li{
     margin: 15px 0;
 	border-radius: 3px;
 	font-size: 12px;
 }
 
-.outer-greet-links li button:hover{
+.outer-popUp-links li button:hover{
     background: linear-gradient(#f7e2af, #e9bf53, #f0bb36);
 }
 
-.outer-greet-links li button{
+.outer-popUp-links li button{
     text-align: center;
     position: relative;
     top: -20px;
@@ -219,10 +219,10 @@ position: absolute;
     border: 1px solid #8f732d;
 }
 
-.greet-links li, .outer-greet-links li{
+.popUp-links li, .outer-popUp-links li{
     color: black;
 }
-.outer-greet-links li p {
+.outer-popUp-links li p {
      position: relative;
     top: -45px;
     font-size: 11px;
@@ -234,7 +234,7 @@ position: absolute;
     padding-bottom: 10px;
 }
 
-#greet-signin{
+#popUp-signin{
     font-size: 12px;
     font-weight: 500;
     color: black;
@@ -255,18 +255,18 @@ position: absolute;
 }
 
 
-.outergreet:hover .greet{
+.outerpopUp:hover .popUp{
     display:block;
 }
 
 
 
-#bottomgreet img {
+#bottompopUp img {
     position: relative;
     top: 4px;
 }
 
-#topgreet, #bottomgreet{
+#toppopUp, #bottompopUp{
     color:white;
     position: relative;
     text-decoration: none;
@@ -285,30 +285,30 @@ position: absolute;
     border: 1px white solid;
 }
 
-#topgreet, #topreturn{ 
+#toppopUp, #topreturn{ 
     font-size: 12px;
 
 }
 
-#bottomgreet, #bottomreturn{
+#bottompopUp, #bottomreturn{
     font-weight: bolder;
     font-size: 14px;
     white-space: nowrap;
 }
 
-#greeting, #logingreet{
+#popUping, #loginpopUp{
     color:white;
     position: relative;
     text-decoration: none;
 }
 
-#greeting {
+#popUping {
     font-size: 12px;
     white-space: nowrap;
     padding-bottom: 2px;
 }
 
-#logingreet{
+#loginpopUp{
     font-weight: bolder;
     font-size: 14px;
     white-space: nowrap;
