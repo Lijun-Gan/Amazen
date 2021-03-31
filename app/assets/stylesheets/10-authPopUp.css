@@ -70,7 +70,7 @@ popUp-flag .popUp-links input {
 position: absolute;
 	display: none;
 	top: 52px;
-    right: 155px;
+    right: 144px;
 	background-color: #fff;
 	border: 1px solid lightgray;
 	border-radius: 3px;
@@ -275,8 +275,8 @@ position: absolute;
 
 #topbutton{
     margin-top: 10px;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 25px;
+    margin-right: 25px;
     border:  1px transparent solid;
     padding: 5px;
 }
