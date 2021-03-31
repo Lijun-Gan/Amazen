@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchBar from "./search_bar";
-import {fetchBooks, receiveSearch} from '../../../actions/book_actions';
+import {fetchBooks, receiveSearch, fetchBooksTitle} from '../../../actions/book_actions';
 
 const mapStateToProps = (state) => ({
     search: state.search,
@@ -9,9 +9,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-    debugger
+
     return {
         fetchBooks: () => dispatch(fetchBooks()),
+        fetchBooksTitle: (title)=>dispatch(fetchBooksTitle(title)),
         receiveSearch: (search) => dispatch(receiveSearch(search))
     }
    

@@ -13,7 +13,7 @@ class BookIndex extends React.Component {
 
   handleCategory(category){
     return ()=>{
-      this.props.fetchCategoryBooks(category)
+      this.props.fetchBooksCategory(category)
     }
   }
 
@@ -131,7 +131,7 @@ class BookIndex extends React.Component {
                 <p className='home-top-picks'>Top Picks For You</p>
                 <ul className='book-listing'>
                   
-                     {books.map((book,idx )=> <BookIndexItem key={idx} book={book} />)}
+                     {Object.values(books).map((book,idx )=> <BookIndexItem key={idx} book={book} />)}
                   
                     
                 </ul>

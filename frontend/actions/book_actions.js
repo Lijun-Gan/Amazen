@@ -2,7 +2,7 @@ import * as APIUtil from '../util/book_api_util';
 
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS ';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
-export const RECEIVE_BOOK_FOR_REVIEW = 'RECEIVE_BOOK_FOR_REVIEW ';
+// export const RECEIVE_BOOK_FOR_REVIEW = 'RECEIVE_BOOK_FOR_REVIEW ';
 export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 
 export const receiveBooks = (books) => {
@@ -45,8 +45,14 @@ export const fetchBook = (bookId) => dispatch => {
         
         // ;
         
-export const fetchCategoryBooks = (category) => dispatch => {
+export const fetchBooksCategory = (category) => dispatch => {
     return (
-        APIUtil.fetchCategoryBooks(category).then(books => dispatch(receiveBooks(books)))
+        APIUtil.fetchBooksCategory(category).then(books => dispatch(receiveBooks(books)))
+    )
+};
+export const fetchBooksTitle = (title) => dispatch => {
+    debugger
+    return (
+        APIUtil.fetchBooksTitle(title).then(books => dispatch(receiveBooks(books)))
     )
 };
