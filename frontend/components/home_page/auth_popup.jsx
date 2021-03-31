@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {signout} from '../../actions/session_actions'
 
 
 class AuthPopup extends React.Component{
@@ -11,7 +12,9 @@ class AuthPopup extends React.Component{
 
     handleClick(e){
         e.preventDefault()
-        this.props.signout().then(() => this.props.push('/signout'))
+        debugger
+        // this.props.signout().then(() => this.props.push('/signin'))
+        signout().then(() => this.props.push('/signin'))
         // this.props.signout();
         // this.props.push('/signout');
     }
