@@ -12,9 +12,20 @@
 }
 
 #nav-search-bar:focus ~ .search-dropdown{
-    /* border: 2px red solid; */
     display: flex;
 }
+
+.search-dropdown p:hover{
+    cursor: pointer;
+    background:rgb(223, 223, 223);
+}
+
+
+.search-dropdown:hover{
+    display:flex;
+}
+
+
 
 .nav-search-bar-with-icon{
 
@@ -23,8 +34,8 @@
     position: relative;
 }
 
-/* .search-book-link{
+.search-book-link{
     color: black;
     padding: 10px 8px;
     font-size: 14px;
-} */
+}

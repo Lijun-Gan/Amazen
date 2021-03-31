@@ -21,9 +21,9 @@ class BookIndex extends React.Component {
   render() {
      
     const { books } = this.props;
-    debugger
+ 
     if (books.length === 0 ) {
-        debugger
+
         return (
           <h1>Loading......</h1>
         )

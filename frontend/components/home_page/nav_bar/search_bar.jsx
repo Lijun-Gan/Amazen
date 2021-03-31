@@ -1,3 +1,5 @@
+// import { Dropdown } from 'bootstrap';
+// import { Dropdown } from 'bootstrap';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import {Link} from 'react-router-dom';
@@ -10,6 +12,7 @@ class SearchBar extends Component{
         };
 
     this.handleInput = this.handleInput.bind(this);
+    this.dropdownItem = this.dropdownItem.bind(this);
     }
 
     componenetDidMount(){
@@ -24,10 +27,19 @@ class SearchBar extends Component{
         let search = e.target.value 
         this.props.receiveSearch(search)
         this.setState(state=>({
-            previousInput: state.input,
             input: search
         }))
     }
+
+
+   dropdownItem(e,id){
+       debugger
+    this.setState({
+        input: '',
+    
+     })
+     this.props.history.push(`/books/${id}`)
+}
 
 
     searchedBook(e, id){
@@ -42,25 +54,33 @@ class SearchBar extends Component{
 
         let searchBookTitle = "";
         if (this.props.books && this.props.search && this.state.input) {
-            debugger
-
-            searchBookTitle  =  this.props.books.filter((option) => {
-                debugger
-                
+            searchBookTitle  =  this.props.books.filter((option) => {         
                 if (option.title.toLowerCase().includes(this.state.input.toLowerCase())){
-                    debugger
                     return option
                 }
             })
-            .map((book) => (
-                <Link key={book.id} to="/">
-                    <p className="search-book-link" key={book.id} onClick={e => this.searchedBook(e, book.id)}>{book.title}</p>
+           
+            .map((book,idx) => (
+                
+                <Link key={book.id} to={`/books/${book.id}`}>
+                    <p className="search-book-link" key={book.id} >{book.title}</p> 
                 </Link>
+
+                // <Link key={book.id} to={`/books/${book.id}`}>{book.title}</Link>
+              
+                
+                // <Link key={book.id} to={`/books/${book.id}`}>{book.title}</Link>
+
+                // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>
+                // <button key={book.id} onClick={this.dropdownItem} value={book.id}>{book.title}</button>
+
+                    // <button className="search-book-link" key={book.id} onClick={ ()=> this.props.history.push(`/books/${id}`)} >{book.title}</button> 
+                    // <button key={book.id} onClick={e => this.dropdownItem(e, book.id)}>{book.title}</button>
                 
               ))
           }    
-          
-
+        //   
+        //   onClick={e => this.searchedBook(e, book.id)}
        
         return (
             <div className="searchbar">
