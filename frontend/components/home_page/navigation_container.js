@@ -1,6 +1,7 @@
 import {connect } from 'react-redux'
 import  Navigation from './navigation'
 import {fetchBooks} from '../../actions/book_actions'
+import { signout } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state) =>{
@@ -52,7 +53,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
 
     return{
-        fetchBooks: ()=>{dispatch(fetchBooks())}
+        fetchBooks: ()=>{dispatch(fetchBooks())},
+        signout: () => {dispatch(signout())}
     }
 }
 

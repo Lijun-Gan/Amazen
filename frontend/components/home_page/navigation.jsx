@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavSigninContainer from './nav_bar/nav_signin_container'
 import SearchBarContainer from './nav_bar/search_bar_container'
+import AuthPopUp from './auth_popup';
 
 //{ currentUser, signout }
 
@@ -9,7 +10,6 @@ const NavBar = (props) => {
 
   // let quantity = 0;
   // let username;
-
   // if(props.username === undefined || props.cartsBook === null || props.cartsBook.length === 0 ){
   // if(props.cartsBook.length === 0 ){
   //   
@@ -84,7 +84,9 @@ if (props.quantity < 10) {
 
         <div className="nav-top-right">
     
-          <NavSigninContainer />
+          {/* <NavSigninContainer /> */}
+          <AuthPopUp id='greet' currentUser={props.username} signout={props.signout} push={props.history}/>
+          
    
 
            <button className="nav-returns">

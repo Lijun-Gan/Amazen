@@ -1,0 +1,333 @@
+
+.greet-flag{
+    position: absolute;
+	display: none;
+    top: 49px;
+	background-color: #fff;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 10px;
+    width: 175px;
+    height: 80px;
+	z-index: 1;
+	color: darkgray;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    
+}
+input[type='radio']:checked{
+    width: 16px;
+    height: 16px;
+   color: orange;
+}
+
+.greet-flag .greet-links{
+    color: black;
+    font-size: 13px;
+     display: flex;
+    flex-direction: none;
+    align-items: flex-end;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 12px;
+}
+
+greet-flag .greet-links input {
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+#flagarrow:hover .greet-flag{
+    display: block;
+}
+
+.greet-flag:before {
+    content: "";
+    width: 4;
+    height: 4;
+    position: absolute;
+    bottom: 100%;
+    right: 132px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+.greet-flag:after {
+    content: "";
+    width: 4;
+    height: 4;
+    position: absolute;
+    bottom: 100%;
+    right: 134px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+.outergreet .greet {
+position: absolute;
+	display: none;
+	top: 52px;
+    right: 155px;
+	background-color: #fff;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 10px;
+    width: 475px;
+	z-index: 1;
+	color: darkgray;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    font-weight: initial;
+    
+
+}
+
+
+
+.greet:before {
+    content: "";
+    width: 4;
+    height: 4;
+    position: absolute;
+    bottom: 100%;
+    right: 78px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+.greet:after{
+    content: "";
+    width: 4;
+    height: 4;
+    position: absolute;
+    bottom: 100%;
+    right: 80px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+.greet .outer-greet-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-group .greet .greet-links{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+}
+.outergreet .greet .greet-links{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: -45px;
+    border-top: 1px solid rgb(233, 231, 231);
+    padding-top: 15px;
+    margin-top: -62px;
+}
+
+
+.nav-group .greet {
+    position: absolute;
+	display: none;
+	top: 54px;
+    right: 147px;
+	background-color: #fff;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 10px;
+    width: 475px;
+    height: 450px;
+	z-index: 1;
+	color: darkgray;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    font-weight: initial;
+}
+.greet-list{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 1px solid rgb(233, 231, 231);
+}
+
+.greet-shopping-list{
+    margin-left: 8px;
+    margin-top: 5px;
+}
+.greet .greet-shopping-list li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.greet-links h1{
+    color: black;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+
+}
+.greet-links ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 12.5px;
+}
+
+.greet-links ul li a:hover{
+    text-decoration: underline;
+    color: #C7511F
+}
+
+.greet-links .greet-list li{
+    margin: 5px;
+}
+
+.nav-group:hover .greet{
+    display:block;
+}
+
+.greet-links li, .outer-greet-links li{
+    margin: 15px 0;
+	border-radius: 3px;
+	font-size: 12px;
+}
+
+.outer-greet-links li button:hover{
+    background: linear-gradient(#f7e2af, #e9bf53, #f0bb36);
+}
+
+.outer-greet-links li button{
+    text-align: center;
+    position: relative;
+    top: -20px;
+    width: 192px;
+    height: 33px;
+    background: linear-gradient(#f7e2af, #f1d07a, #f3c247);
+    border-radius: 3px;
+    border: 1px solid #8f732d;
+}
+
+.greet-links li, .outer-greet-links li{
+    color: black;
+}
+.outer-greet-links li p {
+     position: relative;
+    top: -45px;
+    font-size: 11px;
+}
+
+#shopping-list-border{
+    border-bottom: 1px solid rgb(233, 231, 231);
+    width: 220px;
+    padding-bottom: 10px;
+}
+
+#greet-signin{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+}
+
+#start-link{
+    font-weight: 500;
+    font-size: 11px;
+    text-decoration: none;
+     color:#10528c;
+     margin-left: 3px;
+}
+
+#start-link:hover{
+    text-decoration: underline;
+    color: #C7511F
+}
+
+
+.outergreet:hover .greet{
+    display:block;
+}
+
+
+
+#bottomgreet img {
+    position: relative;
+    top: 4px;
+}
+
+#topgreet, #bottomgreet{
+    color:white;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 2px;
+}
+
+#topbutton{
+    margin-top: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border:  1px transparent solid;
+    padding: 5px;
+}
+
+#topbutton:hover{
+    border: 1px white solid;
+}
+
+#topgreet, #topreturn{ 
+    font-size: 12px;
+
+}
+
+#bottomgreet, #bottomreturn{
+    font-weight: bolder;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#greeting, #logingreet{
+    color:white;
+    position: relative;
+    text-decoration: none;
+}
+
+#greeting {
+    font-size: 12px;
+    white-space: nowrap;
+    padding-bottom: 2px;
+}
+
+#logingreet{
+    font-weight: bolder;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.nav-group{
+    margin-top: 7px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: solid 1px transparent;
+    padding: 5px;
+}
+
+.nav-group:hover{
+    border: solid 1px white;
+    border-radius: 3px;
+}
+
+#new-customer{
+    margin: 21px;
+}
+
