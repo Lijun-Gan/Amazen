@@ -15,8 +15,8 @@
     display: flex;
 }
 
-.search-dropdown p:hover{
-    cursor: pointer;
+.search-dropdown button:hover{
+
     background:rgb(223, 223, 223);
 }
 

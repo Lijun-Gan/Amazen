@@ -13,6 +13,7 @@ class SearchBar extends Component{
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDropdown = this.handleDropdown.bind(this);
     }
 
     componenetDidMount(){
@@ -25,26 +26,27 @@ class SearchBar extends Component{
         e.preventDefault()
         let search = e.target.value 
         this.props.receiveSearch(search)
-        this.setState(state=>({
-            input: search
-        }))
+        this.setState({ input: search })
     }
 
 
     handleSubmit(e){
         e.preventDefault()
-         debugger
-         this.props.fetchBooksTitle(this.state.input)
+   
+        //  this.props.fetchBooksTitle(this.state.input)
          this.props.history.push("/search")
     }
 
-    // searchedBook(e, id){
-    //     this.setState({
-    //         input: '',
-    //         previousInput: ''
-    //      })
-    //      this.props.history.push(`/books/${id}`)
-    // }
+    handleDropdown(title){
+        return (e)=>{
+            e.preventDefault()
+            this.props.history.push("/search")
+            this.props.receiveSearch(title)
+        }
+    }
+
+
+
 
     render(){
 
@@ -55,7 +57,7 @@ class SearchBar extends Component{
                     return option
                 }
             }).map((book,idx) => (
-                <button className="search-book-link" key={book.id} onClick={this.handleSubmit} >{book.title}</button> 
+                <button className="search-book-link" key={book.id} onClick={this.handleDropdown(book.title)} >{book.title}</button> 
                 // <button className="search-book-link" key={book.id} onClick={ ()=> this.props.history.push(`/books/${id}`)} >{book.title}</button> 
                 
                 // <Link key={book.id} to={`/books/${book.id}`}>

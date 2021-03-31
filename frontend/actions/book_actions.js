@@ -51,7 +51,7 @@ export const fetchBooksCategory = (category) => dispatch => {
     )
 };
 export const fetchBooksTitle = (title) => dispatch => {
-    debugger
+    
     return (
         APIUtil.fetchBooksTitle(title).then(books => dispatch(receiveBooks(books)))
     )

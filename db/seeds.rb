@@ -126,7 +126,7 @@ Review.create!(
     Book.create!( 
         title: "One Fish Two Fish Red Fish Blue Fish (I Can Read It All by Myself)",
         description: "From counting to opposites to Dr. Seuss's signature silly rhymes, this book has everything a beginning reader needs! Meet the bumpy Wump and the singing Ying, and even the winking Yink who drinks pink ink. The silly rhymes and colorful cast of characters will have every child giggling from morning to night.From near to farfrom  here to there,funny things are everywhere.",
-        category: "arts & photography",
+        category: "children's books",
         publication_date: "January 11, 2012",
         image_url: "https://images-na.ssl-images-amazon.com/images/I/51EdPMN219L.jpg", 
         author_id: 3)
