@@ -53,8 +53,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
 
     return{
-        fetchBooks: ()=>{dispatch(fetchBooks())},
-        signout: () => {dispatch(signout())}
+        fetchBooks: ()=>(dispatch(fetchBooks())),
+        signout: ()=>(dispatch(signout()))
     }
 }
 

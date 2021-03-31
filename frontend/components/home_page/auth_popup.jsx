@@ -12,9 +12,9 @@ class AuthPopup extends React.Component{
 
     handleClick(e){
         e.preventDefault()
-        debugger
-        // this.props.signout().then(() => this.props.push('/signin'))
-        signout().then(() => this.props.push('/signin'))
+
+        this.props.signout().then(() => this.props.push('/signin'))
+        // signout().then(() => this.props.push('/signin'))
         // this.props.signout();
         // this.props.push('/signout');
     }

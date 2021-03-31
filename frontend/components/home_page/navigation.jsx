@@ -38,6 +38,8 @@ const NavBar = (props) => {
 };
 
 
+
+
 // let books = JSON.parse(localStorage.getItem(props.user.id))
 // cartsBook = Object.values(cartsBook)
 
