@@ -64,17 +64,17 @@ class SearchBar extends Component{
        
         return (
             <div className="searchbar">
-                    <form className="nav-search-bar-container">
+                    {/* <form className="nav-search-bar-container"> */}
                     <button id="search-all">All &nbsp;▾</button>
                     <div className="nav-search-bar-with-icon">
-                        <input className="nav-search-bar" type="text"  onChange={this.handleInput}/>
-                        <button className="search-icon-btn"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
+                        <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
                         <div className="search-dropdown">
                             {searchBookTitle }
                         </div>
+                        <button className="search-icon-btn"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
 
                     </div>
-                    </form>  
+                    {/* </form>   */}
 
             </div>
         )

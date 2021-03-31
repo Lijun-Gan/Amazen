@@ -1,5 +1,5 @@
 .search-dropdown{
-    /* display: none; */
+    display: none;
     background-color: white;
     /* display: none; */
     flex-direction: column;
@@ -7,19 +7,24 @@
     margin-top: 40px;
     width: 100%;
     border: 1px solid lightgray;
-    /* border-top: none; */
+    border-top:  1px solid #e99d4b;
     position: absolute;
 }
 
+#nav-search-bar:focus ~ .search-dropdown{
+    /* border: 2px red solid; */
+    display: flex;
+}
+
 .nav-search-bar-with-icon{
-    /* widt; */
+
     display: flex;
     width: 100%;
     position: relative;
 }
 
-.search-book-link{
+/* .search-book-link{
     color: black;
     padding: 10px 8px;
     font-size: 14px;
-}
+} */
