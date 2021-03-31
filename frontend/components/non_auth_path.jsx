@@ -10,6 +10,7 @@ import NavBarContainer from './home_page/navigation_container'
 import Footer from "./home_page/footnote";
 import cartContainer from './cart/cart_container';
 import BookIndexContainer from './book/book_index/book_index_container';
+import SearchResultContainer from './search_result/search_result_container';
 
 
 const NonAuthPath = () => (
@@ -19,6 +20,7 @@ const NonAuthPath = () => (
     <Switch>
         <Route exact path="/books/:id" component={BookShowContainer} />
         <Route exact path="/" component={BookIndexContainer} />
+        <Route exact path="/search" component={SearchResultContainer} />
 
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />

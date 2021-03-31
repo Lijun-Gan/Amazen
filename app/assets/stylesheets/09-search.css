@@ -37,3 +37,24 @@
     padding: 10px 8px;
     font-size: 14px;
 }
+
+.result-number{
+    font-size: 14px;
+}
+.result-letter{
+    font-size: 14px;
+    color: #c45500;
+    font-weight: bold;
+}
+
+.search-result{
+    margin: 15px 10px;
+  
+   
+}
+
+.just-line{
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px rgb(224, 223, 223) solid;
+}

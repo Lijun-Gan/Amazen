@@ -35,9 +35,8 @@ class SearchBar extends Component{
         e.preventDefault()
          debugger
          this.props.fetchBooksTitle(this.state.input)
-        // this.props.history.push(`/`)
+         this.props.history.push("/search")
     }
-
 
     // searchedBook(e, id){
     //     this.setState({
@@ -55,16 +54,15 @@ class SearchBar extends Component{
                 if (option.title.toLowerCase().includes(this.state.input.toLowerCase())){
                     return option
                 }
-            })
-           
-            .map((book,idx) => (
+            }).map((book,idx) => (
+                <button className="search-book-link" key={book.id} onClick={this.handleSubmit} >{book.title}</button> 
+                // <button className="search-book-link" key={book.id} onClick={ ()=> this.props.history.push(`/books/${id}`)} >{book.title}</button> 
                 
-                <Link key={book.id} to={`/books/${book.id}`}>
-                    <p className="search-book-link" key={book.id} >{book.title}</p> 
-                </Link>
+                // <Link key={book.id} to={`/books/${book.id}`}>
+                //     <p className="search-book-link" key={book.id} >{book.title}</p> 
+                // </Link>
 
                 // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>        
-                // <button className="search-book-link" key={book.id} onClick={ ()=> this.props.history.push(`/books/${id}`)} >{book.title}</button> 
                 
               ))
           }    
@@ -73,9 +71,9 @@ class SearchBar extends Component{
        
         return (
             <div className="searchbar">
+                    <button id="search-all">All &nbsp;▾</button>
                     <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
                     {/* <form className="nav-search-bar-container"> */}
-                    <button id="search-all">All &nbsp;▾</button>
                     {/* <div className="nav-search-bar-with-icon"> */}
                         <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
                         <div className="search-dropdown">

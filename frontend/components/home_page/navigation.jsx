@@ -56,11 +56,10 @@ if (props.quantity < 10) {
     <div id='nav-bar-top'>
 
         <div className="nav-top-left">
-          {/* <Link to="/">  */}
-     
+
+          <Link to="/"> 
             <img id="nav-amazen-logo" onClick={()=>(props.fetchBooks())} src={window.nav_amazenLogo} alt="amazen logo"/>
-    
-          {/* </Link> */}
+          </Link>
           
 
 <div className="nav-search-bar-container-outer">
