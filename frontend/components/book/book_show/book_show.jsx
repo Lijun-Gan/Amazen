@@ -350,7 +350,7 @@ class BookShow extends React.Component {
                                     </div>
 
                                     <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
-                                    <p className="reviewDateNBody">{review.body}</p>
+                                    <p className="reviewBody">{review.body}</p>
 
                                     {review.user_id === this.props.currentUser ? 
                                     (

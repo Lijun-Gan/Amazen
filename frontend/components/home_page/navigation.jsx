@@ -50,7 +50,7 @@ if (props.quantity < 10) {
     numBooksInCart["left"] = "36px";
 }
 
-   debugger
+   
   return (
     <div id="nav-bar-container">
 

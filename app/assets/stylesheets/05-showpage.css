@@ -449,3 +449,8 @@ a.rating-cal{
 .book-index{
     overflow-x: hidden;
 }
+
+.reviewBody{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
