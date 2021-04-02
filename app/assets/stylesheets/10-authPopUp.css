@@ -122,6 +122,7 @@ position: absolute;
     display: flex;
     flex-direction: row;
     align-items: end;
+    
     justify-content: space-between;
 }
 .outerpopUp .popUp .popUp-links{
@@ -137,6 +138,7 @@ position: absolute;
 
 
 .nav-group .popUp {
+    height: auto;
     position: absolute;
 	display: none;
 	top: 54px;
@@ -196,6 +198,7 @@ position: absolute;
 
 .nav-group:hover .popUp{
     display:block;
+    height: auto;
 }
 
 .popUp-links li, .outer-popUp-links li{
@@ -320,6 +323,7 @@ position: absolute;
     margin-right: 25px;
     border: solid 1px transparent;
     padding: 5px;
+ 
 }
 
 .nav-group:hover{
