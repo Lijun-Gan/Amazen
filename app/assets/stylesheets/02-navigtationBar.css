@@ -196,7 +196,7 @@ div.searchbar{
 #nav-search-bar{
 
     /* height: 40px; */
-    width: 94%;
+    width: 95%;
     /* margin-top: 6px; */
     background-color: white;
     padding-left: 8px;
@@ -242,7 +242,6 @@ div.searchbar:focus-within{
     background:  #dadada;
 }
 
-
 .search-icon{
     /* height: 23px; */
     width: 36px;
@@ -252,7 +251,7 @@ div.searchbar:focus-within{
 .search-icon-btn{
     border-radius: 0px 4px 4px 0px;
     border: none;
-    width: 51px;
+    width: 46px;
     min-width: 45px;
     box-sizing: border-box;
     background: #febd69;
@@ -284,7 +283,7 @@ div.searchbar:focus-within{
 
 .nav-returns{
     /* font-size: 12px; */
-    padding-top: 4px; 
+    padding-top: 3px; 
     margin-top: 6px;
     margin-right: 20px;
     height: 45px;

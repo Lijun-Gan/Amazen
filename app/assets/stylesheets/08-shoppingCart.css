@@ -41,9 +41,10 @@
     /* width: 218px; */
     border-color: #a88734 #9c7e31 #846a29;
     border-radius: 4px;
-    text-align: center;
+    /* text-align: center; */
     font-size: 13px;
     background:  #f0c14b;
+    display: flex;
 }
 
 .add-to-cart-button:hover{
@@ -59,12 +60,13 @@
 }
 
 .buy-now-button{
+    display: flex;
     border: solid 1px;
     height: 28px;
     /* width: 218px; */
     border-color: #a88734 #9c7e31 #846a29;
     border-radius: 4px;
-    text-align: center;
+    /* text-align: center; */
     font-size: 13px;
     background:  rgb(237, 146, 32);
 
@@ -276,15 +278,16 @@
 }
 
 .on-the-way{
+  
     display: block;
     color: #189018;
-    border: #bce2bc solid 5px;
+    border: #bce2bc solid 3px;
     width: 400px;
-    height: 43px;
-    font-size: 25px;
+    height: 41px;
+    font-size: 23px;
     text-align: center;
     margin: 30px auto;
-    padding-top: 12px;
+    padding-top: 5px;
     border-radius: 13px;
 }
 

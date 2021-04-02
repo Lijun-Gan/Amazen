@@ -11,11 +11,13 @@ class BookShow extends React.Component {
           format: 'Select format',
           price: '0.00',
           quantity: '1',
+          checkOut: false,
           
       })
       this.handlePrice = this.handlePrice.bind(this)
       this.handleCart = this.handleCart.bind(this)
       this.handleBookQuantity = this.handleBookQuantity.bind(this)
+      this.handleBuyNow = this.handleBuyNow.bind(this)
     }
   
     handleCart(e){
@@ -102,8 +104,14 @@ class BookShow extends React.Component {
         const date = d.getDate()
         return `${monthName} ${date}, ${year}`
     }
-    
-  
+
+    handleBuyNow(){
+
+        this.setState({checkOut:true}) 
+        setTimeout(() => {this.setState({checkOut:false});}, 2000);
+    }
+
+
 
     render(){  
 
@@ -190,9 +198,11 @@ class BookShow extends React.Component {
 
             return(
 
+<div>
+
+                <p className={ this.state.checkOut ? "on-the-way" : "not-show"}>✅ &nbsp; Your order is on the way!</p>
 
             <div id="bsp-container">
-
                 <div id="bsp-container-first">
                     <div>
                         <img id="lookInside_bookShow" src={window.lookInside_bookShow} alt="Look Inside"/>
@@ -267,9 +277,19 @@ class BookShow extends React.Component {
 <div className="addCartBtn-container">
 
     {/* <button className='addToCart-btn'>Add to Cart</button> */}
-    <button className='add-to-cart-button' onClick={this.handleCart}>Add to Cart</button>
+    <button className='add-to-cart-button' onClick={this.handleCart}>
+    <img className="add-to-cart-pic" src={window.addToCart} alt="add to cart"/>
+    <span className="cart-span"> Add to Cart</span>
+   
+    </button>
+    
     <p className="givenSmallSpace"></p>
-    <button className='buy-now-button'>Buy Now</button>
+
+    <button className='buy-now-button'>
+    <img className="add-to-cart-pic" src={window.buyNowCart} alt="buyNowCart"/>
+    <span className="buynow-span" onClick={this.handleBuyNow}>  Buy Now</span>
+  
+    </button>
                         <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
 
                     
@@ -352,7 +372,7 @@ class BookShow extends React.Component {
                                     <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
                                     <p className="reviewBody">{review.body}</p>
 
-                                    {review.user_id === this.props.currentUser ? 
+                                    {review.user_id === this.props.currentUserId ? 
                                     (
                                         <div className="delete-edit-btn" >
                                             {/* <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button> */}
@@ -370,7 +390,8 @@ class BookShow extends React.Component {
                     </div>
                 </div>
 
-            </div>            
+            </div>  
+</div>         
 
         )}
     } 

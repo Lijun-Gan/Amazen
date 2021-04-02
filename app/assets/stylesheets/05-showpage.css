@@ -306,6 +306,7 @@
 .delete-edit-btn{
     display: flex;
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .deleteReview-btn:focus{
@@ -453,4 +454,26 @@ a.rating-cal{
 .reviewBody{
     font-size: 14px;
     margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.add-to-cart-pic{
+    height: 25px;
+    width: 25px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.cart-span{
+    font-size: 12px;
+    margin-top: 8px;
+    margin-left: 55px;
+}
+
+.buynow-span{
+    font-size: 12px;
+    padding-right: 72px;
+    padding-left: 60px;
+    padding-top: 8px;
+    white-space: nowrap;
 }

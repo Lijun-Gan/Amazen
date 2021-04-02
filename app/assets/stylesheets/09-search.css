@@ -9,6 +9,7 @@
     border: 1px solid lightgray;
     border-top:  1px solid #e99d4b;
     position: absolute;
+    z-index: 2;
 }
 
 #nav-search-bar:focus ~ .search-dropdown{
@@ -42,7 +43,7 @@
     font-size: 14px;
 }
 .result-letter{
-    font-size: 14px;
+    font-size: 13px;
     color: #c45500;
     font-weight: bold;
 }
