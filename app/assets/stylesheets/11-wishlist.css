@@ -1,14 +1,13 @@
 .wishlist-container{
     margin: 0 auto;
-    width: 80%;
+    width: 75%;
     
 }
 
 .wishlist-page{
     border: 1px solid rgb(219, 218, 218);
-    width: 80%;
+    /* width: 80%; */
     margin: 40px;
-    min-width: 700;
 }
 
 a.wl-title{
@@ -33,6 +32,7 @@ a.wl-title{
     display: flex;
     border-top: solid 1px grey;
     padding-top: 20px;
+    justify-content: center;
 }
 
 .wl-info{

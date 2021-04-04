@@ -143,7 +143,7 @@ class Cart extends React.Component {
 
             <div className="sub-total-right ">
 
-                    <span className="carts-books-subtotal-tag-left">Subtotal ({quantity} items):</span>
+                    <span className="carts-books-subtotal-tag-right">Subtotal ({quantity} items):</span>
                   
                     <span className="carts-books-subtotal-left">{subTotal}</span>
 

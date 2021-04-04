@@ -256,11 +256,15 @@
 
 .carts-books-subtotal-tag-left{
     
-    font-size: 18px;
-
+    font-size: 24px;
 
     font-family: 'Lato', sans-serif;
 }
+
+.carts-books-subtotal-tag-right{
+    font-size: 18px;
+}
+
 .carts-books-subtotal-left{
     
     font-size: 19px;
