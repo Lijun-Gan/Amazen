@@ -1,0 +1,113 @@
+#profile-container{
+    width: 80%;
+    margin: auto;
+}
+
+.just-grey{
+    height: 200px;
+    background-color: #d5dbdb;
+}
+
+.profile-header{
+    height: 160px;
+    border: #e4e8e8 solid 1px;
+    margin-bottom: 12px;
+    background-color: white;
+}
+
+.profile-header-username{
+    font-size: 24px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.profile-add-to-cart-button{
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background:  #f0c14b;
+    margin-top: 55px;
+    float: right;
+    margin-right: 20px;
+ 
+}
+
+.profile-add-to-cart-button:hover{
+
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.profile-add-to-cart-button:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.profile-review-date{
+    font-size: 13px;
+    padding-left: 8px;
+    margin-top: 10px;
+    color: #6C7778;
+}
+
+.profile-review-list{
+
+    background-color: white;
+    border: 1px solid #e4e8e8 ;
+    margin-bottom: 12px;
+    padding: 20px;
+
+}
+
+#profile-page{
+    background-color: #f6fafb;
+}
+
+#profile-pictureText{
+    display: flex;
+    border-bottom: 1px solid #e4e8e8;
+    padding-bottom: 20px;
+}
+
+.profile-ictureText-title{
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-reviewBody{
+    font-size: 13px;
+}
+
+.profile-rating-star-container{
+    display: flex;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.profile-book-info{
+    border: 1px solid #e4e8e8;
+    margin-top: 25px;
+    padding: 15px;
+    display: flex;
+}
+
+.profile-pic{
+    height: 110px;
+    width: 75px;
+}
+
+a.profile-title{
+    color: black;
+    font-size: 13px;
+}
+
+.profile-rating{
+    margin: 20px;
+}

@@ -5,6 +5,7 @@ import reviewsReducer from './review_reducer';
 import cartsReducer from './carts_reducer';
 import wishlistsReducer from './wishlists_reducer';
 import pricesReducer from './prices_reducer';
+import profileReducer from './profile_reducer';
 
 
 const entitiesReducer = combineReducers({
@@ -13,7 +14,8 @@ const entitiesReducer = combineReducers({
     reviews: reviewsReducer,
     carts: cartsReducer,
     wishlists: wishlistsReducer,
-    prices: pricesReducer
+    prices: pricesReducer,
+    profile: profileReducer,
 })
 
 export default entitiesReducer;

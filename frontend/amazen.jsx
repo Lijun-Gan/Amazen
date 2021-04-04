@@ -8,6 +8,7 @@ import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle } from './acti
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
 import {createCart, deleteCart} from './actions/cart_actions';
 import {createWishlist, deleteWishlist, fetchWishlists} from './actions/wishlist_actions';
+import {fetchProfile} from './actions/profile_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
@@ -52,6 +53,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.deleteWishlist = deleteWishlist
     window.createWishlist = createWishlist
     window.fetchWishlists = fetchWishlists
+
+    window.fetchProfile = fetchProfile
 
 
     ReactDOM.render(<Root store={store} />, root);

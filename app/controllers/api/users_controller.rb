@@ -30,6 +30,11 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def reviews
+        @user = User.includes(authorized_reviews: :book).find_by(id: params[:userId])
+        render :profile
+    end
+
 
     private
     def user_params

@@ -1,10 +1,7 @@
-// import { Dropdown } from 'bootstrap';
-// import { Dropdown } from 'bootstrap';
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
-import {Link} from 'react-router-dom';
 
-class SearchBar extends Component{
+class SearchBar extends React.Component{
     constructor(props){
         super(props);
         this.state = {

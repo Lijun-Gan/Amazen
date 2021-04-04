@@ -11,6 +11,8 @@ Author.destroy_all
 Price.destroy_all
 Book.destroy_all
 Review.destroy_all
+Cart.destroy_all
+Wishlist.destroy_all
 
 
 ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -20,6 +22,7 @@ ApplicationRecord.connection.reset_pk_sequence!('books')
 ApplicationRecord.connection.reset_pk_sequence!('reviews')
 ApplicationRecord.connection.reset_pk_sequence!('carts')
 ApplicationRecord.connection.reset_pk_sequence!('wishlists')
+
 
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 
@@ -54,19 +57,6 @@ Price.create!( book_id: 1, book_format: "Hardcopy",  price: 25.19)
 Price.create!( book_id: 1, book_format: "Audio CD",  price: 36.00)
 
 
-Review.create!(       
-    title: "Definitely not a beginners book!",
-    body: "I am sure this book is chalk full of good info! However it is certainly not a beginners book to investing.",
-    rating: 4,
-    user_id: 3,
-    book_id: 1)
-
-Review.create!(
-    title: "10/10 Great Book, Do Yourself the Favor of Buying the Paperback",
-    body: "This is a great book for anyone who is interested in introducing themselves into the world of investing.",
-    rating: 5,
-    user_id: 3,
-    book_id: 2)
 
 
 Book.create!( 
@@ -116,6 +106,22 @@ Review.create!(
     body: "Here is this book in a nutshell: what do you want to do? Have discipline and do it. I just saved you ten dollars. You're welcome.",
     rating: 1,
     user_id: 2,
+    book_id: 2)
+
+
+
+Review.create!(       
+    title: "Definitely not a beginners book!",
+    body: "I am sure this book is chalk full of good info! However it is certainly not a beginners book to investing.",
+    rating: 4,
+    user_id: 3,
+    book_id: 1)
+
+Review.create!(
+    title: "10/10 Great Book, Do Yourself the Favor of Buying the Paperback",
+    body: "This is a great book for anyone who is interested in introducing themselves into the world of investing.",
+    rating: 5,
+    user_id: 3,
     book_id: 2)
 
 

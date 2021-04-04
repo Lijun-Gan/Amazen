@@ -122,7 +122,10 @@ if (props.quantity < 10) {
        </div>
 
        <div id="nav-mid-container"> 
-          <button className="sub-nav xxsm">Best Sellers</button>
+          {/* <button className="sub-nav xxsm">Best Sellers</button> */}
+          <Link to="/profile" >
+          <button className="sub-nav xxsm">Profile</button>
+          </Link>
           <button className="sub-nav xxsm">Today's Deals</button>
           {/* <button className="sub-nav xsm">Prime</button> */}
           <Link to="/wishlist" >

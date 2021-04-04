@@ -404,7 +404,7 @@ class BookShow extends React.Component {
                             ))}
                         </ul>
                         
-                    </div>
+                    </div>  
                 </div>
 
             </div>  

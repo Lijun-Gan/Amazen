@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get "/books/categories/:category", to: "books#category"
     get "/books/titles/:title", to: "books#title"
 
+    get "/user/:userId/reviews", to: "users#reviews"
+
     resources :reviews, only: [ :create, :update, :destroy, :show]
     resources :carts, only:[:create, :destroy, :show, :index]
     resources :wishlists, only:[:create, :destroy, :show, :index]

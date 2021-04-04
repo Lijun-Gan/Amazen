@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Profiler } from "react";
 
 import { Route, Switch} from 'react-router-dom';
 import {ProtectedRoute} from '../util/route_utils';
@@ -12,6 +12,7 @@ import CartContainer from './cart/cart_container';
 import BookIndexContainer from './book/book_index/book_index_container';
 import SearchResultContainer from './search_result/search_result_container';
 import WishlistContainer from "./wishlist/wishlist_container";
+import ProfileContainer from "./profile/profile_container";
 
 
 const NonAuthPath = () => (
@@ -29,6 +30,8 @@ const NonAuthPath = () => (
         <ProtectedRoute exact path="/cart" component={CartContainer} />
 
         <ProtectedRoute exact path="/wishlist" component={WishlistContainer} />
+
+        <ProtectedRoute path="/profile"  component={ProfileContainer}/>
 
     </Switch>
 

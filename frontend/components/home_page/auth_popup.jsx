@@ -94,7 +94,8 @@ class AuthPopup extends React.Component{
                             </ul>   
                             <ul className="popUp-list">
                                 <h1>Your Account</h1>
-                                <li><a href="">Account</a></li>
+                                <li><Link to="/profile">Profile</Link></li>
+                                {/* <li><a href="">Account</a></li> */}
                                 <li><a href="">Orders</a></li>
                                 <li><a href="">Recommendations</a></li>
                                 <li><a href="">Browsing History</a></li>
