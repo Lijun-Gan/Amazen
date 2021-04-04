@@ -6,7 +6,8 @@ import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
 import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
-import {createCart, receiveCart } from './actions/cart_actions';
+import {createCart, deleteCart} from './actions/cart_actions';
+import {createWishlist, deleteWishlist} from './actions/wishlist_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
@@ -46,7 +47,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.fetchReview = fetchReview
     
     window.createCart = createCart 
-    window.receiveCart = receiveCart
+    window.deleteCart = deleteCart
+
+    window.deleteWishlist = deleteWishlist
+    window.createWishlist = createWishlist
 
 
     ReactDOM.render(<Root store={store} />, root);

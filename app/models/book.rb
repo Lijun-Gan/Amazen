@@ -19,5 +19,9 @@ class Book < ApplicationRecord
     has_many :carts,
         foreign_key: :book_id,
         class_name: :Cart
+
+    has_many :wishlists,
+        foreign_key: :book_id,
+        class_name: :Wishlist
     
 end

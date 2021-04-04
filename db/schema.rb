@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_132656) do
+ActiveRecord::Schema.define(version: 2021_04_03_235413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 2021_03_25_132656) do
     t.integer "quantity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_id", null: false
     t.index ["book_id"], name: "index_carts_on_book_id"
+    t.index ["price_id"], name: "index_carts_on_price_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -80,6 +82,17 @@ ActiveRecord::Schema.define(version: 2021_03_25_132656) do
     t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username"
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_id", null: false
+    t.index ["book_id"], name: "index_wishlists_on_book_id"
+    t.index ["price_id"], name: "index_wishlists_on_price_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
 end

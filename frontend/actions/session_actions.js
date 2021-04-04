@@ -31,7 +31,6 @@ export const signin = (user) => (dispatch)=> (
 
 export const signout = () => (dispatch)=> (
     APIUtil.signout().then((user) => (dispatch(signoutCurrentUser())), 
-    //change: do not need failture promist response
     (errors) => (dispatch(receiveErrors(errors.responseJSON))))
 );
 

@@ -15,8 +15,7 @@ const mapStateToProps=(state,ownProps)=>{
     if(Object.keys(oneBook !== undefined && state.entities.reviews).length !== 0 && state.entities.reviews !== undefined && oneBook.reviewIds !== undefined ){
          
         allReviews = state.entities.reviews
-        oneBook.reviewIds.forEach((id)=>{
-             
+        oneBook.reviewIds.forEach((id)=>{ 
             bookReviews.push(allReviews[id])
         })
     }

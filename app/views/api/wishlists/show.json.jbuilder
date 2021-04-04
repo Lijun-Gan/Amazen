@@ -1,0 +1,1 @@
+json.extract! @wishlish, :id, :user_id, :book_id, :created_at, :price_id

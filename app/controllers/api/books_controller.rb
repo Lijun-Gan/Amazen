@@ -1,13 +1,11 @@
 class Api::BooksController < ApplicationController
     def index 
         @books = Book.includes(:prices,:reviews).all 
-        #  
         render :index
     end
 
     def show
         @book = Book.includes(:book_author, :reviews, :prices).find_by(id: params[:id])
-        #  
         if @book
             render :show
         else 

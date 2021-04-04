@@ -29,11 +29,9 @@ export const deleteReview = (review) => dispatch => (
 
 
 export const fetchReview = (reviewId) => dispatch => {
-    // 
     return(
         ReviewAPIUtil.fetchReview(reviewId)
             .then((review) => {
-                // 
                 dispatch(receiveReview(review))})
     )
 }

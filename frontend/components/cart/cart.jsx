@@ -28,7 +28,7 @@ class Cart extends React.Component {
         
         cartBooks.map((cartBook) => {
             // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
-            this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
+            this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
 
         
@@ -49,7 +49,7 @@ class Cart extends React.Component {
         
         cartBooks.map((cartBook) => {
             // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
-            this.props.deleteCart(cartBook.book_id.toString() + "_" + cartBook.format)
+            this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
         
         // this.props.history.push("/")
@@ -116,7 +116,7 @@ class Cart extends React.Component {
                         <ul>
                             {Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId))).map((cartBook,idx)=>(
                                 <li key={idx}>
-                                    {<CartItem  cartBook={cartBook} subTotle={subTotal}  deleteCart={this.props.deleteCart} receiveCart={this.props.receiveCart} />}
+                                    {<CartItem  cartBook={cartBook} subTotle={subTotal}  removeCart={this.props.removeCart} receiveCart={this.props.receiveCart}  userId={this.props.currentUserId}/>}
                                     {/* deleteOneItem={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)} */}
                                 </li>
                             ))}

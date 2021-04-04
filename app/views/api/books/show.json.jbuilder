@@ -22,9 +22,7 @@ json.book do
         end
     end
 
- 
-json.reviewIds review_ids
-         
+    json.reviewIds review_ids     
 end
 
 

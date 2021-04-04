@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     get "/books/titles/:title", to: "books#title"
 
     resources :reviews, only: [ :create, :update, :destroy, :show]
-    resources :carts, only:[:create]
+    resources :carts, only:[:create, :destroy, :show, :index]
+    resources :wishlists, only:[:create, :destroy, :show, :index]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

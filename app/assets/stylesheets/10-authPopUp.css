@@ -116,6 +116,7 @@ position: absolute;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 7px;
 }
 
 .nav-group .popUp .popUp-links{

@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show 
-        @user = User.include(:carts).find_by(id: params[:id])
+        @user = User.include(:carts, :wishlists).find_by(id: params[:id])
         if @user
             render :show
         else
