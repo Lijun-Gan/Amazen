@@ -18,6 +18,8 @@ ApplicationRecord.connection.reset_pk_sequence!('authors')
 ApplicationRecord.connection.reset_pk_sequence!('prices')
 ApplicationRecord.connection.reset_pk_sequence!('books')
 ApplicationRecord.connection.reset_pk_sequence!('reviews')
+ApplicationRecord.connection.reset_pk_sequence!('carts')
+ApplicationRecord.connection.reset_pk_sequence!('wishlists')
 
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 

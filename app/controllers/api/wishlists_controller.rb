@@ -3,7 +3,7 @@ class Api::WishlistsController < ApplicationController
 
         @wishlist = Wishlist.new(wishlist_params)
         @wishlist.user_id = current_user.id
-       
+       debugger
         if @wishlist.save
       
             # @book = Book.find_by(id: params[:wishlist][:book_id])
@@ -15,8 +15,6 @@ class Api::WishlistsController < ApplicationController
 
     def index
 
-        
-      
         @wishlists = Wishlist.where("user_id = ?", current_user.id)
         
         render :index

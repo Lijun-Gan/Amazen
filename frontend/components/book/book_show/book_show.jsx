@@ -12,12 +12,15 @@ class BookShow extends React.Component {
           price: '0.00',
           quantity: '1',
           checkOut: false,
+          review_err: "",
+          wishlist_err: "",
           
       })
       this.handlePrice = this.handlePrice.bind(this)
       this.handleCart = this.handleCart.bind(this)
       this.handleBookQuantity = this.handleBookQuantity.bind(this)
       this.handleBuyNow = this.handleBuyNow.bind(this)
+      this.addToWishlist = this.addToWishlist.bind(this)
     }
   
     handleCart(e){
@@ -79,6 +82,17 @@ class BookShow extends React.Component {
             price: book_format_price[1],
             
         })
+    }
+
+    addToWishlist(){
+
+        let priceId;
+        this.props.prices.forEach((price)=>{
+            if(price.book_format === this.state.format) priceId = price.id
+        })
+
+        debugger
+        this.props.createWishlist({book_id: this.props.book.id, price_id: priceId })
     }
 
 
@@ -145,6 +159,8 @@ class BookShow extends React.Component {
             let total_review ;
          
             let starRatesBar= [0,0,0,0,0];
+        
+            let currentUser_reviewId = "";
 
             reviews.forEach((review)=>{
                 if(review.rating === 1)  starRatesBar[4] += 1;
@@ -154,6 +170,7 @@ class BookShow extends React.Component {
                 if(review.rating === 5)  starRatesBar[0] += 1;
                  
                 totalRating += review.rating
+                if (review.user_id === this.props.currentUserId) currentUser_reviewId = review.id
             })
 
             total_review = reviews.length
@@ -295,7 +312,7 @@ class BookShow extends React.Component {
                         <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
                         <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>
                         {/* <img id="addToCart-btn" src={window.addToList} alt="Add to List"/> */}
-                        <button className='addToList'>Add to List</button>
+                        <button className='addToList' onClick={this.addToWishlist}>Add to List</button>
 </div>
                     </div>
 
@@ -338,7 +355,7 @@ class BookShow extends React.Component {
                         <p className="share-thoughts">Share your thoughts with other customers</p>
 
 
-                        <Link to={`/books/${book.id}/create-review`}>
+                        <Link to={currentUser_reviewId === "" ?  `/books/${book.id}/create-review` : `/reviews/${currentUser_reviewId}/edit` }>
                             <p id="postReview">Write a customer review</p>
                         </Link>
                     </div>
@@ -368,7 +385,7 @@ class BookShow extends React.Component {
                                         <span className="bsp-PictureText-title">{review.title}</span>
                                     </div>
 
-                                    <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.created_at)}</p>
+                                    <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.updated_at)}</p>
                                     <p className="reviewBody">{review.body}</p>
 
                                     {review.user_id === this.props.currentUserId ? 

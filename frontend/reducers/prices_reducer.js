@@ -7,7 +7,7 @@ const reviewsReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_BOOK:
             // nextState[action.review.id] = action.review;
-            return Object.assign({}, state, action.oneBook.prices)
+            return Object.assign({}, action.oneBook.prices)
              
         default:
             return state;
