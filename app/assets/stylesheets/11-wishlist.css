@@ -1,0 +1,109 @@
+.wishlist-container{
+    margin: 0 auto;
+    width: 80%;
+    
+}
+
+.wishlist-page{
+    border: 1px solid rgb(219, 218, 218);
+    width: 80%;
+    margin: 40px;
+    min-width: 700;
+}
+
+a.wl-title{
+    color: #0066c0;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.wl-author{
+    font-size: 13px;
+}
+
+.wishlist-pic{
+    height: 145px;
+    width: 100px;
+}
+
+.wishlist-items{
+    margin-bottom: 20px;
+    margin-top: 30px;
+    display: flex;
+    border-bottom: solid 1px grey;
+    padding-bottom: 40px;
+}
+
+.wl-info{
+    width: 50%;
+    margin:0 50px;
+}
+
+
+.wl-add-to-cart-button{
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background:  #f0c14b;
+ 
+}
+
+.wl-add-to-cart-button:hover{
+
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.wl-add-to-cart-button:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.deleteList{
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #b9b9b6;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background: #f4f4f4;
+    margin-top: 10px;
+}
+
+.wl-h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.wl-rating-star-container {
+    display: flex;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.wl-price{
+    font-size: 17px;
+
+}
+
+.wl-delivery{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.wl-date{
+    font-size: 13px;
+    margin-bottom: 10px;
+}

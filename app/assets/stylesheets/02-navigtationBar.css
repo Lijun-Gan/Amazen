@@ -360,8 +360,10 @@ button.sub-nav{
     width: auto;
     display: none;
     border: 1px solid transparent;
-    
+    color: white;
 }
+
+
 
 button.sub-nav:hover {
     border: 1px solid #f1f1f1;

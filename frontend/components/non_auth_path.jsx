@@ -8,9 +8,10 @@ import CreateReviewForm from './review/create_review_form_container';
 import EditReviewForm from './review/edit_review_form_container';
 import NavBarContainer from './home_page/navigation_container'
 import Footer from "./home_page/footnote";
-import cartContainer from './cart/cart_container';
+import CartContainer from './cart/cart_container';
 import BookIndexContainer from './book/book_index/book_index_container';
 import SearchResultContainer from './search_result/search_result_container';
+import WishlistContainer from "./wishlist/wishlist_container";
 
 
 const NonAuthPath = () => (
@@ -25,7 +26,9 @@ const NonAuthPath = () => (
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
    
-        <ProtectedRoute exact path="/cart" component={cartContainer} />
+        <ProtectedRoute exact path="/cart" component={CartContainer} />
+
+        <ProtectedRoute exact path="/wishlist" component={WishlistContainer} />
 
     </Switch>
 

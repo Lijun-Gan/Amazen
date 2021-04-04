@@ -23,7 +23,7 @@
         # json.format wishlist.book.prices[wishlist.price_id].book_format
         # json.title wishlist.book.title
         # json.image_url wishlist.book.image_url
-        # json.book_author wishlist.book.book_author.name
+        json.author wishlist.book.book_author.name
         # json.avg_rating (total_rating.to_f / ([1,reviews.length].max)).round(2)
         # json.total_reviews  num_reviews
 

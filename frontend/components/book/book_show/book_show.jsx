@@ -91,8 +91,9 @@ class BookShow extends React.Component {
             if(price.book_format === this.state.format) priceId = price.id
         })
 
-        debugger
+
         this.props.createWishlist({book_id: this.props.book.id, price_id: priceId })
+        this.props.history.push("/wishlist")
     }
 
 
