@@ -4,6 +4,7 @@ class Api::WishlistsController < ApplicationController
         @wishlist = Wishlist.new(wishlist_params)
         @wishlist.user_id = current_user.id
        
+        
         if @wishlist.save
 
             # @book = Book.find_by(id: params[:wishlist][:book_id])
@@ -28,6 +29,6 @@ class Api::WishlistsController < ApplicationController
     private
 
     def wishlist_params
-        params.require(:wishlist).permit(:book_id, :price_id)
+        params.require(:wishlist).permit(:book_id,:price_id)
     end
 end

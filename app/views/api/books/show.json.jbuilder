@@ -18,7 +18,7 @@ json.book do
     json.avg_rating (total_rating.to_f / ([1,@book.reviews.length].max)).round(2)
     json.prices do 
         json.array! @book.prices do |price|
-            json.extract! price, :book_format, :price
+            json.extract! price, :book_format, :price, :id
         end
     end
 

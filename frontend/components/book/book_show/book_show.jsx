@@ -87,10 +87,11 @@ class BookShow extends React.Component {
     addToWishlist(){
 
         let priceId;
-        this.props.prices.forEach((price)=>{
+        this.props.book.prices.forEach((price)=>{
             if(price.book_format === this.state.format) priceId = price.id
         })
 
+        
 
         this.props.createWishlist({book_id: this.props.book.id, price_id: priceId })
         this.props.history.push("/wishlist")
