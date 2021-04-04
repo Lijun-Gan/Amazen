@@ -46,10 +46,7 @@ class CartItem extends React.Component {
             let cartBooks = JSON.parse(localStorage.getItem(currentUser.id ))
             delete cartBooks[cartId];
              
-            
             localStorage.setItem(currentUser.id , JSON.stringify(cartBooks));
-
-             
             this.props.removeCart(cartId)
              
     

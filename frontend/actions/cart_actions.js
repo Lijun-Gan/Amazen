@@ -1,9 +1,16 @@
 import * as APIUtil from '../util/cart_api_util'
-import {receiveCurrentUser} from '../actions/session_actions'
 
 
+export const RECEIVE_CARTS = "RECEIVE_CARTS"
 export const RECEIVE_CART = "RECEIVE_CART"
 export const DELETE_CART = "DELETE_CART"
+
+export const receiveCarts = (carsts) => {
+    return {
+        type: RECEIVE_CARTS,
+        carts,
+    }
+}
 
 export const receiveCart = (cart) => {
     return {

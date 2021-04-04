@@ -7,7 +7,7 @@ import Root from "./components/root";
 import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
 import {createCart, deleteCart} from './actions/cart_actions';
-import {createWishlist, deleteWishlist} from './actions/wishlist_actions';
+import {createWishlist, deleteWishlist, fetchWishlists} from './actions/wishlist_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     window.deleteWishlist = deleteWishlist
     window.createWishlist = createWishlist
+    window.fetchWishlists = fetchWishlists
 
 
     ReactDOM.render(<Root store={store} />, root);

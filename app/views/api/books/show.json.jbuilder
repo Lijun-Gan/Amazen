@@ -36,3 +36,11 @@ json.reviews do
     end
 end
 
+json.prices do 
+    @book.prices.each do |price|
+        json.set! price.id do 
+            json.extract! price, :id, :book_id, :book_format, :price
+        end
+    end
+end
+

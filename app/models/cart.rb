@@ -1,5 +1,5 @@
 class Cart < ApplicationRecord
-    validates :user_id, :book_id, presence: true 
+    validates :user_id, :book_id, :price_id, presence: true 
 
     belongs_to :user,
         class_name: :User,

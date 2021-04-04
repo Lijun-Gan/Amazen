@@ -5,4 +5,6 @@ class Price < ApplicationRecord
     validates :book_id, uniqueness: {scope: :book_format}
 
     belongs_to :book
+
+    has_many :wishlists
 end

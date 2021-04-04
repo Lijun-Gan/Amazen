@@ -195,7 +195,6 @@ class BookShow extends React.Component {
                     avg_rating = "0%"
                 }
                 
-
             return(
 
 <div>

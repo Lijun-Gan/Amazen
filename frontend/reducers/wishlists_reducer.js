@@ -10,13 +10,14 @@ export default (state = {}, action) => {
         }
 
         case RECEIVE_WISHLIST:{
+ 
             nextState[action.wishlist.id] = action.wishlist
 
             return nextState;
         }
 
         case DELETE_WISHLIST:{ 
-            delete nextState[action.wishlistId];
+            delete nextState[action.wishlist.id];
             return nextState;
         }
 

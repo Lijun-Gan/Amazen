@@ -7,36 +7,39 @@ export const DELETE_WISHLIST = "DELETE_WISHLIST"
 
 
 
-export const receiveWishlists = (whishlists) => {
+export const receiveWishlists = (wishlists) => {
     return {
         type: RECEIVE_WISHLISTS,
-        whishlists,
+        wishlists,
     }
 }
 
-export const receiveWishlist = (whishlist) => {
+export const receiveWishlist = (wishlist) => {
     return {
         type: RECEIVE_WISHLIST,
-        whishlist,
+        wishlist,
     }
 }
 
-export const removeWishlist = (whishlistId) => {
+export const removeWishlist = (wishlist) => {
     return {
         type: DELETE_WISHLIST,
-        whishlistId,
+        wishlist,
     }
 }
 
 export const fetchWishlists = ()=>dispatch =>{
     return (
-        APIUtil.fetchWishlist().then((wishlists) => dispatch(receiveWishlists(wishlists)))
+        APIUtil.fetchWishlists().then((wishlists) => dispatch(receiveWishlists(wishlists)))
     )
 }
 
-export const createWishlist = whishlist => dispatch => {
+export const createWishlist = wishlist => dispatch => {
     return (
-        APIUtil.createWishlist(whishlist).then((wishlist) => dispatch(receiveWishlist(wishlist)))
+        APIUtil.createWishlist(wishlist).then((wishlist) => {
+            
+            dispatch(receiveWishlist(wishlist))
+        })
     )
 }
 

@@ -2,7 +2,7 @@ export const fetchWishlists = () => {
 
     return $.ajax({
         method: "GET",
-        url: "api/whishlists",
+        url: "api/wishlists",
     })
 }
 
@@ -10,7 +10,7 @@ export const createWishlist = wishlist => {
 
     return $.ajax({
         method: "POST",
-        url: "api/whishlists",
+        url: "api/wishlists",
         data: { wishlist }
     })
 }
@@ -18,6 +18,6 @@ export const deleteWishlist = wishlistId => {
     
     return $.ajax({
         method: "delete",
-        url: `api/whishlists/${wishlistId}`,
+        url: `api/wishlists/${wishlistId}`,
     })
 }
