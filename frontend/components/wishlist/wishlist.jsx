@@ -78,7 +78,7 @@ handleDate(unformatedDate){
         <div className="wishlist-container">
 
             <ul >
-            {Object.values(wishlists).map((wishlist,idx)=>{
+            {Object.values(wishlists).reverse().map((wishlist,idx)=>{
             
             return(
 
