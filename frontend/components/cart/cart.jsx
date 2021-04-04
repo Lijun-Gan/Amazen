@@ -114,7 +114,7 @@ class Cart extends React.Component {
 
                                
                         <ul>
-                            {Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId))).map((cartBook,idx)=>(
+                            {Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId))).reverse().map((cartBook,idx)=>(
                                 <li key={idx}>
                                     {<CartItem  cartBook={cartBook} subTotle={subTotal}  removeCart={this.props.removeCart} receiveCart={this.props.receiveCart}  userId={this.props.currentUserId}/>}
                                     {/* deleteOneItem={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)} */}
