@@ -1,11 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+// import VerifiyPassword from './modal'
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
-      
+// start
+    this.state = {
+        showPopup: false
+    };
     }
+
+    togglePopup() {
+    this.setState({
+        showPopup: !this.state.showPopup
+    });
+    }
+
+// end 
 
     componentDidMount() {
         this.props.fetchBooks()
@@ -49,10 +61,27 @@ class Profile extends React.Component{
 
           
             <div id="profile-container">
+                <img id="profile-pic" src={window.profile} alt="profile pic"/>
                 <p className="just-grey"></p>
             <div className="profile-header">
                 <p className="profile-header-username">{user.username}</p>
-                <button className='profile-add-to-cart-button'>Edit your public profile</button>
+                <button className='profile-add-to-cart-button' onClick={()=> this.props.history.push("/EditLogin")}>Edit login & security</button>
+           
+            {/*start  */}
+            <button onClick={this.togglePopup.bind(this)}>show popup</button>
+            {this.state.showPopup ? 
+            (
+                <div className='profile-popup'>
+                <div className='profile-popup_inner'>
+                  <h1>Close</h1>
+                <button onClick={this.togglePopup.bind(this)}>close me</button>
+                </div>
+              </div>
+            )
+          : null
+        }
+            {/* end */}
+            
             </div>
             <ul>
                 {user.reviews.reverse().map((review,idx)=>(

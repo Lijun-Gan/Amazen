@@ -50,16 +50,11 @@ class SearchBar extends React.Component{
         let searchBookTitle = "";
         if (this.props.books && this.props.search && this.state.input) {
             searchBookTitle  =  this.props.books.filter((option) => {         
-                if (option.title.toLowerCase().includes(this.state.input.toLowerCase())){
+                if (option.title.toUpperCase().includes(this.state.input.toUpperCase())){
                     return option
                 }
             }).map((book,idx) => (
                 <button className="search-book-link" key={book.id} onClick={this.handleDropdown(book.title)} >{book.title}</button> 
-                // <button className="search-book-link" key={book.id} onClick={ ()=> this.props.history.push(`/books/${id}`)} >{book.title}</button> 
-                
-                // <Link key={book.id} to={`/books/${book.id}`}>
-                //     <p className="search-book-link" key={book.id} >{book.title}</p> 
-                // </Link>
 
                 // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>        
                 
@@ -69,21 +64,23 @@ class SearchBar extends React.Component{
 
        
         return (
+            
             <div className="searchbar">
                     <button id="search-all">All &nbsp;▾</button>
                     <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
-                    {/* <form className="nav-search-bar-container"> */}
-                    {/* <div className="nav-search-bar-with-icon"> */}
+                  
+                {/* <div className={searchBookTitle.length > 0 ? "search-dropdown-container": null}> */}
                         <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
                         <div className="search-dropdown">
                             {searchBookTitle }
-                        </div>
+            </div>
+                        {/* </div> */}
                         <button className="search-icon-btn" ><img className="search-icon" src={window.search_icon} alt="Search" /></button>
 
-                    {/* </div> */}
+             
                     </form>  
 
-            </div>
+        </div>
         )
     }
 }
