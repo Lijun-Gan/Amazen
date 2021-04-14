@@ -49,7 +49,10 @@ class SearchBar extends React.Component{
 
         let searchBookTitle = "";
         if (this.props.books && this.props.search && this.state.input) {
-            searchBookTitle  =  this.props.books.filter((option) => {         
+            searchBookTitle  =  
+       (   
+            
+            this.props.books.filter((option) => {         
                 if (option.title.toUpperCase().includes(this.state.input.toUpperCase())){
                     return option
                 }
@@ -59,6 +62,11 @@ class SearchBar extends React.Component{
                 // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>        
                 
               ))
+        )
+
+
+
+
           }    
         
 
@@ -69,12 +77,11 @@ class SearchBar extends React.Component{
                     <button id="search-all">All &nbsp;▾</button>
                     <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
                   
-                {/* <div className={searchBookTitle.length > 0 ? "search-dropdown-container": null}> */}
                         <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
-                        <div className="search-dropdown">
+                <div className={searchBookTitle.length > 0 ? "search-dropdown-container": null}></div>
+                        <div className="search-dropdown" >
                             {searchBookTitle }
-            </div>
-                        {/* </div> */}
+                        </div>
                         <button className="search-icon-btn" ><img className="search-icon" src={window.search_icon} alt="Search" /></button>
 
              
