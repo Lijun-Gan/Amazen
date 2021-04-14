@@ -19,6 +19,19 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find_by(id: params[:id])
+ 
+        if @user.update(user_params)
+            @user = User.includes(authorized_reviews: :book).find_by(id: params[:id])
+
+            render :profile
+        else
+            render json: @user.errors.full_messages, status: 404
+        end
+
+    end
+
     def exists
 
         user = User.account_exist(params[:email_or_phone])
@@ -38,7 +51,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :phone_number)
     end
 
 end

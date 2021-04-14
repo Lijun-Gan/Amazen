@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
     get "/users/exists", to: "users#exists"
 
-    resources :users, only: [:create, :show]
+    resources :users, only: [:create, :show, :update]
     resources :books, only: [:index, :show]
     
     get "/books/categories/:category", to: "books#category"
     get "/books/titles/:title", to: "books#title"
 
-    get "/user/:userId/reviews", to: "users#reviews"
+    get "/users/:userId/reviews", to: "users#reviews"
 
     resources :reviews, only: [ :create, :update, :destroy, :show]
     resources :carts, only:[:create, :destroy, :show, :index]

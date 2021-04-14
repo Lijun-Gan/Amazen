@@ -139,8 +139,164 @@ a.profile-title{
     position: absolute;
     left: 25%;
     right: 25%;
-    top: 25%;
+    top: 10%;
     bottom: 25%;
     margin: auto;
     background: white;
+    height: fit-content;
+    padding: 20px;
+    /* max-width: 400px; */
+    width: fit-content;
   }
+
+
+#pw{
+    width: 230px;
+    border-radius: 3px;
+    /* height: 31px; */
+    height: 23px;
+    border: 1px solid #a6a6a6;
+    font-size: 12.5px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 7px;
+    margin-bottom: 20px;
+}
+
+input:focus{
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
+}
+
+.pop-user{
+    display: flex;
+}
+
+#pop-user-pic{
+    width: 62px;
+    height: 58px;
+
+}
+
+.pop-username{
+    margin-top: 14px;
+}
+.pop-email{
+    font-size: 13px;
+    color: #767676;
+}
+
+.pop-password{
+    margin-bottom: 5px;
+}
+
+.pop-form{
+    margin: 18px 10px;
+}
+
+
+.pop-confirm-btn{
+    background: #e4bc57;
+    text-align: center; 
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background: rgb(255,255,255);
+    background-image: linear-gradient(rgb(247, 223, 165), rgb(240, 193, 75));
+    border-color: #c59f3d #9c7e31 #846a29;
+    width: 100px;
+    height: 28px;
+    border-radius: 3px;
+    margin-right: 38px;
+
+}
+
+.pop-confirm-btn:hover{
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+
+.pop-confirm-btn:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.pop-close-btn{
+
+    text-align: center;
+    width: 100px;
+    height: 28px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background:  rgb(237, 146, 32);
+
+}
+
+.pop-close-btn:hover{
+
+    background-image: linear-gradient(rgb(244, 188, 119), rgb(225, 133, 18));
+    background-image: linear-gradient(rgb(244, 188, 119), rgb(225, 133, 18));
+}
+
+.pop-close-btn:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+
+
+.edit-login-container{
+    width: 25%;
+    margin: auto;
+}
+
+.profile-phone{
+    border: solid 1px #a6a6a6;
+}
+.edit-login-item{
+
+    border: 1px solid #e4e8e8 ;
+    border-bottom: none;
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.edit-login-item.last{
+    border-bottom: 1px solid #e4e8e8 ;
+}
+
+.edit-done-btn{
+    background: #e4bc57;
+    text-align: center; 
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    background: rgb(255,255,255);
+    background-image: linear-gradient(rgb(247, 223, 165), rgb(240, 193, 75));
+    border-color: #c59f3d #9c7e31 #846a29;
+    width: 60px;
+    height: 28px;
+    border-radius: 3px;
+    
+    margin-top: 30px;
+    margin-bottom: 80px;
+
+
+}
+
+.edit-done-btn:hover{
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+
+.edit-done-btn:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}

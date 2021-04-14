@@ -1,6 +1,16 @@
 export const fetchUserReviews = (userId) => (
     $.ajax({
         method: "GET",
-        url: `/api/user/${userId}/reviews`
+        url: `/api/users/${userId}/reviews`
     })
 );
+
+
+export const updateProfile = (user) => {
+    return $.ajax({
+            method: "PATCh",
+            url: `/api/users/${user.id}`,
+            data: {user}
+        })
+
+}

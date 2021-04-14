@@ -38,13 +38,13 @@ a:-webkit-any-link{
 
     width: 296px;
     border-radius: 3px;
-    margin-bottom: 12px;
-    margin-top: 4px;
     /* height: 31px; */
     height: 23px;
     border: 1px solid #a6a6a6;
     font-size: 12.5px;
     font-family: 'Lato', sans-serif;
+    margin-bottom: 12px;
+    margin-top: 4px;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 7px;
@@ -253,6 +253,14 @@ h3{
     background-color: #E6E6E6;
     margin-bottom: 25px;
     background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+}
+.signin_fade_rule {
+    height: 2px;
+    background-color: #E6E6E6;
+
+    background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    margin-top: 30px;
+
 }
 
 h2.crossline {

@@ -273,6 +273,9 @@ class SignIn extends React.Component {
                     <a href="https://github.com/Lijun-Gan/Amazen"> Detail ▾</a>
                 </div>
                 </div>
+
+                <div className="signin_fade_rule"></div>  
+
                 <div id="auth-footnotes" >
                     <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
                     <p> &nbsp; </p>

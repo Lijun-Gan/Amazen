@@ -33,7 +33,7 @@ const NonAuthPath = () => (
         <ProtectedRoute exact path="/wishlist" component={WishlistContainer} />
 
         <ProtectedRoute path="/profile"  component={ProfileContainer}/>
-        <ProtectedRoute path="/EditLogin"  component={EditLoginContainer}/>
+        <ProtectedRoute path="/editLogin"  component={EditLoginContainer}/>
 
     </Switch>
 

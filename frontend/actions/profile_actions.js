@@ -11,3 +11,10 @@ export const fetchProfile = (userId) => dispatch => (
     ProfileAPIUtil.fetchUserReviews(userId)
         .then((user) => dispatch(receiveProfile(user)))
 );
+
+export const updateProfile = (user) =>dispatch =>{
+    return(
+        ProfileAPIUtil.updateProfile(user)
+        .then((user) => dispatch(receiveProfile(user)) )
+    )
+}

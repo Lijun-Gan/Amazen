@@ -1,4 +1,5 @@
-json.extract! @user, :username, :email, :phone_number, :created_at
+
+json.extract! @user, :username, :email, :phone_number, :created_at, :id
 json.reviews do 
     json.array! @user.authorized_reviews do |review|
         json.extract! review, :id, :title, :body, :rating, :updated_at
