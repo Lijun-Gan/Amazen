@@ -172,17 +172,21 @@
     font-size: 14px;
  }
 
-/* .cart-page-left-side{
-    width: 70%;
-} */
+
+
+.cart-page-price-tag{
+    color: #565959;
+    font-size: 13px;
+}
 
 
 .price-at-end{
     text-align: right;
     width: 100%;
-    border-bottom: solid 1px grey;
+    border-bottom: solid 1px #dcdbdb;
     margin-bottom: 15px;
-    font-size: 14px;
+  
+    
 } 
 
 .deleteOneItem{
@@ -218,11 +222,16 @@
 
 .carts-books-subtotal-left{
     color: #0F1111;
-    font-size: 24px;
+    font-size: 18px;
     padding-left: 5px;
     font-weight: 600;
     margin-bottom: 25px;
  } 
+
+ .carts-books-subtotal-tag-left{
+    font-size: 18px;
+ }
+
 
 .carts-checkout{
     border: solid 1px;
@@ -254,7 +263,7 @@
     width: 145px;
 }
 
-.carts-books-subtotal-tag-left{
+.subtotal-tag-left{
     
     font-size: 24px;
 
@@ -265,7 +274,7 @@
     font-size: 18px;
 }
 
-.carts-books-subtotal-left{
+.subtotal-left{
     
     font-size: 19px;
 
@@ -295,6 +304,10 @@
     border-radius: 13px;
 }
 
+.shopping-cart-header-line{
+    font-size: 24px;
+}
+
 .book-quantity-select-cart{
     width: 85px;
     height: 32px;
@@ -322,9 +335,11 @@
 .carts-books-title{
     color: #007185;
     font-size: 18px;
-    font-weight: 600;
+    /* font-weight: 600; */
     margin-right: 6px;
 }
+
+
 
 .carts-books-title:hover{
     text-decoration:underline;
@@ -339,6 +354,7 @@
 .cart-book-format{
     font-size: 12px;
     margin:  8px 0;
+    font-weight: bold;
 }
 
 .carts-book-in-stock{

@@ -100,7 +100,7 @@ class Cart extends React.Component {
             
 
             <div id="shopping-cart-page-container">
-                        <h1 className="carts-books-subtotal-tag-left">Shopping Cart</h1>
+                        <h1 className="shopping-cart-header-line">Shopping Cart</h1>
                         <button className="delete-all-book" onClick={this.deleteAllItems}>Delete all items</button>
                         
                         <div className="price-at-end">
