@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {checkUser} from '../../../util/session_api_util'
+import {checkUser} from '../../../util/session_api_util';
 
 class SignIn extends React.Component {
     
@@ -257,7 +257,7 @@ class SignIn extends React.Component {
 
                         <input type="password"
                             className={emptyPasswordColor}
-                            id="pw"
+                            id="auth-pw"
                             value={this.state.password}
                             onChange={this.update('password')}
                         />

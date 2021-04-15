@@ -11,9 +11,14 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password
 
+    def phone_number=(phone_number)
+        super(phone_number == "" ? nil : phone_number)
+    end
+
     def generate_session_token
         SecureRandom.urlsafe_base64
     end
+
 
     def generate_unique_session_token
         self.session_token = generate_session_token

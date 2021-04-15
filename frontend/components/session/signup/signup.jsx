@@ -104,9 +104,7 @@ class SignUp extends React.Component {
                                 emailTaken: "Email address already in use"
                             }
                         });
-                        console.log(response.errors[0])
                     }
-                    console.log(response.errors[0])
                 } );
         }
 
@@ -193,7 +191,7 @@ class SignUp extends React.Component {
                         <label htmlFor="pw">Password:</label>
                         <input type="password"
                             className={passwordColor}
-                            id="pw"
+                            id="auth-pw"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="At least 6 characters"

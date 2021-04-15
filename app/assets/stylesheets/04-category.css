@@ -22,9 +22,17 @@
     width: 80px;
     border: 1px transparent solid;
     margin-bottom: 10px;
+ 
 }
 
 
+#category_img:hover{
+   
+    /* border:#797676 1px solid;     */
+    border-radius: 40px;   
+    filter: brightness(95%);
+    
+}
 
 #catPic{
     height: 130px;
@@ -63,11 +71,6 @@
     margin-right: 2%; */
 }
 
-#category_img:hover{
-   
-    border:#797676 1px solid;    
-   
-}
 
 #catPic{
     display: none;
