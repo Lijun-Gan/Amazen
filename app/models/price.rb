@@ -6,5 +6,7 @@ class Price < ApplicationRecord
 
     belongs_to :book
 
+    has_many :carts
+
     has_many :wishlists
 end

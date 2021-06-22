@@ -24,6 +24,8 @@ class BookShow extends React.Component {
     }
   
     handleCart(e){
+      
+
         e.preventDefault();
 
         if(!this.props.currentUserId){
@@ -42,9 +44,9 @@ class BookShow extends React.Component {
         }
 
 
-        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id}
+        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id, price_id: this.props.book.prices[this.state.format]["id"] }
         let uniqueId = this.props.book.id.toString() + "_" + this.state.format
-        
+
         cart[uniqueId] = cartItem
 
     
@@ -87,7 +89,7 @@ class BookShow extends React.Component {
     addToWishlist(){
 
         let priceId;
-        this.props.book.prices.forEach((price)=>{
+        Object.values(this.props.book.prices).forEach((price)=>{
             if(price.book_format === this.state.format) priceId = price.id
         })
 
@@ -139,8 +141,8 @@ class BookShow extends React.Component {
             let author_bio;
 
             if(this.state.price === '0.00'){
-                this.state.price = book.prices[0].price
-                this.state.format =book.prices[0].book_format
+                this.state.price =  Object.values(book.prices)[0].price
+                this.state.format = Object.values(book.prices)[0].book_format
             }
   
             if (book.biography ){
@@ -232,16 +234,18 @@ class BookShow extends React.Component {
                         <span className ="font-for- author">by </span>
                         <span className="bsp-author">{book.author} </span>
                         <span className ="font-for-author">(Author)</span>
-               
-<div className="rating-star-min-width">
-    <div className="rating-star-container-bookShow-top">
-        <div className="star-ratings-css">
-            <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div> 
-        <p className="review-count-top showpage">{total_review} ratings</p>
-    </div>
-</div>
+
+               {/* {} */}
+                        <div className="rating-star-min-width">
+                            <div className="rating-star-container-bookShow-top">
+                                <div className="star-ratings-css">
+                                    <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                </div> 
+                                <p className="review-count-top showpage">{total_review} ratings</p>
+                            </div>
+                        </div>
+                {/* {} */}
 
                         <div className="book-catego">
                             <span>Category: </span>
@@ -252,8 +256,8 @@ class BookShow extends React.Component {
                         <p className="diff-price"> See all formats and editions</p>
 
                         <ul className="bsp-prices">
-                           { book.prices.map((formatPrice,idx)=> {
-                            //     
+                           { Object.values(book.prices).map((formatPrice,idx)=> {
+                         
                                return (
                                <li key={idx}>
                                    <button className={formatPrice.book_format=== this.state.format ? "price-btn change": "price-btn"} value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>
@@ -264,7 +268,7 @@ class BookShow extends React.Component {
 
                                    {/* <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
                                    <br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
-               */}
+                                    */}
                                </li>
                            )})}
                         </ul>
@@ -281,41 +285,43 @@ class BookShow extends React.Component {
                         <p className="freeShipping">& FREE shipping</p>
                         <p className="inStock-color">In Stock</p>
 
-    {/*  */}
-                <select className="book-quantity-select" onChange={this.handleBookQuantity} value={this.state.quantity}>
-                    <option value="1">Qty: 1</option>
-                    <option value="2">Qty: 2</option>
-                    <option value="3">Qty: 3</option>
-                    <option value="4">Qty: 4</option>
-                </select>
+            {/*  */}
+                        <select className="book-quantity-select" onChange={this.handleBookQuantity} value={this.state.quantity}>
+                            <option value="1">Qty: 1</option>
+                            <option value="2">Qty: 2</option>
+                            <option value="3">Qty: 3</option>
+                            <option value="4">Qty: 4</option>
+                        </select>
 
+                                
+            {/*  */}
+
+                        <div className="addCartBtn-container">
+
+                            {/* <button className='addToCart-btn'>Add to Cart</button> */}
+                            <button className='add-to-cart-button' onClick={this.handleCart}>
+                            <img className="add-to-cart-pic" src={window.addToCart} alt="add to cart"/>
+                            <span className="cart-span"> Add to Cart</span>
                         
-    {/*  */}
+                            </button>
+                            
+                            <p className="givenSmallSpace"></p>
 
-<div className="addCartBtn-container">
+                            <button className='buy-now-button'>
+                            <img className="add-to-cart-pic" src={window.buyNowCart} alt="buyNowCart"/>
+                            <span className="buynow-span" onClick={this.handleBuyNow}>  Buy Now</span>
+                        
+                            </button>
+                                                <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
 
-    {/* <button className='addToCart-btn'>Add to Cart</button> */}
-    <button className='add-to-cart-button' onClick={this.handleCart}>
-    <img className="add-to-cart-pic" src={window.addToCart} alt="add to cart"/>
-    <span className="cart-span"> Add to Cart</span>
-   
-    </button>
-    
-    <p className="givenSmallSpace"></p>
+                                            
+                                                <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
+                                                <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>
+                                                {/* <img id="addToCart-btn" src={window.addToList} alt="Add to List"/> */}
+                                                <button className='addToList' onClick={this.addToWishlist}>Add to List</button>
+                        </div>
 
-    <button className='buy-now-button'>
-    <img className="add-to-cart-pic" src={window.buyNowCart} alt="buyNowCart"/>
-    <span className="buynow-span" onClick={this.handleBuyNow}>  Buy Now</span>
-  
-    </button>
-                        <p className="secure-trans">🔒 &nbsp;Secure transaction</p>
 
-                    
-                        <p className="shipFrom">ship from &nbsp;&nbsp;Amazen.com</p>
-                        <p className="soldBy">sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amazen.com</p>
-                        {/* <img id="addToCart-btn" src={window.addToList} alt="Add to List"/> */}
-                        <button className='addToList' onClick={this.addToWishlist}>Add to List</button>
-</div>
                     </div>
 
                 </div>
@@ -333,24 +339,24 @@ class BookShow extends React.Component {
 
                         <h2>Customer reviews</h2>
                         
-                
-                                       
-<div className="rating-star-min-width">
-    <div className="rating-star-container">
-        <div className="star-ratings-css-review bigger">
-            <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div> 
-        <p className="grobal-review-count">{avg_rating_out} out of 5</p>
-    </div>
+                                        
+                                                            
+                        <div className="rating-star-min-width">
+                            <div className="rating-star-container">
+                                <div className="star-ratings-css-review bigger">
+                                    <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                </div> 
+                                <p className="grobal-review-count">{avg_rating_out} out of 5</p>
+                            </div>
 
-</div>
+                        </div>
 
-<p className="givenSpace">{total_review} global ratings</p>
+                        <p className="givenSpace">{total_review} global ratings</p>
 
-{ showBar }
+                        { showBar }
 
-<a className="rating-cal" href="https://github.com/Lijun-Gan/Amazen">How are ratings calculated?</a>
+                        <a className="rating-cal" href="https://github.com/Lijun-Gan/Amazen">How are ratings calculated?</a>
 
 
                         <p className="title-to-review">Review this Product</p>
@@ -379,11 +385,11 @@ class BookShow extends React.Component {
                                     <div className="rating-star-container">
                                         {/* {this.handleRating(review.rating)} */}
 
-     <div className="star-ratings-css-reviewbottom">
-        <div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    </div> 
-    
+                                    <div className="star-ratings-css-reviewbottom">
+                                        <div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                    </div> 
+                                    
                                         <span className="bsp-PictureText-title">{review.title}</span>
                                     </div>
 

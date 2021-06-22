@@ -6,7 +6,7 @@ import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
 import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
-import {createCart, deleteCart} from './actions/cart_actions';
+import {createOrder} from './actions/cart_actions';
 import {createWishlist, deleteWishlist, fetchWishlists} from './actions/wishlist_actions';
 import {fetchProfile} from './actions/profile_actions';
 
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.deleteReview = deleteReview
     window.fetchReview = fetchReview
     
-    window.createCart = createCart 
-    window.deleteCart = deleteCart
+    window.createOrder = createOrder 
+    // window.deleteCart = deleteCart
 
     window.deleteWishlist = deleteWishlist
     window.createWishlist = createWishlist

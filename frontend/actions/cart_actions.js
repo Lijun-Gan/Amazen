@@ -1,14 +1,32 @@
 import * as APIUtil from '../util/cart_api_util'
 
 
+export const RECEIVE_ORDERS = "RECEIVE_ORDERS"
+export const RECEIVE_ORDER = "RECEIVE_ORDER"
+export const REMOVE_ORDER = "REMOVE_ORDER"
 export const RECEIVE_CARTS = "RECEIVE_CARTS"
 export const RECEIVE_CART = "RECEIVE_CART"
 export const DELETE_CART = "DELETE_CART"
 
-export const receiveCarts = (carsts) => {
+export const receiveOrders = (orders) => {
     return {
-        type: RECEIVE_CARTS,
-        carts,
+        type: RECEIVE_ORDERS,
+        orders,
+    }
+}
+
+
+export const receiveOrder = (order) => {
+    return {
+        type: RECEIVE_ORDER,
+        order,
+    }
+}
+
+export const removeOrder = (order) => {
+    return {
+        type: REMOVE_ORDER,
+        order,
     }
 }
 
@@ -26,14 +44,27 @@ export const removeCart = (cartId) => {
     }
 }
 
-export const createCart = cart => dispatch => {
+export const createOrder = cart => dispatch => {
     return (
-        APIUtil.createCart(cart).then((user) => dispatch(receiveCart(user)))
+        // APIUtil.createOrder(cart).then((user) => dispatch(receiveCart(user)))
+        APIUtil.createOrder(cart).then(
+            (order)=> {
+                
+                dispatch(receiveOrder(order))
+            }
+        )
     )
 }
-export const deleteCart = cartId => dispatch => {
+
+export const deleteOrder = orderId => dispatch => {
     return (
-        APIUtil.deleteCart(cartId).then((user) => dispatch(removeCart(user)))
+        APIUtil.deleteOrder(orderId).then((order) => dispatch(removeOrder(order)))
+    )
+}
+
+export const fetchOrders = () => dispatch => {
+    return (
+        APIUtil.fetchOrders().then((carts) => dispatch(receiveOrders(carts)))
     )
 }
 

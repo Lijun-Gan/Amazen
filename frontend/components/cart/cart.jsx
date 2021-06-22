@@ -27,7 +27,8 @@ class Cart extends React.Component {
         });
         
         cartBooks.map((cartBook) => {
-            // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
+            
+            this.props.createOrder(cartBook)
             this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
 
@@ -48,7 +49,6 @@ class Cart extends React.Component {
         });
         
         cartBooks.map((cartBook) => {
-            // this.props.createCart({ user_id: this.props.currentUserId, book_id: book.id, quantity: book.quantity});
             this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
         });
         

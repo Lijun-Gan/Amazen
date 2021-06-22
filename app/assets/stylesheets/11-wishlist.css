@@ -76,6 +76,10 @@ a.wl-title{
     margin-top: 10px;
 }
 
+.deleteList:hover{
+    background: #e8e8e8;;
+}
+
 .wl-h3{
     font-size: 18px;
     font-weight: bold;

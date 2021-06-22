@@ -6,8 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application' %>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
     window.pwAlert = "<%= image_url("alert-icon.png") %>"
     window.amazenLogo = "<%= image_url("amazen-logo.png") %>"
@@ -60,8 +59,10 @@
 
     window.profile = "<%= image_url("profile.jpg") %>"
 
-    
+    window.buyAgain = "<%= image_url("buyAgain.png") %>"
+
   </script>
+  <%= favicon_link_tag asset_path('tab-logo.png') %>
   </head>
 
   <body>

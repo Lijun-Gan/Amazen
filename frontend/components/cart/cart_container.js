@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Cart from './cart';
-import {createCart, removeCart, receiveCart} from '../../actions/cart_actions'
+import {removeCart, receiveCart, createOrder} from '../../actions/cart_actions'
 
 const mapStateToProps = (state) => {
     // return {
@@ -29,9 +29,9 @@ const mapStateToProps = (state) => {
     
 const mapDispatchToProps = (dispatch) => {
     return {
-        createCart: (cart) => dispatch(createCart(cart)),
         removeCart: (cartId) => dispatch(removeCart(cartId)),
-        receiveCart: (cart) => dispatch(receiveCart(cart))
+        receiveCart: (cart) => dispatch(receiveCart(cart)),
+        createOrder: (cart) => dispatch(createOrder(cart)),
     }
 }
 

@@ -12,8 +12,10 @@ class Wishlist extends React.Component {
 
   componentDidMount(){
       
-    this.props.fetchBooks()
-    this.props.fetchWishlists()
+    this.props.fetchBooks().then(()=>{
+
+      this.props.fetchWishlists()
+    })
   }
 
   handleCart(cartItem){

@@ -17,13 +17,22 @@ class Profile extends React.Component{
     this.handleConfirm = this.handleConfirm.bind(this)
     }
 
+
+    componentDidMount() {
+        this.props.fetchBooks().then(()=>{
+
+            this.props.fetchProfile(this.props.currentUserId)
+        })
+        
+    }
+
     togglePopup() {
-    this.setState({
-        showPopup: !this.state.showPopup,
-        password: '',
-        emptyPassword: '',
-        invalidPassword: '',
-    });
+        this.setState({
+            showPopup: !this.state.showPopup,
+            password: '',
+            emptyPassword: '',
+            invalidPassword: '',
+        });
     }
     
     // end 
@@ -60,13 +69,6 @@ class Profile extends React.Component{
             });
         });
     }
-
-    componentDidMount() {
-        this.props.fetchBooks()
-        
-        this.props.fetchProfile(this.props.currentUserId)
-    }
-
 
     handleDate(unformatedDate){
 

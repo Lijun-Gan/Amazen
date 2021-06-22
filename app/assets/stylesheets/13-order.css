@@ -1,0 +1,139 @@
+.order-outer-container{
+    width: 90%;
+    margin: auto;
+    
+}
+
+.order-ul{
+    margin-bottom: 60px;
+}
+
+.item-container{
+    height: 305px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 15px;
+
+}
+
+.item-header{
+    display: flex;
+    border: 1px solid  #ddd;
+    height: 70px;
+    padding: 0 22px;
+    background: #f6f6f6;
+    color: #565959;
+    border-radius: 4px 4px 0 0;
+}
+
+.dispaly-block{
+    width: 200px;
+    margin: auto 0;
+}
+
+.dispaly-block-top{
+    font-size: 13px;
+    color: #565959;
+    line-height: 16px;
+    margin-bottom: 2px;
+}
+
+.dispaly-block-bottom{
+    font-size: 15px;
+    color: #373838;
+    line-height: 20px;
+
+}
+
+.order-num{
+    margin: auto 0;
+    margin-left: auto;
+    font-size: 13px;
+}
+
+.item-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 230px;
+    border: 1px solid  #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+a.order-title{
+    color: #0066C0;
+    font-size: 16px;
+}
+
+.order-pic{
+    height: 118px;
+    width: 82px;
+}
+
+.order-author{
+
+    font-size: 13px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+
+}
+
+.buyAgain{
+    height: 25px;
+    width: 25px;
+    margin-top: 2.5px;
+    margin-left: 3px;
+    position: absolute;
+}
+
+.order-add-to-cart-button{
+   
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #a88734 #9c7e31 #846a29;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background:  #f0c14b;
+ 
+}
+
+.order-add-to-cart-button:hover{
+
+    background-image: linear-gradient(rgb(247, 213, 165), rgb(240, 187, 75));    
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.order-add-to-cart-button:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.your-orders{
+    font-size: 28px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: 'Lato', sans-serif;
+}
+
+.order-write-review{
+    border: solid 1px;
+    height: 28px;
+    width: 218px;
+    border-color: #b9b9b6;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    background: #f4f4f4;
+    margin-top: 10px;
+    line-height: 28px;
+    color: black;
+}
+
+.order-write-review:hover{
+    background: #e8e8e8;;
+}
+
+
