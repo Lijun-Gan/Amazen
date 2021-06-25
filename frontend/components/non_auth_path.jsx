@@ -15,6 +15,9 @@ import WishlistContainer from "./wishlist/wishlist_container";
 import ProfileContainer from "./profile/profile_container";
 import EditLoginContainer from "./profile/edit_login_container";
 import OrderContainer from "./order/order_container";
+import ConfirmContainer from "./cart/order_confirmation";
+import ContactUs from "./email/email_form";
+
 
 
 const NonAuthPath = () => (
@@ -25,6 +28,7 @@ const NonAuthPath = () => (
         <Route exact path="/books/:id" component={BookShowContainer} />
         <Route exact path="/" component={BookIndexContainer} />
         <Route exact path="/search" component={SearchResultContainer} />
+        <Route exact path="/contact" component={ContactUs} />
 
         <ProtectedRoute  exact path="/reviews/:reviewId/edit" component={EditReviewForm} />
         <ProtectedRoute  exact path='/books/:bookId/create-review' component={CreateReviewForm} />
@@ -38,6 +42,7 @@ const NonAuthPath = () => (
         <ProtectedRoute exact path="/editLogin"  component={EditLoginContainer}/>
 
         <ProtectedRoute exact path="/order"  component={OrderContainer}/>
+        <ProtectedRoute exact path="/order-confirmation"  component={ConfirmContainer}/>
 
     </Switch>
 

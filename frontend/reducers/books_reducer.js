@@ -6,10 +6,10 @@ import { RECEIVE_BOOKS, RECEIVE_BOOK, RECEIVE_BOOK_FOR_REVIEW } from '../actions
 //     image_url: "",
 // };
 
-const booksReducer = (State = {}, action) => {
+const booksReducer = (state = {}, action) => {
 
-    Object.freeze(State);
-    let nextState = Object.assign({}, State);
+    Object.freeze(state);
+    let nextState = Object.assign({}, state);
 
     switch (action.type) {
         case RECEIVE_BOOKS:
@@ -24,7 +24,7 @@ const booksReducer = (State = {}, action) => {
      
 
         default:
-            return State;
+            return state;
     }
 };
 

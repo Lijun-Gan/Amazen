@@ -3,9 +3,15 @@ import { receiveBook } from './book_actions';
 
 
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+export const DELETE_PROFILE_REVIEW = "DELETE_PROFILE_REVIEW";
 
 export const receiveReview = (review) => ({
     type: RECEIVE_REVIEW,
+    review
+});
+
+export const deleteProfileReview = (review) => ({
+    type: DELETE_PROFILE_REVIEW,
     review
 });
 
@@ -22,10 +28,19 @@ export const updateReview = (review) => dispatch => (
         .then((book) => dispatch(receiveBook(book)))
 );
 
-export const deleteReview = (review) => dispatch => (
-    ReviewAPIUtil.deleteReview(review)
-        .then((book) => dispatch(receiveBook(book)))
-);
+export const deleteReview = (review) => dispatch => {
+
+    return (
+        ReviewAPIUtil.deleteReview(review)
+            .then((book) => dispatch(receiveBook(book)))
+)};
+
+export const removeProfileReview = (review) => dispatch => {
+
+    return (
+        ReviewAPIUtil.deleteReview(review)
+            .then((book) => dispatch(deleteProfileReview(book)))
+)};
 
 
 export const fetchReview = (reviewId) => dispatch => {

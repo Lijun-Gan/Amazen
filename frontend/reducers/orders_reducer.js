@@ -1,4 +1,4 @@
-import { RECEIVE_ORDERS,  RECEIVE_ORDER, REMOVE_ORDER} from '../actions/cart_actions';
+import { RECEIVE_ORDERS,  RECEIVE_ORDER, REMOVE_ORDER, CLEAR_ORDER_STATE} from '../actions/cart_actions';
 
 export default (state = {}, action) => {
     const nextState = Object.assign({}, state)
@@ -14,6 +14,10 @@ export default (state = {}, action) => {
         case REMOVE_ORDER:
             delete nextState[action.order.id]
             return nextState
+
+        case CLEAR_ORDER_STATE:
+
+            return {}
 
         default: 
             return state;

@@ -6,7 +6,16 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application' %>
+
+   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script>
+     
+      var host = "amazen2021.herokuapp.com" 
+      if ((host == window.location.host) && (window.location.protocol != "https:")){
+        window.location.protocol = "https";
+      }
+    </script>
   <script>
     window.pwAlert = "<%= image_url("alert-icon.png") %>"
     window.amazenLogo = "<%= image_url("amazen-logo.png") %>"
@@ -58,8 +67,12 @@
     window.cart = "<%= image_url("cart.svg") %>"
 
     window.profile = "<%= image_url("profile.jpg") %>"
+    window.threeDots = "<%= image_url("threeDots.png") %>"
 
     window.buyAgain = "<%= image_url("buyAgain.png") %>"
+
+    window.green_checkmark = "<%= image_url("green_checkmark.svg") %>"
+    
 
   </script>
   <%= favicon_link_tag asset_path('tab-logo.png') %>

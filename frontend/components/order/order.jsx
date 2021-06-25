@@ -18,6 +18,10 @@ class Order extends React.Component {
         })
     }
 
+    componentWillUnmount(){
+        this.props.clearOrderState();
+    }
+
     handleCart(book){
 
         return (e)=>{
@@ -29,7 +33,10 @@ class Order extends React.Component {
             }
 
             const savedCart = localStorage.getItem(this.props.currentUserId);
-            let cart = {};
+
+            let cart = {"cartItems":{} , "prices": {}};
+
+            // let cart = {};
 
             if (savedCart) {
     
@@ -39,7 +46,7 @@ class Order extends React.Component {
             let cartItem = book
             let uniqueId = cartItem.book_id.toString() + "_" + cartItem.format
 
-            cart[uniqueId] = cartItem
+            cart["cartItems"][uniqueId] = cartItem
 
             localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
 
@@ -82,15 +89,31 @@ class Order extends React.Component {
     }
 
     render(){
-        const books = this.props.books;
-        const prices = this.props.prices;
-        
+        // const books = this.props.books;
+        // const prices = this.props.prices;
+
+        const{books, prices, orders } = this.props;
+
+
+        // const bookIds = Object.keys(books);
+        // const orderIds = Object.keys(orders);
+        if(Object.keys(orders).length <1 ){
+      
+            return (
+                <h1>Loading......</h1>
+            )
+
+        }else{
+
+
+
         return(
             <div className="order-outer-container">
                 <h1 className="your-orders">Your Orders</h1>
 
                 <ul className="order-ul">
-                    {Object.values(this.props.orders).reverse().map((order,idx) =>{
+                    {Object.values(orders).reverse().map((order,idx) =>{
+                        
                         return(
                             <li key={idx} className="item-container">
 
@@ -101,7 +124,8 @@ class Order extends React.Component {
                                     </div>
                                     <div className="dispaly-block">
                                         <p className="dispaly-block-top">TOTAL</p>
-                                        <p className="dispaly-block-bottom">$ {prices[order.price_id].price}</p>   
+                                        {/* {console.log(order.price_id, books["4"],prices["1"], orders["20"], prices[order.price_id] )} */}
+                                        <p className="dispaly-block-bottom">$ {prices[order.price_id].price * order.quantity}</p>   
                                     </div>
 
                           
@@ -116,6 +140,7 @@ class Order extends React.Component {
          {/* {} */}
                   <Link className="order-title" to={`/books/${order.book_id}`}>
                   <img className="order-pic" src={books[order.book_id].image_url} alt="book img"/>
+                  {order.quantity > 1 ? <p className="order-quant">{order.quantity}</p> : null}
                   </Link>
 
                     <div className="wl-info">
@@ -130,12 +155,15 @@ class Order extends React.Component {
        
                     </div>
                     <div className="wl-btn">
-                        <button className='wl-add-to-cart-button' onClick={this.hanldeOrder(order.id)}>Return Item</button>
+                        <button className='wl-add-to-cart-button' onClick={this.hanldeOrder(order.id)}>Cancel / Return Item</button>
                         <br/>
 
                         <Link to={Object.keys(this.props.reviewedBookIds).includes(order.book_id.toString()) ?  `/reviews/${this.props.reviewedBookIds[order.book_id]}/edit` : `/books/${order.book_id}/create-review` }>
                             {/* {console.log(this.props.reviewedBookIds, Object.keys(this.props.reviewedBookIds),Object.keys(this.props.reviewedBookIds).includes(order.book_id.toString()), order.book_id,this.props.reviewedBookIds[order.book_id])} */}
                             <p className="order-write-review">Write a product review</p>
+                        </Link>
+                        <Link to="/contact">
+                            <p className="order-write-review">Get product support</p>
                         </Link>
                         {/* <button className="deleteList" >Write a product review</button> */}
                     </div>
@@ -154,6 +182,7 @@ class Order extends React.Component {
                 </ul>
             </div>
         )
+                }
     }
 
 }

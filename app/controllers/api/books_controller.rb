@@ -25,6 +25,20 @@ class Api::BooksController < ApplicationController
         render :index
     end
 
+    def recommendation
+
+        @books =  Book.order("RANDOM()").limit(5)
+        render :index
+    end
+
+    def format
+
+        @books = Book.includes(:prices).where(prices: { book_format: params[:format] })
+        # @books = Book.joins(:prices).where(prices: { book_format: params[:format] })
+
+        render :index
+    end
+
 end
 
 

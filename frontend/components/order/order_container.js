@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Order from './order';
-import {fetchOrders, receiveCart, deleteOrder} from '../../actions/cart_actions';
+import {fetchOrders, receiveCart, deleteOrder , clearOrderState} from '../../actions/cart_actions';
 import {fetchBooks} from '../../actions/book_actions';
 import { fetchProfile } from "../../actions/profile_actions";
 
@@ -32,6 +32,7 @@ const mapDispatchToProps = (dispatch) => {
         receiveCart: (cart)=>dispatch(receiveCart(cart)),
         deleteOrder: (orderId)=>dispatch(deleteOrder(orderId)),
         fetchProfile: (userId) => dispatch(fetchProfile(userId)),
+        clearOrderState: ()=>dispatch(clearOrderState()),
 
     }
 }

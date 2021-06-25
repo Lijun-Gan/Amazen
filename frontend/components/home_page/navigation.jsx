@@ -133,21 +133,38 @@ if (props.quantity < 10) {
           <Link to="/wishlist" >
           <button className="sub-nav xsm">Wish List</button>
           </Link>
-          <button className="sub-nav xsm">Customer Service</button>
-          <button className="sub-nav sm">New Release</button>
-          <Link to="/" > 
-          <button className="sub-nav sm" onClick={()=>(props.fetchBooks())}>Books</button>
-          </Link>
-      
 
-          <button className="sub-nav md">Fashion</button>
-          <button className="sub-nav md">Kindle Books</button>
-          <button className="sub-nav md">Gift Cards</button>
-          <button className="sub-nav md">Toys & Games</button>
-    
-          <button className="sub-nav lg">Find a Gift</button>
-          <button className="sub-nav lg">Amazon Home</button>
-          <button className="sub-nav lg">Computers</button>
+          <Link to="/contact" >
+          <button className="sub-nav xsm">Customer Service</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav sm" onClick={()=>(props.fetchBooksFormat("Kindle"))}>Kindle</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav sm" onClick={()=>(props.fetchBooksFormat("Audiobook"))}>Audiobook</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav md" onClick={()=>(props.fetchBooksFormat("Paperback"))}>Paperback</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav md" onClick={()=>(props.fetchBooksFormat("Audio CD"))}>Audio CD</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav md" onClick={()=>(props.fetchBooksFormat("Hardcopy"))}>Hardcopy</button>
+          </Link>
+
+          <Link to="/" > 
+          <button className="sub-nav md" onClick={()=>(props.fetchBooks())}>Books</button>
+          </Link>
+          <Link to="/" > 
+          <button className="sub-nav md" onClick={()=>(props.fetchBooksRecommendation())}>Recommendation</button>
+          </Link>
+          <Link to="/cart" >
+          <button className="sub-nav lg">Shopping Carts</button>
+          </Link>
+          <Link to="/orders" >
+          <button className="sub-nav lg">Orders</button>
+          </Link>
           <button className="sub-nav xlg">Sell</button>
           <button className="sub-nav xlg">Pharmacy</button>
           <button className="sub-nav xlg">Video Games</button>

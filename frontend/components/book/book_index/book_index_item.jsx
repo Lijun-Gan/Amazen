@@ -26,23 +26,24 @@ const BookIndexItem = ({book}) => {
                     <img className='index-book-photo' src={book.image_url}></img>
                 </div>
 
-<div className="showPage-book-info">
+            <div className="showPage-book-info">
 
                 <p className='index-book-title'>{book.title}</p>
 
 
 
-<div className="home-rating-star-container">
-    <div className="star-ratings-css-home-page">
-        <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    </div> 
-    <p className="review-count-home-page">{book.total_reviews}</p>
-    {/* book.reviewIds.length */}
-</div>
+                <div className="home-rating-star-container">
+                    <div className="star-ratings-css-home-page">
+                        <div className="star-ratings-css-top" style={{"width":  `${avg_rating}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    </div> 
+                    <p className="review-count-home-page">{book.total_reviews}</p>
+                    {/* book.reviewIds.length */}
+                </div>
+                              
                 <p className="index-book--price home">{ "$"+ Number.parseFloat(parseFloat(book.price)).toFixed(2)}</p>
                 {/* <p className='free-ship-cap home'>FREE Shipping by Amazen</p> */}
-</div>         
+            </div>         
             
             </Link>
             {/* </button> */}

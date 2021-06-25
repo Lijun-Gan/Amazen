@@ -9,7 +9,7 @@
 }
 
 .item-container{
-    height: 305px;
+    height: 285px;
     font-family: 'Arial', sans-serif;
     margin-bottom: 15px;
 
@@ -53,16 +53,18 @@
 .item-body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 230px;
+    /* align-items: center; */
+    height: 170px;
     border: 1px solid  #ddd;
     border-top: none;
     border-radius: 0 0 4px 4px;
+    padding-top: 40px;
 }
 
 a.order-title{
     color: #0066C0;
     font-size: 16px;
+    position: relative;
 }
 
 .order-pic{
@@ -81,7 +83,7 @@ a.order-title{
 .buyAgain{
     height: 25px;
     width: 25px;
-    margin-top: 2.5px;
+    margin-top: 3.5px;
     margin-left: 3px;
     position: absolute;
 }
@@ -133,7 +135,22 @@ a.order-title{
 }
 
 .order-write-review:hover{
-    background: #e8e8e8;;
+    background: #e8e8e8;
 }
 
+.order-quant{
+    border: 1px solid #b9b9b6;
+    border-radius: 50px;
+    width: 21px;
+    height: 18px;
+    font-size: 13px;
+    color: black;
+    background: white;
+    opacity: 0.9;
+    text-align: center;
+    padding-top: 3px;
+    position: absolute;
+    bottom: 49px;
+    right: -4px;
+}
 

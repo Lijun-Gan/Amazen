@@ -100,8 +100,8 @@
 }
 
 .profile-pic{
-    height: 95px;
-    width: 64px;
+    height: 85px;
+    width: 58px;
 }
 
 a.profile-title{
@@ -318,4 +318,92 @@ input:focus{
 .word-regular{
 
     font-size: 14px;
+}
+
+
+.threeDots-btn{
+    margin-left: auto;
+}
+
+.threeDots-pic{
+    height: 4px;
+    width: 25px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    margin-left: auto;
+    font-size: 14px;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    /* visibility: visible; */
+    /* width: 120px; */
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 106%;
+    left: 73%;
+    margin-left: -78px;
+    border: 1px solid #cdcdcd;
+    height: 66px;
+    width: 140px;
+  }
+
+  .tooltip .tooltiptext::before {
+    display: block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-left: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    transform: rotate(135deg);
+    margin-top: -12px;
+    margin-left: 65px;
+    background-color: #fff;
+  }
+  
+  .tooltip .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  /* .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  } */
+  
+  /* .tooltip:hover .tooltiptext {
+    visibility: visible;
+  } */
+
+.profile-editReview-btn{
+      color: black;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+.profile-editReview-btn:hover{
+    color: #c45500;
+}
+
+.profile-deleteReview-btn{
+    width: 100%;
+}
+.profile-deleteReview-btn:hover{
+    color: #c45500;
 }

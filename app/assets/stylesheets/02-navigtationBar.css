@@ -126,7 +126,7 @@ p.nav-signin.username{
     white-space: nowrap;
     overflow: hidden;
     font-weight: normal;
-    
+    margin-bottom: 0px;
 }
 
 .nav-search-bar-container-outer{
@@ -284,7 +284,7 @@ div.searchbar:focus-within{
 .nav-returns{
     /* font-size: 12px; */
     padding-top: 3px; 
-    margin-top: 6px;
+    margin-top: 8px;
     margin-right: 20px;
     height: 45px;
     text-align: center;

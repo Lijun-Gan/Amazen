@@ -18,11 +18,18 @@ class Wishlist extends React.Component {
     })
   }
 
+  componentWillUnmount(){
+    this.props.clearWishlistState()
+  }
+
   handleCart(cartItem){
       return() =>{
 
           const savedCart = localStorage.getItem(this.props.currentUserId);
-          let cart = {};
+
+          let cart = {"cartItems":{} , "prices": {}};
+
+          // let cart = {};
       
           if (savedCart) {
               cart = JSON.parse(savedCart);
@@ -31,7 +38,7 @@ class Wishlist extends React.Component {
      
           let uniqueId = cartItem.book_id + "_" + cartItem.format
           
-          cart[uniqueId] = cartItem
+          cart["cartItems"][uniqueId] = cartItem
       
       
           localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
@@ -68,7 +75,7 @@ handleDate(unformatedDate){
 
 
   render(){
-      if (this === undefined || this.props.books == undefined){
+      if (this === undefined || this.props.books == undefined || Object.keys(this.props.wishlists).length <1 ){
           return <h1>loading......</h1>
       }
       const {wishlists, books, deleteWishlist} = this.props
@@ -96,17 +103,20 @@ handleDate(unformatedDate){
                         </Link>
                         <p className="wl-author">by {wishlist.author} ({wishlist.format})</p>
                         
+
                         <div className="wl-rating-star-container">
-    <div className="star-ratings-css-home-page">
-        <div className="star-ratings-css-top" style={{"width": `${( books[wishlist.book_id].avg_rating / 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-    </div> 
-    <p className="review-count-home-page">{books[wishlist.book_id].total_reviews}</p>
-    {/* book.reviewIds.length */}
-</div>
-                <span className="wl-price">{ "$"+ Number.parseFloat(parseFloat(books[wishlist.book_id].price)).toFixed(2)}</span>
-                <span className="wl-delivery">Free Delivery</span>
-       
+                          <div className="star-ratings-css-home-page">
+                              <div className="star-ratings-css-top" style={{"width": `${( books[wishlist.book_id].avg_rating / 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                              <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                          </div> 
+                          <p className="review-count-home-page">{books[wishlist.book_id].total_reviews}</p>
+                          {/* book.reviewIds.length */}
+                        </div>
+
+
+                        <span className="wl-price">{ "$"+ Number.parseFloat(parseFloat(books[wishlist.book_id].price)).toFixed(2)}</span>
+                        <span className="wl-delivery">Free Delivery</span>
+              
 
                     </div>
                     <div className="wl-btn">
@@ -118,6 +128,10 @@ handleDate(unformatedDate){
               </li>
                 
             )})}
+
+            {/* <p className="wl-end-list"></p> */}
+
+            <h2 className="crossline"><span id="wl-end-list">End of list</span></h2>
             </ul>
         
         </div>

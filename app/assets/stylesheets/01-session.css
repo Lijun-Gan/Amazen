@@ -157,11 +157,14 @@ input.input-error {
 }
 
 
-#exist-email{
+#exist-email {
     margin-bottom: 20px;
+    display: flex
 }
 
-
+#email-change{
+    margin-top: 4px;
+}
 
 .auth-btn{
     background: #e4bc57;
@@ -189,8 +192,11 @@ input.input-error {
     /* font-size: 0.7em; */
 }
 
-button.backFirstSignIn{
+input.backFirstSignIn{
     color: #0066c0;
+    border: none;
+    margin: 0px;
+    padding: 0px 4px;
 }
 
 .signin-form-bottom{

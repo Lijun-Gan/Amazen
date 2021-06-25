@@ -8,7 +8,10 @@ class BookIndex extends React.Component {
 
   componentDidMount(){
      
-    this.props.fetchBooks()
+    if(Object.keys(this.props.books).length === 0){
+
+        this.props.fetchBooks()
+    }
   }
 
   handleCategory(category){

@@ -8,8 +8,10 @@ class BookShow extends React.Component {
 
       this.state = ({
         //   book: this.props.book,
-          format: 'Select format',
-          price: '0.00',
+        //   format: 'Select format',
+        //   price: '0.00',
+          format: this.props.format,
+          price: this.props.price,
           quantity: '1',
           checkOut: false,
           review_err: "",
@@ -21,6 +23,53 @@ class BookShow extends React.Component {
       this.handleBookQuantity = this.handleBookQuantity.bind(this)
       this.handleBuyNow = this.handleBuyNow.bind(this)
       this.addToWishlist = this.addToWishlist.bind(this)
+      this.handleBtn = this.handleBtn.bind(this)
+
+      this.wrapperRef = React.createRef();
+    //   this.setWrapperRef = this.setWrapperRef.bind(this);
+      this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+
+    componentDidMount(){
+        document.addEventListener('mousedown', this.handleClickOutside);
+  
+        this.props.fetchBooks().then(()=>{
+            this.props.fetchBook(this.props.match.params.id)
+            
+        }) 
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && this.wrapperRef.current && !this.wrapperRef.current.contains(event.target)) {
+            // alert('You clicked outside of me!');
+            if(this.state.showReviewBtn){
+
+                const id = this.wrapperRef.current.id.slice(0,-1) + "book"
+                let popup = document.getElementById(id);
+                popup.classList.toggle("show");
+         
+    
+                this.setState({showReviewBtn: !this.state.showReviewBtn });
+
+            }
+        }
+    }
+
+    handleBtn(id){
+        return(e)=>{
+
+            let popup = document.getElementById(id);
+            popup.classList.toggle("show");
+     
+
+            this.setState({showReviewBtn: !this.state.showReviewBtn });
+
+        }
     }
   
     handleCart(e){
@@ -34,28 +83,26 @@ class BookShow extends React.Component {
     
 
         const savedCart = localStorage.getItem(this.props.currentUserId);
-        let cart = {};
+        // let cart = {};
+        let cart = {"cartItems":{} , "prices": {}};
 
-
-
-        if (savedCart) {
- 
-            cart = JSON.parse(savedCart);
+        if (savedCart) { 
+           cart = JSON.parse(savedCart);
         }
 
+        
 
         let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id, price_id: this.props.book.prices[this.state.format]["id"] }
         let uniqueId = this.props.book.id.toString() + "_" + this.state.format
 
-        cart[uniqueId] = cartItem
+        cart["cartItems"][uniqueId] = cartItem
 
+        
     
         localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
 
         // let sub_total = Number(this.state.quantity) * parseFloat(this.state.price)
 
-       
-        
         this.props.receiveCart(cartItem)
         this.props.history.push('/cart')
 
@@ -63,11 +110,6 @@ class BookShow extends React.Component {
        
     };
 
-    componentDidMount(){
-      this.props.fetchBook(this.props.match.params.id)
-    }
-
- 
 
     handleBookQuantity(e){
         e.preventDefault();
@@ -79,10 +121,28 @@ class BookShow extends React.Component {
 
     handlePrice(e){
         const book_format_price = e.currentTarget.value.split(",")
+
+        
+        const savedCart = localStorage.getItem(this.props.currentUserId);
+        // let cart = {};
+        let cart = {"cartItems":{} , "prices": {}};
+     
+        if (savedCart) { 
+           
+            cart = JSON.parse(savedCart);
+            
+        }
+        
+        // cart[this.props.book.id.toString()] = { format: book_format_price[0], price:book_format_price[0]}
+        cart["prices"][this.props.book.id.toString()] = { format: book_format_price[0], price:book_format_price[1]}
+        
+        localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
+        
+      
+
         this.setState({
             format: book_format_price[0],
-            price: book_format_price[1],
-            
+            price: book_format_price[1], 
         })
     }
 
@@ -99,10 +159,7 @@ class BookShow extends React.Component {
         this.props.history.push("/wishlist")
     }
 
-
-    handleDate(unformatedDate){
-
-        const d = new Date(unformatedDate)
+    formatDate(useDate){
         const months = {
             0: 'January',
             1: 'February',
@@ -117,16 +174,56 @@ class BookShow extends React.Component {
             10: 'November',
             11: 'December'
         }
-        const monthName = months[d.getMonth()]
-        const year = d.getFullYear() 
-        const date = d.getDate()
+
+        const d = new Date(useDate)
+            const monthName = months[d.getMonth()]
+            const year = d.getFullYear() 
+            const date = d.getDate()
+       
         return `${monthName} ${date}, ${year}`
+
     }
+
+
+    handleDate(unformatedDate){
+
+        if(unformatedDate.update === unformatedDate.create){
+           
+            // const d = new Date(unformatedDate.update )
+            // const monthName = months[d.getMonth()]
+            // const year = d.getFullYear() 
+            // const date = d.getDate()
+            // return `Reviewed in the United States on ${monthName} ${date}, ${year}`
+            return "Reviewed in the United States on " +  this.formatDate(unformatedDate.update)
+        }else{
+            // const d = new Date(unformatedDate.create )
+            // const monthName = months[d.getMonth()]
+            // const year = d.getFullYear() 
+            // const date = d.getDate()
+            // return `Updated in the United States on ${monthName} ${date}, ${year}`
+            return "Updated in the United States on " +  this.formatDate(unformatedDate.create)
+
+        }
+
+    }
+
+
 
     handleBuyNow(){
 
-        this.setState({checkOut:true}) 
-        setTimeout(() => {this.setState({checkOut:false});}, 2000);
+       
+        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format, price: this.state.price, book_id: this.props.book.id, price_id: this.props.book.prices[this.state.format]["id"] }
+
+        // this.props.receiveCart(cartItem)
+
+        this.props.createOrder(cartItem).then(()=>{
+
+            this.props.history.push('/order-confirmation')
+            
+        })
+
+        // this.setState({checkOut:true}) 
+        // setTimeout(() => {this.setState({checkOut:false});}, 2000);
     }
 
 
@@ -230,7 +327,7 @@ class BookShow extends React.Component {
                     </div>
                     <div className="bsp-detail">
                         <p className="bsp-title">{book.title}</p>
-                        <p className="bsp-publication">{this.handleDate(book.publication_date)}</p>
+                        <p className="bsp-publication">{this.formatDate(book.publication_date)}</p>
                         <span className ="font-for- author">by </span>
                         <span className="bsp-author">{book.author} </span>
                         <span className ="font-for-author">(Author)</span>
@@ -373,13 +470,28 @@ class BookShow extends React.Component {
                     <div id="book-reviews-container-right">
                         <p className="us-top-reviews">Top reviews from the United States</p>
                         <ul>
-                            {reviews.map((review,idx)=>(
-                                <li key={idx}>
+                            {reviews.slice().reverse().map((review,idx)=>(
+                                <li key={idx} className="book-review-li">
                           
          
                                     <div id="PictureText">
                                         <img id="reviewUser-pic" src={window.userPic_review} alt="user pic"/>
                                         <span className="pictureText-text-user">{review.review_author}</span>
+                                        {review.user_id === this.props.currentUserId ? 
+                                        (<div ref={this.wrapperRef}  id={review.id + "$"} className="tooltip" onClick={this.handleBtn(review.id + "book")}>
+                                            <img src={window.threeDots} alt="hide delete" className="threeDots-pic"/>
+
+                                            {/* <div className="tooltiptext" style={{visibility: this.state.showReviewBtn? 'visible' : 'hidden' }}> */}
+                                            <div className="tooltiptext" id={review.id + "book"}>
+                                                    <Link to={`/reviews/${review.id}/edit`}>
+                                                        <p className="profile-editReview-btn">Edit review</p>
+                                                    </Link>
+                                                        <button className="profile-deleteReview-btn" onClick={()=>this.props.deleteReview(review)} >Detete review</button>
+
+                                            </div>
+                                        </div>)
+                                        : null }
+
                                     </div>
 
                                     <div className="rating-star-container">
@@ -393,20 +505,21 @@ class BookShow extends React.Component {
                                         <span className="bsp-PictureText-title">{review.title}</span>
                                     </div>
 
-                                    <p className="reviewUS">Reviewed in the United States on {this.handleDate(review.updated_at)}</p>
+                                    <p className="reviewUS">{this.handleDate({create: review.created_at, update: review.updated_at})}</p>
                                     <p className="reviewBody">{review.body}</p>
 
+                                    {/*                                    
                                     {review.user_id === this.props.currentUserId ? 
                                     (
                                         <div className="delete-edit-btn" >
-                                            {/* <button className="editReview-btn" onClick={(()=>{this.props.updateReview(review)})} >Edit</button> */}
                                             <Link to={`/reviews/${review.id}/edit`}>
                                                 <p className="editReview-btn">Edit</p>
                                             </Link>
                                             <button className="deleteReview-btn" onClick={(()=>{this.props.deleteReview(review)})} >Detete</button>
                                         </div>
 
-                                    ) : null}   
+                                    ) : null}    */}
+
                                 </li>
                             ))}
                         </ul>

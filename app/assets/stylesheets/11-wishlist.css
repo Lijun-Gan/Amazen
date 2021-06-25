@@ -8,6 +8,8 @@
     border: 1px solid rgb(219, 218, 218);
     /* width: 80%; */
     margin: 40px;
+    padding-top: 5px;
+    padding-bottom: 30px;
 }
 
 a.wl-title{
@@ -27,9 +29,9 @@ a.wl-title{
 
 .wishlist-items{
     margin-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
-    border-top: solid 1px grey;
+    border-top: solid 1px #ddd;
     padding-top: 20px;
     justify-content: center;
 }
@@ -109,4 +111,29 @@ a.wl-title{
 .wl-date{
     font-size: 13px;
     margin-bottom: 10px;
+}
+
+.wl-end-list{
+    border-top: solid 1px #ddd;
+    margin-top: 45px;
+    margin-bottom: 36px;
+}
+
+
+h2.crossline {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(233, 232, 229);
+    line-height: 0.1em;
+    margin: 10px 0 4px;
+}
+
+#wl-end-list {
+    color: rgb(141, 141, 138);
+    font-size: 0.75em;
+}
+
+h2.crossline span {
+    background: #fff;
+    padding: 0 8px;
 }

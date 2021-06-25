@@ -22,11 +22,11 @@ class CartItem extends React.Component {
             })
             let cartBooks = JSON.parse(localStorage.getItem(this.props.userId ))
              
-               cartBooks[cartId].quantity = e.target.value;
+               cartBooks["cartItems"][cartId].quantity = e.target.value;
         
             localStorage.setItem(this.props.userId , JSON.stringify(cartBooks));  
-
-            this.props.receiveCart(cartBooks[cartId])
+            console.log("handle quantity", cartBooks["cartItems"][cartId])
+            this.props.receiveCart(cartBooks["cartItems"][cartId])
         }    
 
     }
@@ -39,7 +39,7 @@ class CartItem extends React.Component {
         return(e)=>{
             e.preventDefault
             let cartBooks = JSON.parse(localStorage.getItem(this.props.userId ))
-            delete cartBooks[cartId];
+            delete cartBooks["cartItems"][cartId];
              
             localStorage.setItem(this.props.userId , JSON.stringify(cartBooks));
             this.props.removeCart(cartId)
@@ -48,9 +48,9 @@ class CartItem extends React.Component {
 
 
     render() {
+        
         const { cartBook } = this.props;
          
-
         return (
             <div className="shopping-cart-item">
                  

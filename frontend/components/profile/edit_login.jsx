@@ -100,7 +100,7 @@ class EditLogin extends React.Component {
                         {this.state.exist === 1 ? <h5 className="phone-length-error">❗ this phone number is already taken</h5> : null}
                     </div>
 
-                <button className="edit-done-btn">Done</button>
+                <button type="submit" className="edit-done-btn">Done</button>
 
                 </form>
 

@@ -5,10 +5,15 @@ Rails.application.routes.draw do
     get "/users/exists", to: "users#exists"
 
     resources :users, only: [:create, :show, :update]
+
+    get "/books/recommendation", to: "books#recommendation"
+    
     resources :books, only: [:index, :show]
     
     get "/books/categories/:category", to: "books#category"
+    get "/books/formats/:format", to: "books#format"
     get "/books/titles/:title", to: "books#title"
+
 
     get "/users/:userId/reviews", to: "users#reviews"
 

@@ -51,34 +51,64 @@ class SignIn extends React.Component {
         checkUser(this.state.user.email_or_phone).then((response)=>{
             
             if (response.exist=== 0) {
-                if( /[a-zA-Z]/g.test(this.state.user.email_or_phone)){
-                    invalid_email = (
-                    <div className="auth-errors">
-                        <div><img src={window.warningBan} alt="email error" /></div>
-                        <span>
-                            <h4>There was a problem</h4>
-                            <h5>We cannot find an account with that email address</h5>
-                        </span>
-                    </div>
-                        // <img id="incorrect-email" src={window.incorrect_email} alt="incorrect-email"/>
-                        )
-                }
+                // if( /[a-zA-Z]/g.test(this.state.user.email_or_phone)){
+                //     invalid_email = (
+                //     <div className="auth-errors">
+                //         <div><img src={window.warningBan} alt="email error" /></div>
+                //         <span>
+                //             <h4>There was a problem</h4>
+                //             <h5>We cannot find an account with that email address</h5>
+                //         </span>
+                //     </div>
+                //         // <img id="incorrect-email" src={window.incorrect_email} alt="incorrect-email"/>
+                //         )
+                // }
 
-                if(/\d/.test(this.state.user.email_or_phone)){
-                    invalid_phone = (
+                // if(/\d/.test(this.state.user.email_or_phone)){
+                //     invalid_phone = (
+                //         <div className="auth-errors">
+                //             <div><img src={window.warningBan} alt="email error" /></div>
+                //             <span>
+                //                 <h4>There was a problem</h4>
+                //                 <h5>We cannot find an account with that mobile number</h5>
+                //             </span>
+                //     </div>
+                //         // <img id="incorrect-phone" src={window.incorrect_phone} alt="incorrect-phone"/>
+                //     )
+                // }
+
+                if (this.state.user.email_or_phone === "") {
+                    invalid_email_or_phone = <h5 className="input-error">❗ Enter your email or mobile phone number</h5>
+                
+                }else{
+                    
+                    if( ! /^\d+$/.test(this.state.user.email_or_phone) ){
+                        invalid_email = (
                         <div className="auth-errors">
                             <div><img src={window.warningBan} alt="email error" /></div>
                             <span>
                                 <h4>There was a problem</h4>
-                                <h5>We cannot find an account with that mobile number</h5>
+                                <h5>We cannot find an account with that email address</h5>
                             </span>
-                    </div>
-                        // <img id="incorrect-phone" src={window.incorrect_phone} alt="incorrect-phone"/>
-                    )
+                        </div>
+                            // <img id="incorrect-email" src={window.incorrect_email} alt="incorrect-email"/>
+                            )
+                    }
+    
+                    if( /^\d+$/.test(this.state.user.email_or_phone)){
+                        invalid_phone = (
+                            <div className="auth-errors">
+                                <div><img src={window.warningBan} alt="email error" /></div>
+                                <span>
+                                    <h4>There was a problem</h4>
+                                    <h5>We cannot find an account with that mobile number</h5>
+                                </span>
+                        </div>
+                            // <img id="incorrect-phone" src={window.incorrect_phone} alt="incorrect-phone"/>
+                        )
+                    }
                 }
-                if (this.state.user.email_or_phone === "") {
-                    invalid_email_or_phone = <h5 className="input-error">❗ Enter your email or mobile phone number</h5>
-                }
+
             }
         
             this.setState({
@@ -243,9 +273,10 @@ class SignIn extends React.Component {
                     <form  onSubmit={this.handleSecondSubmit} className="login-form-box">
                     <h1>Sign-In</h1> 
                     <div id="exist-email">
-                        <span>{this.state.user_exist.email}</span>
+                        <p id="email-change">{this.state.user_exist.email}</p>
                         {/* <Link to="/signup"> Change</Link> */}
-                        <button className="backFirstSignIn" onClick={this.backFirstSignIn}>&nbsp;Change</button>
+                        {/* <button className="backFirstSignIn" onClick={this.backFirstSignIn}>&nbsp;Change</button> */}
+                        <input type="button" className="backFirstSignIn" onClick={this.backFirstSignIn} value="Change"/>
                         
                     
                     </div>
@@ -264,7 +295,8 @@ class SignIn extends React.Component {
 
                         {this.state.errors.emptyPassword}
 
-                        <input className="auth-btn" type="submit" value="Sign-In" />
+                        {/* <input className="auth-btn" type="submit" value="Sign-In" /> */}
+                        <button  className="auth-btn demo" type="submit" >Sign-In</button>
                     </div>
                     </form>
                     <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>

@@ -26,9 +26,9 @@ ApplicationRecord.connection.reset_pk_sequence!('wishlists')
 
 demoUser = User.create(username: "AmazenShopper", email: "amazen@gmail.com", password: "amazenLover", phone_number: "0123456789" )
 
-User.create!(username: "lijun", email: "lijun@gmail.com", password: "password" )
+User.create!(username: "lijun", email: "lijun@gmail.com", password: "password",phone_number:"1111111111" )
 
-User.create!(username: "app", email: "app@gmail.com", password: "password" )
+User.create!(username: "app", email: "app@gmail.com", password: "password",phone_number:"2222222222" )
 
 Author.create!( name: "Benjamin Graham",  
     biography: "Benjamin Graham (1894-1976), 

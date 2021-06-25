@@ -1,12 +1,13 @@
 import * as APIUtil from '../util/cart_api_util'
 
 
-export const RECEIVE_ORDERS = "RECEIVE_ORDERS"
-export const RECEIVE_ORDER = "RECEIVE_ORDER"
-export const REMOVE_ORDER = "REMOVE_ORDER"
-export const RECEIVE_CARTS = "RECEIVE_CARTS"
-export const RECEIVE_CART = "RECEIVE_CART"
-export const DELETE_CART = "DELETE_CART"
+export const RECEIVE_ORDERS = "RECEIVE_ORDERS";
+export const RECEIVE_ORDER = "RECEIVE_ORDER";
+export const REMOVE_ORDER = "REMOVE_ORDER";
+export const CLEAR_ORDER_STATE = "CLEAR_ORDER_STATE";
+export const RECEIVE_CARTS = "RECEIVE_CARTS";
+export const RECEIVE_CART = "RECEIVE_CART";
+export const DELETE_CART = "DELETE_CART";
 
 export const receiveOrders = (orders) => {
     return {
@@ -27,6 +28,12 @@ export const removeOrder = (order) => {
     return {
         type: REMOVE_ORDER,
         order,
+    }
+}
+
+export const clearOrderState = () => {
+    return {
+        type: CLEAR_ORDER_STATE,
     }
 }
 

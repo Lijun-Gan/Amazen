@@ -14,10 +14,23 @@ export const fetchBooks = () => (
         })
 )
 
+export const fetchBooksRecommendation = () => (
+        $.ajax({
+            method: 'GET',
+            url: `/api/books/recommendation`,
+        })
+)
 export const fetchBooksCategory = (category) => (
         $.ajax({
             method: 'GET',
             url: `/api/books/categories/${category}`,
+        })
+)
+
+export const fetchBooksFormat = (format) => (
+        $.ajax({
+            method: 'GET',
+            url: `/api/books/formats/${format}`,
         })
 )
 

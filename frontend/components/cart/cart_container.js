@@ -16,9 +16,11 @@ const mapStateToProps = (state) => {
          
         userId = state.session.id;
 
-        if(localStorage.getItem(userId) !== null){
+        if(localStorage.getItem(userId) !== null && Object.values(JSON.parse(localStorage.getItem(userId)).cartItems).length > 0){
+          
              
-            cartsBook = JSON.parse(localStorage.getItem(userId ))
+            cartsBook = JSON.parse(localStorage.getItem(userId)).cartItems
+            
         }
         return ({
             currentUserId: userId,

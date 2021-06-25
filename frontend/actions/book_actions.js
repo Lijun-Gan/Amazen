@@ -45,11 +45,24 @@ export const fetchBook = (bookId) => dispatch => {
         
         // ;
         
+export const fetchBooksRecommendation = () => dispatch => {
+    return (
+        APIUtil.fetchBooksRecommendation().then(books => dispatch(receiveBooks(books)))
+    )
+};
+
 export const fetchBooksCategory = (category) => dispatch => {
     return (
         APIUtil.fetchBooksCategory(category).then(books => dispatch(receiveBooks(books)))
     )
 };
+
+export const fetchBooksFormat = (format) => dispatch => {
+    return (
+        APIUtil.fetchBooksFormat(format).then(books => dispatch(receiveBooks(books)))
+    )
+};
+
 export const fetchBooksTitle = (title) => dispatch => {
     
     return (
