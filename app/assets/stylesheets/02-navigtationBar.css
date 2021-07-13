@@ -404,7 +404,6 @@ form.nav-search-bar-container{
 } */
 div.searchbar:focus-within{
     background-color: #e77700;
-    box-shadow: 0 0 1px 3px rgb(224, 153, 47, 0.5);
     border-radius: 3px;
 }
 
