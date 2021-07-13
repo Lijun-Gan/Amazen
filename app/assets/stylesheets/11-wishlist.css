@@ -163,7 +163,7 @@ h2.crossline span {
     background: #5f6368;
     border-color: #3d444c #2f353b #2c3137;
     color: #fff;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 15%) inset;
+    box-shadow: 0 1px 0 rgb(255 255 255 0.15) inset;
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
@@ -187,7 +187,7 @@ h2.crossline span {
     position: static;
     border: 1px solid #888C8C;
     border-radius: 3px;
-    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 1px 2px rgb(15 17 17 0.15) inset;
     height: 17px;
     padding: 7px 29px;
     width:180px;
@@ -197,13 +197,13 @@ h2.crossline span {
 .wl-search-bar:hover{
     background-color: #F7FEFF;
     border-color: #007185;
-    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 0.15) inset;
 }
 
 .wl-search-bar:focus{
     background-color: #F7FEFF;
     border-color: #007185;
-    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 0.15) inset;
 }
 
 .wl-search-close{

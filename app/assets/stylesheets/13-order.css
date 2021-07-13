@@ -182,7 +182,7 @@ a.order-title{
     position: static;
     border: 1px solid #888C8C;
     border-radius: 3px;
-    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 1px 2px rgb(15 17 17 0.15) inset;
     /* height: 31px; */
     height: 17px;
     padding: 7px 29px;
@@ -192,13 +192,13 @@ a.order-title{
 .order-search-bar:hover{
     background-color: #F7FEFF;
     border-color: #007185;
-    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 0.15) inset;
 }
 
 .order-search-bar:focus{
     background-color: #F7FEFF;
     border-color: #007185;
-    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 0.15) inset;
 }
 
 .order-search-icon{
@@ -219,7 +219,7 @@ a.order-title{
     background: #5f6368;
     border-color: #3d444c #2f353b #2c3137;
     color: #fff;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 15%) inset;
+    box-shadow: 0 1px 0 rgb(255 255 255 0.15) inset;
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
