@@ -515,7 +515,6 @@ input:focus{
 
 .profile-auth-errors{
     border: 1px solid #c40000;
-    box-shadow: 0 0 0 3px rgb(221 0 0 / 10%) inset;
     border-radius: 4px;
     box-sizing: border-box;
     padding: 10px 26px 15px 15px;
