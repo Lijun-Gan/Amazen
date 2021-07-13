@@ -106,7 +106,7 @@ class Profile extends React.Component{
                 empty_password = <h5 className="input-error">❗ Enter your password</h5>
             }else{
                 invalid_password = ( 
-                    <div className="auth-errors">
+                    <div className="profile-auth-errors">
                         <div><img src={window.warningBan} alt="passward warning" /></div>
                         <span>
                             <h4>There was a problem</h4>
@@ -182,9 +182,12 @@ class Profile extends React.Component{
                 <div className='profile-popup'>
                 <div className='profile-popup_inner'>
                   {this.state.invalidPassword}
+
+
                   <div className="pop-user">
 
                     <img id="pop-user-pic" src={window.userPic_review} alt="user pic"/>
+                    
                     <div>
                         <p className="pop-username">{user.username}</p>
                         <p className="pop-email">{user.email}</p>
@@ -210,6 +213,8 @@ class Profile extends React.Component{
                         </form>
                                 
                     </div>
+
+
                 </div>
               </div>
             )

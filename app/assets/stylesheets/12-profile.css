@@ -506,3 +506,62 @@ input:focus{
 .profile-padding{
     padding: 60px 0px;
 }
+
+/* .profile-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.profile-auth-errors{
+    border: 1px solid #c40000;
+    box-shadow: 0 0 0 3px rgb(221 0 0 / 10%) inset;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 26px 15px 15px;
+    margin-top: 2px;
+    width: 270px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    display: flex;
+    height: 84px;
+}
+
+.profile-auth-errors div {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+ .profile-auth-errors img {
+    display: inline-block;
+    object-fit: fill;
+    box-sizing: border-box;
+    width: 112%;
+    height: 32px;
+
+}
+
+.profile-auth-errors span{
+    display: inline-block;
+    height: inherit;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+.profile-auth-errors h4{
+    color: #c40000;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0px; 
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 5px;
+    padding-top: 4px;
+}
+.profile-auth-errors h5{
+    margin: 0px;
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
+}
