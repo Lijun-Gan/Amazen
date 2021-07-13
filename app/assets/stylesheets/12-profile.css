@@ -67,6 +67,7 @@
 
 #profile-page{
     background-color: #f6fafb;
+    min-width: 869px;
 }
 
 #profile-pictureText{
@@ -147,6 +148,7 @@ a.profile-title{
     padding: 20px;
     /* max-width: 400px; */
     width: fit-content;
+    border-radius: 6px;
   }
 
 
@@ -259,6 +261,12 @@ input:focus{
 .profile-phone{
     border: solid 1px #a6a6a6;
     margin-top: 5px;
+    width: 186px;
+    border: solid 1px #a6a6a6;
+    margin-top: 5px;
+    width: 186px;
+    font-size: 14px;
+    padding: 4px;
 }
 .edit-login-item{
 
@@ -267,6 +275,10 @@ input:focus{
     height: 70px;
     text-align: center;
     padding-top: 20px;
+}
+
+.edit-login-inner{
+    width: 280px;
 }
 
 .edit-login-item.last{
@@ -289,7 +301,7 @@ input:focus{
     
     margin-top: 30px;
     margin-bottom: 80px;
-
+    margin-left: 52px;
 
 }
 
@@ -406,4 +418,91 @@ input:focus{
 }
 .profile-deleteReview-btn:hover{
     color: #c45500;
+}
+
+.verified-purchase{
+    color: #c45500;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.login-city{
+    border: solid 1px #e8e2e2;
+
+    height: 18px;
+    width: 186px;
+    margin: 8px auto;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.eidt-profile-close-btn{
+
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    border: solid 1px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    background: rgb(237, 146, 32);
+    border-color: #c59f3d #9c7e31 #846a29;
+    margin-left: 50px;
+
+}
+
+.eidt-profile-close-btn:hover{
+
+    background-image: linear-gradient(rgb(244, 188, 119), rgb(225, 133, 18));
+    background-image: linear-gradient(rgb(244, 188, 119), rgb(225, 133, 18));
+}
+
+.eidt-profile-close-btn:focus{
+    outline: none;
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.user-review-title{
+    padding: 22px;
+    font-size: 18px;
+}
+
+.review-down-arrow{
+    border: 1px solid #c9c5c5;
+    background: #f4f5f7;
+    height: 27px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 128px;
+    text-align: center;
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.profile-disply-flex{
+    border: 1px solid #e4e8e8;
+    display: flex;
+    background-color: white;
+    align-items: center;
+}
+
+.arrow-bold{
+    font-size: larger;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+#profile-end-list{
+    font-size: 14px;
+    margin-top: 45px;
+    margin-bottom: 36px;
+    background: #f6fafb;
+}
+
+.profile-padding{
+    padding: 60px 0px;
 }

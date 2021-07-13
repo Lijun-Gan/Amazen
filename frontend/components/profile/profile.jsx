@@ -32,10 +32,10 @@ class Profile extends React.Component{
 
         // document.addEventListener('mousedown', this.handleClickOutside);
   
-        this.props.fetchBooks().then(()=>{
+        // this.props.fetchBooks().then(()=>{
 
             this.props.fetchProfile(this.props.currentUserId)
-        })      
+        // })      
     }
 
 
@@ -43,58 +43,36 @@ class Profile extends React.Component{
     //     document.removeEventListener('mousedown', this.handleClickOutside);
     // }
 
-
     // handleClickOutside(event) {
     //     if (this.wrapperRef && this.wrapperRef.current && !this.wrapperRef.current.contains(event.target)) {
     //         // alert('You clicked outside of me!');
-          
+    
     //         if(this.state.showReviewBtn){
-            
-
     //             // const id = this.wrapperRef.current.id.slice(0,-1)
     //             let popup = document.getElementById(this.state.showReviewBtnId);
     //             popup.classList.toggle("show");
          
-    
     //             this.setState({showReviewBtn: !this.state.showReviewBtn,
-    //                 showReviewBtnId: '',
-                
-    //             });
-
-    //         }
-    //     }
-    // }
+    //                 showReviewBtnId: '',});
+    //         }}}
 
     // handleBtn(id){
 
     //     return(e)=>{
-
     //         if(!this.state.showReviewBtn){
-
     //             let popup = document.getElementById(id);
     //             popup.classList.toggle("show");
-         
-
+        
     //             this.setState({showReviewBtn: !this.state.showReviewBtn,
-    //                 showReviewBtnId: id
-                
-    //             });
+    //                 showReviewBtnId: id});
     //         }else{
-
     //                 let popup = document.getElementById(this.state.showReviewBtnId);
     //                 popup.classList.toggle("show");
-        
     //                 this.setState({showReviewBtn: !this.state.showReviewBtn,
-    //                     showReviewBtnId: '',
-    //                 });
+    //                     showReviewBtnId: '', });
 
     //                  this.handleBtn(id)
-
-    //         }
-
-
-    //     }
-    // }
+    //         }}}
 
 
 
@@ -121,7 +99,8 @@ class Profile extends React.Component{
         let empty_password = "";
 
        
-        this.props.signin({email_or_phone:this.props.user.email, password: this.state.password}).then(()=>(this.props.history.push('/editLogin')),
+        this.props.signin({email_or_phone:this.props.user.email, password: this.state.password})
+        .then(()=>(this.props.history.push('/editLogin')),
         ()=>{
             if(this.state.password === ""){
                 empty_password = <h5 className="input-error">❗ Enter your password</h5>
@@ -177,7 +156,7 @@ class Profile extends React.Component{
 
     render(){
         
-        if(this.props.user.reviews === undefined || this.props.books === undefined ){
+        if(this.props.user.reviews === undefined  ){
             
             return <h1>Loading....</h1>
         }
@@ -240,9 +219,18 @@ class Profile extends React.Component{
             
             </div>
             <ul>
+                <div className="profile-disply-flex">
+                    <p className="user-review-title">Community activity</p>
+                    <p className="review-down-arrow">View: Reviews <span className="arrow-bold">⌵</span></p>
+                </div>
                 {user.reviews.slice().reverse().map((review,idx)=>(
-                    <UserReviewItem key={idx} review={review} user={user} books={books} deleteReview={this.props.deleteReview} fetchProfile={this.props.fetchProfile} currentUserId={this.props.currentUserId}/>
+                    <UserReviewItem key={idx} review={review} user={user} deleteReview={this.props.deleteReview} fetchProfile={this.props.fetchProfile} currentUserId={this.props.currentUserId}/>
                 ))}
+
+                <div className="profile-padding">
+
+                    <h2 className="crossline"><span id="profile-end-list">End of list</span></h2> 
+                </div>
             </ul>
         </div>
 

@@ -37,7 +37,8 @@ const mapStateToProps=(state,ownProps)=>{
         // prices: state.entities.prices,
         currentUserId: state.session.id,
         price: defult_price.price,
-        format: defult_price.format
+        format: defult_price.format,
+        prime: state.prime,
         
     })
 }

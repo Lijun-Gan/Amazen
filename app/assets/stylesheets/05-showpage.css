@@ -1,21 +1,24 @@
 #bsp-container{
-    width: 76%;
+    width: 85%;
     margin: auto;
     margin-top: 55px;
-    min-width: 1000px;
+    min-width: 812px;
     max-width: 1500px;
 }
 
 #showPage-bookImg{
-    height: 346px;
-    width: 230px;
+    /* height: 346px;
+    width: 230px; */
+
+    height: 270px;
+    width: 185px;
     
 }
 
 #lookInside_bookShow{
     width: 99px;
     height: 19px;
-    padding-left: 131px;
+    padding-left: 90px;
 }
 
 #fiveStar{
@@ -36,8 +39,8 @@
 .bsp-detail{
     /* border: greenyellow 1px solid; */
     width: 60%;
-    min-width: 400px;
-    margin-left: 4%;
+    min-width: 268px;
+    /* margin-left: 4%; */
     margin-right: 4%;
     
 }
@@ -51,7 +54,7 @@
     width: 100px;
     height: 39px;
     border: solid 1px  #a2a6ac;
-    padding: 5px 10px 5px 11px;
+    padding: 5px 10px 0px 11px;
     font-size: 13px;
     margin-left: 10px;
     margin-top: 5px;
@@ -59,8 +62,8 @@
 }
 
 .price-btn.change{
-    border: red solid 1px;
-    background-color: #fff6e6;
+    border: #e77600 solid 1px;
+    background-color: #fef8f2;
 }
 
 .book-show-price{
@@ -99,14 +102,14 @@
 .bsp-author{
     color: #007185;
     /* margin-bottom: 4px; */
-    margin-right: 12px;
+    /* margin-right: 12px; */
     font-size: 14px;
 }
 
 .bsp-title{
     font-size: 28px;
     margin-bottom: 5px;   
-    margin-right: 4px;
+    margin-right: 10px;
     
 }
 
@@ -116,7 +119,18 @@
 
 .bsp-publication{
     font-size: 24px;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
+    color: #565959;
+    margin-top: 8px;
+    line-height: 32px
+}
+
+.bsp-title-publication{
+    display: flex;
+}
+
+.bsp-space{
+    margin: 10px;
 }
 
 
@@ -189,13 +203,17 @@
     /* border: 1px solid red; */
     margin-bottom: 100px;
     width: 60%;
-    margin-left: 100px;
+    margin-left: 85px;
 }
 
 
 
 .SelectForm{
-    margin: 5px 4px;
+    margin: 5px 0px;
+    color: #0F1111;
+    font-size: 14px;
+    font-weight: bold;
+    width: 180px;
 }
 
 .shipFrom{
@@ -477,3 +495,63 @@ a.rating-cal{
     padding-top: 7px;
     white-space: nowrap;
 }
+
+.check-color-big{
+    color: #f8981c;
+    font-size: 13px;
+}
+.prime-color-big{
+    color: #2593c2;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.prime-big{
+    font-size: 0;
+    /* margin-top: 3px; */
+    margin-bottom: 12px;
+}
+
+.book-show-check-color{
+    color: #f8981c;
+    font-size: 9px;
+}
+
+.book-show-prime-color{    
+    color: #2593c2;
+    font-size: 10px;
+    font-weight: bold;
+}
+.noSpanSpace{
+    font-size: 0;
+    margin-left: 2px;
+}
+
+.book-show-price-prime{
+    line-height: 22px;   
+    letter-spacing: 0.3px;
+}
+
+.delivery-date{
+    font-size: 14px;
+    margin: 15px 0px;
+
+}
+
+.bsp-form-price{
+    display: flex;
+    align-items: center;
+}
+
+.listPirce{
+    font-size: 14px;
+    color: #565959;
+    margin-top: 10px;
+    letter-spacing: 0.4px;
+    text-align: end;
+}
+.listPirce-cross{
+    
+    text-decoration: line-through;
+}
+

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import configureStore from './store/store'
-import {checkUser} from "./util/session_api_util";
+import { checkUser, updateZipCode } from "./util/session_api_util";
 import {signin, signout, signup} from "./actions/session_actions"
 import Root from "./components/root";
-import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle } from './actions/book_actions';
+import { fetchBook,fetchBooks,fetchBooksCategory, fetchBooksTitle, fetchBooksTitles } from './actions/book_actions';
 import { createReview,updateReview,deleteReview,fetchReview } from './actions/review_actions';
 import {createOrder} from './actions/cart_actions';
 import {createWishlist, deleteWishlist, fetchWishlists} from './actions/wishlist_actions';
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.dispatch = store.dispatch;
 
     window.checkUser = checkUser
+    window.updateZipCode = updateZipCode
 
     window.fetchBook = fetchBook
     window.fetchBooks = fetchBooks
@@ -55,9 +56,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.fetchWishlists = fetchWishlists
 
     window.fetchProfile = fetchProfile
-
+    
+    store.dispatch(fetchBooksTitles());
 
     ReactDOM.render(<Root store={store} />, root);
 
-    
 })

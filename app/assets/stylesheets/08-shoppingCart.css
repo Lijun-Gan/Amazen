@@ -24,15 +24,19 @@
 .addCartBtn-container{
     display: flex;
     flex-direction: column;
+    width: 205px;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 
 #addCartContainer{
-    width: 270px;
-    padding: 10px 14px ;
-    border: #e6e3e3 3px solid;
+    /* width: 350px; */
+    width: 235px;
+    padding: 16px 14px ;
+    border: #e5e5e5 5px solid;
     border-radius: 8px;
-    height: 400px
+    height: 450px;
 }
 
 .add-to-cart-button{
@@ -96,9 +100,8 @@
     background: #f4f4f4;
 }
 .bsp-price-color{
-    color: red;
-    font-size: 14px;
-    margin-left: 96px;
+    color: #B12704;
+    font-size: 18px;
 }
 
 .secure-trans{
@@ -124,6 +127,7 @@
 .inStock-color{
     color: rgb(4, 139, 4);
     font-size: 18px;
+    margin-top: 30px;
 
 }
 
@@ -204,7 +208,7 @@
     color: black;
     font-weight: 600;
     min-width: 56px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
 }
 
 /* .cart-bottom-note{
@@ -215,8 +219,9 @@
 
 
 .cart-book-info{
-    min-width: 280px;
     margin-right: auto;
+    min-width: 196px;
+    /* min-width: 280px; */
     padding: 0 35px;
 } 
 
@@ -337,6 +342,7 @@
     font-size: 18px;
     /* font-weight: 600; */
     margin-right: 6px;
+    margin-bottom: 6px;
 }
 
 
@@ -349,6 +355,7 @@
 
 .cart-book-author{
     font-size: 14px;
+    line-height: 20px;
 }
 
 .cart-book-format{
@@ -360,6 +367,7 @@
 .carts-book-in-stock{
     font-size: 12px;
     color: #058552;
+    margin-bottom: 6px;
 }
 
 .cart-book-info-container{
@@ -391,6 +399,6 @@
     display: flex;
     border: 18px solid #EAEDED;
 
-    min-width: 950px;
+    min-width: 833px;
 
 }

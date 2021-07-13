@@ -1,3 +1,4 @@
+import { DELETE_CART } from '../actions/cart_actions';
 import { RECEIVE_CURRENT_USER, SIGNOUT_CURRENT_USER } from '../actions/session_actions';
 
 const usersReducer = (state = {}, action) => {

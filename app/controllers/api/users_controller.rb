@@ -12,7 +12,8 @@ class Api::UsersController < ApplicationController
     end
 
     def show 
-        @user = User.include(:carts, :wishlists, :authorized_reviews).find_by(id: params[:id])
+        # @user = User.include(:carts, :wishlists, :authorized_reviews).find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
         if @user
             render :show
         else
@@ -20,11 +21,22 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def updateZipCode
+
+        @user = User.find_by(id: current_user.id)
+
+        if @user.update(user_params)
+            render :show
+        else
+            render json: @user.errors.full_messages, status: 404
+        end
+
+    end
+
     def update
+
         @user = User.find_by(id: params[:id])
  
-
-
         if @user.update(user_params)
         
             @user = User.includes(authorized_reviews: :book).find_by(id: params[:id])
@@ -55,7 +67,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :email, :password, :phone_number)
+        params.require(:user).permit(:username, :email, :password, :phone_number, :city, :zip_code, :image_url, :full_name, :image_url)
     end
 
 end

@@ -22,7 +22,8 @@ const mapStateToProps=(state)=>{
     return({
         books: Object.values(state.entities.books),
         // total: state_total,
-        search: state.search
+        search: state.search,
+        prime: state.prime,
       
     })
 }

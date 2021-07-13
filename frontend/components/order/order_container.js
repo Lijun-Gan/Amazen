@@ -6,20 +6,21 @@ import { fetchProfile } from "../../actions/profile_actions";
 
 
 const mapStateToProps = (state) => {
-    let bookIds = [];
-    // let reviewedIds = [];
+    // let bookIds = [];
+    // // let reviewedIds = [];
 
-    if(state.entities.profile.reviewedBookIds){
-        bookIds = state.entities.profile.reviewedBookIds
-        // reviewedIds = state.entities.profile.reviewIds
-    }
+    // if(state.entities.profile.reviewedBookIds){
+    //     bookIds = state.entities.profile.reviewedBookIds
+    //     // reviewedIds = state.entities.profile.reviewIds
+    // }
     
    return {
        orders: state.entities.orders,
-       books: state.entities.books,
-       prices: state.entities.prices,
+    //    books: state.entities.books,
+    //    prices: state.entities.prices,
        currentUserId: state.session.id,
-       reviewedBookIds: bookIds,
+       user: state.entities.users[state.session.id]
+    //    reviewedBookIds: bookIds,
     //    reviewIds: reviewedIds
    }
 }

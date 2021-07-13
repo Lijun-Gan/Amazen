@@ -10,11 +10,20 @@
     margin: 40px;
     padding-top: 5px;
     padding-bottom: 30px;
+    min-width: 780px;
+}
+
+.wl-title{
+    color: #0066c0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 7px;
 }
 
 a.wl-title{
     color: #0066c0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -86,7 +95,7 @@ a.wl-title{
     font-size: 18px;
     font-weight: bold;
     color: black;
-
+    white-space: nowrap;
     padding-bottom: 20px;
     padding-left: 20px;
 }
@@ -100,7 +109,7 @@ a.wl-title{
 
 .wl-price{
     font-size: 17px;
-
+    margin-right: 3px;
 }
 
 .wl-delivery{
@@ -136,4 +145,78 @@ h2.crossline {
 h2.crossline span {
     background: #fff;
     padding: 0 8px;
+}
+
+.review-count-wishlist-page{
+    margin-top: 5px;
+    margin-left: 8px;
+    /* min-width: 134px; */
+    font-size: 13px;
+    color: #0066c0;
+}
+
+.wishlist-prime{
+    display: flex;
+}
+
+.wl-search-icon-btn {
+    background: #5f6368;
+    border-color: #3d444c #2f353b #2c3137;
+    color: #fff;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 15%) inset;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 11px;
+    margin-left: 10px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.wl-search-bar{
+   
+    background-color: white;
+    font-size: 14px;
+    position: 1px solid #888C8C;
+    position: static;
+    border: 1px solid #888C8C;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    height: 17px;
+    padding: 7px 29px;
+    width:180px;
+    margin-right: 20px;
+}
+
+.wl-search-bar:hover{
+    background-color: #F7FEFF;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+}
+
+.wl-search-bar:focus{
+    background-color: #F7FEFF;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+}
+
+.wl-search-close{
+    color: orange;
+    position: absolute;
+    left: 220px;
+    top: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wl-search-div {
+    display: flex;
+    align-items: baseline;
+    margin: 30px 0px 40px 0px;
 }

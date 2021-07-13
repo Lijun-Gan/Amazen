@@ -11,7 +11,9 @@ button.backToTop{
 }
 
 #footer-container{
-    min-width: 986px;
+    /* min-width: 986px; */
+    /* min-width: 840px; */
+    min-width: 869px;
 }
 
 #foot-notes-container{

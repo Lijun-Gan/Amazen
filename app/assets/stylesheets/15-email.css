@@ -1,11 +1,13 @@
 .email-container{
     height: 800px;
-    width: 730px;
+    /* width: 730px; */
+    width: 620px;
     margin: auto;
 }
 .email-container-outer{
     height: 820px;
-    width: 900px;
+    /* width: 900px; */
+    width: 690px;
     border: 1px solid rgb(192, 191, 191);
     margin: 40px auto;
     padding: 20px;
@@ -23,7 +25,7 @@
 }
 
 .email-input{
-    width: 700px;
+    width: 600px;
     height: 30px;
     border: 1px solid grey;
     border-radius: 4px;
@@ -34,7 +36,7 @@
 
 .email-comment{
     height: 180px;
-    width: 700px;
+    width: 600px;
     border: 1px solid grey;
     border-radius: 4px;
     margin: 10px 0px 0px 0px;

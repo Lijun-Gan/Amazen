@@ -2,10 +2,17 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
 
+    get "/users/updateZipCode", to: "users#updateZipCode"
     get "/users/exists", to: "users#exists"
 
     resources :users, only: [:create, :show, :update]
 
+    get "/books/booksTitles", to: "books#booksTitles"
+    get "/books/bestBooks", to: "books#bestBooks"
+    get "/books/celebrityPicks", to: "books#celebrityPicks"
+    get "/books/bookBox", to: "books#bookBox"
+    get "/books/discount", to: "books#discount"
+    get "/books/prime", to: "books#prime"
     get "/books/recommendation", to: "books#recommendation"
     
     resources :books, only: [:index, :show]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_040449) do
+ActiveRecord::Schema.define(version: 2021_07_07_183221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_040449) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "discount", default: false
     t.index ["book_format"], name: "index_prices_on_book_format"
     t.index ["book_id", "book_format"], name: "index_prices_on_book_id_and_book_format", unique: true
     t.index ["book_id"], name: "index_prices_on_book_id"
@@ -78,6 +79,10 @@ ActiveRecord::Schema.define(version: 2021_04_15_040449) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
+    t.string "full_name"
+    t.string "image_url"
+    t.string "city"
+    t.string "zip_code"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true

@@ -6,8 +6,10 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
 
+        // if(! JSON.parse(localStorage.getItem(this.props.currentUserId)))  localStorage.setItem(this.props.currentUserId , JSON.stringify({"cartItems":{},"prices":{}}));
+
         this.state = {
-            cartBooks: JSON.parse(localStorage.getItem(this.props.currentUserId)).cartItems,
+            // cartBooks:  JSON.parse(localStorage.getItem(this.props.currentUserId)) || JSON.parse(localStorage.getItem(this.props.currentUserId)).cartItems,
             checkOut: false,
         };
 
@@ -19,47 +21,58 @@ class Cart extends React.Component {
     handleCheckOut() {
 
         // let cartBooks = Object.values(this.state.cartBooks );
-        let cartBooks = Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId)).cartItems);
-
+        
         let cartBooksLocalStorage = JSON.parse(localStorage.getItem(this.props.currentUserId))
-        cartBooksLocalStorage["cartItems"] = {}
-        localStorage.setItem(this.props.currentUserId , JSON.stringify(cartBooksLocalStorage));
-       
-        // localStorage.clear();
+        if(cartBooksLocalStorage){
 
-        this.setState({
-            cartBooks: [],
-            // checkOut: true
-        });
-        
-        console.log("handle checkout", cartBooks)
-        cartBooks.map((cartBook) => {
+            let cartBooks = Object.values(cartBooksLocalStorage.cartItems);
+            if(cartBooks && cartBooks.length > 0){
+
+                cartBooksLocalStorage["cartItems"] = {}
+                localStorage.setItem(this.props.currentUserId , JSON.stringify(cartBooksLocalStorage));
             
-            this.props.createOrder(cartBook)
-            this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
-        });
-
+                // localStorage.clear();
         
-        // this.props.history.push("/")
-      
-
-        this.props.history.push('/order-confirmation')
+                this.setState({
+                    cartBooks: [],
+                    // checkOut: true
+                });
+                
+                // console.log("handle checkout", cartBooks)
+                cartBooks.map((cartBook) => {
+        
+                    
+                    this.props.createOrder(cartBook).then((res)=>{
+        
+                    })
+                    this.props.removeCart(cartBook.book_id.toString() + "_" + cartBook.format)
+                });
+        
+                
+                // this.props.history.push("/")
             
+                this.props.history.push('/order-confirmation')
+                    
+            }
+        }
     }
 
 
     deleteAllItems(e) {
+        
         e.preventDefault()
-
-        let cartBooks = Object.values(this.state.cartBooks );
-
-        let cartBooksLocalStorage = JSON.parse(localStorage.getItem(this.props.currentUserId))
+        
+        // let cartBooks = Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId)).cartItems);
+        // localStorage.clear();
        
+        let cartBooksLocalStorage = JSON.parse(localStorage.getItem(this.props.currentUserId))
+        let cartBooks = Object.values(cartBooksLocalStorage.cartItems);
+  
+        
         cartBooksLocalStorage["cartItems"] = {}
         localStorage.setItem(this.props.currentUserId , JSON.stringify(cartBooksLocalStorage));
-        // localStorage.clear();
- 
-
+        
+        
         this.setState({
             cartBooks: [],
         });
@@ -82,7 +95,8 @@ class Cart extends React.Component {
 
 
         
-        if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || this.props.currentUserId === null || Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId ))).length < 1){
+        // if (this === undefined || this.state.cartBooks === null || this.state.cartBooks.length === 0 || this.props.currentUserId === null || Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId ))).length < 1){
+        if (this === undefined  || this.props.currentUserId === null || localStorage.getItem(this.props.currentUserId ) ===null || Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId ))).length < 1){
         
   
 
@@ -104,7 +118,7 @@ class Cart extends React.Component {
         Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId )).cartItems).forEach(cartBook => {
             quantity = quantity + Number(cartBook.quantity);
              
-            subTotal = subTotal + Number(cartBook.price) * Number(cartBook.quantity)
+            subTotal = subTotal + (cartBook.discount? Number.parseFloat(parseFloat(cartBook.price * 0.75 + 0.99)).toFixed(2) : Number(cartBook.price)) * Number(cartBook.quantity)
         });
 
         subTotal = "$" + subTotal.toFixed(2).toString();
@@ -133,7 +147,7 @@ class Cart extends React.Component {
                         <ul>
                             {Object.values(JSON.parse(localStorage.getItem(this.props.currentUserId)).cartItems).reverse().map((cartBook,idx)=>(
                                 <li key={idx}>
-                                    {<CartItem  cartBook={cartBook} subTotle={subTotal} removeCart={this.props.removeCart} receiveCart={this.props.receiveCart}  userId={this.props.currentUserId}/>}
+                                    {<CartItem  cartBook={cartBook} subTotle={subTotal} removeCart={this.props.removeCart} receiveCart={this.props.receiveCart}  userId={this.props.currentUserId} prime={this.props.prime} history={this.props.history}/>}
                                     {/* deleteOneItem={this.deleteOneItem(cartBook.book_id.toString() + "_" + cartBook.format)} */}
                                 </li>
                             ))}

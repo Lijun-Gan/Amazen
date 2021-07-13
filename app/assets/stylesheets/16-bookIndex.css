@@ -1,0 +1,127 @@
+.index-book-author{
+    font-size: 14px;
+    color: #555;
+}
+.index-book-format{
+    font-size: 11px;
+    color: #555;
+}
+
+.book-index-right{
+    margin-right: 13px;
+}
+
+.home-book-listing{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    margin-bottom: 60px;
+    /* justify-content: space-around; */
+    width: 100%;
+    /* border-left: 1px solid #eae7e7; */
+}
+
+.book-index-page-title {
+    width: 190px;
+    font-size: 13px;
+    margin: auto;
+    padding-top: 10px;
+    /* text-align: center; */
+    color: #0F1111;
+}
+
+.index-book-page-author{
+    color: #555;
+    font-size: 14px;
+    line-height: 1.25;
+    margin: 5px 0px;
+}
+
+.book-index-price-prime{
+    display: flex;
+    margin-top: 8px;
+}
+
+.book-index-rating-star-container{
+    display: flex;
+    margin: auto;
+    margin-top: 2px;
+}
+
+.book-index-check-color {
+    color: #f8981c;
+    font-size: 13px;
+}
+
+.index-book-show-price{
+   font-size: 21px;
+   color: black;
+}
+
+.index-book-show-price-decimal{
+   font-size: 12px;
+   color: black;
+   margin-left: 2px;
+   padding-top: 2px;
+}
+.index-book-show-price-dollar{
+    font-size: 13px;
+    color: black;
+    padding-top: 2px;
+    margin-right: 1px;
+}
+
+.index-book-cross-price{
+    font-size: 13px;
+    /* text-align: center; */
+    margin-left: 5px;
+    color: #0F1111;
+    text-decoration: line-through;
+    padding-top: 6px;
+}
+
+.index-book-page-format{
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.book-index-page-section-title{
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.book-index-left-item-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.book-index-page-left{
+    min-width: 180px;
+    margin-right: 13px;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+}
+
+.book-index-page-left > * {
+    margin-bottom: 15px ;
+}
+
+.book-index-left-item-container > * {
+    margin: 3px 10px;
+}
+
+.book-index-left-check-color{
+    color: #f8981c;
+    font-size: 14px;
+    margin-left: 12px;
+}
+
+.book-index-left-prime-color{
+    color: #2593c2;
+    font-size: 15px;
+    font-weight: bold;
+}

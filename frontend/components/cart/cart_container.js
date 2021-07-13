@@ -24,7 +24,8 @@ const mapStateToProps = (state) => {
         }
         return ({
             currentUserId: userId,
-            cartBooks: cartsBook
+            cartBooks: cartsBook,
+            prime: state.prime,
         })
     }
 }

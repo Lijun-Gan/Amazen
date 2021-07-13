@@ -18,6 +18,7 @@ const entitiesReducer = combineReducers({
     prices: pricesReducer,
     profile: profileReducer,
     orders: ordersReducer,
+    
 })
 
 export default entitiesReducer;

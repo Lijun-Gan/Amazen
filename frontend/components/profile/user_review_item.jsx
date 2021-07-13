@@ -124,7 +124,7 @@ class UserReviewItem extends React.Component{
 
     render(){
 
-        const {review, user, books} = this.props
+        const {review, user } = this.props
         return(
             
             <li className="profile-review-list">
@@ -161,10 +161,12 @@ class UserReviewItem extends React.Component{
                         <div className="profile-rating-star-container">
                             {/* {this.handleRating(review.rating)} */}
 
-<div className="star-ratings-css-reviewbottom">
-<div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-<div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-</div> 
+                            <div className="star-ratings-css-reviewbottom">
+                                <div className="star-ratings-css-top" style={{"width":  `${(review.rating/ 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            </div> 
+
+                            {review.purchased ? <p className="verified-purchase">Verified Purchase</p> : null}
 
                         </div>
                             <p className="profile-ictureText-title">{review.title}</p>

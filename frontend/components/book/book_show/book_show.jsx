@@ -24,6 +24,7 @@ class BookShow extends React.Component {
       this.handleBuyNow = this.handleBuyNow.bind(this)
       this.addToWishlist = this.addToWishlist.bind(this)
       this.handleBtn = this.handleBtn.bind(this)
+      this.handDelivery = this.handDelivery.bind(this)
 
       this.wrapperRef = React.createRef();
     //   this.setWrapperRef = this.setWrapperRef.bind(this);
@@ -34,10 +35,10 @@ class BookShow extends React.Component {
     componentDidMount(){
         document.addEventListener('mousedown', this.handleClickOutside);
   
-        this.props.fetchBooks().then(()=>{
+        // this.props.fetchBooks().then(()=>{
             this.props.fetchBook(this.props.match.params.id)
             
-        }) 
+        // }) 
     }
 
     componentWillUnmount() {
@@ -92,7 +93,7 @@ class BookShow extends React.Component {
 
         
 
-        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id, price_id: this.props.book.prices[this.state.format]["id"] }
+        let cartItem = {title:this.props.book.title, image_url:this.props.book.image_url, author: this.props.book.author,  quantity: this.state.quantity, format: this.state.format ,price: this.state.price, book_id: this.props.book.id, price_id: this.props.book.prices[this.state.format]["id"], discount: this.props.book.prices[this.state.format].discount}
         let uniqueId = this.props.book.id.toString() + "_" + this.state.format
 
         cart["cartItems"][uniqueId] = cartItem
@@ -153,10 +154,37 @@ class BookShow extends React.Component {
             if(price.book_format === this.state.format) priceId = price.id
         })
 
-        
-
         this.props.createWishlist({book_id: this.props.book.id, price_id: priceId })
         this.props.history.push("/wishlist")
+    }
+
+    handDelivery(){
+ 
+            const months = {
+                0: 'January',
+                1: 'February',
+                2: 'March',
+                3: 'April',
+                4: 'May',
+                5: 'June',
+                6: 'July',
+                7: 'August',
+                8: 'September',
+                9: 'October',
+                10: 'November',
+                11: 'December'
+            }
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            
+            const today = new Date(new Date().getTime()+(2*24*60*60*1000))
+
+            const weekDay = days[today.getDay()]
+            const monthName = months[today.getMonth()]
+            const date = today.getDate()
+           
+            return `${weekDay}, ${monthName} ${date}`
+    
+   
     }
 
     formatDate(useDate){
@@ -183,6 +211,7 @@ class BookShow extends React.Component {
         return `${monthName} ${date}, ${year}`
 
     }
+
 
 
     handleDate(unformatedDate){
@@ -234,7 +263,7 @@ class BookShow extends React.Component {
 
         if(this.props.book === undefined ||  this.props.reviews === undefined || this.props.book.prices === undefined)  return show_page
         if (this.props.book){
-            const {book, reviews} = this.props
+            const {book, reviews, prime} = this.props
             let author_bio;
 
             if(this.state.price === '0.00'){
@@ -250,6 +279,10 @@ class BookShow extends React.Component {
                     </div>
                 ) 
             }
+
+            const prices =  book.prices;
+      
+         
 
             // let avg_rating = (book.avg_rating / 5 * 100).toString()+"%"
             // let review_count = "(" + book.avg_rating.toString() + " rating" + ", " + book.reviews.length.toString() + " reviews" + ")"
@@ -326,8 +359,11 @@ class BookShow extends React.Component {
                         <img id="showPage-bookImg" src={book.image_url}/>
                     </div>
                     <div className="bsp-detail">
-                        <p className="bsp-title">{book.title}</p>
-                        <p className="bsp-publication">{this.formatDate(book.publication_date)}</p>
+                        {/* <div className="bsp-title-publication"> */}
+                            <span className="bsp-title">{book.title}</span>
+                            <span className="bsp-publication">{this.state.format} - {this.formatDate(book.publication_date)}</span>
+                        {/* </div> */}
+                       <p className="bsp-space"></p>
                         <span className ="font-for- author">by </span>
                         <span className="bsp-author">{book.author} </span>
                         <span className ="font-for-author">(Author)</span>
@@ -358,14 +394,16 @@ class BookShow extends React.Component {
                                return (
                                <li key={idx}>
                                    <button className={formatPrice.book_format=== this.state.format ? "price-btn change": "price-btn"} value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>
-                                       <p className={formatPrice.book_format=== this.state.format ?  "book-show-format" : "nothing"}>{formatPrice.book_format}</p>
-                                        <p className={formatPrice.book_format=== this.state.format ?  "book-show-price" : "nothing"} >{"$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</p>
+                                        <p className={formatPrice.book_format=== this.state.format ?  "book-show-format" : "nothing"}> { formatPrice.book_format === "Audiobook"? <span> <img style={{width: 20}} src={window.audible} alt="audible logo" /></span> : null} {formatPrice.book_format}</p>
+                                        <div className="book-show-price-prime">
+                                            {/* <p className={formatPrice.book_format=== this.state.format ?  "book-show-price" : "nothing"} > {"$" + Number.parseFloat(formatPrice.price).toFixed(2)}  {(prime[book.id] && ["Paperback", "Audio CD", "Hardcopy"].includes(formatPrice.book_format)) ? <span className="noSpanSpace"><span className="book-show-check-color">✓</span> <span className="book-show-prime-color">prime</span> </span> : null} </p>  */}
+                                            <p className={formatPrice.book_format=== this.state.format ?  "book-show-price" : "nothing"} > ${formatPrice.discount? Number.parseFloat(parseFloat(formatPrice.price * 0.75 + 0.99)).toFixed(2) :  Number.parseFloat(formatPrice.price).toFixed(2)}  
+                                          
+                                            {(prime[book.id] && ["Paperback", "Audio CD", "Hardcopy"].includes(formatPrice.book_format)) ? <span className="noSpanSpace"><span className="book-show-check-color">✓</span> <span className="book-show-prime-color">prime</span> </span> : null} </p> 
+                                        </div>
                                     </button>
-
-
-                                   {/* <button className="price-btn" value={[formatPrice.book_format, formatPrice.price]} onClick={this.handlePrice}>{formatPrice.book_format}
-                                   <br/>{  "$"+ Number.parseFloat(formatPrice.price).toFixed(2)}</button>
-                                    */}
+                                    
+                
                                </li>
                            )})}
                         </ul>
@@ -375,11 +413,46 @@ class BookShow extends React.Component {
                     </div>
 
                     <div id="addCartContainer">
-                        <p className="SelectForm">{this.state.format + ":"} </p>
-                        <span className="bsp-price-color">Price: { "$ "+ Number.parseFloat(parseFloat(this.state.price)).toFixed(2)}</span>
-                       
                         
-                        <p className="freeShipping">& FREE shipping</p>
+                            {/* {formatPrice.discount? Number.parseFloat(parseFloat(formatPrice.price * 0.75 + 0.99)).toFixed(2) :  Number.parseFloat(formatPrice.price).toFixed(2)}  */}
+                           {prices[this.state.format].discount ? 
+                     <div>
+                            <div className="bsp-form-price">
+                                <p className="SelectForm">{this.state.format + ":"} </p>
+            
+                                 <p className="bsp-price-color">{ "$"+ Number.parseFloat(parseFloat(this.state.price * 0.75 + 0.99)).toFixed(2)}</p>
+                            </div> 
+
+                                
+                            <div className="listPirce">
+                                    <span>List Price: </span>
+                                    <span className="listPirce-cross">{ "$"+ Number.parseFloat(parseFloat(this.state.price)).toFixed(2)}</span>
+                                    <p>Save: ${Number.parseFloat(parseFloat(this.state.price * 0.25 - 0.99)).toFixed(2)} (25%)</p>
+                             
+                            </div>
+                    </div>:  
+                            <div className="bsp-form-price">
+                                <p className="SelectForm">{this.state.format + ":"} </p>
+                                
+                                <p className="bsp-price-color">{ "$"+ Number.parseFloat(parseFloat(this.state.price)).toFixed(2)}</p>
+                            
+                            </div>
+                            } 
+                               
+    
+                        {(prime[book.id] && ["Paperback", "Audio CD", "Hardcopy"].includes(this.state.format)) ? 
+                       
+                        <div>
+                            <div className="prime-big">
+                                <span className="check-color-big">✓</span> <span className="prime-color-big">prime</span> 
+                                {/* <p className="freeShipping">& FREE Return</p> */}
+                            </div> 
+
+                            <p className="delivery-date">FREE Delivery by <span style={{fontWeight: "bold"}}>{this.handDelivery()}</span> for prime members</p>
+                        </div>
+
+                        : null}
+
                         <p className="inStock-color">In Stock</p>
 
             {/*  */}

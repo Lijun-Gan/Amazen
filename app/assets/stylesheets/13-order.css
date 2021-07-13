@@ -6,6 +6,8 @@
 
 .order-ul{
     margin-bottom: 60px;
+  
+    min-width: 622px;
 }
 
 .item-container{
@@ -25,23 +27,28 @@
     border-radius: 4px 4px 0 0;
 }
 
-.dispaly-block{
-    width: 200px;
+.display-block{
+    width: 190px;
     margin: auto 0;
 }
 
-.dispaly-block-top{
+.display-block-top{
     font-size: 13px;
     color: #565959;
     line-height: 16px;
     margin-bottom: 2px;
 }
 
-.dispaly-block-bottom{
+.display-block-bottom{
     font-size: 15px;
     color: #373838;
     line-height: 20px;
 
+}
+.display-block-bottom-last{
+    font-size: 15px;
+    color: #0066c0;
+    line-height: 20px;
 }
 
 .order-num{
@@ -53,9 +60,9 @@
 .item-body{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    height: 170px;
-    border: 1px solid  #ddd;
+    align-items: end;
+    height: 148px;
+    border: 1px solid #ddd;
     border-top: none;
     border-radius: 0 0 4px 4px;
     padding-top: 40px;
@@ -68,8 +75,8 @@ a.order-title{
 }
 
 .order-pic{
-    height: 118px;
-    width: 82px;
+    height: 100px;
+    width: 70px;
 }
 
 .order-author{
@@ -118,6 +125,7 @@ a.order-title{
     margin-top: 25px;
     margin-bottom: 25px;
     font-family: 'Lato', sans-serif;
+    white-space: nowrap;
 }
 
 .order-write-review{
@@ -154,3 +162,83 @@ a.order-title{
     right: -4px;
 }
 
+.order-title{
+    color: #0066c0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.order-search-div{
+    display: flex;
+    align-items: center;
+    margin: 30px 0px 20px 0px
+}
+
+.order-search-bar{
+   
+    background-color: white;
+    font-size: 14px;
+    position: static;
+    border: 1px solid #888C8C;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    /* height: 31px; */
+    height: 17px;
+    padding: 7px 29px;
+    width:332px;
+}
+
+.order-search-bar:hover{
+    background-color: #F7FEFF;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+}
+
+.order-search-bar:focus{
+    background-color: #F7FEFF;
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+}
+
+.order-search-icon{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    left: 8px;
+    top: 9px;
+    opacity: 84%;
+}
+
+.order-margin-auto{
+    margin-left: auto;
+    position: relative;
+}
+
+.order-search-icon-btn {
+    background: #5f6368;
+    border-color: #3d444c #2f353b #2c3137;
+    color: #fff;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 15%) inset;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 11px;
+    margin-left: 10px;
+    height: 20px;
+}
+
+.order-search-close{
+    color: orange;
+    position: absolute;
+    left: 372px;
+    top: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}

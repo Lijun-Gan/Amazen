@@ -24,7 +24,7 @@ json.book do
 
         @book.prices.each do |price|
             json.set! price.book_format do 
-                json.extract! price, :book_format, :price, :id
+                json.extract! price, :book_format, :price, :id, :discount
             end 
         end
 

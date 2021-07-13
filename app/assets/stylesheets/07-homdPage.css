@@ -6,11 +6,20 @@
 
 .book-listing{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
     margin-bottom: 60px;
-    width: 100%;
-    margin-left: 30px;
+    justify-content: space-around;
+    width: 99%;
+    border-left: 1px solid #eae7e7;
 } 
+
+.book-listing::after {
+    content: "";
+    flex: inherit;
+    width: 65%;
+    flex-flow: row wrap;
+  }
 
 .index-book-title{
     width: 190px;
@@ -18,6 +27,8 @@
     margin: auto;
     padding-top: 25px;
     text-align: center;
+
+    /* color: #0F1111; */
 }
 
 .index-book-title:hover{
@@ -30,15 +41,15 @@
 .bookItem-container{
     /* width: 360px; */
     /* border: red solid 3px; */
-    padding: 20px;
+    padding: 25px;
 }
 
 .home-top-picks{
 
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 30px;
-    margin-left: 40px;
+    margin-bottom: 20px;
+    /* margin-left: 20px; */
 
 }
 
@@ -50,9 +61,9 @@
 }
 
 .index-book--price.home{
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
-    margin-top: 5px;
+    /* margin-top: 8px; */
     color: #B12704;
 }
 
@@ -87,3 +98,154 @@
 .book-review-li{
     margin-bottom: 40px;
 }
+
+.summer-reading{
+    height: 186;
+}
+
+.home-index-title{
+    font-size: 32px;
+    color: #e47911;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin: 40px;
+    
+}
+
+.book-index-title{
+    font-size: 32px;
+    color: #e47911;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin: 18px 0px;
+    
+}
+    /* min-width: 180px;
+    margin-right: 13px;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+    padding-left: 0px; */
+
+.book-index-container{
+    /* background: #95d8eb; */
+    /* height: 280px; */
+    /* margin: 0px 40px 20px 40px; */
+    margin-bottom: 20px;
+    width: 100%;
+    /* margin-left: 13px; */
+    /* margin-right: 13px; */
+}
+
+.bookFilter-img{
+    max-height: 278px;
+    width: 100%;
+}
+
+.book-index-page{
+    display: flex;
+    min-width: 869px;
+
+}
+
+.book-index-left{
+    min-width: 230px;
+    margin-right: 13px;
+    border-right: 2px solid #ddd;
+}
+
+.home-page-left {
+    min-width: 180px;
+    margin-right: 13px;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+    padding-left: 0px;
+
+}
+
+.home-page-left > * {
+    margin-bottom: 15px ;
+}
+
+.home-book-index{
+    display: flex;
+    border-top: 1px solid #ddd;
+    margin-left: 20px;
+    margin-right: 13px;
+    min-width: 835px;
+}
+
+.home-book-title{
+    width: 190px;
+    font-size: 14px;
+    margin: auto;
+    padding-top: 18px;
+    text-align: center;
+    color: #0066c0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.price-prime{
+    display: flex;
+    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-color{
+    color: #f8981c;
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+.prime-color{
+    color: #2593c2;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.home-prime{
+    height: 15px;
+    width: 30px;
+}
+
+.home-flex{
+    display: flex;
+    /* margin-left: 13px; */
+    margin-bottom: 28px;
+    /* max-width: 290px; */
+}
+
+.home-flex-pic-div{
+    /* width: auto; */
+    /* max-width: 398px; */
+    max-width: 635px;
+    margin-right: 13px;
+
+}
+
+.home-flex-pic-div.last{
+    margin-right: 0px;
+}
+
+.home-flex-pic{
+
+    /* width: 200px;
+    height: 158px;
+    margin-right: 13px; */
+
+    /* max-width: 228px;
+    max-height: 184px; */
+
+    max-width: 100%;
+    height: auto;
+    left: 0px;
+    right: 0px;
+}
+
+.section-min-width{
+    min-width: 544px;
+}
+

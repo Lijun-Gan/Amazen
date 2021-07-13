@@ -29,3 +29,12 @@ export const checkUser = (email_or_phone) =>(
         data: {email_or_phone}
     })
 );
+
+export const updateZipCode = (user) =>(
+    $.ajax({
+        method: "GET",
+        url: "/api/users/updateZipCode",
+        data: {user}
+    })
+);
+

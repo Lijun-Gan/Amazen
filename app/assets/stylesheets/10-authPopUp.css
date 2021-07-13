@@ -69,23 +69,20 @@ popUp-flag .popUp-links input {
 .outerpopUp .popUp {
 position: absolute;
 	display: none;
-	top: 52px;
-    right: 144px;
+    top: 55px;
+    right: 87px;
 	background-color: #fff;
 	border: 1px solid lightgray;
 	border-radius: 3px;
-	padding: 10px;
-    width: 475px;
+	padding: 12px;
+    width: 455px;
 	z-index: 1;
 	color: darkgray;
 	text-align: left;
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
     font-weight: initial;
     
-
 }
-
-
 
 .popUp:before {
     content: "";
@@ -105,10 +102,10 @@ position: absolute;
     height: 4;
     position: absolute;
     bottom: 100%;
-    right: 80px;
-    border-width: 0 6px 6px 6px;
+    right: 114px;
+    border-width: 0 8px 8px 8px;
     border-style: solid;
-    border-color: #fff transparent;    
+    border-color: #fff transparent; 
 }
 
 .popUp .outer-popUp-links{
@@ -141,19 +138,19 @@ position: absolute;
 .nav-group .popUp {
     height: auto;
     position: absolute;
-	display: none;
-	top: 54px;
-    right: 147px;
-	background-color: #fff;
-	border: 1px solid lightgray;
-	border-radius: 3px;
-	padding: 10px;
-    width: 475px;
+    display: none;
+    top: 54px;
+    right: 90px;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px;
+    width: 455px;
     height: 450px;
-	z-index: 1;
-	color: darkgray;
-	text-align: left;
-	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    z-index: 1;
+    color: darkgray;
+    text-align: left;
+    box-shadow: -1px 4px 6px 1px rgb(0 0 0 / 9%);
     font-weight: initial;
 }
 .popUp-list{
@@ -276,12 +273,13 @@ position: absolute;
     position: relative;
     text-decoration: none;
     padding-bottom: 2px;
+    line-height: 17px;
 }
 
 #topbutton{
     margin-top: 10px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 20px;
+    margin-right: 14px;
     border:  1px transparent solid;
     padding: 5px;
 }
@@ -292,7 +290,7 @@ position: absolute;
 
 #toppopUp, #topreturn{ 
     font-size: 12px;
-
+    height: 14px;
 }
 
 #bottompopUp, #bottomreturn{
@@ -321,8 +319,8 @@ position: absolute;
 
 .nav-group{
     margin-top: 6px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 13px;
+    margin-right: 17px;
     border: solid 1px transparent;
     padding: 5px;
  

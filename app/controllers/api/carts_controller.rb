@@ -11,9 +11,11 @@ class Api::CartsController < ApplicationController
     end
 
     def index
-        # @carts = Cart.find_by(user_id: current_user.id)
-        @carts = Cart.where(user_id: current_user.id)
+    
+        # @carts = Cart.where(user_id: current_user.id)
+        @carts = Cart.includes(:book).where("user_id = ?", current_user.id)
         render :index
+
     end
 
     # def show

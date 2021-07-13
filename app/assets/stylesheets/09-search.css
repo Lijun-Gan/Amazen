@@ -73,3 +73,138 @@
     margin-bottom: 40px;
     border-bottom: 1px rgb(224, 223, 223) solid;
 }
+
+.flag{
+    font-size: 28px;
+    margin-left: 9px;
+    margin-top: 7px;
+}
+
+.us-flag{
+  height: 17px;
+  width: 24px;
+  margin-left: 15px;
+  margin-right: 5px;
+  margin-top: 21px;
+  border-radius: 2px;
+}
+
+.flag-arrow{
+    font-size: 13px;
+    color: #a7acb2;
+    margin-top: 24px;
+    margin-left: 2px;
+    margin-right: 6px;
+}
+
+/* .flag-arrow-div{
+    border: solid 1px transparent;
+    display: flex;
+    margin-top: -5px;
+    margin-left: 6px;
+    height: 52px;
+} */
+.flag-arrow-div:hover{
+    cursor: pointer;
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+
+}
+
+.flag-arrow-div {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    border: solid 1px transparent;
+    display: flex;
+    margin-top: 6px;
+    margin-left: 6px;
+    height: 52px;
+  }
+  
+  .flag-arrow-div .flag-arrow-pop {
+    visibility: hidden;
+    /* visibility: visible; */
+    /* width: 120px; */
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 92%;
+    left: 136%;
+    margin-left: -78px;
+    border: 1px solid #cdcdcd;
+    height: 108px;
+    width: 214px;
+  }
+
+  .flag-arrow-div .flag-arrow-pop::before {
+    display: block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    border-left: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    transform: rotate(135deg);
+    margin-top: -12px;
+    margin-left: 38px;
+    background-color: #fff;
+    
+  }
+  
+  .flag-arrow-div:hover .flag-arrow-pop {
+    visibility: visible;
+  }
+
+  input[type="radio"] {
+    /* remove standard background appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 11px;
+    background-clip: content-box;
+    border: 3px solid #a2a0a0;
+    background-color: #e7e6e7;
+    border-radius: 50%;
+    /* -webkit-transform: scale(6.5); */
+    transform: scale(0.4);
+    margin-left: -41px;
+    position: absolute;
+    left: 41px;
+  }
+
+  input[type="radio"]:checked {
+    background-color: #e77600;
+  }
+
+  .language{
+    
+    position: absolute;
+    top: 25px;
+    left: 38px;
+    font-size: 12px;
+
+  }
+
+  .languge-line{
+    border-bottom: 1px #e7e6e7 solid;
+    height: 47px;
+    width: 165px;
+    margin-left: 34px;
+  }
+
+  .after-languge-line{
+      
+    font-size: 13px;
+    margin-top: 12px;
+    margin-left: 16px;
+    text-align: left;
+
+  }
+

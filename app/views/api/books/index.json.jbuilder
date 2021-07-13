@@ -17,18 +17,20 @@
         json.set! book.id do 
                 json.extract! book, :id, :title, :image_url
                 json.price book.prices.first.price
+                json.format book.prices.first.book_format
+                json.discount book.prices.first.discount
                 json.avg_rating (total_rating.to_f /  [1,book.reviews.length].max).round(2)
                 json.total_reviews book.reviews.length
                 json.author book.book_author.name
         end
     end
 
-    json.prices do
-        book.prices.each do |price|
-            json.set! price.id do 
-                json.extract! price, :id, :book_id, :book_format, :price
-            end
-        end
-    end
+    # json.prices do
+    #     book.prices.each do |price|
+    #         json.set! price.id do 
+    #             json.extract! price, :id, :book_id, :book_format, :price, :discount
+    #         end
+    #     end
+    # end
 
 end

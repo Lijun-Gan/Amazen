@@ -8,6 +8,7 @@ class SearchResult extends React.Component {
 
   componentDidMount(){
         // if(Object.values(this.props.books).length ===0){
+
             this.props.fetchBooks()
         // }
   }
@@ -23,7 +24,7 @@ class SearchResult extends React.Component {
             
         } else {
 
-            const { books,total,search } = this.props;
+            const { books,total,search, prime } = this.props;
         // if(total === 0){
         //     this.props.fetchBooks()
         // }
@@ -44,7 +45,7 @@ class SearchResult extends React.Component {
         
         let book_count = [];
         let result = books.filter((book)=>{
-            if (search == ""){
+            if (search === ""){
                 book_count.push(book)
                 return book
             } else if (book.title.toLowerCase().includes(search.toLowerCase())){
@@ -75,7 +76,7 @@ class SearchResult extends React.Component {
 
                 <ul className='book-listing'>
                   
-                     {result.map((book,idx )=> <BookIndexItem key={idx} book={book} />)}
+                     {result.map((book,idx )=> <BookIndexItem key={idx} book={book} prime={prime}/>)}
                     
                 </ul>
             </div>

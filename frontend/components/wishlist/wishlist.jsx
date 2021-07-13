@@ -5,22 +5,28 @@ class Wishlist extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      search: ""
+    }
 
+    this.handleClose = this.handleClose.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this. handleCart = this.handleCart.bind(this)
     this.handleDate = this.handleDate.bind(this)
+    this.handleRedirectBookPage = this.handleRedirectBookPage.bind(this)
   }
 
   componentDidMount(){
       
-    this.props.fetchBooks().then(()=>{
+    // this.props.fetchBooks().then(()=>{
 
       this.props.fetchWishlists()
-    })
+    // })
   }
 
-  componentWillUnmount(){
-    this.props.clearWishlistState()
-  }
+  // componentWillUnmount(){
+  //   this.props.clearWishlistState()
+  // }
 
   handleCart(cartItem){
       return() =>{
@@ -48,7 +54,7 @@ class Wishlist extends React.Component {
           this.props.history.push('/cart')
       }
 
-};
+  }
 
 handleDate(unformatedDate){
 
@@ -73,55 +79,149 @@ handleDate(unformatedDate){
     return `${monthName} ${date}, ${year}`
 }
 
+  handleRedirectBookPage(book){
+    return(e)=>{
+
+        e.preventDefault();
+
+        const savedCart = localStorage.getItem(this.props.currentUserId);
+        // let cart = {};
+        let cart = {"cartItems":{} , "prices": {}};
+    
+        if (savedCart) { 
+        
+            cart = JSON.parse(savedCart);
+            
+        }
+        
+        cart["prices"][book.book_id.toString()] = { format: book.format, price: book.price}
+        
+        localStorage.setItem(this.props.currentUserId, JSON.stringify(cart));
+    
+    
+       this.props.history.push(`/books/${book.book_id}`);
+    }
+ 
+  
+  }
+
+  handleClose(e){
+
+
+    // return (e)=>{
+        e.preventDefault()
+
+        // if(action === "submit"){
+
+            // this.setState({
+            //     search: this.state.search
+            // })
+        
+        // }else{
+
+        //     document.getElementById("clear-search").value = "";
+            this.setState({
+              search: ""
+          })
+        // }
+
+    // }
+  }
+
+  handleInput(e){
+
+      this.setState({
+        search: e.target.value
+    })
+
+  }
+
 
   render(){
-      if (this === undefined || this.props.books == undefined || Object.keys(this.props.wishlists).length <1 ){
-          return <h1>loading......</h1>
-      }
-      const {wishlists, books, deleteWishlist} = this.props
+      // if (this === undefined || this.props.books == undefined || Object.keys(this.props.wishlists).length <1 ){
+      // if (Object.keys(this.props.wishlists).length < 1 ){
+      //     return <h1>loading......</h1>
+      // }
+      const {wishlists,  deleteWishlist } = this.props
+
+      let wishItems = Object.values(wishlists).filter(wish=>{
+        if(wish.title.toUpperCase().includes(this.state.search.toUpperCase())){
+          
+            return wish
+
+        }
+    })
 
       return(
 
         <div className="wishlist-page">
+
+          <div className="wl-search-div">
             <h3 className="wl-h3">Wish List</h3>
+
+            <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
+                <div className="order-margin-auto">
+                    <img className="order-search-icon" src={window.search_icon} alt="Search" />
+                    <input className="wl-search-bar" id="clear-search" type="text" name="search" onChange={this.handleInput} placeholder="Search by book title" autoComplete="off" value={this.state.search}/>
+                    {this.state.search ? <p className="wl-search-close" onClick={this.handleClose}>✕</p> : null}
+                </div>
+                {/* <button className="wl-search-icon-btn" type="submit">Search</button> */}
+                
+              </form>  
+          </div>
+
         <div className="wishlist-container">
 
             <ul >
-            {Object.values(wishlists).reverse().map((wishlist,idx)=>{
+            {wishItems.reverse().map((wishlist,idx)=>{
             
             return(
 
               <li key={idx} className="wishlist-items">
-                   <Link className="wl-title" to={`/books/${wishlist.book_id}`}>
-                  <img className="wishlist-pic" src={books[wishlist.book_id].image_url} alt="book img"/>
-                  </Link>
+                   {/* <Link className="wl-title" to={`/books/${wishlist.book_id}`}> */}
+                  <button className="wl-title" onClick={this.handleRedirectBookPage(wishlist)}> 
+                    <img className="wishlist-pic" src={wishlist.image_url} alt="book img"/>
+                  </button>
+                  {/* </Link> */}
 
                     <div className="wl-info">
                         
-                        <Link className="wl-title" to={`/books/${wishlist.book_id}`}>
-                        {books[wishlist.book_id].title}
-                        </Link>
+                        {/* <Link className="wl-title" to={`/books/${wishlist.book_id}`}> */}
+                        <button className="wl-title" onClick={this.handleRedirectBookPage(wishlist)}> 
+                          {wishlist.title}
+                        </button>
+                        {/* </Link> */}
                         <p className="wl-author">by {wishlist.author} ({wishlist.format})</p>
                         
 
                         <div className="wl-rating-star-container">
                           <div className="star-ratings-css-home-page">
-                              <div className="star-ratings-css-top" style={{"width": `${( books[wishlist.book_id].avg_rating / 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                              <div className="star-ratings-css-top" style={{"width": `${( wishlist.avg_rating / 5 * 100).toString()+"%"}` }}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                               <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                           </div> 
-                          <p className="review-count-home-page">{books[wishlist.book_id].total_reviews}</p>
+                          <p className="review-count-wishlist-page">{wishlist.total_reviews}</p>
                           {/* book.reviewIds.length */}
                         </div>
 
 
-                        <span className="wl-price">{ "$"+ Number.parseFloat(parseFloat(books[wishlist.book_id].price)).toFixed(2)}</span>
-                        <span className="wl-delivery">Free Delivery</span>
-              
+                        <div className="wishlist-prime">
+                          <span className="wl-price">{ wishlist.discount ? "$"+ Number.parseFloat(parseFloat(wishlist.price * 0.75 + 0.99)).toFixed(2): "$"+ Number.parseFloat(parseFloat(wishlist.price)).toFixed(2)}</span>
+                          {/* <span className="wl-delivery">Free Delivery</span> */}
+                
+                          {(this.props.prime[wishlist.book_id] && ["Paperback", "Audio CD", "Hardcopy"].includes(wishlist.format)) ? 
+                        
+                            <div className="prime-big">
+                                <span className="check-color-big">✓</span> <span className="prime-color-big">prime</span> 
+                            </div> 
+
+
+                            : null}
+                        </div>
 
                     </div>
                     <div className="wl-btn">
                         <p className="wl-date">Item added {this.handleDate(wishlist.created_at)}</p>
-                        <button className='wl-add-to-cart-button' onClick={this.handleCart({title: books[wishlist.book_id].title, image_url:books[wishlist.book_id].image_url, author: wishlist.author,  quantity: 1, format: wishlist.format ,price: wishlist.price, book_id: wishlist.book_id})}>Add to Cart</button>
+                        <button className='wl-add-to-cart-button' onClick={this.handleCart({title: wishlist.title, image_url:wishlist.image_url, author: wishlist.author, price_id: wishlist.price_id,  quantity: 1, format: wishlist.format ,price: wishlist.price, book_id: wishlist.book_id, discount: wishlist.discount})}>Add to Cart</button>
                         <br/>
                         <button className="deleteList" onClick={()=>deleteWishlist(wishlist.id)}>Delete</button>
                     </div>

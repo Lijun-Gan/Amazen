@@ -32,8 +32,12 @@ export const signin = (user) => (dispatch)=> (
 export const signout = () => (dispatch)=> (
     APIUtil.signout().then((user) => (dispatch(signoutCurrentUser())), 
     (errors) => (dispatch(receiveErrors(errors.responseJSON))))
+    );
+    
+export const updateZipCode = (user) => (dispatch)=> (
+    APIUtil.updateZipCode(user).then(user => (dispatch(receiveCurrentUser(user))), 
+    (errors) => (dispatch(receiveErrors(errors.responseJSON))))
 );
-
   
 
 

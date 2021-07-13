@@ -11,7 +11,8 @@
 # end
 
 # json.user do 
-json.extract! user, :username, :id, :email, :phone_number
+# json.extract! user, :username, :id, :email, :phone_number, :city, :zip_code, :full_name
+json.extract! user, :username, :id, :city, :zip_code, :full_name, :phone_number, :email
     # json.cartIds cart_ids
     # json.wishlistIds wishlist_ids
 # end

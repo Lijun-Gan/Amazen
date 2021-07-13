@@ -9,6 +9,7 @@ import EditReviewForm from './review/edit_review_form_container';
 import NavBarContainer from './home_page/navigation_container'
 import Footer from "./home_page/footnote";
 import CartContainer from './cart/cart_container';
+import HomeContainer from './book/book_index/home_container';
 import BookIndexContainer from './book/book_index/book_index_container';
 import SearchResultContainer from './search_result/search_result_container';
 import WishlistContainer from "./wishlist/wishlist_container";
@@ -25,8 +26,9 @@ const NonAuthPath = () => (
       <NavBarContainer />
 
     <Switch>
+        <Route exact path="/bookFilter/:kinds/:kind" component={BookIndexContainer} />
         <Route exact path="/books/:id" component={BookShowContainer} />
-        <Route exact path="/" component={BookIndexContainer} />
+        <Route exact path="/" component={HomeContainer} />
         <Route exact path="/search" component={SearchResultContainer} />
         <Route exact path="/contact" component={ContactUs} />
 

@@ -8,7 +8,7 @@ const NavSignin = ({ currentUser, signout }) => {
     <div className="nav-signin-container">
       <Link  to="/signin">
       <span className="nav-signin">Hello, Sign in </span> 
-      <p className="nav-signin"> Account & Lists ▾</p>
+      <p className="nav-signin"> Account & Lists <span className="flag-arrow">▾ </span></p>
       </Link>
       
     </div>

@@ -15,7 +15,7 @@ class SearchBar extends React.Component{
 
     componenetDidMount(){
     
-        this.props.fetchBooks()
+        // this.props.fetchBooks()
         this.handleInput()
     }
 
@@ -52,21 +52,21 @@ class SearchBar extends React.Component{
             searchBookTitle  =  
        (   
             
+
             this.props.books.filter((option) => {         
                 if (option.title.toUpperCase().includes(this.state.input.toUpperCase())){
+              
                     return option
+
                 }
             }).map((book,idx) => (
+             
                 <button className="search-book-link" key={book.id} onClick={this.handleDropdown(book.title)} >{book.title}</button> 
 
                 // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>        
                 
               ))
         )
-
-
-
-
           }    
         
 
@@ -77,12 +77,12 @@ class SearchBar extends React.Component{
                     <button id="search-all">All &nbsp;▾</button>
                     <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
                   
-                        <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
-                <div className={searchBookTitle.length > 0 ? "search-dropdown-container": null}></div>
-                        <div className="search-dropdown" >
-                            {searchBookTitle }
-                        </div>
-                        <button className="search-icon-btn" ><img className="search-icon" src={window.search_icon} alt="Search" /></button>
+                    <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>
+                    {/* <div className={searchBookTitle.length > 0 ? "search-dropdown-container": null}></div> */}
+                    <button className="search-icon-btn" type="submit"><img className="search-icon" src={window.search_icon} alt="Search" /></button>
+                    <div className="search-dropdown" >
+                        {searchBookTitle }
+                    </div>
 
              
                     </form>  

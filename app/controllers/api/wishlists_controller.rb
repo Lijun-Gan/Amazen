@@ -4,9 +4,17 @@ class Api::WishlistsController < ApplicationController
         @wishlist = Wishlist.new(wishlist_params)
         @wishlist.user_id = current_user.id
        
-        
-        if @wishlist.save
 
+        # if @wishlist.save
+
+        #     # @book = Book.find_by(id: params[:wishlist][:book_id])
+        #     render :show
+        if Wishlist.exists?(price_id: @wishlist.price_id)
+            @wishlist = Wishlist.where(:user_id => current_user.id).first
+            render :show
+
+        elsif @wishlist.save
+        
             # @book = Book.find_by(id: params[:wishlist][:book_id])
             render :show
         else
@@ -16,8 +24,8 @@ class Api::WishlistsController < ApplicationController
 
     def index
 
-        @wishlists = Wishlist.where("user_id = ?", current_user.id)
-        
+        @wishlists = Wishlist.includes(:book).where("user_id = ?", current_user.id)
+        # @wishlists = Wishlist.where("user_id = ?", current_user.id)
         render :index
     end
 

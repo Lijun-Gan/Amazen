@@ -1,20 +1,27 @@
 import {connect } from 'react-redux'
 import  Navigation from './navigation'
-import {fetchBooks, fetchBooksFormat, fetchBooksRecommendation} from '../../actions/book_actions'
-import { signout } from '../../actions/session_actions';
+import {fetchBooks, 
+        fetchBooksFormat, 
+        fetchBooksRecommendation, 
+        fetchBooksPrime,
+        fetchBooksDiscount,
+        fetchCelebrityPicks,
+        fetchBookBox} from '../../actions/book_actions'
+import { signout , updateZipCode} from '../../actions/session_actions';
 import { withRouter } from "react-router";
 
 const mapStateToProps = (state) =>{
 
     let books = [];
     let bookQuantity = 0;
-    let userName = ""
+    let currentUser = {}
 
 
      
     if(state.session.id !== undefined && state.session.id != null ){
         const userId = state.session.id
-        userName = state.entities.users[userId].username
+        // userName = state.entities.users[userId].username
+        currentUser = state.entities.users[userId]
 
         if(localStorage.length !== 0 && localStorage.getItem(userId ) !== null && Object.values(JSON.parse(localStorage.getItem(userId)).cartItems).length > 0){
 
@@ -26,7 +33,8 @@ const mapStateToProps = (state) =>{
         }
     }
     return ({
-            username: userName,
+            // username: userName,
+            user: currentUser,
             cartsBook: books,
             quantity: bookQuantity
         })  
@@ -56,7 +64,12 @@ const mapDispatchToProps = (dispatch) =>{
         fetchBooks: ()=>(dispatch(fetchBooks())),
         signout: ()=>(dispatch(signout())),
         fetchBooksFormat: (format)=>(dispatch(fetchBooksFormat(format))),
-        fetchBooksRecommendation: (format)=>(dispatch(fetchBooksRecommendation(format))),
+        fetchBooksRecommendation: ()=>(dispatch(fetchBooksRecommendation())),
+        fetchBooksPrime: ()=>(dispatch(fetchBooksPrime())),
+        fetchBooksDiscount: ()=>(dispatch(fetchBooksDiscount())),
+        fetchCelebrityPicks: ()=>(dispatch(fetchCelebrityPicks())),
+        fetchBookBox: ()=>(dispatch(fetchBookBox())),
+        updateZipCode: (user)=>(dispatch(updateZipCode(user)))
     }
 }
 

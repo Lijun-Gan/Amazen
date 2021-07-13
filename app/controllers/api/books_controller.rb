@@ -13,6 +13,11 @@ class Api::BooksController < ApplicationController
         end 
     end
 
+    def booksTitles
+        @books = Book.all 
+        render :booksTitles
+    end
+
     def title
 
         @books = Book.where(title: params[:title])
@@ -25,9 +30,35 @@ class Api::BooksController < ApplicationController
         render :index
     end
 
+    def discount
+
+        @books =  Book.includes(:prices).where(:prices => {discount: true})
+        render :index
+    end
+
     def recommendation
 
         @books =  Book.order("RANDOM()").limit(5)
+        render :index
+    end
+
+    def prime
+        @books =  Book.find([2,3,5,7,10,12,15,17,18])
+        render :index
+    end
+
+    def bestBooks
+        @books =  Book.find([14,15,16,17,18,19,20])
+        render :index
+    end
+    
+    def celebrityPicks
+        @books =  Book.find([8,9,10,11,12,13])
+        render :index
+    end
+ 
+    def bookBox
+        @books =  Book.find([1,2,3,4,5,6,7])
         render :index
     end
 
