@@ -150,7 +150,7 @@ position: absolute;
     z-index: 1;
     color: darkgray;
     text-align: left;
-    box-shadow: -1px 4px 6px 1px rgb(0 0 0 / 9%);
+
     font-weight: initial;
 }
 .popUp-list{
