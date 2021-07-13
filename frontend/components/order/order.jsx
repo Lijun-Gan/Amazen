@@ -200,9 +200,7 @@ class Order extends React.Component {
             orderItems = orderItems.filter(order=>{
  
                     if( order.title && order.title.toUpperCase().includes(this.state.search.toUpperCase())){
-                    
                         return order
-            
                     }
                 })
         } 
