@@ -144,13 +144,17 @@ handleDate(unformatedDate){
       // }
       const {wishlists,  deleteWishlist } = this.props
 
-      let wishItems = Object.values(wishlists).filter(wish=>{
-        if(wish.title.toUpperCase().includes(this.state.search.toUpperCase())){
-          
-            return wish
+      let wishItems = Object.values(wishlists)
+      if(wishItems && wishItems.length > 0 ){
 
-        }
-    })
+        wishItems = wishItems.filter(wish=>{
+          if(wish.title && wish.title.toUpperCase().includes(this.state.search.toUpperCase())){
+            
+              return wish
+
+              }
+          })
+      }
 
       return(
 

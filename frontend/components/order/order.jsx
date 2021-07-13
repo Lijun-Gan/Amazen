@@ -195,13 +195,18 @@ class Order extends React.Component {
 
         // }else{
 
-        let orderItems = Object.values(orders).filter(order=>{
-            if(order.title.toUpperCase().includes(this.state.search.toUpperCase())){
-              
-                return order
-
-            }
-        })
+        let orderItems = Object.values(orders)
+        if(orderItems.length > 0 ){
+            orderItems = orderItems.filter(order=>{
+ 
+                    if( order.title && order.title.toUpperCase().includes(this.state.search.toUpperCase())){
+                    
+                        return order
+            
+                    }
+                })
+        } 
+            
 
         return(
             <div className="order-outer-container">
