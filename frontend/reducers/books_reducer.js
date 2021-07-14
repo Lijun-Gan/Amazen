@@ -21,9 +21,16 @@ const booksReducer = (state = {}, action) => {
             return Object.assign({} ,action.books.books);
                 
         case RECEIVE_BOOK:
-            
-            nextState[action.oneBook.book.id] = action.oneBook.book;
-                
+            const id = action.oneBook.book.id
+            let showBook = action.oneBook.book
+            if(nextState[id]){    
+                showBook.discount =  nextState[id].discount
+                showBook.price =  nextState[id].price
+                showBook.format =  nextState[id].format
+            }
+            nextState[id] = showBook;
+            // nextState[action.oneBook.book.id] = action.oneBook.book;
+
             return nextState;
                     
         case CLEAR_BOOK_STATE:

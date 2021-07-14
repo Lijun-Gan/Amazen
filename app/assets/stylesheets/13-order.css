@@ -149,23 +149,24 @@ a.order-title{
 .order-quant{
     border: 1px solid #b9b9b6;
     border-radius: 50px;
-    width: 21px;
+    width: 19px;
     height: 18px;
     font-size: 13px;
     color: black;
     background: white;
     opacity: 0.9;
     text-align: center;
-    padding-top: 3px;
+    /* padding-top: 0px; */
     position: absolute;
-    bottom: 49px;
-    right: -4px;
+    bottom: 2px;
+    left: 52px;
 }
 
 .order-title{
     color: #0066c0;
     font-size: 14px;
     line-height: 20px;
+    position: relative;
 }
 
 

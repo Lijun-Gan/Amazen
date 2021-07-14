@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -50,31 +51,28 @@ class SearchBar extends React.Component{
         let searchBookTitle = "";
         if (this.props.books && this.props.search && this.state.input) {
             searchBookTitle  =  
-       (   
-            
-
-            this.props.books.filter((option) => {         
-                if (option.title.toUpperCase().includes(this.state.input.toUpperCase())){
-              
-                    return option
-
-                }
-            }).map((book,idx) => (
+            (
+                this.props.books.filter((option) => {         
+                    if (option.title.toUpperCase().includes(this.state.input.toUpperCase())){
+                        return option
+                    }
+                }).map((book,idx) => (
              
                 <button className="search-book-link" key={book.id} onClick={this.handleDropdown(book.title)} >{book.title}</button> 
 
                 // <button key={book.id} onClick={() => {alert('TEST');}} value={book.id}>{book.title}</button>        
                 
               ))
-        )
-          }    
+            )
+        }    
         
-
        
         return (
             
             <div className="searchbar">
-                    <button id="search-all">All &nbsp;▾</button>
+                {/* <Link to="/"> */}
+                    <button id="search-all" onClick={()=>this.props.history.push("/")}>All &nbsp;▾</button>
+                {/* </Link> */}
                     <form className="nav-search-bar-with-icon" onSubmit={this.handleSubmit}>
                   
                     <input id="nav-search-bar" type="text"  onChange={this.handleInput} autoComplete="off"/>

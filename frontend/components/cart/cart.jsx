@@ -180,7 +180,7 @@ class Cart extends React.Component {
 
                 </div>
 
-                    <button className="carts-checkout" onClick={this.handleCheckOut}>Proceeed to checkout</button>
+                    <button className="carts-checkout" onClick={this.handleCheckOut}>Proceed to checkout</button>
 
             </div>
 

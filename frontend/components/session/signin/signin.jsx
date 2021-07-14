@@ -234,7 +234,7 @@ class SignIn extends React.Component {
                         </form>
                             <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
                             
-                        <p id="notes">By creating an account, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                        <p id="notes">By continuing, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
         
                         <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
                     </div>
@@ -296,7 +296,7 @@ class SignIn extends React.Component {
                         {this.state.errors.emptyPassword}
 
                         {/* <input className="auth-btn" type="submit" value="Sign-In" /> */}
-                        <button  className="auth-btn demo" type="submit" >Sign-In</button>
+                        <button  className="auth-btn signin" type="submit" >Sign-In</button>
                     </div>
                     </form>
                     <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>

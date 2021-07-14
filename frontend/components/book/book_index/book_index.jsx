@@ -21,7 +21,7 @@ class BookIndex extends React.Component {
   componentDidMount(){
 
 
-    if(Object.keys(this.props.books).length === 0){
+    if(Object.keys(this.props.books).length < 2){
 
       this.handleFetch()
       console.log("from first if")

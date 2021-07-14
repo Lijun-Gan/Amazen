@@ -29,11 +29,6 @@ class UserReviewItem extends React.Component{
       
     }
 
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
-
     handleClickOutside(event) {
         if (this.wrapperRef && this.wrapperRef.current && !this.wrapperRef.current.contains(event.target)) {
             // alert('You clicked outside of me!');
@@ -54,6 +49,11 @@ class UserReviewItem extends React.Component{
             }
         }
     }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
 
     handleBtn(id){
 

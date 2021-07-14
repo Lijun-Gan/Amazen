@@ -41,13 +41,13 @@
 }
 
 h5.input-error{
-    color:  #c40000;
-    margin-bottom: 10px;
+    color: #c40000;
+    margin-bottom: 12px;
     margin-top: 0px;
     font-family: 'Lato', sans-serif;
-    font-weight:520;
+    font-weight: 520;
     font-size: 1em;
-    
+    line-height: 12px;
 }
 
 .signin-address-btn{
@@ -566,13 +566,13 @@ button.sub-nav:hover {
 
 a.subNav.last {
     margin-left: 45px;
-    margin-right: 25px;
+    /* margin-right: 25px; */
     font-weight: bold;
     width: 182px;
-    height: 24px;
+    height: 21px;
     font-size: 14px;
     padding-top: 8px;
-    margin-top: 2px;
+    margin-top: 3px;
     border: 1px solid transparent;
     text-align: center;
     white-space: nowrap;
