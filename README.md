@@ -13,7 +13,7 @@ Amazen, an Amazon clone, allows users to browse, purchase, and review books. All
 * [Profile](#Profile)
 * [Review](#Review)
 * [Shopping Cart](#Shopping-Cart)
-* [Order](#Orders)
+* [Order](#Order)
 * [Wish List](#Wish-List)
 
 
