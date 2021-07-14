@@ -175,7 +175,7 @@ Amazen, an Amazon clone, allows users to browse, purchase, and review books. All
 * User can return the order.
 * User can write a book review.
 * User can add the purchased item to the cart.
-* User can get a product support.
+* User can get product support.
 
 ```js
 
