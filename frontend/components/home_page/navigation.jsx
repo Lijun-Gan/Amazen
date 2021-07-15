@@ -368,7 +368,7 @@ import checkZipCode from './nav_bar/checkZipCode';
             <button className="sub-nav xxlg" onClick={()=>(this.props.fetchCelebrityPicks())}>Celebrity Picks</button>
             </Link>
           </div>
-          <a className="subNav last" href="https://github.com/Lijun-Gan/Amazen">Shop women-owned</a>
+          <a className="subNav last" target="_blank" href="https://www.linkedin.com/in/lijun-gan/">Shop women-owned</a>
             <button ></button>
         </div>
 

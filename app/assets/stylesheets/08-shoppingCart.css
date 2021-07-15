@@ -202,6 +202,10 @@
     margin-left: 19px;
 }
 
+.deleteOneItem:hover{
+    text-decoration: underline #007185;
+}
+
 
 .cart-price{
     text-align: right;

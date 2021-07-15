@@ -70,8 +70,8 @@ const FootNote = ()=>{
                     <img className="amazenLogo" src={window.nav_amazenLogo} alt="Amazen Logo"/>
                </Link>
                 <p className="linkedin">
-                    <a href="https://www.linkedin.com/in/lijun-gan/">LinkedIn | </a>
-                    <a href="https://github.com/Lijun-Gan">GitHub </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/lijun-gan/">LinkedIn | </a>
+                    <a target="_blank" href="https://github.com/Lijun-Gan">GitHub </a>
                 </p>
            </div>
 

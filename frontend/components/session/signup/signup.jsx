@@ -230,7 +230,7 @@ class SignUp extends React.Component {
             </div>
         
         <div id="auth-footnotes" >
-            <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+            <a target="_blank" href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
             <p> &nbsp; </p>
             <p>© 2021, Amazen.com, inc. or its affiliates</p>
         </div>
@@ -285,14 +285,14 @@ class SignUp extends React.Component {
                     <p></p>
 
                     <h3>Still need help?</h3>
-                    <a href="https://github.com/Lijun-Gan/Amazen">Contact Customer Service</a>
+                    <a target="_blank" href="https://github.com/Lijun-Gan/Amazen">Contact Customer Service</a>
                     
                 </div>
             </div>
             {/* <img id="auth-footnote" src={window.session_footnote} alt="signin-footnote"/> */}
         
         <div id="auth-footnotes" >
-            <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+            <a target="_blank" href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
             <p> &nbsp; </p>
             <p>© 2021, Amazen.com, inc. or its affiliates</p>
         </div>

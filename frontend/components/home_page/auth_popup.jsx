@@ -82,8 +82,8 @@ class AuthPopup extends React.Component{
                         <li><Link to="/bookFilter/format/Hardcopy" > 
                             <button onClick={()=>(this.props.fetchBooksFormat("Hardcopy"))}>Hardcopy</button>
                         </Link></li>
-                        <li><a href="https://www.linkedin.com/in/lijun-gan/">Amazen Developer's LinkedIn</a></li>
-                        <li> <a href="https://github.com/Lijun-Gan">Amazen Developer's GitHub</a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/lijun-gan/">Amazen Developer's LinkedIn</a></li>
+                        <li> <a target="_blank" href="https://github.com/Lijun-Gan">Amazen Developer's GitHub</a></li>
                         <li>
                             {/* <Link to="/signin">  */}
                             <button onClick={()=>{ this.props.push('/signup')}}>Create an New Account</button>
@@ -166,8 +166,8 @@ class AuthPopup extends React.Component{
                                 <li><Link to="/bookFilter/format/Hardcopy" > 
                                     <button onClick={()=>(this.props.fetchBooksFormat("Hardcopy"))}>Hardcopy</button>
                                 </Link></li>
-                                <li><a href="https://www.linkedin.com/in/lijun-gan/">Amazen Developer's LinkedIn</a></li>
-                                <li> <a href="https://github.com/Lijun-Gan">Amazen Developer's GitHub</a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/lijun-gan/">Amazen Developer's LinkedIn</a></li>
+                                <li><a target="_blank" href="https://github.com/Lijun-Gan">Amazen Developer's GitHub</a></li>
                                 <li>
                                     {/* <Link to="/signin">  */}
                                     <button onClick={()=>{ this.props.signout().then(() => this.props.push('/signup'))}}>Create an New Account</button>

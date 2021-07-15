@@ -234,9 +234,9 @@ class SignIn extends React.Component {
                         </form>
                             <button className="auth-btn demo" onClick={this.demoLogin}> Demo User Sign In</button>
                             
-                        <p id="notes">By continuing, you agree to Amazen's <a href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
+                        <p id="notes">By continuing, you agree to Amazen's <a target="_blank" href="https://github.com/Lijun-Gan/Amazen">conditions of User</a> and <a href="https://github.com/Lijun-Gan/Amazen">Privacy Notice</a> </p>
         
-                        <a href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
+                        <a target="_blank" href="https://github.com/Lijun-Gan/Amazen">▸ Need help?</a>
                     </div>
                 </div>
                 <div className="signin-form-bottom">
@@ -250,7 +250,7 @@ class SignIn extends React.Component {
                 </div>
 
                 <div id="auth-footnotes" >
-                    <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+                    <a target="_blank" href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
                     <p> &nbsp; </p>
                     <p>© 2021, Amazen.com, inc. or its affiliates</p>
                 </div>
@@ -309,7 +309,7 @@ class SignIn extends React.Component {
                 <div className="signin_fade_rule"></div>  
 
                 <div id="auth-footnotes" >
-                    <a href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
+                    <a target="_blank" href="https://github.com/Lijun-Gan/Amazen"> Conditions of User &nbsp;&nbsp;&nbsp;&nbsp; Privacy Notice &nbsp;&nbsp;&nbsp;&nbsp; Help</a>
                     <p> &nbsp; </p>
                     <p>© 2021, Amazen.com, inc. or its affiliates</p>
                 </div>

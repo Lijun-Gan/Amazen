@@ -2,7 +2,7 @@
 
 ![Amazen](app/assets/readme_assets/homepage.png)
 
-Amazen, an Amazon clone, allows users to browse, purchase, and review books. All users can send feedback directly to Amazen, and search books by book format, title, categories, prime, discount and so on. Only logged-in users can add books to wishlist, edit their profile information, and track their shopping cart items and placed orders history. Technologies include: Ruby, Ruby on Rails, PostgreSQL, React, Redux, AJAX, Node.js, HTML5, CSS, JavaScript, Webpack, Heroku, Git, and Github.
+Amazen, an Amazon clone, allows users to browse, purchase, and review books. All users can send feedback directly to Amazen, and search books by book format, title, categories, prime, discount and so on. Only logged-in users can add books to their wishlist, edit their profile information, and track their shopping cart items and placed orders history. Technologies include: Ruby, Ruby on Rails, PostgreSQL, React, Redux, AJAX, Node.js, HTML5, CSS, JavaScript, Webpack, Heroku, Git, and Github.
 
 # <p align="center"> [Check Out the Live App!][1] </p>
 

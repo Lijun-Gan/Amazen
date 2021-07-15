@@ -526,7 +526,7 @@ class BookShow extends React.Component {
 
                         { showBar }
 
-                        <a className="rating-cal" href="https://github.com/Lijun-Gan/Amazen">How are ratings calculated?</a>
+                        <a className="rating-cal" target="_blank" href="https://github.com/Lijun-Gan/Amazen">How are ratings calculated?</a>
 
 
                         <p className="title-to-review">Review this Product</p>
