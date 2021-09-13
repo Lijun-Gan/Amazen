@@ -60,12 +60,13 @@
 .item-body{
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     height: 148px;
     border: 1px solid #ddd;
     border-top: none;
     border-radius: 0 0 4px 4px;
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 a.order-title{
@@ -214,10 +215,10 @@ a.order-title{
 }
 
 .order-search-icon-btn {
-    background: #5f6368;
+    background: #303333;
     border-color: #3d444c #2f353b #2c3137;
     color: #fff;
-    border-radius: 3px;
+    border-radius: 15px;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;

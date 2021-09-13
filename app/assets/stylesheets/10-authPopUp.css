@@ -119,14 +119,14 @@ position: absolute;
 .nav-group .popUp .popUp-links{
     display: flex;
     flex-direction: row;
-    align-items: end;
+    /* align-items: end; */
     
     justify-content: space-between;
 }
 .outerpopUp .popUp .popUp-links{
     display: flex;
     flex-direction: row;
-    align-items: end;
+    /* align-items: end; */
     justify-content: space-between;
     margin-top: -45px;
     border-top: 1px solid rgb(233, 231, 231);
@@ -163,7 +163,7 @@ position: absolute;
 
 .popUp-shopping-list{
     margin-left: 8px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 .popUp .popUp-shopping-list li{
     margin-top: 10px;
